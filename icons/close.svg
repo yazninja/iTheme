@@ -24,20 +24,33 @@
      inkscape:pagecheckerboard="0"
      showgrid="false"
      inkscape:zoom="24.24787"
-     inkscape:cx="7.6089157"
+     inkscape:cx="7.6089158"
      inkscape:cy="13.568202"
      inkscape:window-width="1920"
      inkscape:window-height="1009"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg6" />
+     inkscape:current-layer="svg6"
+     showguides="true"
+     inkscape:guide-bbox="true">
+    <sodipodi:guide
+       position="21.651386,26.556926"
+       orientation="0,-1"
+       id="guide1329" />
+  </sodipodi:namedview>
   <path
      d="M0 0h24v24H0V0z"
      fill="none"
      id="path2" />
+  <circle
+     style="fill:#ff5c5c;fill-opacity:1;stroke-width:2.5464;stroke-miterlimit:4;stroke-dasharray:none"
+     id="path1225"
+     cx="12"
+     cy="12"
+     r="11.980433" />
   <path
-     d="M 22.3405,3.7423725 20.257628,1.6595004 12,9.9171279 3.7423725,1.6595004 1.6595004,3.7423725 9.9171279,12 1.6595004,20.257628 3.7423725,22.3405 12,14.082872 20.257628,22.3405 22.3405,20.257628 14.082872,12 Z"
+     d="M 18.247355,7.0110406 16.98896,5.7526439 11.999999,10.741603 7.0110403,5.7526439 5.7526447,7.0110406 10.741601,12 l -4.9889563,4.988962 1.2583956,1.258394 4.9889587,-4.988962 4.988961,4.988962 1.258395,-1.258394 -4.98896,-4.988964 z"
      id="path4"
-     style="fill:#4b0000;fill-opacity:1;stroke-width:1.47721" />
+     style="fill:#4b0000;fill-opacity:1;stroke-width:0.892355;stroke-miterlimit:4;stroke-dasharray:none" />
 </svg>
