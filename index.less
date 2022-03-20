@@ -504,6 +504,17 @@ body {
         .sidebar-icon>.svg-icon {
             --color: #fa586a;
         }
+        button[title="Unlove"]>.sidebar-icon>.svg-icon, button[data-original-title="Unlove"]>.sidebar-icon>.svg-icon{
+            --url:none !important;
+            background: url('icons/heart.svg');
+            background-size: contain;
+        }
+        button[title="Undo dislike"]>.sidebar-icon>.svg-icon, button[data-original-title="Undo dislike"]>.sidebar-icon>.svg-icon{
+            --url:none !important;
+            background: url('icons/thumbs-down.svg');
+            background-size: contain;
+        }
+
     }
 
     #app.simplebg::before {
