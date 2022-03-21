@@ -332,9 +332,27 @@ body {
         transform: translate(0, -50%);
     }
 
+    // Window Controls to the left
+    .window-controls{
+        position: relative;
+        left: calc(-100vw + 140px);
+    }
+
+    .app-mainmenu{
+        position:relative;
+        left: calc(100vw - 290px);
+    }
+    .app-chrome--right{
+        margin-right: 20px;
+    }
+    .app-chrome--left{
+        margin-left: 150px;
+    }
     .usermenu-body {
         background-color: rgba(0, 0, 0, 0.25);
         backdrop-filter: blur(8px);
+        position:relative;
+        left: calc(100vw - 260px);
     }
 
     .app-sidebar-item {
@@ -513,6 +531,9 @@ body {
             --url:none !important;
             background: url('icons/thumbs-down.svg');
             background-size: contain;
+        }
+        .fullscreen-view .artwork-col .app-playback-controls .playback-info > div{
+            color: #fff;
         }
 
     }
