@@ -1,4 +1,4 @@
-# Apple [Cider](https://cider.sh/) Lite (Beta) ![stars](https://img.shields.io/github/stars/yazninja/apple-cider-lite?style=social)
+# Apple [Cider](https://cider.sh/) Lite (Beta) <img src="https://img.shields.io/github/stars/yazninja/apple-cider-lite?style=social" width="70"></img>
 
 Cider theme based from the Apple Music beta app in MacOS Monterey.
 Best used with `Mica(beta)` option in settings. 
