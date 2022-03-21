@@ -290,7 +290,7 @@ body {
             div.close {
                 background-image: url('icons/close.svg');
                 background-size: 13px 13px;
-                // background-position: inherit;
+                // basckground-position: inherit;
                 background-repeat: no-repeat;
             }
         }
@@ -338,15 +338,34 @@ body {
         left: calc(-100vw + 140px);
     }
 
-    .app-mainmenu{
+    .app-chrome--left>.app-chrome-item.full-height{
         position:relative;
-        left: calc(100vw - 290px);
+        left: calc(100vw - 280px);
+        z-index: 100;
     }
     .app-chrome--right{
         margin-right: 20px;
+        z-index: 1;
+    }
+    .app-chrome::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: calc(100% - 260px);
+        height: var(--chromeHeight1);
+        background-color: rgba(31,31,31,0.8);
+        z-index: 0;
+        border-left: 1px solid rgb(20, 20, 20);
+    }
+    .app-chrome--center, .app-chrome--left, .app-chrome-item{
+        z-index: 2;
     }
     .app-chrome--left{
         margin-left: 150px;
+    }
+    #app-content{
+        border-radius: 0px;
     }
     .usermenu-body {
         background-color: rgba(0, 0, 0, 0.25);
@@ -365,6 +384,10 @@ body {
         .sidebar-icon>svg {
             color: #fa586a;
         }
+    }
+
+    .sidebar-playlist>button>.sidebar-icon>svg{
+        color: #999;
     }
 
     // .app-chrome {
@@ -505,7 +528,7 @@ body {
 
 @media (prefers-color-scheme: light) {
     #app {
-        --color1: rgba(255, 255, 255, 0.5);
+        --color1: rgba(255, 255, 255, 0.35);
         --color2: rgb(203 203 203 / 30%);
         --textColor: #000;
         --mediaItemShadow-Shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
@@ -535,6 +558,7 @@ body {
         .fullscreen-view .artwork-col .app-playback-controls .playback-info > div{
             color: #fff;
         }
+        
 
     }
 
@@ -557,7 +581,9 @@ body {
     }
 
     #app-main {
-
+        .window-controls{
+            filter: drop-shadow(0px 0px 0px rgb(0 0 0 / 50%));
+        }
         .window-controls>div.minmax,
         .window-controls>div.minimize,
         .window-controls>div.close {
@@ -570,7 +596,11 @@ body {
         .volume-button--small,
         .volume,
         .nav-item {
-            filter: invert(1) brightness(100);
+            filter: invert(1) brightness(85);
+        }
+        #navigation-bar> .nav-item::hover{
+            background: #333 !important;
+            
         }
 
         button.volume {
@@ -644,11 +674,11 @@ body {
             filter: invert(1);
         }
 
-        .nav-item:hover {
-            svg:hover {
-                filter: invert(0);
-            }
-        }
+        // .nav-item:hover {
+        //     svg:hover {
+        //         filter: invert(0);
+        //     }
+        // }
 
         .playback-button--small:hover,
         .playback-button:hover,
@@ -675,6 +705,23 @@ body {
             background-size: 75%;
             filter: brightness(0);
             opacity: 1;
+        }
+        .app-chrome::before{
+            background-color: rgba(255, 255, 255, 0.7);
+            border-left: rgb(200, 200, 200) solid 1px;
+        }
+        .app-chrome .app-chrome-item > .app-mainmenu{
+            background: url(icons/AppChromeBtn.svg)
+        }
+        .app-chrome .app-chrome-item > .app-mainmenu.active{
+            background: url(icons/AppChromeBtn-Open.svg)
+        }
+        #navigation-bar{
+            background: rgba(255,255,255,0.5);
+            backdrop-filter: none;
+        }
+        .sidebar-playlist>button>.sidebar-icon>svg{
+            color: #555;
         }
     }
 
@@ -900,7 +947,7 @@ body {
 
     .app-navigation {
         #app-content {
-            background: #1f1f1f !important;
+            background: rgba(31, 31, 31,0.7) !important;
         }
     }
 
