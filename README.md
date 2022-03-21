@@ -4,13 +4,17 @@ Cider theme based from the Apple Music beta app in MacOS Monterey.
 Best used with `Mica(beta)` option in settings. 
 
 ---
-##### New Update! Dynamic Theme
-Theme now follows the System Theme. Thanks to [vapormusic](https://github.com/vapormusic) for teaching me about Dynamic Themes.
+#### New Update! MacOS Layout
+Get the feeling of a mac app with window controls in the left and a MacOS style UI!
 
-![dark1](https://user-images.githubusercontent.com/71800112/159126086-79173597-2280-4353-bcd9-d4a631bbca12.png)
-![light1](https://user-images.githubusercontent.com/71800112/159126088-51f7f8e1-a0dc-44fd-9a22-2f0f0af38e3f.png)
-![dark2](https://user-images.githubusercontent.com/71800112/159126090-08bd810b-14a7-4fd0-b4f1-88c0006202ec.png)
-![light2](https://user-images.githubusercontent.com/71800112/159126091-22b946bd-f585-4aa1-af4b-d75ec4d73739.png)
+![dark1](https://user-images.githubusercontent.com/71800112/159197953-64f2978d-0b10-4040-b6e6-8ba6b2a6658f.png)
+![light1](https://user-images.githubusercontent.com/71800112/159197955-0b005258-3d34-47c0-b5a7-76b5206c58d5.png)
+![dark2](https://user-images.githubusercontent.com/71800112/159197949-eda3ccd2-9a06-4d49-80d0-906a83289831.png)
+![light2](https://user-images.githubusercontent.com/71800112/159197956-1850b176-f287-43fa-b148-80fbe558693d.png)
+
+
+
+
 ---
 
 ### See Any Bugs?
@@ -24,8 +28,8 @@ Messege me on [Discord](http://discord.com/users/325495275454070786) about it :)
 [MIT License](https://github.com/yazninja/apple-cider-lite/blob/main/LICENSE)
 
 
-Thanks to
-[vapormusic](https://github.com/vapormusic) Dynamic Theme idea
-[Joviverde](https://github.com/Joviverde) Icons used from AppleMusic+ Theme
-
+Thanks to:
+- [vapormusic](https://github.com/vapormusic) Dynamic Theme idea
+- [Joviverde](https://github.com/Joviverde) Icons used from AppleMusic+ Theme
+#
 Designed by [yazninja](https://github.com/yazninja)
