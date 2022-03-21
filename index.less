@@ -40,7 +40,7 @@ body {
 
 .md-btn {
     &.md-btn-primary {
-        background: #d60017;
+        background: #fa233b;
     }
 }
 
@@ -333,44 +333,52 @@ body {
     }
 
     // Window Controls to the left
-    .window-controls{
+    .window-controls {
         position: relative;
         left: calc(-100vw + 140px);
     }
 
-    .app-chrome--left>.app-chrome-item.full-height{
-        position:relative;
+    .app-chrome--left>.app-chrome-item.full-height {
+        position: relative;
         left: calc(100vw - 280px);
         z-index: 100;
     }
-    .app-chrome--right{
+
+    .app-chrome--right {
         margin-right: 20px;
         z-index: 1;
     }
-    .app-chrome::before{
+
+    .app-chrome::before {
         content: "";
         position: absolute;
         top: 0;
         right: 0;
         width: calc(100% - 260px);
         height: var(--chromeHeight1);
-        background-color: rgba(31,31,31,0.8);
+        background-color: rgba(31, 31, 31, 0.8);
         z-index: 0;
         border-left: 1px solid rgb(20, 20, 20);
     }
-    .app-chrome--center, .app-chrome--left, .app-chrome-item{
+
+    .app-chrome--center,
+    .app-chrome--left,
+    .app-chrome-item {
         z-index: 2;
     }
-    .app-chrome--left{
+
+    .app-chrome--left {
         margin-left: 150px;
     }
-    #app-content{
+
+    #app-content {
         border-radius: 0px;
     }
+
     .usermenu-body {
         background-color: rgba(0, 0, 0, 0.25);
         backdrop-filter: blur(8px);
-        position:relative;
+        position: relative;
         left: calc(100vw - 260px);
     }
 
@@ -386,7 +394,7 @@ body {
         }
     }
 
-    .sidebar-playlist>button>.sidebar-icon>svg{
+    .sidebar-playlist>button>.sidebar-icon>svg {
         color: #999;
     }
 
@@ -525,6 +533,66 @@ body {
     overflow: hidden;
 }
 
+@media only screen and (max-width: 1360px) {
+    .display--small {
+        display: inherit !important;
+        ;
+
+        .slider {
+            width: 100%;
+            z-index: 1;
+        }
+
+        .input-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding-bottom: 10px;
+        }
+
+        input[type=range] {
+            -webkit-appearance: none;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 5px;
+            background-size: 70% 100%;
+            background-repeat: no-repeat;
+
+            &::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                height: 14px;
+                width: 14px;
+                border-radius: 50%;
+                background: rgb(50 50 50);
+                cursor: default;
+                box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.4);
+                transition: all var(--appleTransition);
+            }
+
+            &::-webkit-slider-thumb:hover {
+                background-image: radial-gradient(var(--keyColor) 2px, transparent 3px, transparent 10px);
+                transform: scale(1.2);
+            }
+
+            &::-webkit-slider-thumb:active {
+                background-image: radial-gradient(var(--keyColor) 3px, transparent 4px, transparent 10px);
+                transform: scale(1);
+            }
+
+            &::-webkit-slider-runnable-track {
+                -webkit-appearance: none;
+                box-shadow: none;
+                border: none;
+                background: transparent;
+            }
+        }
+    }
+
+    .display--large {
+        display: none !important;
+    }
+}
 
 @media (prefers-color-scheme: light) {
     #app {
@@ -545,20 +613,25 @@ body {
         .sidebar-icon>.svg-icon {
             --color: #fa586a;
         }
-        button[title="Unlove"]>.sidebar-icon>.svg-icon, button[data-original-title="Unlove"]>.sidebar-icon>.svg-icon{
-            --url:none !important;
+
+        button[title="Unlove"]>.sidebar-icon>.svg-icon,
+        button[data-original-title="Unlove"]>.sidebar-icon>.svg-icon {
+            --url: none !important;
             background: url('icons/heart.svg');
             background-size: contain;
         }
-        button[title="Undo dislike"]>.sidebar-icon>.svg-icon, button[data-original-title="Undo dislike"]>.sidebar-icon>.svg-icon{
-            --url:none !important;
+
+        button[title="Undo dislike"]>.sidebar-icon>.svg-icon,
+        button[data-original-title="Undo dislike"]>.sidebar-icon>.svg-icon {
+            --url: none !important;
             background: url('icons/thumbs-down.svg');
             background-size: contain;
         }
-        .fullscreen-view .artwork-col .app-playback-controls .playback-info > div{
+
+        .fullscreen-view .artwork-col .app-playback-controls .playback-info>div {
             color: #fff;
         }
-        
+
 
     }
 
@@ -581,9 +654,10 @@ body {
     }
 
     #app-main {
-        .window-controls{
+        .window-controls {
             filter: drop-shadow(0px 0px 0px rgb(0 0 0 / 50%));
         }
+
         .window-controls>div.minmax,
         .window-controls>div.minimize,
         .window-controls>div.close {
@@ -598,9 +672,10 @@ body {
         .nav-item {
             filter: invert(1) brightness(85);
         }
-        #navigation-bar> .nav-item::hover{
+
+        #navigation-bar>.nav-item::hover {
             background: #333 !important;
-            
+
         }
 
         button.volume {
@@ -706,22 +781,33 @@ body {
             filter: brightness(0);
             opacity: 1;
         }
-        .app-chrome::before{
+
+        .app-chrome::before {
             background-color: rgba(255, 255, 255, 0.7);
             border-left: rgb(200, 200, 200) solid 1px;
         }
-        .app-chrome .app-chrome-item > .app-mainmenu{
+
+        .app-chrome .app-chrome-item>.app-mainmenu {
             background: url(icons/AppChromeBtn.svg)
         }
-        .app-chrome .app-chrome-item > .app-mainmenu.active{
+
+        .app-chrome .app-chrome-item>.app-mainmenu.active {
             background: url(icons/AppChromeBtn-Open.svg)
         }
-        #navigation-bar{
-            background: rgba(255,255,255,0.5);
+
+        #navigation-bar {
+            background: #f5f5f5;
             backdrop-filter: none;
+            mix-blend-mode: normal;
         }
-        .sidebar-playlist>button>.sidebar-icon>svg{
+
+        .sidebar-playlist>button>.sidebar-icon>svg {
             color: #555;
+        }
+        .library-header{
+            backdrop-filter: none;
+            background: #f5f5f5 !important;
+            
         }
     }
 
@@ -761,8 +847,11 @@ body {
             background: rgba(30, 30, 30, 0.2);
         }
 
-        .lyric-line {
+        .lyric-line{
             color: #333;
+        }
+        .lyric-line.active .lyricWaiting > div{
+            background: #333;
         }
     }
 
@@ -772,6 +861,7 @@ body {
         background-position: center;
         background-color: whitesmoke;
         border-radius: 5px;
+
         >div>.song-artist-album {
             width: 98%;
             max-width: unset;
@@ -782,6 +872,7 @@ body {
             }
         }
     }
+
     .app-chrome .app-chrome-item>.app-playback-controls {
         // border: solid darkgray;
         // border-width: 1px;
@@ -834,7 +925,7 @@ body {
             padding-right: 1%;
         }
 
-        
+
 
         .actions {
             display: none;
@@ -947,7 +1038,7 @@ body {
 
     .app-navigation {
         #app-content {
-            background: rgba(31, 31, 31,0.7) !important;
+            background: rgba(31, 31, 31, 0.7) !important;
         }
     }
 
