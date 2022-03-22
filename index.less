@@ -649,7 +649,58 @@ body {
             color: #fff;
             opacity: 1;
         }
-
+        .modal-fullscreen{
+            background: rgba(255,255,255,0.3);
+            
+        }
+        .modal-fullscreen .modal-window .modal-header, .md-footer{
+            background: rgb(255,255,255);
+            color:#000;
+            font-weight: bold;
+        }
+        .modal-fullscreen .modal-window .modal-content{
+            background: rgb(235, 235, 235);
+            color:#333;
+            .playlist-item{
+                background: rgb(235, 235, 235);
+                color:#333;
+            }
+        }
+        .md-btn.md-btn-block{
+            background: #fa233b;
+            color:white;
+        }
+        .castPlayIndicator{
+            fill:#555;
+        }
+        .modal-fullscreen .modal-window .modal-header .close-btn{
+            height: 18px;
+            width: 18px;
+            border: 1px solid rgba(200, 200, 200, 0.08);
+            background: rgb(255, 92, 92);
+            border-radius: 50%;
+            margin: 0px;
+            -webkit-app-region: no-drag;
+            background-image: unset;
+            position: absolute;
+            right: 15px;
+            top: 20px;
+            cursor: pointer;
+            transition-duration: 0.2s;
+        }
+        .modal-fullscreen .modal-window .modal-header .close-btn:hover {
+            background-image: url('icons/close.svg');
+            background-size: 16px 16px;
+            // basckground-position: inherit;
+            background-repeat: no-repeat;
+        }
+        .about-page .row .col img[src="assets/banner.png"]{
+            width:0;
+            height:0;
+            padding: 250px 0 0 500px;
+            background: url("icons/banner.png");
+            background-size: contain;
+        }
 
     }
 
