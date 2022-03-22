@@ -619,6 +619,7 @@ body {
         --mediaItemShadow-Shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
         --mediaItemShadow-ShadowSubtle: 0 4px 4px rgba(0, 0, 0, 0.1);
         --ciderShadow-Generic: var(--mediaItemShadow), 0 8px 8px rgb(0 0 0 / 0.15);
+        --modalBackground: #fff;
         color: #333;
 
         .menu-panel .menu-panel-body {
@@ -653,12 +654,12 @@ body {
             background: rgba(255,255,255,0.3);
             
         }
-        .modal-fullscreen .modal-window .modal-header, .md-footer{
+        .modal-window .modal-header, .md-footer, .modal-lowercontent{
             background: rgb(255,255,255);
             color:#000;
             font-weight: bold;
         }
-        .modal-fullscreen .modal-window .modal-content{
+        .modal-fullscreen .modal-window .modal-content {
             background: rgb(235, 235, 235);
             color:#333;
             .playlist-item{
@@ -701,9 +702,53 @@ body {
             background: url("icons/banner.png");
             background-size: contain;
         }
+        input[type=number] {
+            background-color: #fff;
+            border: 1px solid lightgray;
+            color: #000;
+            border-radius: 5px;
+        }
 
     }
-
+    .modal-content .modal-header, .modal-content .modal-footer{
+        background: rgb(255,255,255);
+        color:#000;
+        font-weight: bold;
+    }
+    .modal-content .modal-body{
+        background: rgb(235, 235, 235);
+    }
+    input[type=text] {
+        background-color: #fff;
+        border: 1px solid lightgray;
+        color: #000;
+        border-radius: 5px;
+    }
+    .bootbox-body{
+        background: rgb(235, 235, 235);
+        color:#333;
+    }
+    .modal .close{
+        height: 18px;
+        width: 18px;
+        border: 1px solid rgba(200, 200, 200, 0.08);
+        background: rgb(255, 92, 92);
+        border-radius: 50%;
+        margin: 0px;
+        -webkit-app-region: no-drag;
+        background-image: unset;
+        position: absolute;
+        right: 15px;
+        top: 20px;
+        cursor: pointer;
+        transition-duration: 0.2s;
+        &:hover{
+            background-image: url('icons/close.svg');
+            background-size: 16px 16px;
+            background-repeat: no-repeat;
+        }
+    }
+    
     #app.simplebg::before {
         content: "";
         position: absolute;
@@ -765,12 +810,7 @@ body {
             border-radius: 5px;
         }
 
-        input[type=number] {
-            background-color: #fff;
-            border: 1px solid lightgray;
-            color: #000;
-            border-radius: 5px;
-        }
+        
 
         .md-btn {
             background-color: #fa586a;
