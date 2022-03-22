@@ -31,6 +31,22 @@
             transition-duration: 0.2s;
         }
     }
+    .fullscreen-view .tab-toggles div{
+        width: 5vh;
+        height: 5vh;
+        padding: 1.6vh;
+        margin-bottom: 100px;
+        border-radius: 5px;
+    }
+    .fullscreen-view .tab-toggles div:hover{
+        background-color: var(--selected);
+        transition-duration: 0.2s;
+    }
+
+    .fullscreen-view .tab-toggles{
+        bottom: 2vh;
+        right: 2vh;
+    }
 }
 
 body {
@@ -629,8 +645,9 @@ body {
             background-size: contain;
         }
 
-        .fullscreen-view .artwork-col .app-playback-controls .playback-info>div {
+        .fullscreen-view .artwork-col .app-playback-controls .playback-info>div, .fullscreen-view .queue-col {
             color: #fff;
+            opacity: 1;
         }
 
 
