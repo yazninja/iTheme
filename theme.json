@@ -1,7 +1,7 @@
 {
     "name": "iTheme",
     "description": "Cider theme based from the Apple Music beta app in MacOS.",
-    "version": "0.3.8",
+    "version": "0.3.9",
     "author": "yazninja",
     "github_repo": "yazninja/apple-cider-lite"
 }
