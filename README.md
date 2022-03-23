@@ -33,5 +33,5 @@ Messege me on [Discord](http://discord.com/users/325495275454070786) about it :)
 Thanks to:
 - [vapormusic](https://github.com/vapormusic) Dynamic Theme idea
 - [Joviverde](https://github.com/Joviverde) Icons used from AppleMusic+ Theme
-#
-Designed by [yazninja](https://github.com/yazninja)
+
+# Designed by [yazninja](https://github.com/yazninja)
