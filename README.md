@@ -3,7 +3,7 @@
 Cider theme based from the Apple Music beta app in MacOS Monterey.
 Best used with `Mica(beta)` option in settings. 
 
-[Not seeing the cider logo?](https://github.com/yazninja/iTheme/issues/10)
+[Not seeing the Cider Logo/ Your Profile?](https://github.com/yazninja/iTheme/issues/10)
 
 ---
 #### New Update! MacOS Layout
