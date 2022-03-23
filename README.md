@@ -34,4 +34,4 @@ Thanks to:
 - [vapormusic](https://github.com/vapormusic) Dynamic Theme idea
 - [Joviverde](https://github.com/Joviverde) Icons used from AppleMusic+ Theme
 
-# Designed by [yazninja](https://github.com/yazninja)
+### Designed by [yazninja](https://github.com/yazninja)
