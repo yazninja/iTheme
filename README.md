@@ -3,6 +3,8 @@
 Cider theme based from the Apple Music beta app in MacOS Monterey.
 Best used with `Mica(beta)` option in settings. 
 
+[Not seeing the Cider Logo/ Your Profile?](https://github.com/yazninja/iTheme/issues/10)
+
 ---
 #### New Update! MacOS Layout
 Get the feeling of a mac app with window controls in the left and a MacOS style UI!
@@ -31,5 +33,5 @@ Messege me on [Discord](http://discord.com/users/325495275454070786) about it :)
 Thanks to:
 - [vapormusic](https://github.com/vapormusic) Dynamic Theme idea
 - [Joviverde](https://github.com/Joviverde) Icons used from AppleMusic+ Theme
-#
-Designed by [yazninja](https://github.com/yazninja)
+
+#### Designed by [yazninja](https://github.com/yazninja)
