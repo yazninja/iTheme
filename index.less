@@ -488,11 +488,13 @@ body {
 
             input[type="range"] {
                 border-radius: 0px;
-                // &::-webkit-slider-thumb{
-                // z-index: 30;
-                // display: flex;
-                // overflow: visible;
-                // } 
+                &::-webkit-slider-thumb{
+                    border-radius: 3px;
+                    width:7px;
+                    height:15px;
+                    border:#333 solid 1px;
+                    background: var(--songProgressColor)
+                } 
             }
 
             .song-duration {
@@ -506,6 +508,7 @@ body {
             width: 100%;
             padding-left: 0.5%;
             padding-right: 1%;
+            margin-top: -10px;
         }
 
         >div>.song-artist-album {
@@ -664,6 +667,8 @@ body {
         --mediaItemShadow-ShadowSubtle: 0 4px 4px rgba(0, 0, 0, 0.1);
         --ciderShadow-Generic: var(--mediaItemShadow), 0 8px 8px rgb(0 0 0 / 0.15);
         --modalBackground: #fff;
+        --songProgressColor: #333;
+        --songProgressBackground: #cbcbd7;
         color: #333;
 
         .menu-panel .menu-panel-body {
@@ -813,6 +818,9 @@ body {
     }
 
     #app-main {
+        .app-chrome .app-chrome-item>.app-playback-controls .song-progress input[type="range"]::-webkit-slider-thumb {
+            border:#fff solid 1px;
+        }
         .window-controls {
             filter: drop-shadow(0px 0px 0px rgb(0 0 0 / 50%));
         }
@@ -1050,68 +1058,7 @@ body {
         }
     }
 
-    .app-chrome .app-chrome-item>.app-playback-controls {
-        // border: solid darkgray;
-        // border-width: 1px;
-        height: 98%;
-        background-color: rgba(255, 255, 255, 0);
-        backdrop-filter: blur(100px);
-        border-radius: 5px;
-
-        .artwork {
-            width: 50px;
-            height: 50px;
-            margin-left: 0px;
-            margin-right: -2.25px;
-            margin-bottom: 0px;
-            margin-top: 0px;
-            border-radius: 5px;
-
-            .mediaitem-artwork {
-                border-radius: 5px;
-
-            }
-        }
-
-        .song-progress {
-            bottom: -4px;
-            right: 1px;
-            left: 2.5px;
-            z-index: 30;
-            overflow: hidden;
-
-            input[type="range"] {
-                border-radius: 0px;
-                // &::-webkit-slider-thumb{
-                // z-index: 30;
-                // display: flex;
-                // overflow: visible;
-                // } 
-            }
-
-            .song-duration {
-                margin-left: 2px;
-                margin-right: 2px;
-            }
-        }
-
-        .song-name {
-            max-width: unset;
-            width: 100%;
-            padding-left: 0.5%;
-            padding-right: 1%;
-        }
-
-
-
-        .actions {
-            display: none;
-        }
-
-        .audio-type {
-            margin-right: 10px;
-        }
-    }
+    
 
 }
 
