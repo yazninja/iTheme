@@ -438,6 +438,28 @@ body {
             color: #fa586a;
         }
     }
+    .cd-hmedia-scroller.hmedia-scroller-card{
+        height:450px;
+        .cd-mediaitem-square.mediaitem-card{
+            width:100%;
+            height:400px;
+            max-width:300px;
+            padding-right: 0px;
+            & .artwork-container{
+                width:100%;
+                height:100%;
+                & .artwork{
+                    width:100%;
+                    height:100%;
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+            }
+        }
+        
+    }
+    
 
     .sidebar-playlist>button>.sidebar-icon>svg {
         color: #999;
@@ -461,7 +483,6 @@ body {
         // background-color: rgba(0, 0, 0, 0.3);
         backdrop-filter: blur(100px);
         border-radius: 5px;
-
         .artwork {
             width: 50px;
             height: 50px;
@@ -505,10 +526,13 @@ body {
 
         .song-name {
             max-width: unset;
-            width: 100%;
+            width:100%;
             padding-left: 0.5%;
             padding-right: 1%;
             margin-top: -10px;
+            // -webkit-mask: linear-gradient(to right, transparent 0%, transparent calc(100% - 1px), #000 calc(100% - 1px), #000 100%);\
+            -webkit-mask-image: linear-gradient(-90deg, transparent 0%, black 10%, black 90%, transparent 100%);
+            
         }
 
         >div>.song-artist-album {
@@ -527,6 +551,7 @@ body {
 
         .audio-type {
             margin-right: 10px;
+            margin-top: -12px;
         }
 
         .playback-info{
