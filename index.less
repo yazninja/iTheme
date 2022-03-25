@@ -938,8 +938,14 @@ button[data-original-title="Unlove"]>.sidebar-icon>.svg-icon {
         .playback-button,
         .volume-button--small,
         .volume,
-        .nav-item {
+        .nav-item:not(li) {
             filter: invert(1) brightness(85);
+        }
+        ul[role="tablist"] {
+            li a{
+                color:#333;
+            }
+            
         }
 
         #navigation-bar>.nav-item::hover {
@@ -1101,6 +1107,9 @@ button[data-original-title="Unlove"]>.sidebar-icon>.svg-icon {
 
         .sidebar-icon>svg.feather.feather-list {
             filter: invert(0.85);
+        }
+        .artist-play h1{
+            color: #333;
         }
     }
 
