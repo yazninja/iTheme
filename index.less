@@ -472,156 +472,161 @@ body {
 
         }
     }
-
-
-    .sidebar-playlist>button>.sidebar-icon>svg {
-        color: #999;
-    }
-
-    // .app-chrome {
-    //     // background: whitesmoke;
-    //     border: 0px;
-    //     border-bottom: rgba(0, 0, 0, 0.2) 1px;
-    //     border-style: solid;
-
-    //     .app-chrome--center {
-    //         width: 40%;
-    //     }
-    // }
-
-    .app-chrome .app-chrome-item>.app-playback-controls {
-        // border: solid darkgray;
-        // border-width: 1px;
-        height: 98%;
-        // background-color: rgba(0, 0, 0, 0.3);
-        backdrop-filter: blur(100px);
-        border-radius: 5px;
-
-        .artwork {
-            width: 50px;
-            height: 50px;
-            margin-left: 0px;
-            margin-right: -2.25px;
-            margin-bottom: 0px;
-            margin-top: 0px;
-            border-radius: 5px;
-            position: absolute;
-            left: 0px;
-
-            .mediaitem-artwork {
-                border-radius: 5px;
-
-            }
-        }
-
-        .song-progress {
-            bottom: -4px;
-            right: 1px;
-            left: 2.5px;
-            z-index: 30;
-            overflow: hidden;
-
-            input[type="range"] {
-                border-radius: 0px;
-
-                &::-webkit-slider-thumb {
-                    border-radius: 3px;
-                    width: 7px;
-                    height: 15px;
-                    border: #333 solid 1px;
-                    background: var(--songProgressColor)
-                }
-            }
-
-            .song-duration {
-                margin-left: 2px;
-                margin-right: 2px;
-            }
-        }
-
-        .song-name {
-            max-width: unset;
-            width: 100%;
-            padding-left: 0.5%;
-            padding-right: 1%;
-            margin-top: -10px;
-            // -webkit-mask: linear-gradient(to right, transparent 0%, transparent calc(100% - 1px), #000 calc(100% - 1px), #000 100%);
-            mask-image: linear-gradient(-90deg, transparent 0%, black 10%, black 90%, transparent 100%);
-            -webkit-mask-image: linear-gradient(-90deg, transparent 0%, black 10%, black 90%, transparent 100%);
-
-        }
-
-        >div>.song-artist-album {
-            width: 98%;
-            max-width: unset;
-
-            .song-artist-album-content {
-                font-size: 12px;
-                // color: #ddd;
-            }
-        }
-
-        .actions {
-            display: none;
-        }
-
-        .audio-type {
-            margin-right: 10px;
-            margin-top: -12px;
-        }
-
-        .playback-info {
-            position: absolute;
-            height: 100%;
-            left: 50px;
-            width: calc(100% - 50px);
-        }
-    }
-
-    .app-navigation {
-        #app-content {
-            background: white;
-            // border-radius: 0px 0px 0px 0px;
-
-            .library-page .library-header {
-                background: unset;
-            }
-
-            .content-inner.podcasts-page .podcasts-list .podcasts-search {
-                background: rgba(0, 0, 0, 0.01);
-            }
-        }
-    }
-
-    div[data-type="musicVideo"] .info-rect .title::before {
-        content: url('data:image/svg+xml;base64,PHN2ZyB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTkiIGhlaWdodD0iMTYiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLW1pdGVybGltaXQ9IjIiIGNsaXAtcnVsZT0iZXZlbm9kZCIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgMTkgMTYiIHhtbDpzcGFjZT0icHJlc2VydmUiIGNsYXNzPSJzb25ncy1saXN0LXJvd19fdmlkZW8tZ2x5cGgiPjxwYXRoIGZpbGwtcnVsZT0ibm9uemVybyIgZD0iTTE2Ljc0NywxMi40MzdjMS4xNjYsMCAxLjc1MywtMC41NjUgMS43NTMsLTEuNzcxbDAsLTcuODk1YzAsLTEuMjA2IC0wLjU4NywtMS43NzEgLTEuNzUzLC0xLjc3MWwtMTQuNDk0LDBjLTEuMTY2LDAgLTEuNzUzLDAuNTY1IC0xLjc1MywxLjc3MWwwLDcuODk1YzAsMS4yMDYgMC41ODcsMS43NzEgMS43NTMsMS43NzFsMTQuNDk0LDBabS0wLjAyLC0xLjEwOWwtMTQuNDU0LDBjLTAuNDcsMCAtMC42NzUsLTAuMTkzIC0wLjY3NSwtMC42NzVsMCwtNy44NjJjMCwtMC40ODkgMC4yMDUsLTAuNjgyIDAuNjc1LC0wLjY4MmwxNC40NTQsMGMwLjQ3LDAgMC42NzUsMC4xOTMgMC42NzUsMC42ODJsMCw3Ljg2MmMwLDAuNDgyIC0wLjIwNSwwLjY3NSAtMC42NzUsMC42NzVabS04LjczOCwtMS4yOTZjMC45NzYsMCAxLjYzNywtMC43MDkgMS42MzcsLTEuNzA4bDAsLTIuMzYzYzAsLTAuMjU1IDAuMDU1LC0wLjMyNCAwLjIwNSwtMC4zNTlsMS42MDMsLTAuMzg1YzAuMzI3LC0wLjA5IDAuNDI5LC0wLjE1OSAwLjQyOSwtMC41NTlsMCwtMS4zNWMwLC0wLjI2MiAtMC4wOTUsLTAuMzc5IC0wLjQ1NywtMC4yODlsLTEuOTkxLDAuNTAzYy0wLjM0MSwwLjA4MiAtMC40MSwwLjE1MSAtMC40MSwwLjU1OGwwLDMuMTA3YzAsMC4zMDMgLTAuMDI3LDAuMzU4IC0wLjM3NSwwLjQ1NWwtMC42MjcsMC4xNjVjLTAuNjIxLDAuMTY1IC0xLjEzOSwwLjUzNyAtMS4xMzksMS4yMTNjMCwwLjU4NSAwLjQzNiwxLjAxMiAxLjEyNSwxLjAxMlptNS44MzksNC45NjhjMC4zNDgsMCAwLjYyNywtMC4yODkgMC42MjcsLTAuNjQ4YzAsLTAuMzU4IC0wLjI3OSwtMC42NDcgLTAuNjI3LC0wLjY0N2wtOC42NjksMGMtMC4zNDgsMCAtMC42MzUsMC4yODkgLTAuNjM1LDAuNjQ3YzAsMC4zNTkgMC4yODcsMC42NDggMC42MzUsMC42NDhsOC42NjksMFoiIGZpbGw9IiNGQTU4NkEiPjwvcGF0aD48L3N2Zz4=');
-        // background-repeat: no-repeat;
-        // background-position: center;
-        // background-size: 100%;
-        // color: transparent;
-    }
-    .artist-page .artist-header{
-        min-height: 350px;
-    }
-    .content-inner.artist-page.animated{
-        .artist-header .animated{
-            margin-top: 250px;
-            height: 180%;
-        }
-        
-        .col.flex-center.artist-title.artist-animation-on{
-            bottom:-260px;
-        }
-        .more-btn-round{
-            bottom:-240px !important;
-        }
-        .artist-body{
-            margin-top: 215px;
-        }
-
-    }
-    
 }
+
+
+.sidebar-playlist>button>.sidebar-icon>svg {
+    color: #999;
+}
+
+// .app-chrome {
+//     // background: whitesmoke;
+//     border: 0px;
+//     border-bottom: rgba(0, 0, 0, 0.2) 1px;
+//     border-style: solid;
+
+//     .app-chrome--center {
+//         width: 40%;
+//     }
+// }
+
+.app-chrome .app-chrome-item>.app-playback-controls {
+    // border: solid darkgray;
+    // border-width: 1px;
+    height: 98%;
+    // background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(100px);
+    border-radius: 5px;
+
+    .artwork {
+        width: 50px;
+        height: 50px;
+        margin-left: 0px;
+        margin-right: -2.25px;
+        margin-bottom: 0px;
+        margin-top: 0px;
+        border-radius: 5px;
+        position: absolute;
+        left: 0px;
+
+        .mediaitem-artwork {
+            border-radius: 5px;
+
+        }
+    }
+
+    .song-progress {
+        bottom: -4px;
+        right: 1px;
+        left: 2.5px;
+        z-index: 30;
+        overflow: hidden;
+
+        input[type="range"] {
+            border-radius: 0px;
+
+            &::-webkit-slider-thumb {
+                border-radius: 3px;
+                width: 7px;
+                height: 15px;
+                border: #333 solid 1px;
+                background: var(--songProgressColor)
+            }
+        }
+
+        .song-duration {
+            margin-left: 2px;
+            margin-right: 2px;
+        }
+    }
+
+    .song-name {
+        max-width: unset;
+        width: 100%;
+        padding-left: 0.5%;
+        padding-right: 1%;
+        margin-top: -10px;
+        // -webkit-mask: linear-gradient(to right, transparent 0%, transparent calc(100% - 1px), #000 calc(100% - 1px), #000 100%);
+        mask-image: linear-gradient(-90deg, transparent 0%, black 10%, black 90%, transparent 100%);
+        -webkit-mask-image: linear-gradient(-90deg, transparent 0%, black 10%, black 90%, transparent 100%);
+
+    }
+
+    >div>.song-artist-album {
+        width: 98%;
+        max-width: unset;
+
+        .song-artist-album-content {
+            font-size: 12px;
+            // color: #ddd;
+        }
+    }
+
+    .actions {
+        display: none;
+    }
+
+    .audio-type {
+        margin-right: 10px;
+        margin-top: -12px;
+    }
+
+    .playback-info {
+        position: absolute;
+        height: 100%;
+        left: 50px;
+        width: calc(100% - 50px);
+    }
+}
+
+.app-navigation {
+    #app-content {
+        background: white;
+        // border-radius: 0px 0px 0px 0px;
+
+        .library-page .library-header {
+            background: unset;
+        }
+
+        .content-inner.podcasts-page .podcasts-list .podcasts-search {
+            background: rgba(0, 0, 0, 0.01);
+        }
+    }
+}
+
+div[data-type="musicVideo"] .info-rect .title::before {
+    content: url('data:image/svg+xml;base64,PHN2ZyB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTkiIGhlaWdodD0iMTYiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLW1pdGVybGltaXQ9IjIiIGNsaXAtcnVsZT0iZXZlbm9kZCIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgMTkgMTYiIHhtbDpzcGFjZT0icHJlc2VydmUiIGNsYXNzPSJzb25ncy1saXN0LXJvd19fdmlkZW8tZ2x5cGgiPjxwYXRoIGZpbGwtcnVsZT0ibm9uemVybyIgZD0iTTE2Ljc0NywxMi40MzdjMS4xNjYsMCAxLjc1MywtMC41NjUgMS43NTMsLTEuNzcxbDAsLTcuODk1YzAsLTEuMjA2IC0wLjU4NywtMS43NzEgLTEuNzUzLC0xLjc3MWwtMTQuNDk0LDBjLTEuMTY2LDAgLTEuNzUzLDAuNTY1IC0xLjc1MywxLjc3MWwwLDcuODk1YzAsMS4yMDYgMC41ODcsMS43NzEgMS43NTMsMS43NzFsMTQuNDk0LDBabS0wLjAyLC0xLjEwOWwtMTQuNDU0LDBjLTAuNDcsMCAtMC42NzUsLTAuMTkzIC0wLjY3NSwtMC42NzVsMCwtNy44NjJjMCwtMC40ODkgMC4yMDUsLTAuNjgyIDAuNjc1LC0wLjY4MmwxNC40NTQsMGMwLjQ3LDAgMC42NzUsMC4xOTMgMC42NzUsMC42ODJsMCw3Ljg2MmMwLDAuNDgyIC0wLjIwNSwwLjY3NSAtMC42NzUsMC42NzVabS04LjczOCwtMS4yOTZjMC45NzYsMCAxLjYzNywtMC43MDkgMS42MzcsLTEuNzA4bDAsLTIuMzYzYzAsLTAuMjU1IDAuMDU1LC0wLjMyNCAwLjIwNSwtMC4zNTlsMS42MDMsLTAuMzg1YzAuMzI3LC0wLjA5IDAuNDI5LC0wLjE1OSAwLjQyOSwtMC41NTlsMCwtMS4zNWMwLC0wLjI2MiAtMC4wOTUsLTAuMzc5IC0wLjQ1NywtMC4yODlsLTEuOTkxLDAuNTAzYy0wLjM0MSwwLjA4MiAtMC40MSwwLjE1MSAtMC40MSwwLjU1OGwwLDMuMTA3YzAsMC4zMDMgLTAuMDI3LDAuMzU4IC0wLjM3NSwwLjQ1NWwtMC42MjcsMC4xNjVjLTAuNjIxLDAuMTY1IC0xLjEzOSwwLjUzNyAtMS4xMzksMS4yMTNjMCwwLjU4NSAwLjQzNiwxLjAxMiAxLjEyNSwxLjAxMlptNS44MzksNC45NjhjMC4zNDgsMCAwLjYyNywtMC4yODkgMC42MjcsLTAuNjQ4YzAsLTAuMzU4IC0wLjI3OSwtMC42NDcgLTAuNjI3LC0wLjY0N2wtOC42NjksMGMtMC4zNDgsMCAtMC42MzUsMC4yODkgLTAuNjM1LDAuNjQ3YzAsMC4zNTkgMC4yODcsMC42NDggMC42MzUsMC42NDhsOC42NjksMFoiIGZpbGw9IiNGQTU4NkEiPjwvcGF0aD48L3N2Zz4=');
+    // background-repeat: no-repeat;
+    // background-position: center;
+    // background-size: 100%;
+    // color: transparent;
+}
+
+.artist-page .artist-header {
+    min-height: 350px;
+}
+
+.content-inner.artist-page.animated {
+    .artist-header .animated {
+        margin-top: 250px;
+        height: 180%;
+    }
+
+    .col.flex-center.artist-title.artist-animation-on {
+        bottom: -260px;
+    }
+
+    .more-btn-round {
+        bottom: -240px !important;
+    }
+
+    .artist-body {
+        margin-top: 215px;
+    }
+
+}
+
+
 
 button[title="Unlove"]>.sidebar-icon>.svg-icon,
 button[data-original-title="Unlove"]>.sidebar-icon>.svg-icon {
@@ -848,8 +853,6 @@ button[data-original-title="Unlove"]>.sidebar-icon>.svg-icon {
             color: #000;
             border-radius: 5px;
         }
-
-
     }
 
     .modal-content .modal-header,
@@ -966,8 +969,6 @@ button[data-original-title="Unlove"]>.sidebar-icon>.svg-icon {
             border-radius: 5px;
         }
 
-
-
         .md-btn {
             background-color: #fa233b;
             color: #fff;
@@ -979,7 +980,7 @@ button[data-original-title="Unlove"]>.sidebar-icon>.svg-icon {
 
         .usermenu-container .usermenu-body {
             backdrop-filter: blur(8px);
-
+            background-color: rgba(250, 250, 250, 0.5);
             .usermenu-item {
                 color: #333;
 
@@ -1166,9 +1167,6 @@ button[data-original-title="Unlove"]>.sidebar-icon>.svg-icon {
             }
         }
     }
-
-
-
 }
 
 @media (prefers-color-scheme: dark) {
@@ -1195,105 +1193,107 @@ button[data-original-title="Unlove"]>.sidebar-icon>.svg-icon {
         box-shadow: 0px 10px 15px 10px rgb(0 0 0 / 15%);
         background-color: rgb(0 0 0 / 55%);
     }
+
+
+    .menu-panel .menu-panel-body {
+        background-color: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(8px);
+    }
+
+    #app-main {
+        background: unset !important;
+
+        .md-btn,
+        .md-select {
+            color: whitesmoke;
+
+            &:not(.md-btn-primary) {
+                background: #333;
+                border: 1px solid rgb(100 100 100 / 20%);
+            }
+
+            .md-ico-remove {
+                filter: unset;
+            }
+
+            .md-ico-add {
+                filter: unset;
+            }
+
+            >option,
+            >optgroup,
+            optgroup>option {
+                background: #333;
+            }
+        }
+
+        .artist-page {
+            .artist-title {
+                color: var(--textColor);
+            }
+
+            .floating-header {
+                background: rgba(0, 0, 0, 0.25);
+                color: var(--textColor);
+            }
+        }
+
+        .playlist-page {
+            .floating-header {
+                background: rgba(0, 0, 0, 0.25);
+                color: var(--textColor);
+            }
+        }
+
+        #navigation-bar {
+            background: unset;
+        }
+
+        .playlist-page.inline-playlist .playlist-inner {
+            background: rgb(29, 29, 29);
+
+            .floating-header {
+                background: rgba(0, 0, 0, 0.3);
+                backdrop-filter: blur(32px);
+            }
+        }
+
+        .app-chrome .app-chrome-item.playback-controls {
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9IiNhZmFmYWYiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyNCIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgMjAgMjQiIGNsYXNzPSJ3ZWItY2hyb21lLXBsYXliYWNrLWxjZF9fbG9nbyIgYXJpYS1oaWRkZW49InRydWUiPjxwYXRoIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGQ9Ik0xNC41NDk4MzMxLDUuNzkwNTU1NzYgTDE0Ljg2NjczNDYsNS43OTgyNDA3MyBDMTUuNjUxOTI3MSw1Ljg1NzUzODk1IDE3LjkxNjc4NTIsNi4wOTM1NDQ1MiAxOS4zNjYzMDgzLDguMTg2NTgyNTkgQzE5LjI0NTQ5OTIsOC4yNzYxOTAyIDE2LjY3ODYzODUsOS43MjExNTE4OCAxNi43MDkxMzc4LDEyLjc1ODk4NzYgQzE2LjczOTA5MTEsMTYuMzg3MDU1MyAxOS45Njk2NjgyLDE3LjU5NzAwNzkgMjAsMTcuNjI2NTA4NiBDMTkuOTY5NjY4MiwxNy43MTU1ODMyIDE5LjQ4NzQ5OSwxOS4zMzgxNTc4IDE4LjMwOTY0MDUsMjEuMDE4NTczOCBDMTcuMjgyOTIyOSwyMi40OTQxMjM1IDE2LjIyNTY4NzMsMjMuOTM5NDU0NyAxNC41MzQ1OTI1LDIzLjk2ODk3MzYgQzEyLjkwMzg3MjgsMjMuOTk4NDc0MyAxMi4zNTk5Njk3LDIzLjAyNDYxODEgMTAuNDg4Nzk4MywyMy4wMjQ2MTgxIEM4LjYxNjI0OTQyLDIzLjAyNDYxODEgOC4wMTI0MzY1OCwyMy45Mzk0NTQ3IDYuNDcxOTM2NjgsMjMuOTk4NDc0MyBDNC44NDE0ODA2OCwyNC4wNTY3NzMgMy42MDQwOTQwMywyMi40MzM2NjUzIDIuNTc3MzU3ODEsMjAuOTU5NTUxMiBDMC40NjMwOTQ1NTQsMTcuOTc5OTI2NCAtMS4xMzczMTE5NiwxMi41NTMxMjQ4IDEuMDM2ODU3OTEsOC44OTQ2NTM4MiBDMi4wOTM5MDczMyw3LjA2NTg3MTEyIDQuMDI2NzE5NTksNS45MTYwMjU0NCA2LjEwOTc0ODI1LDUuODg2MTU1MjMgQzcuNzEwMTU0NzcsNS44NTc1Mzg5NSA5LjE4OTg0NTI1LDYuOTE5Mzk3NDQgMTAuMTU2NjU2Miw2LjkxOTM5NzQ0IEMxMS4xMjI5Mzk4LDYuOTE5Mzk3NDQgMTIuODQzMzI3MSw1LjY4MDU3MTEyIDE0Ljg2NjczNDYsNS43OTgyNDA3MyBaIE0xNC44ODI1NjksLTEuNTA5OTAzMzFlLTE0IEMxNS4wMzQzMTgsMS40MjA2MzQyMSAxNC40NTg5NDc2LDIuODEwODU2MDQgMTMuNjExMDU5NSwzLjg0NjIzNjU5IEMxMi43MzI1ODgzLDQuODUyNTcwNzcgMTEuMzQwNTc2OCw1LjY1MDQ3OTggOS45NDcyNzc3OSw1LjUzMjQ4MzA3IEM5Ljc2NTYwNjUzLDQuMTcxNDAxNTEgMTAuNDYyNDg0MSwyLjcyMjk3Nzg5IDExLjI0OTg0NTEsMS44MzU2MzY5MiBDMTIuMTI2NzQ2NSwwLjc5OTQ0NDY0MyAxMy42NDEzNzg5LDAuMDYwMjU1MzIzOSAxNC44ODI1NjksLTEuNTA5OTAzMzFlLTE0IFoiPjwvcGF0aD48L3N2Zz4=");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+        }
+
+    }
+
+    .app-navigation {
+        #app-content {
+            background: rgba(31, 31, 31, 0.7) !important;
+        }
+    }
+
+    .cd-mediaitem-list-item:nth-child(odd) {
+        background: rgb(255 255 255 / 0.015);
+    }
+
+    .search-hints-container .search-hints {
+        .search-hint {
+            &:hover {
+                background: #fa586a;
+            }
+        }
+    }
+
+
+    input[type=checkbox][switch]:checked {
+        background: #fa586a;
+        border: 0 solid #fa586a;
+        mix-blend-mode: unset;
+    }
 }
 
-.menu-panel .menu-panel-body {
-    background-color: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(8px);
-}
-
-#app-main {
-    background: unset !important;
-
-    .md-btn,
-    .md-select {
-        color: whitesmoke;
-
-        &:not(.md-btn-primary) {
-            background: #333;
-            border: 1px solid rgb(100 100 100 / 20%);
-        }
-
-        .md-ico-remove {
-            filter: unset;
-        }
-
-        .md-ico-add {
-            filter: unset;
-        }
-
-        >option,
-        >optgroup,
-        optgroup>option {
-            background: #333;
-        }
-    }
-
-    .artist-page {
-        .artist-title {
-            color: var(--textColor);
-        }
-
-        .floating-header {
-            background: rgba(0, 0, 0, 0.25);
-            color: var(--textColor);
-        }
-    }
-
-    .playlist-page {
-        .floating-header {
-            background: rgba(0, 0, 0, 0.25);
-            color: var(--textColor);
-        }
-    }
-
-    #navigation-bar {
-        background: unset;
-    }
-
-    .playlist-page.inline-playlist .playlist-inner {
-        background: rgb(29, 29, 29);
-
-        .floating-header {
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(32px);
-        }
-    }
-
-    .app-chrome .app-chrome-item.playback-controls {
-        background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9IiNhZmFmYWYiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyNCIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgMjAgMjQiIGNsYXNzPSJ3ZWItY2hyb21lLXBsYXliYWNrLWxjZF9fbG9nbyIgYXJpYS1oaWRkZW49InRydWUiPjxwYXRoIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGQ9Ik0xNC41NDk4MzMxLDUuNzkwNTU1NzYgTDE0Ljg2NjczNDYsNS43OTgyNDA3MyBDMTUuNjUxOTI3MSw1Ljg1NzUzODk1IDE3LjkxNjc4NTIsNi4wOTM1NDQ1MiAxOS4zNjYzMDgzLDguMTg2NTgyNTkgQzE5LjI0NTQ5OTIsOC4yNzYxOTAyIDE2LjY3ODYzODUsOS43MjExNTE4OCAxNi43MDkxMzc4LDEyLjc1ODk4NzYgQzE2LjczOTA5MTEsMTYuMzg3MDU1MyAxOS45Njk2NjgyLDE3LjU5NzAwNzkgMjAsMTcuNjI2NTA4NiBDMTkuOTY5NjY4MiwxNy43MTU1ODMyIDE5LjQ4NzQ5OSwxOS4zMzgxNTc4IDE4LjMwOTY0MDUsMjEuMDE4NTczOCBDMTcuMjgyOTIyOSwyMi40OTQxMjM1IDE2LjIyNTY4NzMsMjMuOTM5NDU0NyAxNC41MzQ1OTI1LDIzLjk2ODk3MzYgQzEyLjkwMzg3MjgsMjMuOTk4NDc0MyAxMi4zNTk5Njk3LDIzLjAyNDYxODEgMTAuNDg4Nzk4MywyMy4wMjQ2MTgxIEM4LjYxNjI0OTQyLDIzLjAyNDYxODEgOC4wMTI0MzY1OCwyMy45Mzk0NTQ3IDYuNDcxOTM2NjgsMjMuOTk4NDc0MyBDNC44NDE0ODA2OCwyNC4wNTY3NzMgMy42MDQwOTQwMywyMi40MzM2NjUzIDIuNTc3MzU3ODEsMjAuOTU5NTUxMiBDMC40NjMwOTQ1NTQsMTcuOTc5OTI2NCAtMS4xMzczMTE5NiwxMi41NTMxMjQ4IDEuMDM2ODU3OTEsOC44OTQ2NTM4MiBDMi4wOTM5MDczMyw3LjA2NTg3MTEyIDQuMDI2NzE5NTksNS45MTYwMjU0NCA2LjEwOTc0ODI1LDUuODg2MTU1MjMgQzcuNzEwMTU0NzcsNS44NTc1Mzg5NSA5LjE4OTg0NTI1LDYuOTE5Mzk3NDQgMTAuMTU2NjU2Miw2LjkxOTM5NzQ0IEMxMS4xMjI5Mzk4LDYuOTE5Mzk3NDQgMTIuODQzMzI3MSw1LjY4MDU3MTEyIDE0Ljg2NjczNDYsNS43OTgyNDA3MyBaIE0xNC44ODI1NjksLTEuNTA5OTAzMzFlLTE0IEMxNS4wMzQzMTgsMS40MjA2MzQyMSAxNC40NTg5NDc2LDIuODEwODU2MDQgMTMuNjExMDU5NSwzLjg0NjIzNjU5IEMxMi43MzI1ODgzLDQuODUyNTcwNzcgMTEuMzQwNTc2OCw1LjY1MDQ3OTggOS45NDcyNzc3OSw1LjUzMjQ4MzA3IEM5Ljc2NTYwNjUzLDQuMTcxNDAxNTEgMTAuNDYyNDg0MSwyLjcyMjk3Nzg5IDExLjI0OTg0NTEsMS44MzU2MzY5MiBDMTIuMTI2NzQ2NSwwLjc5OTQ0NDY0MyAxMy42NDEzNzg5LDAuMDYwMjU1MzIzOSAxNC44ODI1NjksLTEuNTA5OTAzMzFlLTE0IFoiPjwvcGF0aD48L3N2Zz4=");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-color: rgba(0, 0, 0, 0.3);
-        border-radius: 5px;
-    }
-
-}
-
-.app-navigation {
-    #app-content {
-        background: rgba(31, 31, 31, 0.7) !important;
-    }
-}
-
-.cd-mediaitem-list-item:nth-child(odd) {
-    background: rgb(255 255 255 / 0.015);
-}
-
-.search-hints-container .search-hints {
-    .search-hint {
-        &:hover {
-            background: #fa586a;
-        }
-    }
-}
-
-
-input[type=checkbox][switch]:checked {
-    background: #fa586a;
-    border: 0 solid #fa586a;
-    mix-blend-mode: unset;
-}
 
 .marquee {
     animation-duration: 25s;
