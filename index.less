@@ -7,31 +7,6 @@
     --ciderShadow-Generic: var(--mediaItemShadow), 0 8px 8px rgb(0 0 0 / 0.15);
     color: #333;
 
-    // &.simplebg {
-    //     background: #ffffff86;
-    //     box-shadow: inset 0 0 2000px rgb(255 255 255 / 50%);
-    //     // backdrop-filter: blur(8px);
-    //     box-shadow: 0px 10px 15px 10px rgb(0 0 0 / 15%);
-    //     background-color: rgb(228 228 228 / 15%);
-    // }
-    &:not(:window-inactive) {
-        .window-controls>div.minimize {
-            background-color: rgb(255, 189, 76);
-            transition-duration: 0.2s;
-
-        }
-
-        .window-controls>div.minmax {
-            background-color: rgb(77, 202, 77);
-            transition-duration: 0.2s;
-        }
-
-        .window-controls>div.close {
-            background-color: rgb(255, 92, 92);
-            transition-duration: 0.2s;
-        }
-    }
-
     .fullscreen-view .tab-toggles div {
         width: 5vh;
         height: 5vh;
@@ -298,79 +273,71 @@ body {
     // Mac-like Window controls
     .window-controls {
         width: 100px;
-        filter: drop-shadow(0px 0px 4px rgb(0 0 0 / 50%));
-
+        // Window Controls to the left
+        position: relative;
+        left: calc(-100vw + 100px);
+        div {
+            height: 15px;
+            width: 15px;
+            border-radius: 50%;
+            margin: 0px;
+            -webkit-app-region: no-drag;
+            background-image: unset;
+            position: absolute;
+            cursor: pointer;
+            // set color
+            &.minimize {
+                background-color: rgb(255, 189, 76) !important;
+                margin-left: 2px;
+                left: 25px;
+                top: 50%;
+                transform: translate(0, -50%);
+            }
+    
+            &.minmax {
+                background-color: rgb(77, 202, 77) !important;
+                left: 52px;
+                top: 50%;
+                transform: translate(0, -50%);
+            }
+    
+            &.close {
+                background-color: rgb(255, 92, 92) !important;
+                margin-left: 2px;
+                left: 0;
+                top: 50%;
+                transform: translate(0, -50%);
+            }
+        }
+        // set icons on hover
         &:hover {
-            div.minimize {
+            .minimize {
                 background-image: url('icons/minimize.svg');
                 background-size: 13px 13px;
                 // background-position: center;
                 background-repeat: no-repeat;
             }
 
-            div.minmax {
+            .minmax {
                 background-image: url('icons/minmax.svg');
                 background-size: 10px 10px;
                 background-position: center;
                 background-repeat: no-repeat;
             }
 
-            div.minmax.restore {
+            .minmax.restore {
                 background-image: url('icons/maxmin.svg');
                 background-size: 12px 12px;
                 // background-position: center;
                 background-repeat: no-repeat;
             }
-
-            div.close {
+            .close {
                 background-image: url('icons/close.svg');
                 background-size: 13px 13px;
                 // basckground-position: inherit;
                 background-repeat: no-repeat;
             }
         }
-    }
-
-    .window-controls>div.minmax,
-    .window-controls>div.minimize,
-    .window-controls>div.close {
-        height: 15px;
-        width: 15px;
-        border: 1px solid rgba(200, 200, 200, 0.08);
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 50%;
-        margin: 0px;
-        -webkit-app-region: no-drag;
-        background-image: unset;
-        position: absolute;
-        cursor: pointer;
-        transition-duration: 0.2s;
-    }
-
-    .window-controls>div.minmax {
-        left: 52px;
-        top: 50%;
-        transform: translate(0, -50%);
-    }
-
-    .window-controls>div.minimize {
-        margin-left: 2px;
-        left: 25px;
-        top: 50%;
-        transform: translate(0, -50%);
-    }
-
-    .window-controls>div.close {
-        margin-left: 2px;
-        left: 0;
-        top: 50%;
-        transform: translate(0, -50%);
-    }
-
-    // Window Controls to the left
-    .window-controls {
-        position: relative;
-        left: calc(-100vw + 100px);
     }
 
     .app-chrome--left>.app-chrome-item.full-height {
@@ -472,31 +439,35 @@ body {
 
         }
     }
-    .library-artists-page{
-        .cd-mediaitem-list-item{
-            .artwork{
+
+    .library-artists-page {
+        .cd-mediaitem-list-item {
+            .artwork {
                 box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.3);
                 border-radius: 50%;
             }
+
             &:hover {
                 background-color: rgba(250, 35, 59, 0.8);
-                color:#fff;
-                transition: 0.1s ease-in-out; 
+                color: #fff;
+                transition: 0.1s ease-in-out;
             }
         }
     }
 }
+
 #apple-music-video-container {
-    #captions{
-        color:white;
+    #captions {
+        color: white;
         font-size: 1.75rem;
         padding: 10px 20px;
         border-radius: 10px;
         font-family: 'SF Pro', 'Inter', 'Noto Sans JP', 'Source Han Sans SC', 'Source Han Sans HK', 'Source Han Sans SC', 'Source Han Sans HK', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans HK', 'Noto Sans KR', sans-serif;
         margin-top: 6vh;
     }
+
     #player-fullscreen {
-        background:url("icons/fullscreen.svg");
+        background: url("icons/fullscreen.svg");
         background-size: 50%;
         background-position: center;
         background-repeat: no-repeat;
@@ -505,26 +476,30 @@ body {
         background-color: rgba(0, 0, 0, 0.4);
         border-radius: 10px;
         transition: 0.2s ease-in-out filter;
-        bottom:0;
+        bottom: 0;
+
         &:hover {
             filter: opacity(1);
             transition: 0.2s ease-in-out filter;
         }
-        svg{
-            display:none;
-        } 
+
+        svg {
+            display: none;
+        }
     }
-    #player-pip{
+
+    #player-pip {
         background-color: rgba(0, 0, 0, 0.4);
         border-radius: 10px;
-        bottom:0;
+        bottom: 0;
         filter: opacity(0.6);
         transition: 0.2s ease-in-out filter;
+
         &:hover {
             filter: opacity(1);
             transition: 0.2s ease-in-out filter;
         }
-    } 
+    }
 }
 
 
@@ -995,18 +970,21 @@ button[data-original-title="Unlove"]>.sidebar-icon>.svg-icon {
         .nav-item:not(li) {
             filter: invert(1) brightness(85);
         }
+
         ul[role="tablist"] {
             border-radius: 25px;
             background-color: rgba(0, 0, 0, 0.1);
-            li a{
-                color:#333;
+
+            li a {
+                color: #333;
             }
-            a[role="tab"].active{
-                outline:none;
+
+            a[role="tab"].active {
+                outline: none;
                 background-color: #fff;
                 box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.3);
             }
-            
+
         }
 
         #navigation-bar>.nav-item::hover {
@@ -1048,6 +1026,7 @@ button[data-original-title="Unlove"]>.sidebar-icon>.svg-icon {
         .usermenu-container .usermenu-body {
             backdrop-filter: blur(8px);
             background-color: rgba(250, 250, 250, 0.8);
+
             .usermenu-item {
                 color: #333;
 
@@ -1169,10 +1148,12 @@ button[data-original-title="Unlove"]>.sidebar-icon>.svg-icon {
         .sidebar-icon>svg.feather.feather-list {
             filter: invert(0.85);
         }
-        .artist-play h1{
+
+        .artist-play h1 {
             color: #333;
         }
-        .replay-page{
+
+        .replay-page {
             .cd-mediaitem-list-item:nth-child(odd) {
                 background-color: rgba(255, 255, 255, 0.01);
             }
@@ -1340,18 +1321,21 @@ button[data-original-title="Unlove"]>.sidebar-icon>.svg-icon {
             background-color: rgba(0, 0, 0, 0.3);
             border-radius: 5px;
         }
+
         ul[role="tablist"] {
             border-radius: 25px;
             background-color: rgba(0, 0, 0, 0.2);
-            li a{
-                color:rgba(255, 255, 255, 0.5);
+
+            li a {
+                color: rgba(255, 255, 255, 0.5);
             }
-            a[role="tab"].active{
-                outline:none;
+
+            a[role="tab"].active {
+                outline: none;
                 background-color: #fff;
                 box-shadow: 0px 0px 36px 0px rgba(0, 0, 0, 1);
-                color:#333;
-            }          
+                color: #333;
+            }
         }
 
     }
