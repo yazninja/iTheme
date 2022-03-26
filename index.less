@@ -475,8 +475,6 @@ body {
 }
 #apple-music-video-container {
     #captions{
-        min-width: 0px;
-        min-height: 0px;
         color:white;
         font-size: 1.75rem;
         padding: 10px 20px;
@@ -650,20 +648,20 @@ div[data-type="musicVideo"] .info-rect .title::before {
 
 .content-inner.artist-page.animated {
     .artist-header .animated {
-        margin-top: 250px;
-        height: 180%;
+        margin-top: 20vh;
+        height: 60vh;
     }
 
     .col.flex-center.artist-title.artist-animation-on {
-        bottom: -260px;
+        bottom: -23vh;
     }
 
     .more-btn-round {
-        bottom: -240px !important;
+        bottom: -21vh !important;
     }
 
     .artist-body {
-        margin-top: 215px;
+        margin-top: 20vh;
     }
 
 }
@@ -1322,6 +1320,19 @@ button[data-original-title="Unlove"]>.sidebar-icon>.svg-icon {
             background-position: center;
             background-color: rgba(0, 0, 0, 0.3);
             border-radius: 5px;
+        }
+        ul[role="tablist"] {
+            border-radius: 25px;
+            background-color: rgba(0, 0, 0, 0.2);
+            li a{
+                color:rgba(255, 255, 255, 0.5);
+            }
+            a[role="tab"].active{
+                outline:none;
+                background-color: #fff;
+                box-shadow: 0px 0px 36px 0px rgba(0, 0, 0, 1);
+                color:#333;
+            }          
         }
 
     }
