@@ -1,9 +1,9 @@
-# iTheme for [Cider](https://cider.sh/) (Beta) <img src="https://img.shields.io/github/stars/yazninja/apple-cider-lite?style=social" width="70"></img>
+# iTheme for [Cider](https://cider.sh/) <img src="https://img.shields.io/github/stars/yazninja/apple-cider-lite?style=social" width="70"></img>
 
 Cider theme based from the Apple Music beta app in MacOS Monterey.
 Best used with `Mica(beta)` option in settings. 
 
-[Not seeing the Cider Logo/ Your Profile?](https://github.com/yazninja/iTheme/issues/10)
+[Not seeing the Cider Logo/ Your Profile?](https://github.com/ciderapp/iTheme/issues/10)
 
 ---
 #### New Update! MacOS Layout
