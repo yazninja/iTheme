@@ -472,6 +472,19 @@ body {
 
         }
     }
+    .library-artists-page{
+        .cd-mediaitem-list-item{
+            .artwork{
+                box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.3);
+                border-radius: 50%;
+            }
+            &:hover {
+                background-color: rgba(250, 35, 59, 0.8);
+                color:#fff;
+                transition: 0.1s ease-in-out; 
+            }
+        }
+    }
 }
 #apple-music-video-container {
     #captions{
@@ -1158,6 +1171,11 @@ button[data-original-title="Unlove"]>.sidebar-icon>.svg-icon {
         }
         .artist-play h1{
             color: #333;
+        }
+        .replay-page{
+            .cd-mediaitem-list-item:nth-child(odd) {
+                background-color: rgba(255, 255, 255, 0.01);
+            }
         }
     }
 
