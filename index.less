@@ -5,7 +5,7 @@
     --mediaItemShadow-Shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
     --mediaItemShadow-ShadowSubtle: 0 4px 4px rgba(0, 0, 0, 0.1);
     --ciderShadow-Generic: var(--mediaItemShadow), 0 8px 8px rgb(0 0 0 / 0.15);
-    color: #333;
+    --keycolor: #fa233b;
 
     .fullscreen-view .tab-toggles div {
         width: 5vh;
@@ -24,51 +24,6 @@
         bottom: 2vh;
         right: 2vh;
     }
-}
-
-body {
-    background-image: unset !important;
-}
-
-
-.md-btn {
-    &.md-btn-primary {
-        background: #fa233b;
-    }
-}
-
-.md-btn,
-.md-select {
-    color: #333;
-
-    &:not(.md-btn-primary) {
-        background: #eee;
-        border: 1px solid rgb(100 100 100 / 20%);
-    }
-
-    .md-ico-remove {
-        filter: invert(0.8);
-    }
-
-    .md-ico-add {
-        filter: invert(0.8);
-    }
-
-    &.md-btn-replay {
-        background: linear-gradient(45deg, hsl(248deg 58% 29%), hsl(13deg 41% 42%)) !important;
-    }
-
-    &.md-btn-replay--hero {
-        background: linear-gradient(45deg, hsl(248deg 58% 29%), hsl(13deg 41% 42%)) !important;
-    }
-
-    >option,
-    >optgroup,
-    optgroup>option {
-        background: #eee;
-    }
-
-
 }
 
 // Only changing the CSS for the main window
@@ -178,21 +133,24 @@ body {
     }
 
     // Mac Style side-menu
-    .app-sidebar-item {
-        font-size: 15px;
-        padding: 4px 12px;
-        // filter: drop-shadow(0px 0px 4px rgb(0 0 0 / 50%));
-    }
+    #app-sidebar {
+        background-color: transparent;
 
-    .app-sidebar-item.active::after {
-        height: 50%;
-        filter: drop-shadow(0px 2px 4px rgb(0 0 0 / 50%));
-        filter: drop-shadow(0px 2px 4px rgb(0 0 0 / 50%));
-    }
+        .app-sidebar-item {
+            font-size: 15px;
+            padding: 4px 12px;
+        }
 
-    .app-sidebar-header-text:not(:first-child) {
-        font-size: 10px;
-        padding-top: 15px;
+        .app-sidebar-item.active::after {
+            height: 50%;
+            filter: drop-shadow(0px 2px 4px rgb(0 0 0 / 50%));
+            filter: drop-shadow(0px 2px 4px rgb(0 0 0 / 50%));
+        }
+
+        .app-sidebar-header-text:not(:first-child) {
+            font-size: 10px;
+            padding-top: 15px;
+        }
     }
 
     // Mac Style menu icons
@@ -276,6 +234,7 @@ body {
         // Window Controls to the left
         position: relative;
         left: calc(-100vw + 100px);
+
         div {
             height: 15px;
             width: 15px;
@@ -285,6 +244,7 @@ body {
             background-image: unset;
             position: absolute;
             cursor: pointer;
+
             // set color
             &.minimize {
                 background-color: rgb(255, 189, 76) !important;
@@ -293,14 +253,14 @@ body {
                 top: 50%;
                 transform: translate(0, -50%);
             }
-    
+
             &.minmax {
                 background-color: rgb(77, 202, 77) !important;
                 left: 52px;
                 top: 50%;
                 transform: translate(0, -50%);
             }
-    
+
             &.close {
                 background-color: rgb(255, 92, 92) !important;
                 margin-left: 2px;
@@ -309,6 +269,7 @@ body {
                 transform: translate(0, -50%);
             }
         }
+
         // set icons on hover
         &:hover {
             .minimize {
@@ -331,6 +292,7 @@ body {
                 // background-position: center;
                 background-repeat: no-repeat;
             }
+
             .close {
                 background-image: url('icons/close.svg');
                 background-size: 13px 13px;
@@ -452,6 +414,12 @@ body {
                 color: #fff;
                 transition: 0.1s ease-in-out;
             }
+        }
+    }
+
+    .md-btn {
+        &.md-btn-primary {
+            background: var(--keycolor);
         }
     }
 }
@@ -782,6 +750,7 @@ button[data-original-title="Unlove"]>.sidebar-icon>.svg-icon {
         --color1: rgba(255, 255, 255, 0.35);
         --color2: rgb(203 203 203 / 30%);
         --textColor: #000;
+        --textColor2: #fff;
         --mediaItemShadow-Shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
         --mediaItemShadow-ShadowSubtle: 0 4px 4px rgba(0, 0, 0, 0.1);
         --ciderShadow-Generic: var(--mediaItemShadow), 0 8px 8px rgb(0 0 0 / 0.15);
@@ -948,6 +917,41 @@ button[data-original-title="Unlove"]>.sidebar-icon>.svg-icon {
     }
 
     #app-main {
+
+        .md-btn,
+        .md-select {
+            color: #333;
+
+            &:not(.md-btn-primary):not(button) {
+                background: #eee;
+                border: 1px solid rgb(100 100 100 / 20%);
+            }
+
+            .md-ico-remove {
+                filter: invert(0.8);
+            }
+
+            .md-ico-add {
+                filter: invert(0.8);
+            }
+
+            &.md-btn-replay {
+                background: linear-gradient(45deg, hsl(248deg 58% 29%), hsl(13deg 41% 42%)) !important;
+            }
+
+            &.md-btn-replay--hero {
+                background: linear-gradient(45deg, hsl(248deg 58% 29%), hsl(13deg 41% 42%)) !important;
+            }
+
+            >option,
+            >optgroup,
+            optgroup>option {
+                background: #eee;
+            }
+
+
+        }
+
         .app-chrome .app-chrome-item>.app-playback-controls .song-progress input[type="range"]::-webkit-slider-thumb {
             border: #fff solid 1px;
         }
@@ -1031,11 +1035,12 @@ button[data-original-title="Unlove"]>.sidebar-icon>.svg-icon {
                 color: #333;
 
                 svg {
-                    color: #fa586a;
+                    color: var(--keycolor);
                 }
 
                 &:hover {
-                    background: #fa586a;
+                    background: var(--keycolor);
+                    color: var(--textColor2);
 
                     svg {
                         color: whitesmoke;
