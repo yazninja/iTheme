@@ -25,6 +25,18 @@
         bottom: 2vh;
         right: 2vh;
     }
+
+    // Use Filled Heart icon in pop up windows
+    button[title="Unlove"]>.sidebar-icon>.svg-icon,
+    button[data-original-title="Unlove"]>.sidebar-icon>.svg-icon {
+        --url: none !important;
+        background: url('icons/heart.svg');
+        background-size: contain;
+    }
+
+    .marquee {
+        animation-duration: 25s;
+    }
 }
 
 // Only changing the CSS for the main window
@@ -525,9 +537,49 @@
             background: var(--keycolor-selected);
         }
     }
+
     // Add Music Video Icons to Songs that are Music Videos
     div[data-type="musicVideo"] .info-rect .title::before {
         content: url('data:image/svg+xml;base64,PHN2ZyB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTkiIGhlaWdodD0iMTYiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLW1pdGVybGltaXQ9IjIiIGNsaXAtcnVsZT0iZXZlbm9kZCIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgMTkgMTYiIHhtbDpzcGFjZT0icHJlc2VydmUiIGNsYXNzPSJzb25ncy1saXN0LXJvd19fdmlkZW8tZ2x5cGgiPjxwYXRoIGZpbGwtcnVsZT0ibm9uemVybyIgZD0iTTE2Ljc0NywxMi40MzdjMS4xNjYsMCAxLjc1MywtMC41NjUgMS43NTMsLTEuNzcxbDAsLTcuODk1YzAsLTEuMjA2IC0wLjU4NywtMS43NzEgLTEuNzUzLC0xLjc3MWwtMTQuNDk0LDBjLTEuMTY2LDAgLTEuNzUzLDAuNTY1IC0xLjc1MywxLjc3MWwwLDcuODk1YzAsMS4yMDYgMC41ODcsMS43NzEgMS43NTMsMS43NzFsMTQuNDk0LDBabS0wLjAyLC0xLjEwOWwtMTQuNDU0LDBjLTAuNDcsMCAtMC42NzUsLTAuMTkzIC0wLjY3NSwtMC42NzVsMCwtNy44NjJjMCwtMC40ODkgMC4yMDUsLTAuNjgyIDAuNjc1LC0wLjY4MmwxNC40NTQsMGMwLjQ3LDAgMC42NzUsMC4xOTMgMC42NzUsMC42ODJsMCw3Ljg2MmMwLDAuNDgyIC0wLjIwNSwwLjY3NSAtMC42NzUsMC42NzVabS04LjczOCwtMS4yOTZjMC45NzYsMCAxLjYzNywtMC43MDkgMS42MzcsLTEuNzA4bDAsLTIuMzYzYzAsLTAuMjU1IDAuMDU1LC0wLjMyNCAwLjIwNSwtMC4zNTlsMS42MDMsLTAuMzg1YzAuMzI3LC0wLjA5IDAuNDI5LC0wLjE1OSAwLjQyOSwtMC41NTlsMCwtMS4zNWMwLC0wLjI2MiAtMC4wOTUsLTAuMzc5IC0wLjQ1NywtMC4yODlsLTEuOTkxLDAuNTAzYy0wLjM0MSwwLjA4MiAtMC40MSwwLjE1MSAtMC40MSwwLjU1OGwwLDMuMTA3YzAsMC4zMDMgLTAuMDI3LDAuMzU4IC0wLjM3NSwwLjQ1NWwtMC42MjcsMC4xNjVjLTAuNjIxLDAuMTY1IC0xLjEzOSwwLjUzNyAtMS4xMzksMS4yMTNjMCwwLjU4NSAwLjQzNiwxLjAxMiAxLjEyNSwxLjAxMlptNS44MzksNC45NjhjMC4zNDgsMCAwLjYyNywtMC4yODkgMC42MjcsLTAuNjQ4YzAsLTAuMzU4IC0wLjI3OSwtMC42NDcgLTAuNjI3LC0wLjY0N2wtOC42NjksMGMtMC4zNDgsMCAtMC42MzUsMC4yODkgLTAuNjM1LDAuNjQ3YzAsMC4zNTkgMC4yODcsMC42NDggMC42MzUsMC42NDhsOC42NjksMFoiIGZpbGw9IiNGQTU4NkEiPjwvcGF0aD48L3N2Zz4=');
+    }
+
+    // Style See All/ History Button
+    .cd-btn-seeall {
+        color: var(--keycolor);
+    }
+
+    // .cd-mediaitem-list-item .title {
+    //     width: 100%;
+    //     display: -webkit-box;
+    //     -webkit-box-orient: vertical;
+    //     -webkit-line-clamp: 2;
+    //     overflow: hidden;
+    // }
+    // Make Static Artist Headers smaller
+    .artist-page .artist-header {
+        min-height: 350px;
+    }
+
+    // Make Static Artist Headers larger
+    .content-inner.artist-page.animated {
+        .artist-header .animated {
+            margin-top: 15vh;
+            height: 60vh;
+            max-height: 550px;
+        }
+
+        .col.flex-center.artist-title.artist-animation-on {
+            bottom: -15vh;
+        }
+
+        .more-btn-round {
+            bottom: -11vh !important;
+        }
+
+        .artist-body {
+            margin-top: 13vh;
+        }
+
     }
 }
 
@@ -585,7 +637,6 @@
 .app-navigation {
     #app-content {
         background: white;
-        // border-radius: 0px 0px 0px 0px;
 
         .library-page .library-header {
             background: unset;
@@ -597,47 +648,12 @@
     }
 }
 
-.artist-page .artist-header {
-    min-height: 350px;
-}
-
-.content-inner.artist-page.animated {
-    .artist-header .animated {
-        margin-top: 15vh;
-        height: 60vh;
-        max-height: 550px;
-    }
-
-    .col.flex-center.artist-title.artist-animation-on {
-        bottom: -15vh;
-    }
-
-    .more-btn-round {
-        bottom: -11vh !important;
-    }
-
-    .artist-body {
-        margin-top: 13vh;
-    }
-
-}
-
-
-
-button[title="Unlove"]>.sidebar-icon>.svg-icon,
-button[data-original-title="Unlove"]>.sidebar-icon>.svg-icon {
-    --url: none !important;
-    background: url('icons/heart.svg');
-    background-size: contain;
-}
-
 // Only changing the CSS for the FS View
 .fullscreen-view-container {
     .fullscreen-view .lyrics {
         background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcKICAgd2lkdGg9IjIyIgogICBoZWlnaHQ9IjIyIgogICB2aWV3Qm94PSIwIDAgMjggMjgiCiAgIHZlcnNpb249IjEuMSIKICAgaWQ9InN2ZzMiCiAgIHNvZGlwb2RpOmRvY25hbWU9ImhlbGxvLnN2ZyIKICAgaW5rc2NhcGU6dmVyc2lvbj0iMS4xLjIgKGI4ZTI1YmU4MzMsIDIwMjItMDItMDUpIgogICB4bWxuczppbmtzY2FwZT0iaHR0cDovL3d3dy5pbmtzY2FwZS5vcmcvbmFtZXNwYWNlcy9pbmtzY2FwZSIKICAgeG1sbnM6c29kaXBvZGk9Imh0dHA6Ly9zb2RpcG9kaS5zb3VyY2Vmb3JnZS5uZXQvRFREL3NvZGlwb2RpLTAuZHRkIgogICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxkZWZzCiAgICAgaWQ9ImRlZnM3IiAvPgogIDxzb2RpcG9kaTpuYW1lZHZpZXcKICAgICBpZD0ibmFtZWR2aWV3NSIKICAgICBwYWdlY29sb3I9IiNmZmZmZmYiCiAgICAgYm9yZGVyY29sb3I9IiM2NjY2NjYiCiAgICAgYm9yZGVyb3BhY2l0eT0iMS4wIgogICAgIGlua3NjYXBlOnBhZ2VzaGFkb3c9IjIiCiAgICAgaW5rc2NhcGU6cGFnZW9wYWNpdHk9IjAuMCIKICAgICBpbmtzY2FwZTpwYWdlY2hlY2tlcmJvYXJkPSIwIgogICAgIHNob3dncmlkPSJmYWxzZSIKICAgICBpbmtzY2FwZTp6b29tPSIzNy40MDkwOTEiCiAgICAgaW5rc2NhcGU6Y3g9IjExLjAyNjczMSIKICAgICBpbmtzY2FwZTpjeT0iMTEuMDEzMzY2IgogICAgIGlua3NjYXBlOndpbmRvdy13aWR0aD0iMTkyMCIKICAgICBpbmtzY2FwZTp3aW5kb3ctaGVpZ2h0PSIxMDA5IgogICAgIGlua3NjYXBlOndpbmRvdy14PSItOCIKICAgICBpbmtzY2FwZTp3aW5kb3cteT0iLTgiCiAgICAgaW5rc2NhcGU6d2luZG93LW1heGltaXplZD0iMSIKICAgICBpbmtzY2FwZTpjdXJyZW50LWxheWVyPSJzdmczIiAvPgogIDxwYXRoCiAgICAgaWQ9InBhdGgiCiAgICAgZD0iTSAxNC40IDEyLjIgQyAxNC40IDExLjEgMTUuMiAxMC4zIDE2LjQgMTAuMyBDIDE3LjcgMTAuMyAxOC41IDExLjMgMTguNSAxMi43IEMgMTguNSAxNC43IDE2LjggMTUuOSAxNS44IDE1LjkgQyAxNS41IDE1LjkgMTUuMyAxNS43IDE1LjMgMTUuNSBDIDE1LjMgMTUuMyAxNS40IDE1LjEgMTUuNyAxNS4xIEMgMTYuNSAxNC45IDE3LjEgMTQuNCAxNy40IDEzLjcgTCAxNy4yIDEzLjcgQyAxNyAxNCAxNi42IDE0LjEgMTYuMSAxNC4xIEMgMTUuMSAxNCAxNC40IDEzLjIgMTQuNCAxMi4yIFogTSA5LjUgMTIuMiBDIDkuNSAxMS4xIDEwLjMgMTAuMyAxMS41IDEwLjMgQyAxMi44IDEwLjMgMTMuNiAxMS4zIDEzLjYgMTIuNyBDIDEzLjYgMTQuNyAxMS45IDE1LjkgMTAuOSAxNS45IEMgMTAuNiAxNS45IDEwLjQgMTUuNyAxMC40IDE1LjUgQyAxMC40IDE1LjMgMTAuNSAxNS4xIDEwLjggMTUuMSBDIDExLjYgMTQuOSAxMi4zIDE0LjQgMTIuNSAxMy43IEwgMTIuMyAxMy43IEMgMTIuMSAxNCAxMS43IDE0LjEgMTEuMiAxNC4xIEMgMTAuMiAxNCA5LjUgMTMuMiA5LjUgMTIuMiBaIE0gMTAuNCAyMS40IEwgMTMuMiAxOC43IEMgMTMuOCAxOC4xIDE0LjEgMTggMTQuOCAxOCBMIDE5LjQgMTggQyAyMC43IDE4IDIxLjUgMTcuMiAyMS41IDE1LjkgTCAyMS41IDkuNCBDIDIxLjUgOCAyMC43IDcuMyAxOS40IDcuMyBMIDguNSA3LjMgQyA3LjIgNy4zIDYuNCA4IDYuNCA5LjQgTCA2LjQgMTUuOSBDIDYuNCAxNy4yIDcuMiAxOCA4LjUgMTggTCA5LjUgMTggQyAxMC4xIDE4IDEwLjQgMTguMyAxMC40IDE4LjkgTCAxMC40IDIxLjQgWiBNIDkuOSAyNCBDIDkgMjQgOC40IDIzLjQgOC40IDIyLjQgTCA4LjQgMjAuNCBMIDcuOSAyMC40IEMgNS40IDIwLjMgNCAxOSA0IDE2LjUgTCA0IDkgQyA0IDYuNSA1LjUgNSA4LjEgNSBMIDE5LjkgNSBDIDIyLjUgNSAyNCA2LjQgMjQgOSBMIDI0IDE2LjYgQyAyNCAxOS4xIDIyLjUgMjAuNCAxOS45IDIwLjQgTCAxNC44IDIwLjQgTCAxMS43IDIzLjEgQyAxMSAyMy43IDEwLjUgMjQgOS45IDI0IFoiCiAgICAgc3R5bGU9ImZpbGw6I2ZmZmZmZjtmaWxsLW9wYWNpdHk6MSIgLz4KPC9zdmc+Cg==');
         background-size: 70%;
         background-position: center;
-
         opacity: 0.75;
         width: 40px;
         height: 32px;
@@ -654,34 +670,13 @@ button[data-original-title="Unlove"]>.sidebar-icon>.svg-icon {
     box-shadow: var(--mediaItemShadow);
 }
 
-.cd-mediaitem-square.mediaitem-card .info-rect-card {
-    color: white
-}
-
-.cd-mediaitem-list-item:nth-child(odd) {
-    background: rgb(0 0 0 / 0.01);
-}
-
-// .app-chrome .app-chrome-item.volume input[type="range"] {
-//     filter: invert(0) !important;
-//     background-color: rgba(0, 0, 0, 0.1);
+// .cd-mediaitem-square.mediaitem-card .info-rect-card {
+//     color: white
 // }
 
-// .app-chrome .app-chrome-item.volume button {
-//     filter: invert(0.6);
+// .cd-mediaitem-list-item:nth-child(odd) {
+//     background: rgb(0 0 0 / 0.01);
 // }
-
-.cd-btn-seeall {
-    color: #fa586a;
-}
-
-.cd-mediaitem-list-item .title {
-    width: 100%;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    overflow: hidden;
-}
 
 @media (prefers-color-scheme: light) {
     #app {
@@ -695,7 +690,6 @@ button[data-original-title="Unlove"]>.sidebar-icon>.svg-icon {
         --modalBackground: #fff;
         --songProgressColor: #333;
         --songProgressBackground: #cbcbd7;
-        color: #333;
 
         .menu-panel .menu-panel-body {
             background-color: rgba(250, 250, 250, 0.8);
@@ -798,9 +792,34 @@ button[data-original-title="Unlove"]>.sidebar-icon>.svg-icon {
         font-weight: bold;
     }
 
+    .modal-content,
     .modal-content .modal-body {
         background: rgb(235, 235, 235);
+        color: #333;
+
+        button {
+            .sidebar-icon>svg.feather-list {
+                background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgY2xhc3M9IndlYi1uYXZpZ2F0aW9uX19wbGF5bGlzdC1pY29uIiBhcmlhLWhpZGRlbj0idHJ1ZSI+PHBhdGggZD0iTTEzLjA3OSAxOS43MTJjMS4wNzYgMCAyLjY4OC0uNzkgMi42ODgtMi45MjJ2LTYuNzAyYzAtLjM4OC4wNzMtLjQ2OC40MTctLjU0MmwzLjM0Ny0uNzMyYS40OC40OCAwIDAwLjQwMy0uNDgzVjUuNTc3YzAtLjM4OC0uMzE1LS42MzctLjY4OC0uNTY0bC0zLjc2NS44MmMtLjQ2OS4xMDMtLjcyNS4zNTktLjcyNS43N2wuMDE1IDguMTQ0Yy4wMzYuMzU5LS4xMzIuNTkzLS40NTUuNjU5bC0xLjE2NC4yNDJjLTEuNDY1LjMwNy0yLjE1MyAxLjA1NC0yLjE1MyAyLjE2IDAgMS4xMi44NjQgMS45MDQgMi4wOCAxLjkwNHpNMTIuMDQ2IDguNjc1YS41MDMuNTAzIDAgMDAuNDk4LS40OTguNDk3LjQ5NyAwIDAwLS40OTgtLjQ5SDUuNDk4YS40OTIuNDkyIDAgMDAtLjQ5OC40OWMwIC4yNy4yMi40OTguNDk4LjQ5OGg2LjU0OHptMCAyLjYwN2EuNS41IDAgMDAuNDk4LS41MDUuNDkuNDkgMCAwMC0uNDk4LS40ODNINS40OThhLjQ4Ni40ODYgMCAwMC0uNDk4LjQ4M2MwIC4yNzguMjEyLjUwNS40OTguNTA1aDYuNTQ4em0wIDIuNjA4YS40OTQuNDk0IDAgMTAwLS45ODlINS40OThhLjQ5Mi40OTIgMCAwMC0uNDk4LjQ5LjQ5LjQ5IDAgMDAuNDk4LjQ5OWg2LjU0OHoiIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbC1vcGFjaXR5PSIwLjY0IiBmaWxsPSIjRkZGRkZGIj48L3BhdGg+PC9zdmc+');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 130%;
+                color: transparent;
+                filter:invert(0.8);
+            }
+
+            color:var(--textColor);
+        }
     }
+
+    // .modal-window{
+    //     .modal-content{
+    //         background: #eee;
+    //         border: 1px solid rgb(100 100 100 / 20%);
+    //         .sidebar-playlist{
+    //             color:#333;
+    //         }
+    //     }
+    // }
 
     input[type=text] {
         background-color: #fff;
@@ -1309,17 +1328,12 @@ button[data-original-title="Unlove"]>.sidebar-icon>.svg-icon {
     }
 }
 
+// .playback-button.next,
+// .playback-button.previous {
+//     background-size: 46%;
+// }
 
-.marquee {
-    animation-duration: 25s;
-}
-
-.playback-button.next,
-.playback-button.previous {
-    background-size: 46%;
-}
-
-.playback-button.play,
-.playback-button.pause {
-    background-size: 51%;
-}
+// .playback-button.play,
+// .playback-button.pause {
+//     background-size: 51%;
+// }
