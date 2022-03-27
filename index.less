@@ -5,8 +5,8 @@
     --mediaItemShadow-Shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
     --mediaItemShadow-ShadowSubtle: 0 4px 4px rgba(0, 0, 0, 0.1);
     --ciderShadow-Generic: var(--mediaItemShadow), 0 8px 8px rgb(0 0 0 / 0.15);
-    --keycolor: #fa233b;
-    --keycolor-selected: #fa586a;
+    --keyColor: #fa233b;
+    --keyColor-selected: #fa586a;
 
     .fullscreen-view .tab-toggles div {
         width: 5vh;
@@ -41,7 +41,6 @@
 
 // Only changing the CSS for the main window
 #app-main {
-
     // Scrollbar
     ::-webkit-scrollbar-thumb {
         background: transparent;
@@ -530,24 +529,24 @@
     // Style Buttons
     .md-btn {
         &.md-btn-primary {
-            background: var(--keycolor);
+            background: var(--keyColor);
         }
 
         &:hover {
-            background: var(--keycolor-selected);
+            background: var(--keyColor-selected);
         }
     }
 
     // Add Music Video Icons to Songs that are Music Videos
-    
-    div[data-type="library-music-videos"] .info-rect .title::before, 
+
+    div[data-type="library-music-videos"] .info-rect .title::before,
     div[data-type="musicVideo"] .info-rect .title::before {
         content: url('data:image/svg+xml;base64,PHN2ZyB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTkiIGhlaWdodD0iMTYiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLW1pdGVybGltaXQ9IjIiIGNsaXAtcnVsZT0iZXZlbm9kZCIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgMTkgMTYiIHhtbDpzcGFjZT0icHJlc2VydmUiIGNsYXNzPSJzb25ncy1saXN0LXJvd19fdmlkZW8tZ2x5cGgiPjxwYXRoIGZpbGwtcnVsZT0ibm9uemVybyIgZD0iTTE2Ljc0NywxMi40MzdjMS4xNjYsMCAxLjc1MywtMC41NjUgMS43NTMsLTEuNzcxbDAsLTcuODk1YzAsLTEuMjA2IC0wLjU4NywtMS43NzEgLTEuNzUzLC0xLjc3MWwtMTQuNDk0LDBjLTEuMTY2LDAgLTEuNzUzLDAuNTY1IC0xLjc1MywxLjc3MWwwLDcuODk1YzAsMS4yMDYgMC41ODcsMS43NzEgMS43NTMsMS43NzFsMTQuNDk0LDBabS0wLjAyLC0xLjEwOWwtMTQuNDU0LDBjLTAuNDcsMCAtMC42NzUsLTAuMTkzIC0wLjY3NSwtMC42NzVsMCwtNy44NjJjMCwtMC40ODkgMC4yMDUsLTAuNjgyIDAuNjc1LC0wLjY4MmwxNC40NTQsMGMwLjQ3LDAgMC42NzUsMC4xOTMgMC42NzUsMC42ODJsMCw3Ljg2MmMwLDAuNDgyIC0wLjIwNSwwLjY3NSAtMC42NzUsMC42NzVabS04LjczOCwtMS4yOTZjMC45NzYsMCAxLjYzNywtMC43MDkgMS42MzcsLTEuNzA4bDAsLTIuMzYzYzAsLTAuMjU1IDAuMDU1LC0wLjMyNCAwLjIwNSwtMC4zNTlsMS42MDMsLTAuMzg1YzAuMzI3LC0wLjA5IDAuNDI5LC0wLjE1OSAwLjQyOSwtMC41NTlsMCwtMS4zNWMwLC0wLjI2MiAtMC4wOTUsLTAuMzc5IC0wLjQ1NywtMC4yODlsLTEuOTkxLDAuNTAzYy0wLjM0MSwwLjA4MiAtMC40MSwwLjE1MSAtMC40MSwwLjU1OGwwLDMuMTA3YzAsMC4zMDMgLTAuMDI3LDAuMzU4IC0wLjM3NSwwLjQ1NWwtMC42MjcsMC4xNjVjLTAuNjIxLDAuMTY1IC0xLjEzOSwwLjUzNyAtMS4xMzksMS4yMTNjMCwwLjU4NSAwLjQzNiwxLjAxMiAxLjEyNSwxLjAxMlptNS44MzksNC45NjhjMC4zNDgsMCAwLjYyNywtMC4yODkgMC42MjcsLTAuNjQ4YzAsLTAuMzU4IC0wLjI3OSwtMC42NDcgLTAuNjI3LC0wLjY0N2wtOC42NjksMGMtMC4zNDgsMCAtMC42MzUsMC4yODkgLTAuNjM1LDAuNjQ3YzAsMC4zNTkgMC4yODcsMC42NDggMC42MzUsMC42NDhsOC42NjksMFoiIGZpbGw9IiNGQTU4NkEiPjwvcGF0aD48L3N2Zz4=');
     }
 
     // Style See All/ History Button
     .cd-btn-seeall {
-        color: var(--keycolor);
+        color: var(--keyColor);
     }
 
     // .cd-mediaitem-list-item .title {
@@ -692,15 +691,12 @@
         --modalBackground: #fff;
         --songProgressColor: #333;
         --songProgressBackground: #cbcbd7;
+        --keyColor: #fa233b;
 
         .menu-panel .menu-panel-body {
             background-color: rgba(250, 250, 250, 0.8);
             backdrop-filter: blur(8px);
-            color: #000;
-        }
-
-        .sidebar-icon>.svg-icon {
-            --color: #fa586a;
+            color: var(--textColor);
         }
 
         button[title="Undo dislike"]>.sidebar-icon>.svg-icon,
@@ -719,29 +715,32 @@
         .modal-fullscreen {
             background: rgba(255, 255, 255, 0.3);
 
-        }
+            .modal-window {
 
-        .modal-window .modal-header,
-        .md-footer,
-        .modal-lowercontent {
-            background: rgb(255, 255, 255);
-            color: #000;
-            font-weight: bold;
-        }
+                .modal-header,
+                .md-footer,
+                .modal-lowercontent,
+                .modal-search {
+                    background: rgb(255, 255, 255);
+                    color: #000;
+                    font-weight: bold;
+                }
 
-        .modal-fullscreen .modal-window .modal-content {
-            background: rgb(235, 235, 235);
-            color: #333;
+                .modal-content {
+                    background: rgb(235, 235, 235);
+                    color: #333;
 
-            .playlist-item {
-                background: rgb(235, 235, 235);
-                color: #333;
+                    .playlist-item {
+                        background: rgb(235, 235, 235);
+                        color: #333;
+                    }
+                }
+
+                .md-btn, .md-btn-block {
+                    background: var(--keyColor);
+                    color: var(--textColor2);
+                }
             }
-        }
-
-        .md-btn.md-btn-block {
-            background: #fa233b;
-            color: white;
         }
 
         .castPlayIndicator {
@@ -785,6 +784,37 @@
             color: #000;
             border-radius: 5px;
         }
+        .md-btn,
+        .md-select {
+            color: #333;
+
+            &:not(.md-btn-primary):not(button) {
+                background: #eee;
+                border: 1px solid rgb(100 100 100 / 20%);
+            }
+
+            .md-ico-remove {
+                filter: invert(0.8);
+            }
+
+            .md-ico-add {
+                filter: invert(0.8);
+            }
+
+            &.md-btn-replay {
+                background: linear-gradient(45deg, hsl(248deg 58% 29%), hsl(13deg 41% 42%)) !important;
+            }
+
+            &.md-btn-replay--hero {
+                background: linear-gradient(45deg, hsl(248deg 58% 29%), hsl(13deg 41% 42%)) !important;
+            }
+
+            >option,
+            >optgroup,
+            optgroup>option {
+                background: #eee;
+            }
+        }
     }
 
     .modal-content .modal-header,
@@ -806,7 +836,7 @@
                 background-position: center;
                 background-size: 130%;
                 color: transparent;
-                filter:invert(0.8);
+                filter: invert(0.8);
             }
 
             color:var(--textColor);
@@ -877,39 +907,7 @@
 
     #app-main {
 
-        .md-btn,
-        .md-select {
-            color: #333;
-
-            &:not(.md-btn-primary):not(button) {
-                background: #eee;
-                border: 1px solid rgb(100 100 100 / 20%);
-            }
-
-            .md-ico-remove {
-                filter: invert(0.8);
-            }
-
-            .md-ico-add {
-                filter: invert(0.8);
-            }
-
-            &.md-btn-replay {
-                background: linear-gradient(45deg, hsl(248deg 58% 29%), hsl(13deg 41% 42%)) !important;
-            }
-
-            &.md-btn-replay--hero {
-                background: linear-gradient(45deg, hsl(248deg 58% 29%), hsl(13deg 41% 42%)) !important;
-            }
-
-            >option,
-            >optgroup,
-            optgroup>option {
-                background: #eee;
-            }
-
-
-        }
+        
 
         .app-chrome .app-chrome-item>.app-playback-controls .song-progress input[type="range"]::-webkit-slider-thumb {
             border: #fff solid 1px;
@@ -994,11 +992,11 @@
                 color: #333;
 
                 svg {
-                    color: var(--keycolor);
+                    color: var(--keyColor);
                 }
 
                 &:hover {
-                    background: var(--keycolor);
+                    background: var(--keyColor);
                     color: var(--textColor2);
 
                     svg {
@@ -1125,6 +1123,9 @@
     }
 
     .search-input-container {
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 7px;
+        border: 0.2px solid rgba(0, 0, 0, 0.05);
 
         .search-input--icon {
             filter: invert(1);
@@ -1322,20 +1323,9 @@
         }
     }
 
-
     input[type=checkbox][switch]:checked {
         background: #fa586a;
         border: 0 solid #fa586a;
         mix-blend-mode: unset;
     }
 }
-
-// .playback-button.next,
-// .playback-button.previous {
-//     background-size: 46%;
-// }
-
-// .playback-button.play,
-// .playback-button.pause {
-//     background-size: 51%;
-// }
