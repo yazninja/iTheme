@@ -7,6 +7,9 @@
     "directives": {
         "windowLayout": {
             "value": "default"
+        },
+        "appNavigation": {
+            "value": "seperate"
         }
     }
 }
