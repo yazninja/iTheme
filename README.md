@@ -1,18 +1,22 @@
 # iTheme for [Cider](https://cider.sh/) <img src="https://img.shields.io/github/stars/yazninja/apple-cider-lite?style=social" width="70"></img>
 
 Cider theme based from the Apple Music beta app in MacOS Monterey.
-Best used with `Mica(beta)` option in settings. 
+Best used with `Mica(beta)` option in settings.
+
+**New Plugin:**
 
 [Not seeing the Cider Logo/ Your Profile?](https://github.com/ciderapp/iTheme/issues/10)
 
 ---
-#### New Update! MacOS Layout
-Get the feeling of a mac app with window controls in the left and a MacOS style UI!
+#### Version 2.0 release
+iTheme has just gotten better.
 
-![dark1](https://user-images.githubusercontent.com/71800112/159197953-64f2978d-0b10-4040-b6e6-8ba6b2a6658f.png)
-![light1](https://user-images.githubusercontent.com/71800112/159197955-0b005258-3d34-47c0-b5a7-76b5206c58d5.png)
-![dark2](https://user-images.githubusercontent.com/71800112/159197949-eda3ccd2-9a06-4d49-80d0-906a83289831.png)
-![light2](https://user-images.githubusercontent.com/71800112/159197956-1850b176-f287-43fa-b148-80fbe558693d.png)
++ Improved light theme
++ Fixed most scaling issues
++ Supports theme directives for both Right Window, Left Window and Native Window Controls
++ Navigation Bar moved to the top
++ New Animated Artist layout.
++ Fix un-needed blurs that can hog up performance
 
 
 
