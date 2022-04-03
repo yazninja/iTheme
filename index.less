@@ -5,6 +5,7 @@
     font-family: var(--fontStyle);
     --textColor: white;
     --textcolorLight: white;
+    --textColorLighter: #ccc;
     --keyColor: #fa586a;
     --buttonAccent: #d60017;
     --buttonAccentPressed: #bb0000;
@@ -30,6 +31,7 @@
     --searchBackgroundColor: rgba(31, 31, 31, 0.6);
     --activeTabColor: rgba(250, 88, 106, 0.1);
     --oddItemsAccentCOlor: rgb(255 255 255 / 0.03);
+    --sidebarIconColor: rgba(255, 255, 255, 0.5);
 
     .fullscreen-view .tab-toggles div {
         width: 5vh;
@@ -201,7 +203,9 @@
             font-size: 15px;
             padding: 4px 12px;
             color: var(--textColor);
-
+            .feather{
+                color: var(--sidebarIconColor);
+            }
             &.active {
                 background: var(--activeTabColor);
             }
@@ -676,6 +680,7 @@
         --activeTabColor: rgba(100, 100, 107, 0.25);
         --oddItemsAccentCOlor: rgba(0, 0, 0, 0.05);
         --userHoverColor: rgba(250, 35, 59, 0.4);
+        --sidebarIconColor: rgba(30, 30, 30, 0.8);
 
         .usermenu-container .usermenu-body {
             background-color: var(--menuBackgroundColor);

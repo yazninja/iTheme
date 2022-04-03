@@ -3,7 +3,8 @@
 Cider theme based from the Apple Music beta app in MacOS Monterey.
 Best used with `Mica(beta)` option in settings.
 
-**New Plugin:**
+Want more functionality?
+**New Side Plugin: [iVanced (Alpha)](https://github.com/yazninja/ivanced)**
 
 [Not seeing the Cider Logo/ Your Profile?](https://github.com/ciderapp/iTheme/issues/10)
 
@@ -17,6 +18,9 @@ iTheme has just gotten better.
 + Navigation Bar moved to the top
 + New Animated Artist layout.
 + Fix un-needed blurs that can hog up performance
++ Rework Theme to use variables (more versitile)
++ Move Cupertino Icons to plugin 
++ Add Linux Support (Use Native Titlebars & Right Window Controls)
 
 
 
