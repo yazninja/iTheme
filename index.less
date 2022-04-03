@@ -4,7 +4,7 @@
     --fontStyle: : "Inter var experimental", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-family: var(--fontStyle);
     --textColor: white;
-    --textcolorLight: white;
+    --textColorLight: white;
     --textColorLighter: #ccc;
     --keyColor: #fa586a;
     --buttonAccent: #d60017;
@@ -266,6 +266,14 @@
                 }
             }
         }
+        // Display Cider Logo when player is empty
+        .app-chrome-item.playback-controls:empty {
+            background-image: url('/assets/cider-round.svg');
+            background-repeat: no-repeat;
+            background-size: 7%;
+            background-position: center;
+            
+        }
 
         .app-chrome--right {
             // margin-right: -20px;
@@ -501,7 +509,7 @@
                 box-shadow: none;
 
                 video {
-                    -webkit-mask-image: linear-gradient(0deg, transparent 0%, transparent 43%, black 55%, black 90%, black 100%);
+                    -webkit-mask-image: linear-gradient(0deg, transparent 0%, white 43%, black 55%, black 90%, black 100%);
                 }
             }
         }
@@ -514,7 +522,7 @@
             box-shadow: var(--mediaItemShadow);
 
             .svg-icon {
-                background: var(--textColor);
+                background: var(--textColorLight);
             }
         }
     }
