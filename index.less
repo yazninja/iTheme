@@ -67,6 +67,30 @@
     }
     .app-chrome--left {
         width: 65%;
+        .app-mainmenu::before {
+            content: "";
+            background-image: var(--cvar-userprofileimg, url('/assets/cider-round.svg'));
+            position: absolute;
+            top: -1px;
+            left: 2px;
+            width: 37px;
+            height: 37px;
+            border-radius: 50%;
+            background-size: contain;
+            z-index: -1;
+        }
+
+        .app-mainmenu{
+            background-image: none;
+            padding-right: 120px;
+            border-radius: 10px;
+            &:focus{
+                background-image: none;
+                // padding: 10px;
+                border-radius: 10px; 
+            }
+        }
+
         .app-mainmenu::after {
             content: "Cider";
             font-size: 2em;
@@ -76,7 +100,7 @@
         }
 
         & .app-chrome-item:nth-of-type(2) {
-            margin-left: 110px;
+            margin-left: 15px;
         }
     }
 
