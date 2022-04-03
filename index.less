@@ -61,7 +61,12 @@
 }
 
 #app:not(.macosmenu) .app-chrome {
+
+    & .app-chrome-item .shuffle {
+        margin-left: 4vw;
+    }
     .app-chrome--left {
+        width: 65%;
         .app-mainmenu::after {
             content: "Cider";
             font-size: 2em;
@@ -71,7 +76,7 @@
         }
 
         & .app-chrome-item:nth-of-type(2) {
-            margin-left: 220px;
+            margin-left: 110px;
         }
     }
 
