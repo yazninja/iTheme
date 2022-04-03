@@ -82,6 +82,7 @@
             background-color: var(--mediaBarColor);
         }
     }
+
     .usermenu-body {
         backdrop-filter: blur(var(--blurSmall)) !important;
     }
@@ -115,7 +116,10 @@
         }
 
         & .app-chrome-item:nth-of-type(2):not(.generic) {
-            margin-left: 180px;
+            margin-left: 75px;
+        }
+        & .app-chrome-item .shuffle {
+            margin-left: 2vw;
         }
 
         .app-chrome-item .window-controls-macos {
@@ -203,9 +207,11 @@
             font-size: 15px;
             padding: 4px 12px;
             color: var(--textColor);
-            .feather{
+
+            .feather {
                 color: var(--sidebarIconColor);
             }
+
             &.active {
                 background: var(--activeTabColor);
             }
@@ -252,6 +258,9 @@
     }
 
     .app-chrome {
+        .vdiv {
+            display: none;
+        }
         .app-chrome--left {
             // margin-left: 150px;
 
@@ -266,13 +275,14 @@
                 }
             }
         }
+
         // Display Cider Logo when player is empty
         .app-chrome-item.playback-controls:empty {
             background-image: url('/assets/cider-round.svg');
             background-repeat: no-repeat;
             background-size: 7%;
             background-position: center;
-            
+
         }
 
         .app-chrome--right {
@@ -792,33 +802,38 @@
             }
         }
     }
-    .modal-dialog{
+
+    .modal-dialog {
         --menuBackgroundColor: rgba(255, 255, 255, 0.9);
         --textColor: #000;
         --textColorLighter: #333;
         --keyColor: #d60017;
         --keyColor-primary: #d60017;
-        .modal-content{
+
+        .modal-content {
             background: var(--menuBackgroundColor);
             backdrop-filter: blur(8px);
-            .modal-header{
+
+            .modal-header {
                 // background: var(--color2);
                 color: var(--textColor);
                 font-weight: bold;
             }
-            .modal-body{
+
+            .modal-body {
                 color: var(--textColorLighter);
             }
+
             .close {
                 filter: invert(0.8);
-    
+
                 &:hover {
                     filter: invert(0);
                 }
             }
         }
     }
-    
+
 
     .search-hints-container .search-hints {
         background-color: rgba(0, 0, 0, 0.05);
@@ -872,11 +887,6 @@
 
         .playback-button--small.lyrics {
             filter: brightness(0.5);
-        }
-
-        .app-chrome .vdiv {
-            background: #000;
-            width: 2px;
         }
 
         button.volume {
@@ -948,6 +958,7 @@
             background: var(--searchBackgroundColor);
 
         }
+
         .list-group-item-dark {
             background-color: var(--color2);
             border: var(--selectBorder);
@@ -965,7 +976,7 @@
     .fullscreen-view {
         --songProgressColor: #b8b8b8;
         --songProgressBackground: #555;
-        
+
         .artwork-col .app-playback-controls .playback-info>div,
         .fullscreen-view .queue-col {
             color: var(--textColorLight);
@@ -977,6 +988,7 @@
             }
         }
     }
+
     #apple-music-video-container {
         --mediaBarColor: rgba(0, 0, 0, 0.3);
     }
@@ -1009,5 +1021,5 @@
             color: var(--textColorLight);
         }
     }
-    
+
 }
