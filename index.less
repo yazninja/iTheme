@@ -757,6 +757,9 @@
                     background: var(--color2);
                     color: #000;
                     font-weight: bold;
+                    .search-input--icon{
+                        filter: invert(1);
+                    }
                 }
 
                 .close-btn {
@@ -787,10 +790,25 @@
                         background: var(--searchBarBackgroundColor);
                         color: var(--textColor);
                     }
-
+                    .sidebar-playlist{
+                        .app-sidebar-item.app-sidebar-item-playlist{
+                            color: var(--textColor);
+                        }
+                        .sidebar-icon>svg{
+                            color: var(--sidebarIconColor);
+                        }
+                        &:hover{
+                            background-color: var(--keyColor);
+                            .app-sidebar-item, div>svg{
+                                color: var(--textColorLight);
+                            }
+                        }
+                    }
+                    
+                    
                     .playlist-item {
                         background: rgb(235, 235, 235);
-                        color: #333;
+                        color: var(--textColor);
 
                         &:hover {
                             background: var(--keyColor);
