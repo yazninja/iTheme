@@ -32,6 +32,8 @@
     --activeTabColor: rgba(250, 88, 106, 0.1);
     --oddItemsAccentCOlor: rgb(255 255 255 / 0.03);
     --sidebarIconColor: rgba(255, 255, 255, 0.5);
+    --volumeThumbColor: rgb(80,80,80);
+    --volumeTrackColor: rgba(200,200,200, 0.5);
 
     .fullscreen-view .tab-toggles div {
         width: 5vh;
@@ -139,7 +141,7 @@
         }
 
         .app-chrome--right {
-            width: 65%;
+            width: 80%;
         }
 
         .app-chrome--center {
@@ -294,9 +296,9 @@
 
     .app-chrome {
         .app-chrome-item{
-            -webkit-app-region: none;
-            button, .volume{
-                -webkit-app-region: no-drag;
+            -webkit-app-region: drag;
+            button, .volume ,input[type="range"] {
+                -webkit-app-region: no-drag !important;
             }
         }
         
@@ -359,6 +361,26 @@
                 width: 35px;
                 height: 35px;
                 background-size: contain;
+            }
+        }
+        .app-chrome-item.volume {
+            width: 110px;
+            max-width: 110px;
+            margin-right: 1vw;
+            input[type=range] {
+                background-color:transparent;
+                height:20px;
+                &::-webkit-slider-runnable-track{
+                    background: var(--volumeTrackColor);
+                    filter: none !important;
+                    height:3px;
+                }
+                &::-webkit-slider-thumb {
+                    border: 1px solid var(--volumeTrackColor);
+                    background: var(--volumeThumbColor);
+                    margin-top: -6px;
+                }
+                
             }
         }
 
@@ -742,6 +764,8 @@
         --oddItemsAccentCOlor: rgba(0, 0, 0, 0.05);
         --userHoverColor: rgba(250, 35, 59, 0.4);
         --sidebarIconColor: rgba(30, 30, 30, 0.8);
+        --volumeThumbColor: var(--color2);
+        --volumeTrackColor: var(--songProgressColor);
 
         .usermenu-container .usermenu-body {
             background-color: var(--menuBackgroundColor);
@@ -869,6 +893,27 @@
             }
         }
     }
+    .fullscreen-view {
+        --songProgressColor: #b8b8b8;
+        --songProgressBackground: #555;
+        --textColorLight: white;
+        .artwork-col .app-playback-controls .playback-info>div,
+        .queue-col {
+            color: var(--textColorLight);
+            .queue-title{
+                opacity: 1;
+            }
+            .queue-subtitle{
+                opacity: 0.6;
+            }
+            
+
+            .md-btn-primary {
+                background-color: var(--keyColor) !important;
+                color: var(--textColorLight) !important;
+            }
+        }
+    }
 
     .modal-dialog {
         --menuBackgroundColor: rgba(255, 255, 255, 0.9);
@@ -960,18 +1005,6 @@
             filter: invert(1);
         }
 
-        .volume {
-            input[type=range] {
-                background: var(--songProgressColor);
-                filter: none !important;
-
-                &::-webkit-slider-thumb {
-                    border: 1px solid var(--songProgressColor);
-                    background: var(--color2);
-                }
-            }
-        }
-
         .app-chrome-item .window-controls>div {
             filter: invert(0.8);
 
@@ -1040,21 +1073,7 @@
         }
     }
 
-    .fullscreen-view {
-        --songProgressColor: #b8b8b8;
-        --songProgressBackground: #555;
-
-        .artwork-col .app-playback-controls .playback-info>div,
-        .fullscreen-view .queue-col {
-            color: var(--textColorLight);
-            opacity: 1;
-
-            .md-btn-primary {
-                background-color: var(--keyColor) !important;
-                color: var(--textColorLight) !important;
-            }
-        }
-    }
+    
 
     #apple-music-video-container {
         --mediaBarColor: rgba(0, 0, 0, 0.3);
@@ -1094,6 +1113,14 @@
     #app{
         .app-chrome .app-chrome-item:nth-of-type(2) {
             margin-left: 115px !important;
+        }
+    }
+    #app.macosemu{
+        .app-chrome .app-chrome-item:nth-of-type(2) {
+            margin-left: 180px !important;
+        }
+        .app-chrome--right{
+            width: 20% !important;
         }
     }
 }
