@@ -60,60 +60,65 @@
     }
 }
 
-#app:not(.macosmenu) .app-chrome {
+#app:not(.macosmenu) {
+    .app-chrome {
 
-    & .app-chrome-item .shuffle {
-        margin-left: 4vw;
-    }
-    .app-chrome--left {
-        width: 65%;
-        .app-mainmenu::before {
-            content: "";
-            background-image: var(--cvar-userprofileimg, url('/assets/cider-round.svg'));
-            position: absolute;
-            top: -1px;
-            left: 2px;
-            width: 37px;
-            height: 37px;
-            border-radius: 50%;
-            background-size: contain;
-            z-index: -1;
+        & .app-chrome-item .shuffle {
+            margin-left: 4vw;
         }
 
-        .app-mainmenu{
-            background-image: none;
-            padding-right: 120px;
-            border-radius: 10px;
-            &:focus{
+        .app-chrome--left {
+            width: 65%;
+
+            .app-mainmenu::before {
+                content: "";
+                background-image: var(--cvar-userprofileimg, url('/assets/cider-round.svg'));
+                position: absolute;
+                top: -1px;
+                left: 2px;
+                width: 37px;
+                height: 37px;
+                border-radius: 50%;
+                background-size: contain;
+                z-index: -1;
+            }
+
+            .app-mainmenu {
                 background-image: none;
-                // padding: 10px;
-                border-radius: 10px; 
+                padding-right: 120px;
+                border-radius: 10px;
+
+                &:focus {
+                    background-image: none;
+                    // padding: 10px;
+                    border-radius: 10px;
+                }
+            }
+
+            .app-mainmenu::after {
+                content: "Cider";
+                font-size: 2em;
+                font-weight: bold;
+                color: var(--textColorLighter);
+                margin-left: 40px;
+            }
+
+            & .app-chrome-item:nth-of-type(2) {
+                margin-left: 15px;
             }
         }
 
-        .app-mainmenu::after {
-            content: "Cider";
-            font-size: 2em;
-            font-weight: bold;
-            color: var(--textColorLighter);
-            margin-left: 40px;
-        }
-
-        & .app-chrome-item:nth-of-type(2) {
-            margin-left: 15px;
+        .app-chrome--center {
+            .app-chrome-item.playback-controls {
+                width: 90%;
+                max-width: 550px;
+                background-color: var(--mediaBarColor);
+            }
         }
     }
-
-    .app-chrome--center {
-        .app-chrome-item.playback-controls {
-            width: 90%;
-            max-width: 550px;
-            background-color: var(--mediaBarColor);
-        }
-    }
-
     .usermenu-body {
         backdrop-filter: blur(var(--blurSmall)) !important;
+        background-color: var(--color2);
     }
 }
 
@@ -147,6 +152,7 @@
         & .app-chrome-item:nth-of-type(2):not(.generic) {
             margin-left: 75px;
         }
+
         & .app-chrome-item .shuffle {
             margin-left: 4vw;
         }
@@ -287,9 +293,16 @@
     }
 
     .app-chrome {
+        & .app-chrome-item{
+            -webkit-app-region: drag;
+            & button{
+                -webkit-app-region: no-drag;
+            }
+        }
         .vdiv {
             display: none;
         }
+
         .app-chrome--left {
             // margin-left: 150px;
 
@@ -781,7 +794,8 @@
                     background: var(--color2);
                     color: #000;
                     font-weight: bold;
-                    .search-input--icon{
+
+                    .search-input--icon {
                         filter: invert(1);
                     }
                 }
@@ -814,22 +828,27 @@
                         background: var(--searchBarBackgroundColor);
                         color: var(--textColor);
                     }
-                    .sidebar-playlist{
-                        .app-sidebar-item.app-sidebar-item-playlist{
+
+                    .sidebar-playlist {
+                        .app-sidebar-item.app-sidebar-item-playlist {
                             color: var(--textColor);
                         }
-                        .sidebar-icon>svg{
+
+                        .sidebar-icon>svg {
                             color: var(--sidebarIconColor);
                         }
-                        &:hover{
+
+                        &:hover {
                             background-color: var(--keyColor);
-                            .app-sidebar-item, div>svg{
+
+                            .app-sidebar-item,
+                            div>svg {
                                 color: var(--textColorLight);
                             }
                         }
                     }
-                    
-                    
+
+
                     .playlist-item {
                         background: rgb(235, 235, 235);
                         color: var(--textColor);
@@ -1069,4 +1088,11 @@
         }
     }
 
+}
+@media only screen and (max-width: 1120px){
+    #app{
+        .app-chrome .app-chrome-item:nth-of-type(2) {
+            margin-left: 115px !important;
+        }
+    }
 }
