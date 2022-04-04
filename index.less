@@ -293,12 +293,13 @@
     }
 
     .app-chrome {
-        & .app-chrome-item{
-            -webkit-app-region: drag;
-            & button{
+        .app-chrome-item{
+            -webkit-app-region: none;
+            button, .volume{
                 -webkit-app-region: no-drag;
             }
         }
+        
         .vdiv {
             display: none;
         }
