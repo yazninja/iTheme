@@ -876,9 +876,81 @@
         }
     }
 
-    // Only changing the CSS for the FS View
-    .mini-view .artwork-col .app-playback-controls .playback-info>div {
-        color: var(--textColor);
+    .artist-play {
+        background: var(--buttonAccent);
+    }
+
+    .more-btn-round {
+        box-shadow: var(--mediaItemShadow);
+
+        .svg-icon {
+            background: var(--keyColor);
+        }
+    }
+
+    // increase star size
+    .popular {
+        width: 12px;
+        height: 12px;
+        background-size: contain;
+    }
+
+    .playlist-page.inline-playlist .playlist-inner {
+        background: var(--color2);
+        backdrop-filter: blur(var(--blurSmall));
+
+        .floating-header {
+            background: var(--mediaBarColor);
+            backdrop-filter: blur(var(--blurMedium));
+        }
+    }
+
+    // Style new Settings Page UIKit
+    ul[role="tablist"] {
+        margin-top: 40px;
+        margin-bottom: 40px;
+        border-radius: 25px;
+        background-color: var(--UIKitBlack);
+
+        li a {
+            color: var(--UIKitBlackTextColor);
+        }
+
+        a[role="tab"].active {
+            outline: none;
+            background-color: var(--UIKitWhite);
+            box-shadow: var(--UIKitShadow);
+            color: var(--UIKitWhiteTextColor);
+            font-weight: bold;
+        }
+    }
+
+    input[type=checkbox][switch]:checked {
+        background-color: var(--checked);
+        mix-blend-mode: unset;
+    }
+
+    .cd-mediaitem-list-item:nth-child(odd) {
+        background: var(--oddItemsAccentCOlor);
+    }
+
+    .well:not(.artistfeed-well) {
+        background-color: transparent;
+        box-shadow: none;
+    }
+}
+
+// Only changing the CSS for the Music Video Container
+#apple-music-video-container {
+
+    // Style Captions
+    #captions {
+        color: var(--textColorLight);
+        font-size: 1.75rem;
+        padding: 10px 20px;
+        border-radius: 10px;
+        font-family: 'SF Pro', 'Inter', 'Noto Sans JP', 'Source Han Sans SC', 'Source Han Sans HK', 'Source Han Sans SC', 'Source Han Sans HK', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans HK', 'Noto Sans KR', sans-serif;
+        margin-top: 6vh;
     }
 
     .menu-panel .menu-panel-body {
