@@ -1,5 +1,6 @@
 :root,
 :root.dark {
+    --checked: rgb(77, 202, 77);
     #app {
         --color1: rgba(37, 37, 38, 0.2);
         --color2: rgba(31, 31, 31, 0.6);
@@ -966,6 +967,7 @@
 
 
 :root:not(.dark) {
+    --checked: rgb(77, 202, 77);
     @media (prefers-color-scheme: light) {
         #app {
             --color1: rgba(255, 255, 255, 0.33);
@@ -1340,6 +1342,7 @@
 
 
 :root.light {
+    --checked: rgb(77, 202, 77);
     #app {
         --color1: rgba(255, 255, 255, 0.33);
         --color2: rgba(250, 250, 250, 0.95);
