@@ -92,6 +92,11 @@
                 }
             }
         }
+        .menu-panel .menu-panel-body {
+            background-color: var(--menuBackgroundColor);
+            backdrop-filter: blur(var(--blurSmall));
+            color: var(--textColor);
+        }
 
         .modal-fullscreen {
             background: var(--searchBackgroundColor);
@@ -1133,6 +1138,12 @@
                 }
             }
         }
+        .app-sidebar-header-text{
+            filter: brightness(0);
+        }
+        .sidebar-icon svg:not(.feather){
+            color: var(--keyColor);
+        }
 
         .modal-dialog {
             --menuBackgroundColor: rgba(255, 255, 255, 0.9);
@@ -1538,7 +1549,13 @@
             }
         }
     }
-
+    .app-sidebar-header-text{
+        filter: brightness(0);
+    }
+    .sidebar-icon svg:not(.feather){
+        color: var(--keyColor);
+    }
+    
 
     .search-hints-container .search-hints {
         background-color: rgba(0, 0, 0, 0.05);
