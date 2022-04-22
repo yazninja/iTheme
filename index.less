@@ -1,69 +1,70 @@
 :root,
 :root.dark {
     --checked: rgb(77, 202, 77);
+
     #app {
-        --color1: rgba(37, 37, 38, 0.2);
-        --color2: rgba(31, 31, 31, 0.6);
-        --fontStyle: : "Inter var experimental", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        font-family: var(--fontStyle);
-        --textColor: white;
-        --textColorLight: white;
-        --textColorLighter: #ccc;
-        --keyColor: #fa586a;
-        --buttonAccent: #d60017;
-        --buttonAccentPressed: #bb0000;
-        --border: 1px solid rgba(68, 68, 68, 0.4);
-        --topBarColor: rgba(45, 45, 45, 0.6);
-        --linearGradient: linear-gradient(-90deg, transparent 0%, black 10%, black 90%, transparent 100%);
-        --mediaBarColor: rgba(0, 0, 0, 0.3);
-        --songProgressColor: #b8b8b8;
-        --blurSmall: 8px;
-        --blurMedium: 32px;
-        --mediaItemShadow-Shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
-        --artistHoverColor: rgba(250, 35, 59, 0.8);
-        --menuBackgroundColor: rgba(0, 0, 0, 0.8);
-        --selectBackground: #333;
-        --selectBorder: 1px solid rgba(100, 100, 100, 0.2);
-        --UIKitWhite: white;
-        --UIKitWhiteTextColor: #333;
-        --UIKitBlack: rgba(0, 0, 0, 0.2);
-        --UIKitBlackTextColor: rgba(255, 255, 255, 0.5);
-        --UIKitShadow: 0px 0px 36px 0px rgba(0, 0, 0, 0.3);
-        --checked: rgb(77, 202, 77);
+        --color1                  : rgba(37, 37, 38, 0.2);
+        --color2                  : rgba(31, 31, 31, 0.6);
+        --fontStyle               : : "Inter var experimental", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-family               : var(--fontStyle);
+        --textColor               : white;
+        --textColorLight          : white;
+        --textColorLighter        : #ccc;
+        --keyColor                : #fa586a;
+        --buttonAccent            : #d60017;
+        --buttonAccentPressed     : #bb0000;
+        --border                  : 1px solid rgba(68, 68, 68, 0.4);
+        --topBarColor             : rgba(45, 45, 45, 0.6);
+        --linearGradient          : linear-gradient(-90deg, transparent 0%, black 10%, black 90%, transparent 100%);
+        --mediaBarColor           : rgba(0, 0, 0, 0.3);
+        --songProgressColor       : #b8b8b8;
+        --blurSmall               : 8px;
+        --blurMedium              : 32px;
+        --mediaItemShadow-Shadow  : 4px 4px 4px rgba(0, 0, 0, 0.15);
+        --artistHoverColor        : rgba(250, 35, 59, 0.8);
+        --menuBackgroundColor     : rgba(0, 0, 0, 0.8);
+        --selectBackground        : #333;
+        --selectBorder            : 1px solid rgba(100, 100, 100, 0.2);
+        --UIKitWhite              : white;
+        --UIKitWhiteTextColor     : #333;
+        --UIKitBlack              : rgba(0, 0, 0, 0.2);
+        --UIKitBlackTextColor     : rgba(255, 255, 255, 0.5);
+        --UIKitShadow             : 0px 0px 36px 0px rgba(0, 0, 0, 0.3);
+        --checked                 : rgb(77, 202, 77);
         --searchBarBackgroundColor: rgba(0, 0, 0, 0.3);
-        --searchBackgroundColor: rgba(31, 31, 31, 0.6);
-        --activeTabColor: rgba(250, 88, 106, 0.1);
-        --oddItemsAccentCOlor: rgb(255 255 255 / 0.03);
-        --sidebarIconColor: rgba(255, 255, 255, 0.5);
-        --volumeThumbColor: rgb(80, 80, 80);
-        --volumeTrackColor: rgba(200, 200, 200, 0.5);
-        --playlistButtonColor: rgba(100, 100, 100, 0.5);
-        --userHoverColor: rgba(100, 100, 100, 0.2);
-        --modalContentColor: rgba(0, 0, 0, 0.8);
+        --searchBackgroundColor   : rgba(31, 31, 31, 0.6);
+        --activeTabColor          : rgba(250, 88, 106, 0.1);
+        --oddItemsAccentCOlor     : rgb(255 255 255 / 0.03);
+        --sidebarIconColor        : rgba(255, 255, 255, 0.5);
+        --volumeThumbColor        : rgb(80, 80, 80);
+        --volumeTrackColor        : rgba(200, 200, 200, 0.5);
+        --playlistButtonColor     : rgba(100, 100, 100, 0.5);
+        --userHoverColor          : rgba(100, 100, 100, 0.2);
+        --modalContentColor       : rgba(0, 0, 0, 0.8);
 
         .fullscreen-view .tab-toggles div {
-            width: 5vh;
-            height: 5vh;
-            padding: 1.6vh;
+            width        : 5vh;
+            height       : 5vh;
+            padding      : 1.6vh;
             margin-bottom: 100px;
             border-radius: 5px;
         }
 
         .fullscreen-view .tab-toggles div:hover {
-            background-color: var(--selected);
+            background-color   : var(--selected);
             transition-duration: 0.2s;
         }
 
         .fullscreen-view .tab-toggles {
             bottom: 2vh;
-            right: 2vh;
+            right : 2vh;
         }
 
         // Use Filled Heart icon in pop up windows
         button[title="Unlove"]>.sidebar-icon>.svg-icon,
         button[data-original-title="Unlove"]>.sidebar-icon>.svg-icon {
-            --url: none !important;
-            background: url('icons/heart.svg');
+            --url          : none !important;
+            background     : url('icons/heart.svg');
             background-size: contain;
         }
 
@@ -72,7 +73,7 @@
 
             .app-sidebar-button {
                 background: var(--userHoverColor);
-                color: var(--textColor);
+                color     : var(--textColor);
             }
 
             .usermenu-item {
@@ -84,7 +85,7 @@
 
                 &:hover {
                     background: var(--keyColor);
-                    color: var(--textColorLight);
+                    color     : var(--textColorLight);
 
                     svg {
                         color: var(--textColorLight);
@@ -92,10 +93,11 @@
                 }
             }
         }
+
         .menu-panel .menu-panel-body {
             background-color: var(--menuBackgroundColor);
-            backdrop-filter: blur(var(--blurSmall));
-            color: var(--textColor);
+            backdrop-filter : blur(var(--blurSmall));
+            color           : var(--textColor);
         }
 
         .modal-fullscreen {
@@ -110,8 +112,8 @@
                 .md-footer,
                 .modal-lowercontent,
                 .modal-search {
-                    background: var(--color2);
-                    color: var(--textColor);
+                    background : var(--color2);
+                    color      : var(--textColor);
                     font-weight: bold;
 
                     .search-input--icon {
@@ -129,8 +131,8 @@
 
                 .md-select {
                     background: var(--selectBackground);
-                    border: var(--selectBorder);
-                    color: var(--textColor);
+                    border    : var(--selectBorder);
+                    color     : var(--textColor);
 
                     option,
                     optgroup {
@@ -140,12 +142,12 @@
 
                 .modal-content {
                     background: var(--modalContentColor);
-                    color: var(--textColor);
+                    color     : var(--textColor);
                     box-shadow: none;
 
                     input[type="number"] {
                         background: var(--searchBarBackgroundColor);
-                        color: var(--textColor);
+                        color     : var(--textColor);
                     }
 
                     .sidebar-playlist {
@@ -170,11 +172,11 @@
 
                     .playlist-item {
                         background: var(--modalContentColor);
-                        color: var(--textColor);
+                        color     : var(--textColor);
 
                         &:hover {
                             background: var(--keyColor);
-                            color: var(--textColorLight);
+                            color     : var(--textColorLight);
                         }
                     }
                 }
@@ -182,7 +184,7 @@
                 .md-btn,
                 .md-btn-block {
                     background: var(--keyColor);
-                    color: var(--textColorLight);
+                    color     : var(--textColorLight);
                 }
             }
         }
@@ -199,43 +201,43 @@
                 width: 65%;
 
                 .app-mainmenu::before {
-                    content: "";
+                    content         : "";
                     background-image: var(--cvar-userprofileimg, url('/assets/cider-round.svg'));
-                    position: absolute;
-                    top: -1px;
-                    left: 2px;
-                    width: 37px;
-                    height: 37px;
-                    border-radius: 50%;
-                    background-size: contain;
-                    z-index: -1;
+                    position        : absolute;
+                    top             : -1px;
+                    left            : 2px;
+                    width           : 37px;
+                    height          : 37px;
+                    border-radius   : 50%;
+                    background-size : contain;
+                    z-index         : -1;
                 }
 
                 .app-mainmenu {
                     background-image: none;
-                    padding-right: 120px;
-                    border-radius: 10px;
-                    outline: none;
+                    padding-right   : 120px;
+                    border-radius   : 10px;
+                    outline         : none;
 
                     &:focus {
                         background-image: none;
                         // padding: 10px;
-                        border-radius: 10px;
-                        outline: none;
+                        border-radius   : 10px;
+                        outline         : none;
 
                     }
 
                     &:active {
                         background-image: none;
-                        outline: none;
+                        outline         : none;
                     }
                 }
 
                 .app-mainmenu::after {
-                    content: "Cider";
-                    font-size: 2em;
+                    content    : "Cider";
+                    font-size  : 2em;
                     font-weight: bold;
-                    color: var(--textColorLighter);
+                    color      : var(--textColorLighter);
                     margin-left: 40px;
                 }
 
@@ -246,15 +248,15 @@
 
             .app-chrome--center {
                 .app-chrome-item.playback-controls {
-                    width: 90%;
-                    max-width: 550px;
+                    width           : 90%;
+                    max-width       : 550px;
                     background-color: var(--mediaBarColor);
                 }
             }
         }
 
         .usermenu-body {
-            backdrop-filter: blur(var(--blurSmall)) !important;
+            backdrop-filter : blur(var(--blurSmall)) !important;
             background-color: var(--color2);
         }
     }
@@ -265,9 +267,9 @@
         // Make User menu appear on right
         .usermenu-body {
             background-color: var(--color2);
-            backdrop-filter: blur(var(--blurSmall));
-            position: relative;
-            left: calc(100vw - 260px);
+            backdrop-filter : blur(var(--blurSmall));
+            position        : relative;
+            left            : calc(100vw - 260px);
         }
 
         .app-chrome {
@@ -281,7 +283,7 @@
 
             .app-chrome--center {
                 .app-chrome-item.playback-controls {
-                    width: 90%;
+                    width    : 90%;
                     max-width: 550px;
                 }
             }
@@ -296,40 +298,40 @@
 
             .app-chrome-item .window-controls-macos {
                 position: relative;
-                left: 20px;
+                left    : 20px;
 
                 div {
-                    height: 13px !important;
-                    width: 13px !important;
-                    border-radius: 50%;
-                    margin: 0px;
+                    height            : 13px !important;
+                    width             : 13px !important;
+                    border-radius     : 50%;
+                    margin            : 0px;
                     -webkit-app-region: no-drag;
-                    background-image: unset;
-                    position: absolute;
-                    cursor: pointer;
+                    background-image  : unset;
+                    position          : absolute;
+                    cursor            : pointer;
 
                     // set color
                     &.minimize {
                         background-color: rgb(255, 189, 76) !important;
-                        margin-left: 2px;
-                        left: 22px;
-                        top: 50%;
-                        transform: translate(0, -50%);
+                        margin-left     : 2px;
+                        left            : 22px;
+                        top             : 50%;
+                        transform       : translate(0, -50%);
                     }
 
                     &.minmax {
                         background-color: rgb(77, 202, 77) !important;
-                        left: 46px;
-                        top: 50%;
-                        transform: translate(0, -50%);
+                        left            : 46px;
+                        top             : 50%;
+                        transform       : translate(0, -50%);
                     }
 
                     &.close {
                         background-color: rgb(255, 92, 92) !important;
-                        margin-left: 2px;
-                        left: 0;
-                        top: 50%;
-                        transform: translate(0, -50%);
+                        margin-left     : 2px;
+                        left            : 0;
+                        top             : 50%;
+                        transform       : translate(0, -50%);
                     }
                 }
             }
@@ -337,31 +339,31 @@
             // set icons on hover
             & .app-chrome-item:hover {
                 .minimize {
-                    background-image: url('icons/minimize.svg') !important;
-                    background-size: 13px 13px;
+                    background-image      : url('icons/minimize.svg') !important;
+                    background-size       : 13px 13px;
                     // background-position: center;
-                    background-repeat: no-repeat;
+                    background-repeat     : no-repeat;
                 }
 
                 .minmax {
-                    background-image: url('icons/minmax.svg') !important;
-                    background-size: 10px 10px;
+                    background-image   : url('icons/minmax.svg') !important;
+                    background-size    : 10px 10px;
                     background-position: center;
-                    background-repeat: no-repeat;
+                    background-repeat  : no-repeat;
                 }
 
                 .minmax.restore {
-                    background-image: url('icons/maxmin.svg') !important;
-                    background-size: 12px 12px;
+                    background-image      : url('icons/maxmin.svg') !important;
+                    background-size       : 12px 12px;
                     // background-position: center;
-                    background-repeat: no-repeat;
+                    background-repeat     : no-repeat;
                 }
 
                 .close {
-                    background-image: url('icons/close.svg') !important;
-                    background-size: 13px 13px;
+                    background-image       : url('icons/close.svg') !important;
+                    background-size        : 13px 13px;
                     // basckground-position: inherit;
-                    background-repeat: no-repeat;
+                    background-repeat      : no-repeat;
                 }
             }
         }
@@ -377,8 +379,8 @@
 
             .app-sidebar-item {
                 font-size: 15px;
-                padding: 4px 12px;
-                color: var(--textColor);
+                padding  : 4px 12px;
+                color    : var(--textColor);
 
                 .feather {
                     color: var(--sidebarIconColor);
@@ -396,29 +398,29 @@
             }
 
             .app-sidebar-header-text:not(:first-child) {
-                font-size: 10px;
+                font-size  : 10px;
                 padding-top: 15px;
             }
 
             .search-input {
-                background: var(--searchBarBackgroundColor);
-                color: var(--textColor);
-                filter: saturate(0);
-                padding: 10px;
-                padding-left: 32px;
+                background   : var(--searchBarBackgroundColor);
+                color        : var(--textColor);
+                filter       : saturate(0);
+                padding      : 10px;
+                padding-left : 32px;
                 border-radius: 5px;
             }
 
             .search-hints-container .search-hints {
                 background-color: var(--searchBackgroundColor);
-                backdrop-filter: blur(var(--blurSmall));
+                backdrop-filter : blur(var(--blurSmall));
 
                 .search-hint {
                     color: var(--textColor);
 
                     &:hover {
                         background: var(--buttonAccent);
-                        color: var(--textColorLight);
+                        color     : var(--textColorLight);
                     }
                 }
             }
@@ -426,7 +428,7 @@
 
         #app-content {
             border-radius: 0px;
-            border: var(--border);
+            border       : var(--border);
         }
 
         .app-chrome {
@@ -450,7 +452,7 @@
                 .app-chrome-item.full-height {
                     position: relative;
                     // left: calc(100vw - 290px);
-                    z-index: 100;
+                    z-index : 100;
 
                     &:first-child {
                         // width:35px;
@@ -461,9 +463,9 @@
 
             // Display Cider Logo when player is empty
             .app-chrome-item.playback-controls:empty {
-                background-image: url('/assets/cider-round.svg');
-                background-repeat: no-repeat;
-                background-size: 7%;
+                background-image   : url('/assets/cider-round.svg');
+                background-repeat  : no-repeat;
+                background-size    : 7%;
                 background-position: center;
 
             }
@@ -474,15 +476,15 @@
             }
 
             &::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                right: 0;
-                width: calc(100% - 260px);
-                height: var(--chromeHeight1);
+                content         : "";
+                position        : absolute;
+                top             : 0;
+                right           : 0;
+                width           : calc(100% - 260px);
+                height          : var(--chromeHeight1);
                 background-color: var(--topBarColor);
-                z-index: 0;
-                border-left: var(--border);
+                z-index         : 0;
+                border-left     : var(--border);
             }
 
             .app-chrome--center,
@@ -493,33 +495,33 @@
                 // change Cider Logo to profile picture
                 .app-mainmenu,
                 .app-mainmenu.active {
-                    background: var(--cvar-userprofileimg, url('/assets/cider-round.svg'));
-                    border-radius: 50%;
+                    background       : var(--cvar-userprofileimg, url('/assets/cider-round.svg'));
+                    border-radius    : 50%;
                     background-repeat: no-repeat;
-                    width: 35px;
-                    height: 35px;
-                    background-size: contain;
+                    width            : 35px;
+                    height           : 35px;
+                    background-size  : contain;
                 }
             }
 
             .app-chrome-item.volume {
-                width: 110px;
-                max-width: 110px;
+                width       : 110px;
+                max-width   : 110px;
                 margin-right: 1vw;
 
                 input[type=range] {
                     background-color: transparent;
-                    height: 20px;
+                    height          : 20px;
 
                     &::-webkit-slider-runnable-track {
-                        background: var(--volumeTrackColor);
-                        filter: none !important;
-                        height: 4px;
+                        background   : var(--volumeTrackColor);
+                        filter       : none !important;
+                        height       : 4px;
                         border-radius: 4px;
                     }
 
                     &::-webkit-slider-thumb {
-                        border: 1px solid var(--volumeTrackColor);
+                        border    : 1px solid var(--volumeTrackColor);
                         background: var(--volumeThumbColor);
                         margin-top: -6px;
                     }
@@ -529,21 +531,21 @@
 
             // Mac Style Player Controls
             .app-playback-controls {
-                height: 98%;
+                height         : 98%;
                 backdrop-filter: blur(0px);
-                border-radius: 5px;
-                width: 100%;
+                border-radius  : 5px;
+                width          : 100%;
 
                 .artwork {
-                    width: 50px;
-                    height: 50px;
-                    margin-left: 0px;
-                    margin-right: -2.25px;
+                    width        : 50px;
+                    height       : 50px;
+                    margin-left  : 0px;
+                    margin-right : -2.25px;
                     margin-bottom: 0px;
-                    margin-top: 0px;
+                    margin-top   : 0px;
                     border-radius: 5px;
-                    position: absolute;
-                    left: 0px;
+                    position     : absolute;
+                    left         : 0px;
 
                     .mediaitem-artwork {
                         border-radius: 5px;
@@ -552,10 +554,10 @@
                 }
 
                 .song-progress {
-                    bottom: -4px;
-                    right: 1px;
-                    left: 2.5px;
-                    z-index: 30;
+                    bottom  : -4px;
+                    right   : 1px;
+                    left    : 2.5px;
+                    z-index : 30;
                     overflow: hidden;
 
                     input[type="range"] {
@@ -563,35 +565,35 @@
 
                         &::-webkit-slider-thumb {
                             border-radius: 3px;
-                            width: 7px;
-                            height: 15px;
-                            border: #333 solid 1px;
-                            background: var(--songProgressColor)
+                            width        : 7px;
+                            height       : 15px;
+                            border       : #333 solid 1px;
+                            background   : var(--songProgressColor)
                         }
                     }
 
                     .song-duration {
-                        margin-left: -1px;
+                        margin-left : -1px;
                         margin-right: 6px;
                     }
                 }
 
                 .song-name {
-                    max-width: unset;
-                    width: 100%;
-                    padding-left: 0.5%;
-                    padding-right: 1%;
-                    margin-top: -5px;
+                    max-width         : unset;
+                    width             : 100%;
+                    padding-left      : 0.5%;
+                    padding-right     : 1%;
+                    margin-top        : -5px;
                     // -webkit-mask: linear-gradient(to right, transparent 0%, transparent calc(100% - 1px), #000 calc(100% - 1px), #000 100%);
-                    mask-image: var(--linearGradient);
+                    mask-image        : var(--linearGradient);
                     -webkit-mask-image: var(--linearGradient);
 
                 }
 
                 & div .song-artist-album {
-                    width: 98%;
-                    max-width: unset;
-                    mask-image: var(--linearGradient);
+                    width             : 98%;
+                    max-width         : unset;
+                    mask-image        : var(--linearGradient);
                     -webkit-mask-image: var(--linearGradient);
 
                     .song-artist-album-content {
@@ -606,14 +608,14 @@
 
                 .audio-type {
                     margin-right: 10px;
-                    margin-top: -12px;
+                    margin-top  : -12px;
                 }
 
                 .playback-info {
                     position: absolute;
-                    height: 100%;
-                    left: 50px;
-                    width: calc(100% - 50px);
+                    height  : 100%;
+                    left    : 50px;
+                    width   : calc(100% - 50px);
                 }
             }
         }
@@ -621,25 +623,25 @@
         // Style Listen Now first row of cards larger
         .content-inner>div:nth-child(2) {
             .cd-hmedia-scroller.hmedia-scroller-card {
-                height: 400px;
+                height    : 400px;
                 margin-top: -15px;
 
                 .cd-mediaitem-square.mediaitem-card {
-                    width: 100%;
-                    height: 340px;
-                    max-width: 270px;
+                    width        : 100%;
+                    height       : 340px;
+                    max-width    : 270px;
                     padding-right: 0px;
 
                     & .artwork-container {
-                        width: 100%;
+                        width : 100%;
                         height: 100%;
 
                         & .artwork {
-                            width: 100%;
-                            height: 100%;
-                            background-size: cover;
+                            width              : 100%;
+                            height             : 100%;
+                            background-size    : cover;
                             background-position: center;
-                            background-repeat: no-repeat;
+                            background-repeat  : no-repeat;
                         }
                     }
                 }
@@ -651,14 +653,14 @@
         .library-artists-page {
             .cd-mediaitem-list-item {
                 .artwork {
-                    box-shadow: 0px 0px 12px var(--mediaBarColor);
+                    box-shadow   : 0px 0px 12px var(--mediaBarColor);
                     border-radius: 50%;
                 }
 
                 &:hover {
                     background-color: var(--artistHoverColor);
-                    color: #fff;
-                    transition: 0.1s ease-in-out;
+                    color           : #fff;
+                    transition      : 0.1s ease-in-out;
                 }
             }
         }
@@ -669,7 +671,7 @@
                 background: var(--buttonAccent);
             }
 
-            &:not(.md-btn-replay):not(.md-btn-replay--hero):not(.teamBtn)  :hover {
+            &:not(.md-btn-replay):not(.md-btn-replay--hero):not(.teamBtn) :hover {
                 background: var(--buttonAccentPressed);
             }
         }
@@ -681,8 +683,8 @@
 
             &:not(.md-btn-primary):not(.md-btn-replay):not(.md-btn-replay--hero) {
                 background: var(--selectBackground);
-                border: var(--selectBorder);
-                color: var(--textColor);
+                border    : var(--selectBorder);
+                color     : var(--textColor);
             }
 
             .md-ico-remove {
@@ -713,17 +715,17 @@
         // Make Static Artist Headers larger
         .content-inner.artist-page.animated {
             .artist-header {
-                width: calc(100vw - 260px);
-                height: calc(100vh - 480px);
+                width   : calc(100vw - 260px);
+                height  : calc(100vh - 480px);
                 overflow: hidden;
                 position: relative;
 
                 .animated {
-                    position: absolute;
-                    bottom: 0;
+                    position  : absolute;
+                    bottom    : 0;
                     margin-top: calc(var(--chromeHeight1));
-                    height: 30%;
-                    overflow: visible;
+                    height    : 30%;
+                    overflow  : visible;
                     box-shadow: none;
 
                     video {
@@ -759,17 +761,17 @@
 
         // increase star size
         .popular {
-            width: 12px;
-            height: 12px;
+            width          : 12px;
+            height         : 12px;
             background-size: contain;
         }
 
         .playlist-page.inline-playlist .playlist-inner {
-            background: var(--color2);
+            background     : var(--color2);
             backdrop-filter: blur(var(--blurSmall));
 
             .floating-header {
-                background: var(--mediaBarColor);
+                background     : var(--mediaBarColor);
                 backdrop-filter: blur(var(--blurMedium));
             }
         }
@@ -800,9 +802,9 @@
 
         // Style new Settings Page UIKit
         ul[role="tablist"] {
-            margin-top: 40px;
-            margin-bottom: 40px;
-            border-radius: 25px;
+            margin-top      : 40px;
+            margin-bottom   : 40px;
+            border-radius   : 25px;
             background-color: var(--UIKitBlack);
 
             li a {
@@ -810,17 +812,35 @@
             }
 
             a[role="tab"].active {
-                outline: none;
+                outline         : none;
                 background-color: var(--UIKitWhite);
-                box-shadow: var(--UIKitShadow);
-                color: var(--UIKitWhiteTextColor);
-                font-weight: bold;
+                box-shadow      : var(--UIKitShadow);
+                color           : var(--UIKitWhiteTextColor);
+                font-weight     : bold;
+            }
+
+            .nav-link {
+                &:hover {
+                    &:after {
+                        background-color: hsla(0, 0%, 30%, .3);
+                        transform       : translateX(50%, -50%);
+                        transition      : background-color 0.3s var(--appleEase), transform 0.3s var(--appleEase);
+                        scale           : 0.9;
+                    }
+                }
+
+                &.active {
+                    &:after {
+                        background-color: transparent;
+                        transform       : translateX(50%, -50%);
+                    }
+                }
             }
         }
 
         input[type=checkbox][switch]:checked {
             background-color: var(--checked);
-            mix-blend-mode: unset;
+            mix-blend-mode  : unset;
         }
 
         .cd-mediaitem-list-item:nth-child(odd) {
@@ -829,7 +849,7 @@
 
         .well:not(.artistfeed-well) {
             background-color: transparent;
-            box-shadow: none;
+            box-shadow      : none;
         }
 
     }
@@ -839,29 +859,29 @@
 
         // Style Captions
         #captions:not(:empty) {
-            color: var(--textColor);
-            font-size: 1.75rem;
-            padding: 10px 20px;
+            color        : var(--textColor);
+            font-size    : 1.75rem;
+            padding      : 10px 20px;
             border-radius: 10px;
-            font-family: 'SF Pro', 'Inter', 'Noto Sans JP', 'Source Han Sans SC', 'Source Han Sans HK', 'Source Han Sans SC', 'Source Han Sans HK', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans HK', 'Noto Sans KR', sans-serif;
-            margin-top: 6vh;
+            font-family  : 'SF Pro', 'Inter', 'Noto Sans JP', 'Source Han Sans SC', 'Source Han Sans HK', 'Source Han Sans SC', 'Source Han Sans HK', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans HK', 'Noto Sans KR', sans-serif;
+            margin-top   : 6vh;
         }
 
         // AM Web Style Fullscreen Button
         #player-fullscreen {
-            background: url("icons/fullscreen.svg");
-            background-size: 50%;
+            background         : url("icons/fullscreen.svg");
+            background-size    : 50%;
             background-position: center;
-            background-repeat: no-repeat;
-            filter: opacity(0.6);
+            background-repeat  : no-repeat;
+            filter             : opacity(0.6);
             // filter: drop-shadow(0px 0px 4px rgb(0 0 0 / 80%));
-            background-color: var(--mediaBarColor);
-            border-radius: 10px;
-            transition: 0.2s ease-in-out filter;
-            bottom: 0;
+            background-color   : var(--mediaBarColor);
+            border-radius      : 10px;
+            transition         : 0.2s ease-in-out filter;
+            bottom             : 0;
 
             &:hover {
-                filter: opacity(1);
+                filter    : opacity(1);
                 transition: 0.2s ease-in-out filter;
             }
 
@@ -873,13 +893,13 @@
         // AM Web Style PiP Button
         #player-pip {
             background-color: var(--mediaBarColor);
-            border-radius: 10px;
-            bottom: 0;
-            filter: opacity(0.6);
-            transition: 0.2s ease-in-out filter;
+            border-radius   : 10px;
+            bottom          : 0;
+            filter          : opacity(0.6);
+            transition      : 0.2s ease-in-out filter;
 
             &:hover {
-                filter: opacity(1);
+                filter    : opacity(1);
                 transition: 0.2s ease-in-out filter;
             }
         }
@@ -899,26 +919,26 @@
 
     // increase star size
     .popular {
-        width: 12px;
-        height: 12px;
+        width          : 12px;
+        height         : 12px;
         background-size: contain;
     }
 
     .playlist-page.inline-playlist .playlist-inner {
-        background: var(--color2);
+        background     : var(--color2);
         backdrop-filter: blur(var(--blurSmall));
 
         .floating-header {
-            background: var(--mediaBarColor);
+            background     : var(--mediaBarColor);
             backdrop-filter: blur(var(--blurMedium));
         }
     }
 
     // Style new Settings Page UIKit
     ul[role="tablist"] {
-        margin-top: 40px;
-        margin-bottom: 40px;
-        border-radius: 25px;
+        margin-top      : 40px;
+        margin-bottom   : 40px;
+        border-radius   : 25px;
         background-color: var(--UIKitBlack);
 
         li a {
@@ -926,17 +946,17 @@
         }
 
         a[role="tab"].active {
-            outline: none;
+            outline         : none;
             background-color: var(--UIKitWhite);
-            box-shadow: var(--UIKitShadow);
-            color: var(--UIKitWhiteTextColor);
-            font-weight: bold;
+            box-shadow      : var(--UIKitShadow);
+            color           : var(--UIKitWhiteTextColor);
+            font-weight     : bold;
         }
     }
 
     input[type=checkbox][switch]:checked {
         background-color: var(--checked);
-        mix-blend-mode: unset;
+        mix-blend-mode  : unset;
     }
 
     .cd-mediaitem-list-item:nth-child(odd) {
@@ -945,7 +965,7 @@
 
     .well:not(.artistfeed-well) {
         background-color: transparent;
-        box-shadow: none;
+        box-shadow      : none;
     }
 
     // Only changing the CSS for the Music Video Container
@@ -953,18 +973,18 @@
 
         // Style Captions
         #captions {
-            color: var(--textColorLight);
-            font-size: 1.75rem;
-            padding: 10px 20px;
+            color        : var(--textColorLight);
+            font-size    : 1.75rem;
+            padding      : 10px 20px;
             border-radius: 10px;
-            font-family: 'SF Pro', 'Inter', 'Noto Sans JP', 'Source Han Sans SC', 'Source Han Sans HK', 'Source Han Sans SC', 'Source Han Sans HK', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans HK', 'Noto Sans KR', sans-serif;
-            margin-top: 6vh;
+            font-family  : 'SF Pro', 'Inter', 'Noto Sans JP', 'Source Han Sans SC', 'Source Han Sans HK', 'Source Han Sans SC', 'Source Han Sans HK', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans HK', 'Noto Sans KR', sans-serif;
+            margin-top   : 6vh;
         }
 
         .menu-panel .menu-panel-body {
             background-color: var(--color2);
-            backdrop-filter: blur(var(--blurSmall));
-            color: var(--textColor);
+            backdrop-filter : blur(var(--blurSmall));
+            color           : var(--textColor);
         }
     }
 }
@@ -973,53 +993,54 @@
 
 :root:not(.dark) {
     --checked: rgb(77, 202, 77);
+
     @media (prefers-color-scheme: light) {
         #app {
-            --color1: rgba(255, 255, 255, 0.33);
-            --color2: rgba(250, 250, 250, 0.95);
-            --fontStyle: : "Inter var experimental", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            font-family: var(--fontStyle);
-            --textColor: rgba(0, 0, 0, 0.88);
-            --textColorLighter: #333;
-            --textColorLight: white;
-            --keyColor: #d60017;
-            --buttonAccent: #d60017;
-            --buttonAccentPressed: #bb0000;
-            --border: 1px solid rgba(68, 68, 68, 0.4);
-            --topBarColor: rgba(235, 235, 235, 0.9);
-            --linearGradient: linear-gradient(-90deg, transparent 0%, black 10%, black 90%, transparent 100%);
-            --mediaBarColor: rgba(255, 255, 255, 1);
-            --songProgressColor: rgba(0, 0, 0, 0.56);
-            --songProgressBackground: rgba(0, 0, 0, 0.2);
-            --blurSmall: 8px;
-            --blurMedium: 32px;
-            --mediaItemShadow-Shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
-            --artistHoverColor: rgba(250, 35, 59, 0.8);
-            --menuBackgroundColor: rgba(250, 250, 250, 0.8);
-            --selectBackground: #eee;
-            --selectBorder: 1px solid rgba(100, 100, 100, 0.2);
-            --UIKitWhite: white;
-            --UIKitWhiteTextColor: #333;
-            --UIKitBlack: rgba(0, 0, 0, 0.1);
-            --UIKitBlackTextColor: rgba(50, 50, 50, 0.75);
-            --checked: rgb(77, 202, 77);
+            --color1                  : rgba(255, 255, 255, 0.33);
+            --color2                  : rgba(250, 250, 250, 0.95);
+            --fontStyle               : : "Inter var experimental", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-family               : var(--fontStyle);
+            --textColor               : rgba(0, 0, 0, 0.88);
+            --textColorLighter        : #333;
+            --textColorLight          : white;
+            --keyColor                : #d60017;
+            --buttonAccent            : #d60017;
+            --buttonAccentPressed     : #bb0000;
+            --border                  : 1px solid rgba(68, 68, 68, 0.4);
+            --topBarColor             : rgba(235, 235, 235, 0.9);
+            --linearGradient          : linear-gradient(-90deg, transparent 0%, black 10%, black 90%, transparent 100%);
+            --mediaBarColor           : rgba(255, 255, 255, 1);
+            --songProgressColor       : rgba(0, 0, 0, 0.56);
+            --songProgressBackground  : rgba(0, 0, 0, 0.2);
+            --blurSmall               : 8px;
+            --blurMedium              : 32px;
+            --mediaItemShadow-Shadow  : 4px 4px 4px rgba(0, 0, 0, 0.15);
+            --artistHoverColor        : rgba(250, 35, 59, 0.8);
+            --menuBackgroundColor     : rgba(250, 250, 250, 0.8);
+            --selectBackground        : #eee;
+            --selectBorder            : 1px solid rgba(100, 100, 100, 0.2);
+            --UIKitWhite              : white;
+            --UIKitWhiteTextColor     : #333;
+            --UIKitBlack              : rgba(0, 0, 0, 0.1);
+            --UIKitBlackTextColor     : rgba(50, 50, 50, 0.75);
+            --checked                 : rgb(77, 202, 77);
             --searchBarBackgroundColor: rgba(255, 255, 255, 0.3);
-            --searchBackgroundColor: rgba(255, 255, 255, 0.3);
-            --activeTabColor: rgba(100, 100, 107, 0.25);
-            --oddItemsAccentCOlor: rgba(0, 0, 0, 0.05);
-            --userHoverColor: rgba(250, 35, 59, 0.4);
-            --sidebarIconColor: rgba(30, 30, 30, 0.8);
-            --volumeThumbColor: var(--color2);
-            --volumeTrackColor: var(--songProgressColor);
-            --modalContentColor: rgb(235, 235, 235);
+            --searchBackgroundColor   : rgba(255, 255, 255, 0.3);
+            --activeTabColor          : rgba(100, 100, 107, 0.25);
+            --oddItemsAccentCOlor     : rgba(0, 0, 0, 0.05);
+            --userHoverColor          : rgba(250, 35, 59, 0.4);
+            --sidebarIconColor        : rgba(30, 30, 30, 0.8);
+            --volumeThumbColor        : var(--color2);
+            --volumeTrackColor        : var(--songProgressColor);
+            --modalContentColor       : rgb(235, 235, 235);
 
             .menu-panel .menu-panel-body {
                 background-color: var(--menuBackgroundColor);
-                backdrop-filter: blur(var(--blurSmall));
-                color: var(--textColor);
+                backdrop-filter : blur(var(--blurSmall));
+                color           : var(--textColor);
 
                 .menu-body .svg-icon {
-                    color: var(--keyColor);
+                    color  : var(--keyColor);
                     --color: var(--keyColor);
                 }
             }
@@ -1036,8 +1057,8 @@
                     .md-footer,
                     .modal-lowercontent,
                     .modal-search {
-                        background: var(--color2);
-                        color: #000;
+                        background : var(--color2);
+                        color      : #000;
                         font-weight: bold;
 
                         .search-input--icon {
@@ -1055,8 +1076,8 @@
 
                     .md-select {
                         background: var(--selectBackground);
-                        border: var(--selectBorder);
-                        color: var(--textColor);
+                        border    : var(--selectBorder);
+                        color     : var(--textColor);
 
                         option,
                         optgroup {
@@ -1066,12 +1087,12 @@
 
                     .modal-content {
                         background: var(--modalContentColor);
-                        color: var(--textColor);
+                        color     : var(--textColor);
                         box-shadow: none;
 
                         input[type="number"] {
                             background: var(--searchBarBackgroundColor);
-                            color: var(--textColor);
+                            color     : var(--textColor);
                         }
 
                         .sidebar-playlist {
@@ -1096,11 +1117,11 @@
 
                         .playlist-item {
                             background: var(--modalContentColor);
-                            color: var(--textColor);
+                            color     : var(--textColor);
 
                             &:hover {
                                 background: var(--keyColor);
-                                color: var(--textColorLight);
+                                color     : var(--textColorLight);
                             }
                         }
                     }
@@ -1108,16 +1129,16 @@
                     .md-btn,
                     .md-btn-block {
                         background: var(--keyColor);
-                        color: var(--textColorLight);
+                        color     : var(--textColorLight);
                     }
                 }
             }
         }
 
         .fullscreen-view {
-            --songProgressColor: #b8b8b8;
+            --songProgressColor     : #b8b8b8;
             --songProgressBackground: #555;
-            --textColorLight: white;
+            --textColorLight        : white;
 
             .artwork-col .app-playback-controls .playback-info>div,
             .queue-col {
@@ -1134,31 +1155,33 @@
 
                 .md-btn-primary {
                     background-color: var(--keyColor) !important;
-                    color: var(--textColorLight) !important;
+                    color           : var(--textColorLight) !important;
                 }
             }
         }
-        .app-sidebar-header-text{
+
+        .app-sidebar-header-text {
             filter: brightness(0);
         }
-        .sidebar-icon svg:not(.feather){
+
+        .sidebar-icon svg:not(.feather) {
             color: var(--keyColor);
         }
 
         .modal-dialog {
             --menuBackgroundColor: rgba(255, 255, 255, 0.9);
-            --textColor: #000;
-            --textColorLighter: #333;
-            --keyColor: #d60017;
-            --keyColor-primary: #d60017;
+            --textColor          : #000;
+            --textColorLighter   : #333;
+            --keyColor           : #d60017;
+            --keyColor-primary   : #d60017;
 
             .modal-content {
-                background: var(--menuBackgroundColor);
+                background     : var(--menuBackgroundColor);
                 backdrop-filter: blur(8px);
 
                 .modal-header {
                     // background: var(--color2);
-                    color: var(--textColor);
+                    color      : var(--textColor);
                     font-weight: bold;
                 }
 
@@ -1179,7 +1202,7 @@
 
         .search-hints-container .search-hints {
             background-color: rgba(0, 0, 0, 0.05);
-            color: var(--textColor);
+            color           : var(--textColor);
         }
 
         #app.macosemu {
@@ -1190,10 +1213,10 @@
 
         #app-main {
             .about-page .row .col img[src="assets/banner.png"] {
-                width: 0;
-                height: 0;
-                padding: 250px 0 0 500px;
-                background: url("icons/banner.png");
+                width          : 0;
+                height         : 0;
+                padding        : 250px 0 0 500px;
+                background     : url("icons/banner.png");
                 background-size: contain;
             }
 
@@ -1210,7 +1233,7 @@
 
             .md-btn {
                 background-color: var(--keyColor) !important;
-                color: var(--textColorLight) !important;
+                color           : var(--textColorLight) !important;
             }
 
             .settings-page {
@@ -1261,7 +1284,7 @@
 
             input[type="number"] {
                 background: var(--searchBarBackgroundColor);
-                color: var(--textColor);
+                color     : var(--textColor);
             }
 
             .podcasts-page {
@@ -1291,15 +1314,15 @@
 
             .list-group-item-dark {
                 background-color: var(--color2);
-                border: var(--selectBorder);
-                color: var(--textColor);
-                border-radius: 0px;
+                border          : var(--selectBorder);
+                color           : var(--textColor);
+                border-radius   : 0px;
             }
 
             .list-group-item-dark:hover {
                 background-color: var(--keyColor);
-                color: var(--textColorLight);
-                border-radius: 0px;
+                color           : var(--textColorLight);
+                border-radius   : 0px;
             }
         }
 
@@ -1310,24 +1333,24 @@
 
             // Style Captions
             #captions {
-                color: var(--textColorLight);
-                font-size: 1.75rem;
-                padding: 10px 20px;
+                color        : var(--textColorLight);
+                font-size    : 1.75rem;
+                padding      : 10px 20px;
                 border-radius: 10px;
-                font-family: 'SF Pro', 'Inter', 'Noto Sans JP', 'Source Han Sans SC', 'Source Han Sans HK', 'Source Han Sans SC', 'Source Han Sans HK', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans HK', 'Noto Sans KR', sans-serif;
-                margin-top: 6vh;
+                font-family  : 'SF Pro', 'Inter', 'Noto Sans JP', 'Source Han Sans SC', 'Source Han Sans HK', 'Source Han Sans SC', 'Source Han Sans HK', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans HK', 'Noto Sans KR', sans-serif;
+                margin-top   : 6vh;
             }
         }
 
         .mini-view .artwork-col .app-playback-controls {
-            --songProgressColor: #b8b8b8;
+            --songProgressColor     : #b8b8b8;
             --songProgressBackground: #555;
 
             .song-progress {
-                bottom: -4px;
-                right: 1px;
-                left: 2.5px;
-                z-index: 30;
+                bottom  : -4px;
+                right   : 1px;
+                left    : 2.5px;
+                z-index : 30;
                 overflow: hidden;
 
                 input[type="range"] {
@@ -1335,10 +1358,10 @@
 
                     &::-webkit-slider-thumb {
                         border-radius: 3px;
-                        width: 7px;
-                        height: 12px;
-                        border: #333 solid 1px;
-                        background: var(--songProgressColor)
+                        width        : 7px;
+                        height       : 12px;
+                        border       : #333 solid 1px;
+                        background   : var(--songProgressColor)
                     }
                 }
             }
@@ -1354,52 +1377,53 @@
 
 :root.light {
     --checked: rgb(77, 202, 77);
+
     #app {
-        --color1: rgba(255, 255, 255, 0.33);
-        --color2: rgba(250, 250, 250, 0.95);
-        --fontStyle: : "Inter var experimental", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        font-family: var(--fontStyle);
-        --textColor: rgba(0, 0, 0, 0.88);
-        --textColorLighter: #333;
-        --textColorLight: white;
-        --keyColor: #d60017;
-        --buttonAccent: #d60017;
-        --buttonAccentPressed: #bb0000;
-        --border: 1px solid rgba(68, 68, 68, 0.4);
-        --topBarColor: rgba(235, 235, 235, 0.9);
-        --linearGradient: linear-gradient(-90deg, transparent 0%, black 10%, black 90%, transparent 100%);
-        --mediaBarColor: rgba(255, 255, 255, 1);
-        --songProgressColor: rgba(0, 0, 0, 0.56);
-        --songProgressBackground: rgba(0, 0, 0, 0.2);
-        --blurSmall: 8px;
-        --blurMedium: 32px;
-        --mediaItemShadow-Shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
-        --artistHoverColor: rgba(250, 35, 59, 0.8);
-        --menuBackgroundColor: rgba(250, 250, 250, 0.8);
-        --selectBackground: #eee;
-        --selectBorder: 1px solid rgba(100, 100, 100, 0.2);
-        --UIKitWhite: white;
-        --UIKitWhiteTextColor: #333;
-        --UIKitBlack: rgba(0, 0, 0, 0.1);
-        --UIKitBlackTextColor: rgba(50, 50, 50, 0.75);
-        --checked: rgb(77, 202, 77);
+        --color1                  : rgba(255, 255, 255, 0.33);
+        --color2                  : rgba(250, 250, 250, 0.95);
+        --fontStyle               : : "Inter var experimental", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-family               : var(--fontStyle);
+        --textColor               : rgba(0, 0, 0, 0.88);
+        --textColorLighter        : #333;
+        --textColorLight          : white;
+        --keyColor                : #d60017;
+        --buttonAccent            : #d60017;
+        --buttonAccentPressed     : #bb0000;
+        --border                  : 1px solid rgba(68, 68, 68, 0.4);
+        --topBarColor             : rgba(235, 235, 235, 0.9);
+        --linearGradient          : linear-gradient(-90deg, transparent 0%, black 10%, black 90%, transparent 100%);
+        --mediaBarColor           : rgba(255, 255, 255, 1);
+        --songProgressColor       : rgba(0, 0, 0, 0.56);
+        --songProgressBackground  : rgba(0, 0, 0, 0.2);
+        --blurSmall               : 8px;
+        --blurMedium              : 32px;
+        --mediaItemShadow-Shadow  : 4px 4px 4px rgba(0, 0, 0, 0.15);
+        --artistHoverColor        : rgba(250, 35, 59, 0.8);
+        --menuBackgroundColor     : rgba(250, 250, 250, 0.8);
+        --selectBackground        : #eee;
+        --selectBorder            : 1px solid rgba(100, 100, 100, 0.2);
+        --UIKitWhite              : white;
+        --UIKitWhiteTextColor     : #333;
+        --UIKitBlack              : rgba(0, 0, 0, 0.1);
+        --UIKitBlackTextColor     : rgba(50, 50, 50, 0.75);
+        --checked                 : rgb(77, 202, 77);
         --searchBarBackgroundColor: rgba(255, 255, 255, 0.3);
-        --searchBackgroundColor: rgba(255, 255, 255, 0.3);
-        --activeTabColor: rgba(100, 100, 107, 0.25);
-        --oddItemsAccentCOlor: rgba(0, 0, 0, 0.05);
-        --userHoverColor: rgba(250, 35, 59, 0.4);
-        --sidebarIconColor: rgba(30, 30, 30, 0.8);
-        --volumeThumbColor: var(--color2);
-        --volumeTrackColor: var(--songProgressColor);
-        --modalContentColor: rgb(235, 235, 235);
+        --searchBackgroundColor   : rgba(255, 255, 255, 0.3);
+        --activeTabColor          : rgba(100, 100, 107, 0.25);
+        --oddItemsAccentCOlor     : rgba(0, 0, 0, 0.05);
+        --userHoverColor          : rgba(250, 35, 59, 0.4);
+        --sidebarIconColor        : rgba(30, 30, 30, 0.8);
+        --volumeThumbColor        : var(--color2);
+        --volumeTrackColor        : var(--songProgressColor);
+        --modalContentColor       : rgb(235, 235, 235);
 
         .menu-panel .menu-panel-body {
             background-color: var(--menuBackgroundColor);
-            backdrop-filter: blur(var(--blurSmall));
-            color: var(--textColor);
+            backdrop-filter : blur(var(--blurSmall));
+            color           : var(--textColor);
 
             .menu-body .svg-icon {
-                color: var(--keyColor);
+                color  : var(--keyColor);
                 --color: var(--keyColor);
             }
         }
@@ -1416,8 +1440,8 @@
                 .md-footer,
                 .modal-lowercontent,
                 .modal-search {
-                    background: var(--color2);
-                    color: #000;
+                    background : var(--color2);
+                    color      : #000;
                     font-weight: bold;
 
                     .search-input--icon {
@@ -1435,8 +1459,8 @@
 
                 .md-select {
                     background: var(--selectBackground);
-                    border: var(--selectBorder);
-                    color: var(--textColor);
+                    border    : var(--selectBorder);
+                    color     : var(--textColor);
 
                     option,
                     optgroup {
@@ -1446,12 +1470,12 @@
 
                 .modal-content {
                     background: var(--modalContentColor);
-                    color: var(--textColor);
+                    color     : var(--textColor);
                     box-shadow: none;
 
                     input[type="number"] {
                         background: var(--searchBarBackgroundColor);
-                        color: var(--textColor);
+                        color     : var(--textColor);
                     }
 
                     .sidebar-playlist {
@@ -1476,11 +1500,11 @@
 
                     .playlist-item {
                         background: var(--modalContentColor);
-                        color: var(--textColor);
+                        color     : var(--textColor);
 
                         &:hover {
                             background: var(--keyColor);
-                            color: var(--textColorLight);
+                            color     : var(--textColorLight);
                         }
                     }
                 }
@@ -1488,16 +1512,16 @@
                 .md-btn,
                 .md-btn-block {
                     background: var(--keyColor);
-                    color: var(--textColorLight);
+                    color     : var(--textColorLight);
                 }
             }
         }
     }
 
     .fullscreen-view {
-        --songProgressColor: #b8b8b8;
+        --songProgressColor     : #b8b8b8;
         --songProgressBackground: #555;
-        --textColorLight: white;
+        --textColorLight        : white;
 
         .artwork-col .app-playback-controls .playback-info>div,
         .queue-col {
@@ -1514,25 +1538,25 @@
 
             .md-btn-primary {
                 background-color: var(--keyColor) !important;
-                color: var(--textColorLight) !important;
+                color           : var(--textColorLight) !important;
             }
         }
     }
 
     .modal-dialog {
         --menuBackgroundColor: rgba(255, 255, 255, 0.9);
-        --textColor: #000;
-        --textColorLighter: #333;
-        --keyColor: #d60017;
-        --keyColor-primary: #d60017;
+        --textColor          : #000;
+        --textColorLighter   : #333;
+        --keyColor           : #d60017;
+        --keyColor-primary   : #d60017;
 
         .modal-content {
-            background: var(--menuBackgroundColor);
+            background     : var(--menuBackgroundColor);
             backdrop-filter: blur(8px);
 
             .modal-header {
                 // background: var(--color2);
-                color: var(--textColor);
+                color      : var(--textColor);
                 font-weight: bold;
             }
 
@@ -1549,17 +1573,19 @@
             }
         }
     }
-    .app-sidebar-header-text{
+
+    .app-sidebar-header-text {
         filter: brightness(0);
     }
-    .sidebar-icon svg:not(.feather){
+
+    .sidebar-icon svg:not(.feather) {
         color: var(--keyColor);
     }
-    
+
 
     .search-hints-container .search-hints {
         background-color: rgba(0, 0, 0, 0.05);
-        color: var(--textColor);
+        color           : var(--textColor);
     }
 
     #app.macosemu {
@@ -1570,10 +1596,10 @@
 
     #app-main {
         .about-page .row .col img[src="assets/banner.png"] {
-            width: 0;
-            height: 0;
-            padding: 250px 0 0 500px;
-            background: url("icons/banner.png");
+            width          : 0;
+            height         : 0;
+            padding        : 250px 0 0 500px;
+            background     : url("icons/banner.png");
             background-size: contain;
         }
 
@@ -1590,7 +1616,7 @@
 
         .md-btn {
             background-color: var(--keyColor) !important;
-            color: var(--textColorLight) !important;
+            color           : var(--textColorLight) !important;
         }
 
         .settings-page {
@@ -1639,9 +1665,11 @@
             }
         }
 
-        input[type="number"] {
+        input[type="number"],
+        input[type="text"] {
             background: var(--searchBarBackgroundColor);
-            color: var(--textColor);
+            color     : var(--textColor);
+            border    : var(--selectBorder);
         }
 
         .podcasts-page {
@@ -1671,15 +1699,15 @@
 
         .list-group-item-dark {
             background-color: var(--color2);
-            border: var(--selectBorder);
-            color: var(--textColor);
-            border-radius: 0px;
+            border          : var(--selectBorder);
+            color           : var(--textColor);
+            border-radius   : 0px;
         }
 
         .list-group-item-dark:hover {
             background-color: var(--keyColor);
-            color: var(--textColorLight);
-            border-radius: 0px;
+            color           : var(--textColorLight);
+            border-radius   : 0px;
         }
     }
 
@@ -1690,24 +1718,24 @@
 
         // Style Captions
         #captions {
-            color: var(--textColorLight);
-            font-size: 1.75rem;
-            padding: 10px 20px;
+            color        : var(--textColorLight);
+            font-size    : 1.75rem;
+            padding      : 10px 20px;
             border-radius: 10px;
-            font-family: 'SF Pro', 'Inter', 'Noto Sans JP', 'Source Han Sans SC', 'Source Han Sans HK', 'Source Han Sans SC', 'Source Han Sans HK', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans HK', 'Noto Sans KR', sans-serif;
-            margin-top: 6vh;
+            font-family  : 'SF Pro', 'Inter', 'Noto Sans JP', 'Source Han Sans SC', 'Source Han Sans HK', 'Source Han Sans SC', 'Source Han Sans HK', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans HK', 'Noto Sans KR', sans-serif;
+            margin-top   : 6vh;
         }
     }
 
     .mini-view .artwork-col .app-playback-controls {
-        --songProgressColor: #b8b8b8;
+        --songProgressColor     : #b8b8b8;
         --songProgressBackground: #555;
 
         .song-progress {
-            bottom: -4px;
-            right: 1px;
-            left: 2.5px;
-            z-index: 30;
+            bottom  : -4px;
+            right   : 1px;
+            left    : 2.5px;
+            z-index : 30;
             overflow: hidden;
 
             input[type="range"] {
@@ -1715,10 +1743,10 @@
 
                 &::-webkit-slider-thumb {
                     border-radius: 3px;
-                    width: 7px;
-                    height: 12px;
-                    border: #333 solid 1px;
-                    background: var(--songProgressColor)
+                    width        : 7px;
+                    height       : 12px;
+                    border       : #333 solid 1px;
+                    background   : var(--songProgressColor)
                 }
             }
         }
