@@ -842,7 +842,9 @@
                         scale           : 0.9;
                     }
                 }
-
+                &::after{
+                    transition: background-color .5s var(--appleEase);
+                }
                 &.active {
                     &:after {
                         display: none;
