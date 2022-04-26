@@ -378,7 +378,7 @@
         #app-sidebar {
             background-color: transparent;
 
-            .app-sidebar-item  {
+            .app-sidebar-item {
                 font-size: 15px;
                 padding  : 4px 12px;
                 color    : var(--textColor);
@@ -386,6 +386,7 @@
                 &:not(.app-sidebar-item-playlist) .feather {
                     color: var(--keyColor);
                 }
+
                 .feather {
                     color: var(--sidebarIconColor);
                 }
@@ -406,6 +407,11 @@
                 padding-top: 15px;
             }
 
+            .search-input--icon {
+                background-size: 15px;
+                z-index        : 5;
+            }
+
             .search-input {
                 background   : var(--searchBarBackgroundColor);
                 color        : var(--textColor);
@@ -413,6 +419,8 @@
                 padding      : 10px;
                 padding-left : 32px;
                 border-radius: 5px;
+                border       : var(--selectBorder);
+                z-index      : 4;
             }
 
             .search-hints-container .search-hints {
@@ -438,17 +446,21 @@
         .app-chrome {
             .app-chrome-item {
                 -webkit-app-region: drag;
-                svg, button{
-                    transform: scale(1);
+
+                svg,
+                button {
+                    transform : scale(1);
                     transition: transform 0.2s ease-in-out;
                 }
-                
-                &:hover{
-                    svg, button{
-                        transform: scale(1.2);
+
+                &:hover {
+
+                    svg,
+                    button {
+                        transform : scale(1.2);
                         transition: transform 0.2s ease-in-out;
                     }
-                    
+
                 }
 
                 button,
@@ -639,29 +651,33 @@
         // Style Listen Now first row of cards larger
         .content-inner {
             .title-browse-sp {
-                white-space: nowrap;
-                overflow: hidden;
+                white-space  : nowrap;
+                overflow     : hidden;
                 text-overflow: ellipsis;
             }
+
             .cd-mediaitem-square.mediaitem-card {
                 transform : scale(1);
                 transition: transform 0.2s var(--appleEase) 0.1s;
-        
+
                 &:hover {
                     transform : scale(1.1);
                     transition: transform 0.2s var(--appleEase) 0.1s;
                 }
             }
+
             .cd-mediaitem-square:not(.mediaitem-card) {
                 transition      : transform .2s var(--appleEase);
                 transition-delay: .1s;
                 padding         : 12px;
-                height: 250px;
+                height          : 250px;
+
                 .artwork-container,
                 .info-rect {
                     transition      : transform .22s var(--appleEase);
                     transition-delay: .05s;
                 }
+
                 &:hover {
                     .artwork-container {
                         transform       : scale(1.1);
@@ -669,6 +685,7 @@
                         transition-delay: 0s;
                         transform-origin: center;
                     }
+
                     .info-rect {
                         z-index         : 1;
                         transition      : transform .1s var(--appleEase);
@@ -677,32 +694,36 @@
                     }
                 }
             }
-            .vue-horizontal{
-                height:100%;
-                width:100%;
+
+            .vue-horizontal {
+                height    : 100%;
+                width     : 100%;
                 overflow-y: visible;
             }
-            .v-hl-container[data-v-45080727]{
+
+            .v-hl-container[data-v-45080727] {
                 overflow-y: visible;
-                &:not(.v-h1-scroll){
+
+                &:not(.v-h1-scroll) {
                     clip-path: none;
                 }
             }
+
             .cd-hmedia-scroller.hmedia-scroller-card {
-                height: 21.5vw;
-                max-height    : 410px;
-                min-height    : 360px;
+                height    : 21.5vw;
+                max-height: 410px;
+                min-height: 360px;
                 margin-top: -15px;
-                
+
                 .cd-mediaitem-square.mediaitem-card {
                     // width        : 100%;
-                    width: initial;
-                    max-width: none;
-                    max-width: none;
+                    width        : initial;
+                    max-width    : none;
+                    max-width    : none;
                     height       : 90%;
-                    aspect-ratio: 24/31 ;
+                    aspect-ratio : 24/31;
                     padding-right: 0px;
-                    
+
 
                     & .artwork-container {
                         width : 100%;
@@ -716,16 +737,18 @@
                             background-repeat  : no-repeat;
                         }
                     }
-                    & .title{
+
+                    & .title {
                         font-weight: 650;
                     }
-                    & .subtitle{
-                        font-size: 0.95em;
-                        display: -webkit-box;
+
+                    & .subtitle {
+                        font-size         : 0.95em;
+                        display           : -webkit-box;
                         -webkit-box-orient: vertical;
                         -webkit-line-clamp: 3;
-                        overflow: hidden;
-                        max-height: 3.8em;
+                        overflow          : hidden;
+                        max-height        : 3.8em;
 
                     }
                 }
@@ -861,7 +884,7 @@
         }
 
         .playlist-page {
-            
+
             // .playlist-display .playlist-controls {
             //     button:nth-last-of-type(2) {
             //         box-shadow: var(--mediaItemShadow);
@@ -875,10 +898,10 @@
             //         }
             //     }
             // }
-            .artist-chip{
+            .artist-chip {
                 color: var(--textColor);
             }
-            
+
 
             .well .playlist-time {
                 margin-top: 40px;
@@ -891,43 +914,52 @@
 
         // Style new Settings Page UIKit
         .settings-page ul[role="tablist"] {
-            margin-top      : 40px;
-            margin-bottom   : 40px;
+            margin-top   : 40px;
+            margin-bottom: 40px;
         }
-        .nav-link{
-            color:var(--UIKitBlackTextColor);
-            &.active, &:hover{
-                color:var(--UIKitWhiteTextColor);
-                box-shadow: var(--UIKitShadow);
+
+        .nav-link {
+            color: var(--UIKitBlackTextColor);
+
+            &.active,
+            &:hover {
+                color      : var(--UIKitWhiteTextColor);
+                box-shadow : var(--UIKitShadow);
                 font-weight: bold;
-                &:after{
+
+                &:after {
                     background-color: var(--UIKitWhite);
                 }
             }
         }
-        .nav-pills{
+
+        .nav-pills {
             background-color: var(--UIKitBlack);
-            border-radius: 25px;
-            &:hover{
-                .nav-link.active{
-                    color:var(--UIKitBlackTextColor);
+            border-radius   : 25px;
+
+            &:hover {
+                .nav-link.active {
+                    color      : var(--UIKitBlackTextColor);
                     font-weight: normal;
-                    &::after{
+
+                    &::after {
                         background-color: var(--UIKitSelected);
                     }
-                    &:hover{
-                        color:var(--UIKitWhiteTextColor);
+
+                    &:hover {
+                        color      : var(--UIKitWhiteTextColor);
                         font-weight: bold;
-                        &:after{
+
+                        &:after {
                             background-color: var(--UIKitWhite);
                         }
                     }
                 }
             }
-        }   
-        
-        
-        
+        }
+
+
+
         // ul[role="tablist"] {
         //     border-radius   : 25px;
         //     background-color: var(--UIKitBlack);
@@ -1048,8 +1080,8 @@
 
     // Style new Settings Page UIKit
     .settings-page ul[role="tablist"] {
-        margin-top      : 40px;
-        margin-bottom   : 40px;
+        margin-top   : 40px;
+        margin-bottom: 40px;
     }
 
     input[type=checkbox][switch]:checked {
@@ -1094,7 +1126,7 @@
 
     @media (prefers-color-scheme: light) {
         #app {
-            --color1                  : rgba(255, 255, 255, 0.8);
+            --color1                  : rgba(255, 255, 255, 0.75);
             --color2                  : rgba(250, 250, 250, 0.7);
             --fontStyle               : : "Inter var experimental", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             font-family               : var(--fontStyle);
@@ -1123,7 +1155,7 @@
             --UIKitBlackTextColor     : rgba(50, 50, 50, 0.75);
             --UIKitSelected           : rgba(200, 200, 200, 0.15);
             --checked                 : rgb(77, 202, 77);
-            --searchBarBackgroundColor: rgba(255, 255, 255, 0.3);
+            --searchBarBackgroundColor: white;
             --searchBackgroundColor   : rgba(255, 255, 255, 0.3);
             --activeTabColor          : rgba(100, 100, 107, 0.25);
             --oddItemsAccentCOlor     : rgba(0, 0, 0, 0.05);
@@ -1189,7 +1221,7 @@
                         color     : var(--textColor);
                         box-shadow: none;
 
-                        input[type="number"]{
+                        input[type="number"] {
                             background: var(--searchBarBackgroundColor);
                             color     : var(--textColor);
                         }
@@ -1310,7 +1342,14 @@
             }
         }
 
+        #app-sidebar {
+            .search-input--icon {
+                filter: invert(0.8);
+            }
+        }
+
         #app-main {
+
             .about-page .row .col img[src="assets/banner.png"] {
                 width          : 0;
                 height         : 0;
@@ -1381,10 +1420,11 @@
                 }
             }
 
-            input[type="number"], input[type="text"]  {
+            input[type="number"],
+            input[type="text"] {
                 background: var(--searchBarBackgroundColor);
                 color     : var(--textColor);
-                border: var(--selectBorder);
+                border    : var(--selectBorder);
             }
 
             .podcasts-page {
@@ -1479,8 +1519,8 @@
     --checked: rgb(77, 202, 77);
 
     #app {
-        --color1                  : rgba(255, 255, 255, 0.33);
-        --color2                  : rgba(250, 250, 250, 0.95);
+        --color1                  : rgba(255, 255, 255, 0.75);
+        --color2                  : rgba(250, 250, 250, 0.7);
         --fontStyle               : : "Inter var experimental", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         font-family               : var(--fontStyle);
         --textColor               : rgba(0, 0, 0, 0.88) !important;
@@ -1504,17 +1544,17 @@
         --selectBorder            : 1px solid rgba(100, 100, 100, 0.2);
         --UIKitWhite              : white;
         --UIKitWhiteTextColor     : #333;
-        --UIKitBlack              : rgba(0, 0, 0, 0.1);
+        --UIKitBlack              : rgba(0, 0, 0, 0.2);
         --UIKitBlackTextColor     : rgba(50, 50, 50, 0.75);
         --UIKitSelected           : rgba(200, 200, 200, 0.15);
         --checked                 : rgb(77, 202, 77);
-        --searchBarBackgroundColor: rgba(255, 255, 255, 0.3);
+        --searchBarBackgroundColor: white;
         --searchBackgroundColor   : rgba(255, 255, 255, 0.3);
         --activeTabColor          : rgba(100, 100, 107, 0.25);
         --oddItemsAccentCOlor     : rgba(0, 0, 0, 0.05);
         --userHoverColor          : rgba(250, 35, 59, 0.4);
         --sidebarIconColor        : rgba(30, 30, 30, 0.8);
-        --volumeThumbColor        : var(--color2);
+        --volumeThumbColor        : var(--textColorLight);
         --volumeTrackColor        : var(--songProgressColor);
         --modalContentColor       : rgb(235, 235, 235);
 
@@ -1644,6 +1684,14 @@
         }
     }
 
+    .app-sidebar-header-text {
+        filter: brightness(0);
+    }
+
+    .sidebar-icon svg:not(.feather) {
+        color: var(--keyColor);
+    }
+
     .modal-dialog {
         --menuBackgroundColor: rgba(255, 255, 255, 0.9);
         --textColor          : #000;
@@ -1675,14 +1723,6 @@
         }
     }
 
-    .app-sidebar-header-text {
-        filter: brightness(0);
-    }
-
-    .sidebar-icon svg:not(.feather) {
-        color: var(--keyColor);
-    }
-
 
     .search-hints-container .search-hints {
         background-color: rgba(0, 0, 0, 0.05);
@@ -1695,7 +1735,14 @@
         }
     }
 
+    #app-sidebar {
+        .search-input--icon {
+            filter: invert(0.8);
+        }
+    }
+
     #app-main {
+
         .about-page .row .col img[src="assets/banner.png"] {
             width          : 0;
             height         : 0;
@@ -1856,7 +1903,6 @@
             color: var(--textColorLight);
         }
     }
-
 }
 
 @media only screen and (max-width: 1120px) {
