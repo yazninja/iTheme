@@ -22,7 +22,7 @@
         --blurMedium              : 32px;
         --mediaItemShadow-Shadow  : 4px 4px 4px rgba(0, 0, 0, 0.15);
         --artistHoverColor        : rgba(250, 35, 59, 0.8);
-        --menuBackgroundColor     : rgba(0, 0, 0, 0.8);
+        --menuBackgroundColor     : rgba(36, 36, 36, 0.5);
         --selectBackground        : #333;
         --selectBorder            : 1px solid rgba(100, 100, 100, 0.2);
         --UIKitWhite              : white;
@@ -49,7 +49,8 @@
             padding      : 1.6vh;
             margin-bottom: 100px;
             border-radius: 5px;
-            &.active{
+
+            &.active {
                 background-color: var(--UIKitSelected);
             }
         }
@@ -71,6 +72,7 @@
             background     : url('icons/heart.svg');
             background-size: contain;
         }
+
 
         .usermenu-container .usermenu-body {
             background-color: var(--menuBackgroundColor);
@@ -102,6 +104,29 @@
             background-color: var(--menuBackgroundColor);
             backdrop-filter : blur(var(--blurSmall));
             color           : var(--textColor);
+
+            & .menu-body {
+                padding: 0;
+            }
+
+            & .menu-option {
+                border-radius : 0;
+                width         : 100%;
+                padding-inline: 0;
+                padding-block : 10px;
+
+                +.menu-option {
+                    margin-top: -5px;
+                }
+
+                &:not(:last-of-type) {
+                    border-bottom: 1px solid var(--selected);
+                }
+
+                & .sidebar-icon {
+                    margin-left: 15px;
+                }
+            }
         }
 
         .modal-fullscreen {
@@ -192,6 +217,11 @@
                 }
             }
         }
+
+        .app-sidebar-button.active {
+            background: rgb(255 255 255 / 80%) !important;
+            animation: usermenuBtnClick 0s cubic-bezier(0.36, 0, 0.66, -0.56) !important;
+          }
     }
 
     #app:not(.macosmenu) {
@@ -373,6 +403,86 @@
         }
     }
 
+    #app.twopanel {
+        #app-sidebar {
+            z-index: 3;
+        }
+
+        #app-content {
+            z-index   : 1;
+            height    : 100vh;
+            margin-top: calc(-1 * var(--chromeHeight1));
+
+            .content-inner {
+                padding-bottom: 100px;
+                z-index       : 1;
+            }
+        }
+
+        .app-navigation {
+            height: calc(100% - var(--chromeHeight1));
+        }
+
+        .app-drawer {
+            height    : calc(100% - var(--chromeHeight2) + var(--chromeHeight1));
+            margin-top: calc(-1 * var(--chromeHeight1));
+        }
+
+        .app-chrome {
+            z-index: 5;
+
+            &::before {
+                display: none;
+            }
+
+            .app-mainmenu {
+                z-index: 5;
+            }
+
+            &.chrome-bottom {
+                position        : fixed;
+                bottom          : 0;
+                width           : calc(100vw - 260px);
+                margin-left     : 260px;
+                background-color: rgba(30, 30, 30, 0.3);
+                backdrop-filter : blur(32px);
+
+                .app-chrome-item:nth-of-type(2):not(.generic) {
+                    margin-left: 0;
+                }
+
+                .app-chrome--left {
+                    width: 20%;
+
+                    .artwork {
+                        margin       : 10px;
+                        width        : 60px;
+                        height       : auto;
+                        aspect-ratio : 1;
+                        border-radius: 10%;
+
+                        img {
+                            border-radius: 10%;
+                        }
+                    }
+
+                    .playback-info {
+                        width      : 100%;
+                        margin-left: 30px;
+                    }
+                }
+
+                .app-chrome--right {
+                    width: auto;
+
+                    .app-chrome-item.volume {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+
+    }
 
     #app-main {
         color: var(--textColor);
@@ -754,8 +864,25 @@
                         max-height        : 3.8em;
 
                     }
+
+                    & .title+.subtitle {
+                        max-height: none;
+                        margin-top: -0.5em;
+                    }
                 }
 
+            }
+
+            .cd-mediaitem-square:not(.mediaitem-card) {
+                & .title+.subtitle {
+                    opacity: 0.7;
+                }
+            }
+
+            .playlist-page {
+                .playIcon {
+                    margin-left: 20px !important;
+                }
             }
         }
 
@@ -1006,12 +1133,12 @@
 
         // Style Captions
         #captions:not(:empty) {
-            color        : var(--textColor);
-            font-size    : 1.75rem;
-            padding      : 10px 20px;
-            border-radius: 10px;
-            font-family  : 'SF Pro', 'Inter', 'Noto Sans JP', 'Source Han Sans SC', 'Source Han Sans HK', 'Source Han Sans SC', 'Source Han Sans HK', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans HK', 'Noto Sans KR', sans-serif;
-            margin-top   : 6vh;
+            color         : var(--textColor);
+            font-size     : 1.75rem;
+            padding-inline: 10px;
+            border-radius : 10px;
+            font-family   : 'SF Pro', 'Inter', 'Noto Sans JP', 'Source Han Sans SC', 'Source Han Sans HK', 'Source Han Sans SC', 'Source Han Sans HK', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans HK', 'Noto Sans KR', sans-serif;
+            margin-top    : 6vh;
         }
 
         // AM Web Style Fullscreen Button
@@ -1105,13 +1232,13 @@
     #apple-music-video-container {
 
         // Style Captions
-        #captions {
-            color        : var(--textColorLight);
-            font-size    : 1.75rem;
-            padding      : 10px 20px;
-            border-radius: 10px;
-            font-family  : 'SF Pro', 'Inter', 'Noto Sans JP', 'Source Han Sans SC', 'Source Han Sans HK', 'Source Han Sans SC', 'Source Han Sans HK', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans HK', 'Noto Sans KR', sans-serif;
-            margin-top   : 6vh;
+        #captions:not(:empty) {
+            color         : var(--textColorLight);
+            font-size     : 1.75rem;
+            padding-inline: 10px;
+            border-radius : 10px;
+            font-family   : 'SF Pro', 'Inter', 'Noto Sans JP', 'Source Han Sans SC', 'Source Han Sans HK', 'Source Han Sans SC', 'Source Han Sans HK', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans HK', 'Noto Sans KR', sans-serif;
+            margin-top    : 6vh;
         }
 
         .menu-panel .menu-panel-body {
@@ -1467,6 +1594,10 @@
                 color           : var(--textColorLight);
                 border-radius   : 0px;
             }
+
+            .popular {
+                filter: invert(0.65);
+            }
         }
 
 
@@ -1475,13 +1606,13 @@
             --mediaBarColor: rgba(0, 0, 0, 0.3);
 
             // Style Captions
-            #captions {
-                color        : var(--textColorLight);
-                font-size    : 1.75rem;
-                padding      : 10px 20px;
-                border-radius: 10px;
-                font-family  : 'SF Pro', 'Inter', 'Noto Sans JP', 'Source Han Sans SC', 'Source Han Sans HK', 'Source Han Sans SC', 'Source Han Sans HK', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans HK', 'Noto Sans KR', sans-serif;
-                margin-top   : 6vh;
+            #captions:not(:empty) {
+                color         : var(--textColorLight);
+                font-size     : 1.75rem;
+                padding-inline: 10px;
+                border-radius : 10px;
+                font-family   : 'SF Pro', 'Inter', 'Noto Sans JP', 'Source Han Sans SC', 'Source Han Sans HK', 'Source Han Sans SC', 'Source Han Sans HK', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans HK', 'Noto Sans KR', sans-serif;
+                margin-top    : 6vh;
             }
         }
 
@@ -1860,6 +1991,10 @@
             color           : var(--textColorLight);
             border-radius   : 0px;
         }
+
+        .popular {
+            filter: invert(0.65);
+        }
     }
 
 
@@ -1868,13 +2003,13 @@
         --mediaBarColor: rgba(0, 0, 0, 0.3);
 
         // Style Captions
-        #captions {
-            color        : var(--textColorLight);
-            font-size    : 1.75rem;
-            padding      : 10px 20px;
-            border-radius: 10px;
-            font-family  : 'SF Pro', 'Inter', 'Noto Sans JP', 'Source Han Sans SC', 'Source Han Sans HK', 'Source Han Sans SC', 'Source Han Sans HK', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans HK', 'Noto Sans KR', sans-serif;
-            margin-top   : 6vh;
+        #captions:not(:empty) {
+            color         : var(--textColorLight);
+            font-size     : 1.75rem;
+            padding-inline: 10px;
+            border-radius : 10px;
+            font-family   : 'SF Pro', 'Inter', 'Noto Sans JP', 'Source Han Sans SC', 'Source Han Sans HK', 'Source Han Sans SC', 'Source Han Sans HK', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans HK', 'Noto Sans KR', sans-serif;
+            margin-top    : 6vh;
         }
     }
 
