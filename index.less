@@ -113,20 +113,21 @@
             & .menu-option {
                 border-radius : 0;
                 width         : 100%;
-                padding-inline: 0;
+                padding-inline-start: 14px;
                 padding-block : 10px;
-
+                &::before{
+                    --sizeX:0px;
+                    --sizeY:0px;
+                    border-radius : 0;
+                }
                 +.menu-option {
-                    margin-top: -5px;
+                    margin-top: -1px;
                 }
 
                 &:not(:last-of-type) {
                     border-bottom: 1px solid var(--selected);
                 }
 
-                & .sidebar-icon {
-                    margin-left: 15px;
-                }
             }
         }
 
@@ -899,7 +900,7 @@
                     border-radius: 50%;
                 }
 
-                &:hover {
+                &:hover, &.active {
                     background-color: var(--artistHoverColor);
                     color           : #fff;
                     transition      : 0.1s ease-in-out;
