@@ -41,7 +41,8 @@
         --volumeTrackColor        : rgba(200, 200, 200, 0.5);
         --playlistButtonColor     : rgba(100, 100, 100, 0.5);
         --userHoverColor          : rgba(100, 100, 100, 0.2);
-        --modalContentColor       : rgba(0, 0, 0, 0.8);
+        --modalContentColor       : rgba(36, 36, 36, 0.4);
+        --modalHeaderColor        : rgba(0, 0, 0, 0.3);
 
         .fullscreen-view .tab-toggles div {
             width        : 5vh;
@@ -133,6 +134,9 @@
             background: var(--searchBackgroundColor);
 
             .modal-window {
+                backdrop-filter: blur(var(--blurSmall));
+                background     : transparent;
+
                 .castPlayIndicator {
                     fill: var(--keyColor);
                 }
@@ -141,7 +145,7 @@
                 .md-footer,
                 .modal-lowercontent,
                 .modal-search {
-                    background : var(--color2);
+                    background : var(--modalHeaderColor);
                     color      : var(--textColor);
                     font-weight: bold;
 
@@ -170,9 +174,10 @@
                 }
 
                 .modal-content {
-                    background: var(--modalContentColor);
-                    color     : var(--textColor);
-                    box-shadow: none;
+                    backdrop-filter: blur(var(--blurSmall));
+                    background     : var(--modalContentColor);
+                    color          : var(--textColor);
+                    box-shadow     : none;
 
                     input[type="number"] {
                         background: var(--searchBarBackgroundColor);
@@ -220,8 +225,8 @@
 
         .app-sidebar-button.active {
             background: rgb(255 255 255 / 80%) !important;
-            animation: usermenuBtnClick 0s cubic-bezier(0.36, 0, 0.66, -0.56) !important;
-          }
+            animation : usermenuBtnClick 0s cubic-bezier(0.36, 0, 0.66, -0.56) !important;
+        }
     }
 
     #app:not(.macosmenu) {
@@ -908,7 +913,7 @@
                 background: var(--buttonAccent);
             }
 
-            &:not(.md-btn-replay):not(.md-btn-replay--hero):not(.teamBtn) :hover {
+            &:not(.md-btn-replay):not(.md-btn-replay--hero):not(.teamBtn):hover {
                 background: var(--buttonAccentPressed);
             }
         }
@@ -1014,6 +1019,9 @@
         }
 
         .playlist-page {
+            .playlist-display {
+                box-shadow: 0px 0px 12px 4px rgb(0 0 0 / 30%);
+            }
 
             // .playlist-display .playlist-controls {
             //     button:nth-last-of-type(2) {
