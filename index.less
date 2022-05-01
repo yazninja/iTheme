@@ -885,36 +885,40 @@
                     opacity: 0.7;
                 }
             }
-
-            .playlist-page {
-                .playIcon {
-                    margin-left: 80px !important;
+            .heart-icon {
+                left:20px;
+                top:22px;
+                width:12px;
+                height:12px;
+                filter:none;
+                .svg-icon{
+                    background: var(--keyColor) !important;
+                    --url: url('icons/heart.svg') !important;
+                    background-size:contain;
+                    width:100%;
+                    height: 100%;
                 }
-                
+            }
+            .cd-mediaitem-list-item:hover{
+                .heart-icon {
+                    display: none;
+                }
+                .popular{
+                    display: block;
+                }
+            }
+            &.playlist-page {
+                .playIcon {
+                    margin-left: -10px !important;
+                }
+                .heart-icon {
+                    left:-25px;
+                }
             }
             .playlist-body .tab-pane{
                 padding-inline: 40px;
             }
-            .cd-mediaitem-list-item{
-                // .isLibrary{
-                //     width:60px;
-                // }
-                .heart-icon {
-                    right:unset;
-                    left:-25px;
-                    width:12px;
-                    height:12px;
-                    filter:none;
-                    .svg-icon{
-                        background: var(--keyColor) !important;
-                        
-                        --url: url('icons/heart.svg') !important;
-                        background-size:contain;
-                        width:100%;
-                        height:100%;
-                    }
-                }
-            }
+            
         }
 
         // Style New Artists Page
