@@ -349,7 +349,7 @@
                     background-image  : unset;
                     position          : absolute;
                     cursor            : pointer;
-
+                    box-shadow        : none;
                     // set color
                     &.minimize {
                         background-color: rgb(255, 189, 76) !important;
@@ -897,6 +897,7 @@
                 opacity: 0;
             }
             .cd-mediaitem-list-item:hover{
+                background-color: rgba(150, 150, 150, 0.3);
                 .heart-icon{
                     display: flex;
                 }
@@ -1069,10 +1070,16 @@
             // }
             .artist-chip {
                 color: var(--textColor);
-                
-                .artist-chip__follow {
-                    color: var(--KeyColor);
+              
+                .artist-chip__follow{
+                    color: var(--keyColor);
                     background-color: transparent;
+                    transition: background-color 0.3s 1s var(--appleEase), color 0.3s 1s var(--appleEase);
+                    &:hover{
+                        background-color: var(--keyColor);
+                        color: var(--textColorLight);
+                        transition: background-color 0.3s var(--appleEase);
+                    }
                 }
             }
 
