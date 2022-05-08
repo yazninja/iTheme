@@ -1070,6 +1070,16 @@
             // }
             .artist-chip {
                 color: var(--textColor);
+                .artist-chip__follow{
+                    color: var(--keyColor);
+                    background-color: transparent;
+                    transition: background-color 0.3s 1s var(--appleEase), color 0.3s 1s var(--appleEase);
+                    &:hover{
+                        background-color: var(--keyColor);
+                        color: var(--textColorLight);
+                        transition: background-color 0.3s var(--appleEase);
+                    }
+                }
             }
 
 
