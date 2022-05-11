@@ -790,12 +790,37 @@
                     transition: transform 0.2s var(--appleEase) 0.1s;
                 }
             }
+            .cd-mediaitem-square{
+                width: 264px;
+                .artwork-container .artwork{
+                    width:240px;
+                    height: initial;
+                    aspect-ratio: 1;
+                }
+                &.mediaitem-video{
+                    width:320px;
+                    height: 230px !important;
+                    .artwork-container .artwork{
+                        width:290px;
+                        height: initial;
+                        aspect-ratio: 16/9;
+                    }
+                }
+            }
+            
+            .itemContainer .cd-mediaitem-square-container, .madeforyou-body .cd-mediaitem-square-container {
+                padding-right: 20px;
+                .mediaitem-video{
+                    max-width: 320px;
+                    width: 290px;
+                }
+            }
 
             .cd-mediaitem-square:not(.mediaitem-card) {
                 transition      : transform .2s var(--appleEase);
                 transition-delay: .1s;
                 padding         : 12px;
-                height          : 250px;
+                height          : 310px;
 
                 .artwork-container,
                 .info-rect {
@@ -1190,6 +1215,7 @@
         .well:not(.artistfeed-well) {
             background-color: transparent;
             box-shadow      : none;
+            padding-inline: 0;
         }
 
     }
@@ -1314,12 +1340,8 @@
         }
     }
 }
-
-
-
 :root:not(.dark) {
     --checked: rgb(77, 202, 77);
-
     @media (prefers-color-scheme: light) {
         #app {
             --color1                  : rgba(252, 252, 252, 0);
