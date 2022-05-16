@@ -659,7 +659,7 @@
                 max-width   : 110px;
                 margin-right: 1vw;
 
-                input[type=range] {
+                input[type="range"] {
                     background-color: transparent;
                     height          : 20px;
 
@@ -790,7 +790,7 @@
                     transition: transform 0.2s var(--appleEase) 0.1s;
                 }
             }
-            .cd-mediaitem-square{
+            .cd-mediaitem-square:not(.mediaitem-brick){
                 width: 264px;
                 .artwork-container .artwork{
                     width:240px;
@@ -807,6 +807,13 @@
                     }
                 }
             }
+            .cd-mediaitem-square.mediaitem-brick {
+                width: 318px;
+                .artwork-container .artwork{
+                    height:163px;
+                    width:290px;
+                }
+            }
             
             .itemContainer .cd-mediaitem-square-container, .madeforyou-body .cd-mediaitem-square-container {
                 padding-right: 20px;
@@ -816,7 +823,7 @@
                 }
             }
 
-            .cd-mediaitem-square:not(.mediaitem-card) {
+            .cd-mediaitem-square:not(.mediaitem-card):not(.mediaitem-brick) {
                 transition      : transform .2s var(--appleEase);
                 transition-delay: .1s;
                 padding         : 12px;
@@ -844,7 +851,6 @@
                     }
                 }
             }
-
             &:not(.artist-page) .vue-horizontal {
                 height    : 100%;
                 width     : 100%;
@@ -1268,6 +1274,45 @@
                 filter    : opacity(1);
                 transition: 0.2s ease-in-out filter;
             }
+        }
+        .playback-info{
+            width:100%;
+            bottom:0;
+            left:0;
+            padding: 20px 40px;
+            background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 50%);
+        }
+        input[type="range"]{
+            align-self: center;
+            height: 4px;
+            border-radius: .5rem;
+            margin-inline: 10px;
+        }
+        p{
+            color:rgb(255,255,255,1);
+        }
+        .song-artist{
+            font-size: 1.7rem;
+            font-weight: bold;
+            color:rgb(255,255,255,1);
+        }
+        .song-name{
+            font-size: 1.2rem;
+            font-weight: bold;
+            color:rgb(255,255,255,0.8);
+        }
+        .song-progress input[type="range"]{
+            appearance: initial;
+            &::-webkit-slider-thumb {
+                box-shadow: 0px 0px 0px #000000;
+                border: 1px solid #39404D;
+                background: #fff;
+                height:0.7rem;
+                width:0.7rem;
+                border-radius: 50%;
+                cursor: pointer;
+                -webkit-appearance: none;
+              }
         }
     }
 
@@ -1694,7 +1739,8 @@
 
         #apple-music-video-container {
             --mediaBarColor: rgba(0, 0, 0, 0.3);
-
+            --songProgressColor       : #b8b8b8;
+            --songProgressBackground:#333;
             // Style Captions
             #captions:not(:empty) {
                 color         : var(--textColorLight);
@@ -2091,7 +2137,8 @@
 
     #apple-music-video-container {
         --mediaBarColor: rgba(0, 0, 0, 0.3);
-
+        --songProgressColor       : #b8b8b8;
+        --songProgressBackground:#333;
         // Style Captions
         #captions:not(:empty) {
             color         : var(--textColorLight);
