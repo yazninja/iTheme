@@ -20,13 +20,36 @@ Want more functionality?
 
 ---
 ### Gallery
+Listen Now
+![listennow](https://user-images.githubusercontent.com/71800112/168989861-92f16b56-40de-4b0e-80ea-43fc183cd1d9.png)
 
-<img src = "https://user-images.githubusercontent.com/71800112/167619033-9b889ce4-ebb8-4140-b1e1-3d0580e47e91.png" width="700"><img src = "https://user-images.githubusercontent.com/71800112/167619101-235a5ab1-10b9-49e6-a2d3-201f167aad43.png" width="700">
-<img src = "https://user-images.githubusercontent.com/71800112/167619207-79d91f4c-773a-4217-8404-3d741fb81193.png" width="700"><img src = "https://user-images.githubusercontent.com/71800112/167619111-6c55afeb-e31c-4f9d-bf89-21958d04ff89.png" width="700">
-<img src = "https://user-images.githubusercontent.com/71800112/167619125-76009046-515b-45a8-a297-2045753f7629.png" width="700"><img src = "https://user-images.githubusercontent.com/71800112/167619134-120d8e1d-34e8-4cc4-bee4-7b57b6755cd6.png" width="700">
-<img src = "https://user-images.githubusercontent.com/71800112/167619177-035b6825-59f1-4bc9-8ff4-bdc56aac1740.png" width="700"><img src = "https://user-images.githubusercontent.com/71800112/167619140-38cd2b8f-dead-4baa-9905-ace974e88745.png" width="700">
+Light Mode
+![light mode](https://user-images.githubusercontent.com/71800112/168990263-a760aac5-bc59-4607-b4a4-2af7e38a7a96.png)
+
+Left Window Controls
+![queue and left window control](https://user-images.githubusercontent.com/71800112/168989915-838447db-a819-499b-861f-79af9dae6081.png)
+
+Lyrics Pane
+![lyrics](https://user-images.githubusercontent.com/71800112/168990077-069a4c89-987d-4e4f-b544-caf161b6ef08.png)
+
+Music Video (Newer Builds)
+![musicvideo](https://user-images.githubusercontent.com/71800112/168990135-00322395-ba3c-4582-af5c-d71934b96df8.png)
+
+
+Search Page (Newer builds)
+![searchpage](https://user-images.githubusercontent.com/71800112/168990001-5034079e-371d-40d6-88b0-bc2f53e03a98.png)
+
+Artist View
+![artist view](https://user-images.githubusercontent.com/71800112/168990324-a9fd928a-97bc-4117-8b04-b18132038ba0.png)
+
+UI Kit (Pills)
+![UIKit](https://user-images.githubusercontent.com/71800112/168990386-cff18868-6497-47ca-bb09-2b0e875daa0c.png)
+
+Hearts
+![hearts](https://user-images.githubusercontent.com/71800112/168990451-c076c95c-a4dc-4091-a6ed-1bf8811665ce.png)
 
 ---
+
 
 ### See Any Bugs?
 Create an [issue](https://github.com/yazninja/apple-cider-lite/issues).
