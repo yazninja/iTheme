@@ -15,7 +15,7 @@
         --buttonAccent            : #d60017;
         --buttonAccentPressed     : #bb0000;
         --border                  : 1px solid rgba(68, 68, 68, 0.4);
-        --topBarColor             : rgba(45, 45, 45, 0.6);
+        --topBarColor             : rgba(45, 45, 45, 0.25);
         --linearGradient          : linear-gradient(-90deg, transparent 0%, black 10%, black 90%, transparent 100%);
         --mediaBarColor           : rgba(0, 0, 0, 0.3);
         --songProgressColor       : #b8b8b8;
@@ -357,7 +357,7 @@
                     position          : absolute;
                     cursor            : pointer;
                     box-shadow        : none;
-                    transition     : background-color 0.7s var(--appleEase);
+                    transition        : background-color 0.7s var(--appleEase);
 
                     // set color
                     &.minimize {
@@ -444,7 +444,8 @@
         }
 
         .app-chrome {
-            z-index: 5;
+            z-index   : 5;
+            background: transparent;
 
             &::before {
                 display: none;
@@ -530,6 +531,10 @@
                 filter: drop-shadow(0px 2px 4px rgb(0 0 0 / 50%));
             }
 
+            .app-sidebar-header {
+                padding-top: calc(var(--chromeHeight) + 11px);
+            }
+
             .app-sidebar-header-text:not(:first-child) {
                 font-size  : 10px;
                 padding-top: 15px;
@@ -572,6 +577,10 @@
         }
 
         .app-chrome {
+            position  : fixed;
+            z-index   : 6;
+            background: transparent;
+
             .app-chrome-item {
                 -webkit-app-region: drag;
 
@@ -628,7 +637,7 @@
 
             .app-chrome--right {
                 // margin-right: -20px;
-                z-index: 1;
+                z-index: 7;
             }
 
             &::before {
@@ -639,14 +648,16 @@
                 width           : calc(100% - 260px);
                 height          : var(--chromeHeight1);
                 background-color: var(--topBarColor);
-                z-index         : 0;
+                z-index         : 6;
                 border-left     : var(--border);
+                // border-bottom   : var(--border);
+                backdrop-filter : blur(var(--blurSmall));
             }
 
             .app-chrome--center,
             .app-chrome--left,
             .app-chrome-item {
-                z-index: 2;
+                z-index: 7;
 
                 // change Cider Logo to profile picture
                 .app-mainmenu,
@@ -781,6 +792,8 @@
 
         // Style Listen Now first row of cards larger
         .content-inner {
+            top: calc(var(--chromeHeight) + var(--navigationBarHeight));
+
             .header-text {
                 margin-left: 0.65rem;
             }
@@ -992,6 +1005,10 @@
                 .md-option-container .md-option-line:not(:last-child) {
                     border-bottom: var(--selectBorder);
                 }
+            }
+
+            &.home-page {
+                top: 20px;
             }
 
         }
@@ -1237,7 +1254,7 @@
         //             transform: scale(1.3);
         //             background-color: var(--UIKitWhite);
         //         }
-        //     }
+        //     }#content-inner
         // }
 
         input[type=checkbox][switch]:checked {
@@ -1442,7 +1459,7 @@
             --buttonAccent            : #d60017;
             --buttonAccentPressed     : #bb0000;
             --border                  : 1px solid rgba(68, 68, 68, 0.4);
-            --topBarColor             : rgba(235, 235, 235, 0.9);
+            --topBarColor             : rgba(255, 255, 255, 0.35);
             --linearGradient          : linear-gradient(-90deg, transparent 0%, black 10%, black 90%, transparent 100%);
             --mediaBarColor           : rgba(255, 255, 255, 1);
             --songProgressColor       : rgba(0, 0, 0, 0.56);
@@ -1824,23 +1841,25 @@
             }
         }
     }
+
     body {
-        background : black !important;
-    
+        background: black !important;
+
         #micaEffect {
             opacity   : 0.5;
             transition: opacity .20s linear;
             filter    : saturate(260%) brightness(0.5);
         }
-    
+
         &.stopanimation {
             #micaEffect {
                 opacity: 0;
             }
+
             #app.macosemu {
-                .app-chrome-item .window-controls-macos div{
+                .app-chrome-item .window-controls-macos div {
                     background-color: hsl(0, 0%, 50%) !important;
-                    transition     : background-color 0.7s var(--appleEase);
+                    transition      : background-color 0.7s var(--appleEase);
                 }
             }
         }
@@ -1863,7 +1882,7 @@
         --buttonAccent            : #d60017;
         --buttonAccentPressed     : #bb0000;
         --border                  : 1px solid rgba(68, 68, 68, 0.4);
-        --topBarColor             : rgba(235, 235, 235, 0.9);
+        --topBarColor             : rgba(255, 255, 255, 0.35);
         --linearGradient          : linear-gradient(-90deg, transparent 0%, black 10%, black 90%, transparent 100%);
         --mediaBarColor           : rgba(255, 255, 255, 1);
         --songProgressColor       : rgba(0, 0, 0, 0.56);
