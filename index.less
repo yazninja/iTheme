@@ -357,6 +357,7 @@
                     position          : absolute;
                     cursor            : pointer;
                     box-shadow        : none;
+                    transition     : background-color 0.7s var(--appleEase);
 
                     // set color
                     &.minimize {
@@ -1820,6 +1821,27 @@
 
             .playback-info>div {
                 color: var(--textColorLight);
+            }
+        }
+    }
+    body {
+        background : black !important;
+    
+        #micaEffect {
+            opacity   : 0.5;
+            transition: opacity .20s linear;
+            filter    : saturate(260%) brightness(0.5);
+        }
+    
+        &.stopanimation {
+            #micaEffect {
+                opacity: 0;
+            }
+            #app.macosemu {
+                .app-chrome-item .window-controls-macos div{
+                    background-color: hsl(0, 0%, 50%) !important;
+                    transition     : background-color 0.7s var(--appleEase);
+                }
             }
         }
     }
