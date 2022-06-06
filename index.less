@@ -1,686 +1,263 @@
-:root,
-:root.dark {
-    --checked: rgb(77, 202, 77);
+@import "theme/modal.less";
+@import "theme/macos-menu.less";
+@import "theme/mica.less";
+/* Colors */
+@colorMixRate    : 1%;
+@transparencyRate: 65%;
+@appOpacity      : 0;
 
-    #app {
-        --color1                  : rgba(37, 37, 38, 0.2);
-        --color2                  : rgba(31, 31, 31, 0.6);
-        --color3                  : rgba(31, 31, 31, 0.75);
-        --fontStyle               : : "Pretendard Variable", "Inter var experimental", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        font-family               : var(--fontStyle);
-        --textColor               : white !important;
-        --textColorLight          : white;
-        --textColorLighter        : #ccc;
-        --keyColor                : #fa586a;
-        --buttonAccent            : #d60017;
-        --buttonAccentPressed     : #bb0000;
-        --border                  : 1px solid rgba(68, 68, 68, 0.4);
-        --topBarColor             : rgba(45, 45, 45, 0.25);
-        --linearGradient          : linear-gradient(-90deg, transparent 0%, black 10%, black 90%, transparent 100%);
-        --mediaBarColor           : rgba(0, 0, 0, 0.3);
-        --songProgressColor       : #b8b8b8;
-        --blurSmall               : 8px;
-        --blurMedium              : 32px;
-        --mediaItemShadow-Shadow  : 4px 4px 4px rgba(0, 0, 0, 0.15);
-        --artistHoverColor        : rgba(250, 35, 59, 0.8);
-        --menuBackgroundColor     : rgba(36, 36, 36, 0.5);
-        --selectBackground        : #333;
-        --selectBorder            : 1px solid rgba(100, 100, 100, 0.2);
-        --UIKitWhite              : white;
-        --UIKitWhiteTextColor     : #333;
-        --UIKitBlack              : rgba(0, 0, 0, 0.2);
-        --UIKitBlackTextColor     : rgba(255, 255, 255, 0.5);
-        --UIKitSelected           : rgba(200, 200, 200, 0.15);
-        --UIKitShadow             : 0px 0px 36px 0px rgba(0, 0, 0, 0.3);
-        --checked                 : rgb(77, 202, 77);
-        --searchBarBackgroundColor: rgba(0, 0, 0, 0.3);
-        --searchBackgroundColor   : rgba(31, 31, 31, 0.6);
-        --activeTabColor          : rgba(250, 88, 106, 0.1);
-        --oddItemsAccentCOlor     : rgb(255 255 255 / 0.03);
-        --sidebarIconColor        : rgba(255, 255, 255, 0.5);
-        --volumeThumbColor        : rgb(80, 80, 80);
-        --volumeTrackColor        : rgba(200, 200, 200, 0.5);
-        --playlistButtonColor     : rgba(100, 100, 100, 0.5);
-        --userHoverColor          : rgba(100, 100, 100, 0.2);
-        --modalContentColor       : rgba(36, 36, 36, 0.4);
-        --modalHeaderColor        : rgba(0, 0, 0, 0.3);
+@baseColor           : rgb(31, 31, 31);
+@baseColorMix        : mix(@baseColor, transparent, 80%);
+@sidebarColor        : rgb(37, 37, 38);
+@sidebarColorMix     : mix(@sidebarColor, transparent, @transparencyRate);
+@mediaColor          : rgb(85, 85, 85);
+@mediaColorMix       : mix(@mediaColor, transparent, @transparencyRate);
+@mediaContainerColor : rgb(46, 46, 45);
+@songProgressColor   : rgb(184, 184, 184);
+@volumeThumbColor    : rgb(44, 44, 44);
 
-        .fullscreen-view .tab-toggles div {
-            width        : 5vh;
-            height       : 5vh;
-            padding      : 1.6vh;
-            margin-bottom: 100px;
-            border-radius: 5px;
+:root {
+    /* Less Variables */
+    --baseColor          : @baseColor;
+    --baseColorMix       : @baseColorMix;
+    --sidebarColor       : @sidebarColor;
+    --sidebarColorMix    : @sidebarColorMix;
+    --mediaColor         : @mediaColor;
+    --mediaColorMix      : @mediaColorMix;
+    --mediaContainerColor: @mediaContainerColor;
+    --songProgressColor  : @songProgressColor;
+    --volumeThumbColor   : @volumeThumbColor;
+    /* Colors */
+    --keyColor           : #fa586a;
+    --ciderColor         : #ff2654;
+    --artistHoverColor   : rgba(250, 35, 59, 0.8);
+    --activeTabColor     : rgba(250, 88, 106, 0.1);
+    --volumeTrackColor   : rgba(200, 200, 200, 0.3);
+    --categoriesColor    : rgba(50, 50, 50, 0.5);
 
-            &.active {
-                background-color: var(--UIKitSelected);
-            }
-        }
+    /* Text */
+    --textColor     : #fafafa;
+    --textColorLight: #fff;
 
-        .fullscreen-view .tab-toggles div:hover {
-            background-color   : var(--selected);
-            transition-duration: 0.2s;
-        }
+    /* Borders */
+    --modalBorderColor      : rgba(68, 68, 68, 0.4);
+    --modalBorderSubtleColor: hsla(0, 0%, 50%, 0.2);
+    --appBorderColor        : hsla(0, 0%, 50%, 0.5);
+    --contentBorderColor    : hsla(0, 0%, 50%, 0.4);
 
-        .fullscreen-view .tab-toggles {
-            bottom: 2vh;
-            right : 2vh;
-        }
-
-        // Use Filled Heart icon in pop up windows
-        button[title="Unlove"]>.sidebar-icon>.svg-icon,
-        button[data-original-title="Unlove"]>.sidebar-icon>.svg-icon {
-            --url          : none !important;
-            background     : url('icons/heart.svg');
-            background-size: contain;
-        }
+    /* Layout */
+    --contentWidth: calc(100vw - 346px);
+    --sidebarWidth: 260px;
 
 
-        .usermenu-container .usermenu-body {
-            background-color: var(--menuBackgroundColor);
+}
 
-            .app-sidebar-button {
-                background: var(--userHoverColor);
-                color     : var(--textColor);
-            }
+@media (prefers-color-scheme: dark) {
+    @keyColor               : #fa586a;
+    @ciderColor             : #ff2654;
+    @baseColor              : rgb(31, 31, 31);
+    @baseColorMix           : mix(@baseColor, transparent, 80%);
+    @sidebarColor           : rgb(37, 37, 38);
+    @sidebarColorMix        : mix(@sidebarColor, transparent, @transparencyRate);
+    @mediaColor             : rgb(85, 85, 85);
+    @mediaColorMix          : mix(@mediaColor, transparent, @transparencyRate);
+    @textColor              : #fafafa;
+    @textColorLight         : #fff;
+    @activeTabColor         : rgba(250, 88, 106, 0.1);
+    @artistHoverColor       : rgba(250, 35, 59, 0.8);
+    @modalBorderColor       : rgba(68, 68, 68, 0.4);
+    @modalBorderSubtleColor : hsla(0, 0%, 50%, 0.2);
+    @songProgressColor      : rgb(184, 184, 184);
+    @appBorderColor         : hsla(0, 0%, 50%, 0.5);
+    @volumeTrackColor       : rgba(200, 200, 200, 0.3);
+    @volumeThumbColor       : rgb(44, 44, 44);
+    @contentBorderColor     : hsla(0, 0%, 50%, 0.4);
+    @contentWidth           : calc(100vw - 346px);
+    @categoriesColor        : rgba(50, 50, 50, 0.5);
+    @mediaContainerColor    : rgb(46, 46, 45);
 
-            .usermenu-item {
-                color: var(--textColorLighter);
+}
 
-                svg {
-                    color: var(--keyColor);
-                }
+@media (prefers-color-scheme: light) {
+    @keyColor               : #d60017;
+    @ciderColor             : #ff2654;
+    @baseColor              : #fff;
+    @baseColorMix           : mix(@baseColor, transparent, 100%);
+    @sidebarColor           : rgba(249, 249, 249, 0);
+    @sidebarColorMix        : mix(@sidebarColor, transparent, 40%);
+    @mediaColor             : #fff;
+    @mediaColorMix          : mix(@mediaColor, transparent, 100%);
+    @textColor              : #333;
+    @textColorLight         : #fff;
+    @activeTabColor         : rgba(250, 88, 106, 0.1);
+    @artistHoverColor       : rgba(250, 35, 59, 0.8);
+    @modalBorderColor       : rgba(68, 68, 68, 0.4);
+    @modalBorderSubtleColor : hsla(0, 0%, 50%, 0.2);
+    @songProgressColor      : rgb(184, 184, 184);
+    @appBorderColor         : hsla(0, 0%, 50%, 0.8);
+    @appBorderColor         : rgb(221, 221, 221, 0.5);
+    @volumeTrackColor       : rgba(200, 200, 200, 0.9);
+    @volumeThumbColor       : #ffffff;
+    @contentBorderColor     : hsla(0, 0%, 50%, 0.4);
+    @contentWidth           : calc(100vw - 346px);
+    @categoriesColor        : rgba(50, 50, 50, 0.5);
+    @mediaContainerColor    : #fefefe;
 
-                &:hover {
-                    background: var(--keyColor);
-                    color     : var(--textColorLight);
+    .app-chrome-item.display--large>button,
+    .queue {
+        filter: invert(0.8);
+    }
 
-                    svg {
-                        color: var(--textColorLight);
-                    }
-                }
-            }
-        }
+    .app-chrome-item.playback-controls:empty {
+        border: 1px solid @appBorderColor  !important;
 
-        .menu-panel .menu-panel-body {
-            background-color: var(--menuBackgroundColor);
-            backdrop-filter : blur(var(--blurSmall));
-            color           : var(--textColor);
-
-            & .menu-body {
-                padding: 0;
-            }
-
-            & .menu-option {
-                border-radius       : 0;
-                width               : 100%;
-                padding-inline-start: 14px;
-                padding-block       : 10px;
-
-                &::before {
-                    --sizeX      : 0px;
-                    --sizeY      : 0px;
-                    border-radius: 0;
-                }
-
-                +.menu-option {
-                    margin-top: -1px;
-                }
-
-                &:not(:last-of-type) {
-                    border-bottom: 1px solid var(--selected);
-                }
-
-            }
-        }
-
-        .modal-fullscreen {
-            background: var(--searchBackgroundColor);
-
-            .modal-window {
-                backdrop-filter: blur(var(--blurSmall));
-                background     : transparent;
-
-                .castPlayIndicator {
-                    fill: var(--keyColor);
-                }
-
-                .modal-header,
-                .md-footer,
-                .modal-lowercontent,
-                .modal-search {
-                    background : var(--modalHeaderColor);
-                    color      : var(--textColor);
-                    font-weight: bold;
-
-                    .search-input--icon {
-                        filter: invert(1);
-                    }
-                }
-
-                .close-btn {
-                    filter: invert(0.8);
-
-                    &:hover {
-                        filter: invert(0);
-                    }
-                }
-
-                .md-select {
-                    background: var(--selectBackground);
-                    border    : var(--selectBorder);
-                    color     : var(--textColor);
-
-                    option,
-                    optgroup {
-                        background: var(--selectBackground);
-                    }
-                }
-
-                .modal-content {
-                    backdrop-filter: blur(var(--blurSmall));
-                    background     : var(--modalContentColor);
-                    color          : var(--textColor);
-                    box-shadow     : none;
-
-                    input[type="number"] {
-                        background: var(--searchBarBackgroundColor);
-                        color     : var(--textColor);
-                    }
-
-                    .sidebar-playlist {
-                        .app-sidebar-item.app-sidebar-item-playlist {
-                            color: var(--textColor);
-                        }
-
-                        .sidebar-icon>svg {
-                            color: var(--sidebarIconColor);
-                        }
-
-                        &:hover {
-                            background-color: var(--keyColor);
-
-                            .app-sidebar-item,
-                            div>svg {
-                                color: var(--textColorLight);
-                            }
-                        }
-                    }
-
-
-                    .playlist-item {
-                        background: var(--modalContentColor);
-                        color     : var(--textColor);
-
-                        &:hover {
-                            background: var(--keyColor);
-                            color     : var(--textColorLight);
-                        }
-                    }
-                }
-
-                .md-btn,
-                .md-btn-block {
-                    background: var(--keyColor);
-                    color     : var(--textColorLight);
-                }
-            }
-        }
-
-        .app-sidebar-button.active {
-            background: rgb(255 255 255 / 80%) !important;
-            animation : usermenuBtnClick 0s cubic-bezier(0.36, 0, 0.66, -0.56) !important;
+        &::before {
+            border-right: 1px solid @appBorderColor  !important;
         }
     }
 
-    #app:not(.macosmenu) {
-        .app-chrome {
+}
 
-            & .app-chrome-item .shuffle {
-                margin-left: 4vw;
-            }
 
-            .app-chrome--left {
-                width: 65%;
 
-                .app-mainmenu::before {
-                    content         : "";
-                    background-image: var(--cvar-userprofileimg, url('/assets/cider-round.svg'));
-                    position        : absolute;
-                    top             : -1px;
-                    left            : 2px;
-                    width           : 37px;
-                    height          : 37px;
-                    border-radius   : 50%;
-                    background-size : contain;
-                    z-index         : -1;
-                }
 
-                .app-mainmenu {
-                    background-image: none;
-                    padding-right   : 120px;
-                    border-radius   : 10px;
-                    outline         : none;
 
-                    &:focus {
-                        background-image: none;
-                        // padding: 10px;
-                        border-radius   : 10px;
-                        outline         : none;
 
-                    }
+/****       LAYOUT      ****/
 
-                    &:active {
-                        background-image: none;
-                        outline         : none;
-                    }
-                }
+#app-main {
+    // background-color: var(--sidebarColorMix);
 
-                .app-mainmenu::after {
-                    content    : "Cider";
-                    font-size  : 2em;
-                    font-weight: bold;
-                    color      : var(--textColorLighter);
-                    margin-left: 40px;
-                }
-
-                & .app-chrome-item:nth-of-type(2) {
-                    margin-left: 15px;
-                }
-            }
-
-            .app-chrome--center {
-                .app-chrome-item.playback-controls {
-                    width           : 90%;
-                    max-width       : 550px;
-                    background-color: var(--mediaBarColor);
-                }
-            }
-
-            .window-controls {
-                width: 100px;
-            }
+    .app-chrome {
+        background-color: transparent;
+        box-shadow      : none;
+        backdrop-filter : none;
+        -webkit-app-region: drag;
+        &::before {
+            // border-bottom     : 1px solid var(--appBorderColor);
+            @baseColorMix     : mix(@mediaContainerColor, transparent, @transparencyRate);
+            background-color  : var(--baseColorMix);
+            z-index           : 15;
+            content           : "";
+            position          : absolute;
+            top               : 0;
+            right             : 0;
+            width             : calc(100% - var(--sidebarWidth));
+            height            : var(--chromeHeight);
+            backdrop-filter   : blur(16px) saturate(180%);
+            // border-bottom  : 1px solid var(--appBorderColor);
+            // border-left    : 1px solid var(--appBorderColor);
+            -webkit-app-region: drag;
         }
 
-        .usermenu-body {
-            backdrop-filter : blur(var(--blurSmall)) !important;
-            background-color: var(--color2);
-            position        : relative;
-            top: var(--chromeHeight);
-        }
-    }
+        .app-chrome--left {
+            z-index: 17;
+            width  : min-content;
 
-    // Mac-like Window controls
-    #app.macosemu {
-
-        // Make User menu appear on right
-        .usermenu-body {
-            background-color: var(--color2);
-            backdrop-filter : blur(var(--blurSmall));
-            position        : relative;
-            left            : calc(100vw - 260px);
-            top: var(--chromeHeight);
-        }
-
-        .app-chrome {
-            .app-chrome--left {
-                width: 100%;
+            .app-chrome-item:nth-of-type(2) {
+                margin-left       : calc(var(--sidebarWidth) * 0.4);
             }
-
-            .app-chrome--right {
-                width: 80%;
-            }
-
-            .app-chrome--center {
-                .app-chrome-item.playback-controls {
-                    width    : 90%;
-                    max-width: 550px;
-                }
-            }
-
-            & .app-chrome-item:nth-of-type(2):not(.generic) {
-                margin-left: 75px;
-            }
-
-            & .app-chrome-item .shuffle {
-                margin-left: 4vw;
-            }
-
-            .app-chrome-item .window-controls-macos {
-                position: relative;
-                left    : 20px;
-
-                div {
-                    height            : 13px !important;
-                    width             : 13px !important;
-                    border-radius     : 50%;
-                    margin            : 0px;
-                    -webkit-app-region: no-drag;
-                    background-image  : unset;
-                    position          : absolute;
-                    cursor            : pointer;
-                    box-shadow        : none;
-                    transition        : background-color 0.7s var(--appleEase);
-
-                    // set color
-                    &.minimize {
-                        background-color: rgb(255, 189, 76) !important;
-                        margin-left     : 2px;
-                        left            : 22px;
-                        top             : 50%;
-                        transform       : translate(0, -50%);
-                    }
-
-                    &.minmax {
-                        background-color: rgb(77, 202, 77) !important;
-                        left            : 46px;
-                        top             : 50%;
-                        transform       : translate(0, -50%);
-                    }
-
-                    &.close {
-                        background-color: rgb(255, 92, 92) !important;
-                        margin-left     : 2px;
-                        left            : 0;
-                        top             : 50%;
-                        transform       : translate(0, -50%);
-                    }
-                }
-            }
-
-            // set icons on hover
-            & .app-chrome-item:hover {
-                .minimize {
-                    background-image      : url('icons/minimize.svg') !important;
-                    background-size       : 13px 13px;
-                    // background-position: center;
-                    background-repeat     : no-repeat;
-                }
-
-                .minmax {
-                    background-image   : url('icons/minmax.svg') !important;
-                    background-size    : 10px 10px;
-                    background-position: center;
-                    background-repeat  : no-repeat;
-                }
-
-                .minmax.restore {
-                    background-image      : url('icons/maxmin.svg') !important;
-                    background-size       : 12px 12px;
-                    // background-position: center;
-                    background-repeat     : no-repeat;
-                }
-
-                .close {
-                    background-image       : url('icons/close.svg') !important;
-                    background-size        : 13px 13px;
-                    // basckground-position: inherit;
-                    background-repeat      : no-repeat;
-                }
-            }
-        }
-    }
-
-    #app.twopanel {
-        #app-sidebar {
-            z-index: 3;
-        }
-
-        #app-content {
-            z-index   : 1;
-            height    : 100vh;
-            margin-top: calc(-1 * var(--chromeHeight1));
-
-            .content-inner {
-                padding-bottom: 100px;
-                z-index       : 1;
-            }
-        }
-
-        .app-navigation {
-            height: calc(100% - var(--chromeHeight1));
-        }
-
-        .app-drawer {
-            height    : calc(100% - var(--chromeHeight2) + var(--chromeHeight1));
-            margin-top: calc(-1 * var(--chromeHeight1));
-        }
-
-        .app-chrome {
-            z-index   : 5;
-            background: transparent;
-
-            &::before {
-                display: none;
-            }
-
-            .app-mainmenu {
-                z-index: 5;
-            }
-
-            &.chrome-bottom {
-                position        : fixed;
-                bottom          : 0;
-                width           : calc(100vw - 260px);
-                margin-left     : 260px;
-                background-color: rgba(30, 30, 30, 0.3);
-                backdrop-filter : blur(32px);
-
-                .app-chrome-item:nth-of-type(2):not(.generic) {
-                    margin-left: 0;
-                }
-
-                .app-chrome--left {
-                    width: 20%;
-
-                    .artwork {
-                        margin       : 10px;
-                        width        : 60px;
-                        height       : auto;
-                        aspect-ratio : 1;
-                        border-radius: 10%;
-
-                        img {
-                            border-radius: 10%;
-                        }
-                    }
-
-                    .playback-info {
-                        width      : 100%;
-                        margin-left: 30px;
-                    }
-                }
-
-                .app-chrome--right {
-                    width: auto;
-
-                    .app-chrome-item.volume {
-                        margin-right: 0;
-                    }
-                }
-            }
-        }
-
-    }
-
-    #app-main {
-        color: var(--textColor);
-
-        // Mac Style side-menu
-        #app-sidebar {
-            background-color: transparent;
-
-            .app-sidebar-item {
-                font-size: 15px;
-                padding  : 4px 12px;
-                color    : var(--textColor);
-
-                &:not(.app-sidebar-item-playlist) .feather {
-                    color: var(--keyColor);
-                }
-
-                .feather {
-                    color: var(--sidebarIconColor);
-                }
-
-                &.active {
-                    background: var(--activeTabColor);
-                }
-            }
-
-            .app-sidebar-item.active::after {
-                height: 50%;
-                filter: drop-shadow(0px 2px 4px rgb(0 0 0 / 50%));
-                filter: drop-shadow(0px 2px 4px rgb(0 0 0 / 50%));
-            }
-
-            .app-sidebar-header {
-                padding-top: calc(var(--chromeHeight) + 11px);
-            }
-
-            .app-sidebar-header-text:not(:first-child) {
-                font-size  : 10px;
-                padding-top: 15px;
-            }
-
-            .search-input--icon {
-                background-size: 15px;
-                z-index        : 5;
-            }
-
-            .search-input {
-                background   : var(--searchBarBackgroundColor);
-                color        : var(--textColor);
-                filter       : saturate(0);
-                padding      : 10px;
-                padding-left : 32px;
-                border-radius: 5px;
-                border       : var(--selectBorder);
-                z-index      : 4;
-            }
-
-            .search-hints-container .search-hints {
-                background-color: var(--searchBackgroundColor);
-                backdrop-filter : blur(var(--blurSmall));
-
-                .search-hint {
-                    color: var(--textColor);
-
-                    &:hover {
-                        background: var(--buttonAccent);
-                        color     : var(--textColorLight);
-                    }
-                }
-            }
-        }
-        .app-navigation {
-            height: calc(100% - var(--navigationBarHeight));
-        }
-
-        #app-content {
-            border-radius: 0px;
-            border       : var(--border);
-        }
-
-        .app-chrome {
-            position  : fixed;
-            z-index   : 6;
-            background: transparent;
-
-            .app-chrome-item {
-                -webkit-app-region: drag;
-
-                svg,
-                button {
-                    transform : scale(1);
-                    transition: transform 0.2s ease-in-out;
-                }
-
-                &:hover {
-
-                    svg,
-                    button {
-                        transform : scale(1.2);
-                        transition: transform 0.2s ease-in-out;
-                    }
-
-                }
-
-                button,
-                .volume,
-                input[type="range"] {
-                    -webkit-app-region: no-drag !important;
-                }
+            .shuffle {
+                margin-left: calc(var(--sidebarWidth) * 0.2);
             }
 
             .vdiv {
                 display: none;
             }
 
-            .app-chrome--left {
-                // margin-left: 150px;
+            // .app-chrome-item:nth-of-type(4) {
+            //     position: absolute;
 
-                .app-chrome-item.full-height {
-                    position: relative;
-                    // left: calc(100vw - 290px);
-                    z-index : 100;
+            //     button[title="Show Library"],
+            //     button[data-original-title="Show Library"] {
+            //         transition        : margin-left 0.3s var(--appleEase);
+            //         margin-left       : 70px;
+            //         -webkit-app-region: no-drag;
+            //     }
 
-                    &:first-child {
-                        // width:35px;
-                        // margin-left: 75px;
+            //     button[title="Hide Library"],
+            //     button[data-original-title="Hide Library"] {
+            //         transition        : margin-left 0.3s var(--appleEase);
+            //         margin-left       : 270px;
+            //         -webkit-app-region: no-drag;
+            //     }
+            // }
+        }
+
+        .app-chrome--center {
+            z-index: 17;
+
+            .app-chrome-item.playback-controls {
+                width           : 90%;
+                max-width       : 650px;
+                height          : calc(100% - 10px);
+                border-radius   : 0.125rem;
+                background-color: @mediaColorMix;
+                max-width       : 650px;
+                border          : none;
+                overflow        : hidden;
+
+                &:empty {
+                    border: 1px solid @mediaColorMix;
+                }
+            }
+
+            .app-playback-controls {
+                height: 100%;
+
+                .artwork {
+                    border-radius: 0;
+                    margin       : 0;
+                    height       : 100%;
+                    width        : auto;
+
+                    .mediaitem-artwork {
+                        width        : 100%;
+                        height       : 100%;
+                        border-radius: 0 !important;
                     }
                 }
-            }
 
-            // Display Cider Logo when player is empty
-            .app-chrome-item.playback-controls:empty {
-                background-image   : url('/assets/cider-round.svg');
-                background-repeat  : no-repeat;
-                background-size    : 7%;
-                background-position: center;
+                .playback-info {
+                    justify-content: flex-start;
+                    padding-top    : 3px;
 
-            }
+                    .chrome-icon-container {
+                        right: 3px;
+                    }
 
-            .app-chrome--right {
-                // margin-right: -20px;
-                z-index: 7;
-            }
+                    .song-progress {
+                        height: max-content;
+                        bottom: -4px;
 
-            &::before {
-                content         : "";
-                position        : absolute;
-                top             : 0;
-                right           : 0;
-                width           : calc(100% - 260px);
-                height          : var(--chromeHeight1);
-                background-color: var(--topBarColor);
-                z-index         : 6;
-                border-left     : var(--border);
-                // border-bottom   : var(--border);
-                backdrop-filter : blur(var(--blurSmall));
-            }
+                        // left: 2px;
+                        input[type="range"] {
+                            border-radius: 0px;
 
-            .app-chrome--center,
-            .app-chrome--left,
-            .app-chrome-item {
-                z-index: 7;
+                            &::-webkit-slider-thumb {
+                                border-radius: 3px;
+                                width        : 7px;
+                                height       : 15px;
+                                border       : 1px solid @mediaColorMix;
+                                background   : mix(black, @songProgressColor, 20%);
+                            }
+                        }
+                    }
+                }
 
-                // change Cider Logo to profile picture
-                .app-mainmenu,
-                .app-mainmenu.active {
-                    background       : var(--cvar-userprofileimg, url('/assets/cider-round.svg'));
-                    border-radius    : 50%;
-                    background-repeat: no-repeat;
-                    width            : 35px;
-                    height           : 35px;
-                    background-size  : contain;
+                .actions {
+                    display: none;
                 }
             }
+        }
+
+        .app-chrome--right {
+            z-index: 17;
+            width  : min-content;
 
             .app-chrome-item.volume {
-                width       : 110px;
-                max-width   : 110px;
-                margin-right: 1vw;
+                width       : 120px;
+                margin-right: 3rem;
 
                 input[type="range"] {
                     background-color: transparent;
@@ -696,112 +273,99 @@
 
                     &::-webkit-slider-thumb {
                         position  : relative;
-                        border    : 1px solid var(--volumeTrackColor);
-                        background: var(--volumeThumbColor);
-                        margin-top: -6px;
+                        border    : 1px solid hsl(0, 0%, 50%);
+                        background: mix(@volumeThumbColor, @mediaColor, 50%);
+                        margin-top: -5px;
 
                     }
 
                 }
             }
 
-            // Mac Style Player Controls
-            .app-playback-controls {
-                height         : 98%;
-                backdrop-filter: blur(0px);
-                border-radius  : 5px;
-                width          : 100%;
+            .window-controls {
+                width: 100px;
+            }
+        }
 
-                .artwork {
-                    width        : 50px;
-                    height       : 50px;
-                    margin-left  : 0px;
-                    margin-right : -2.25px;
-                    margin-bottom: 0px;
-                    margin-top   : 0px;
-                    border-radius: 5px;
-                    position     : absolute;
-                    left         : 0px;
+        .app-mainmenu,
+        .app-mainmenu.active {
+            background       : var(--cvar-userprofileimg, url('/assets/cider-round.svg'));
+            border-radius    : 50%;
+            background-repeat: no-repeat;
+            width            : 35px;
+            height           : 35px;
+            background-size  : contain;
+            // position         : absolute;
+            // margin-left      : 90px;
+            // -webkit-app-region: no-drag;
+        }
+    }
+}
 
-                    .mediaitem-artwork {
-                        border-radius: 5px;
+.app-navigation {
+    --color1: transparent;
+    display : flex;
 
-                    }
-                }
+    #app-sidebar {
+        background         : @sidebarColorMix;
+        // height          : calc(100% - var(--chromeHeight) + 1.5px);
+        // transition      : background-color 0.7s 1.5s var(--appleEase);
+        // backdrop-filter : blur(10px) saturate(180%);
+        border-right       : 1px solid var(--appBorderColor);
+        align-self         : flex-end;
+        
+        .search-input{
+            transition: border 0.3s var(--appleEase);
+            &:focus{
+                border-bottom: none;
+                border: 1px solid var(--keyColor);
+                transition: border 0.3s var(--appleEase);
+            }
+        }
+        .search-input-container input{
+            height: 35px;
+        }
+        
+        .search-hints-container .search-hints {
+            // margin-left:-10px;
+            width:92.5%;
 
-                .song-progress {
-                    bottom  : -4px;
-                    right   : 1px;
-                    left    : 2.5px;
-                    z-index : 30;
-                    overflow: hidden;
+            .search-hint {
+                color: var(--textColor);
 
-                    input[type="range"] {
-                        border-radius: 0px;
-
-                        &::-webkit-slider-thumb {
-                            border-radius: 3px;
-                            width        : 7px;
-                            height       : 15px;
-                            border       : #333 solid 1px;
-                            background   : var(--songProgressColor)
-                        }
-                    }
-
-                    .song-duration {
-                        margin-left : -1px;
-                        margin-right: 6px;
-                    }
-                }
-
-                .song-name {
-                    max-width         : unset;
-                    width             : 100%;
-                    padding-left      : 0.5%;
-                    padding-right     : 1%;
-                    margin-top        : -5px;
-                    // -webkit-mask: linear-gradient(to right, transparent 0%, transparent calc(100% - 1px), #000 calc(100% - 1px), #000 100%);
-                    mask-image        : var(--linearGradient);
-                    -webkit-mask-image: var(--linearGradient);
-
-                }
-
-                & div .song-artist-album {
-                    width             : 98%;
-                    max-width         : unset;
-                    mask-image        : var(--linearGradient);
-                    -webkit-mask-image: var(--linearGradient);
-
-                    .song-artist-album-content {
-                        font-size: 12px;
-                        // color: #ddd;
-                    }
-                }
-
-                .actions {
-                    display: none;
-                }
-
-                .audio-type {
-                    margin-right: 10px;
-                    margin-top  : -12px;
-                }
-
-                .playback-info {
-                    position: absolute;
-                    height  : 100%;
-                    left    : 50px;
-                    width   : calc(100% - 50px);
+                &:hover {
+                    background: var(--keyColor);
+                    color     : var(--textColorLight);
                 }
             }
         }
 
-        // Style Listen Now first row of cards larger
-        .content-inner {
-            top: calc(var(--chromeHeight) + var(--navigationBarHeight));
+        .app-sidebar-item {
+            font-size: 15px;
+            padding  : 4px 12px;
+            color    : var(--textColor);
 
+            &:not(.app-sidebar-item-playlist) .feather {
+                color: var(--keyColor);
+            }
+
+            .feather {
+                color: var(--sidebarIconColor);
+            }
+
+            &.active {
+                background: var(--activeTabColor);
+            }
+        }
+    }
+
+    #app-content {
+
+        .content-inner {
             .header-text {
-                margin-left: 0.65rem;
+                margin-left   : 0.65rem;
+                padding-bottom: 1rem;
+                border-bottom : 1px solid var(--contentBorderColor);
             }
 
             .title-browse-sp {
@@ -810,1476 +374,305 @@
                 text-overflow: ellipsis;
             }
 
-            .cd-mediaitem-square.mediaitem-card {
-                transform : scale(1);
-                transition: transform 0.2s var(--appleEase) 0.1s;
+            .well,
+            .mediaitem-list-item__grid {
+                background-color: transparent;
+                box-shadow      : none;
+                border-radius   : 0;
+            }
 
-                &:hover {
-                    transform : scale(1.1);
-                    transition: transform 0.2s var(--appleEase) 0.1s;
+            .well {
+                border-bottom : 1px solid var(--contentBorderColor);
+                padding-inline: 0;
+            }
+
+            .cd-mediaitem-list-item {
+
+                // border-top          : 1px solid @contentBorderColor;
+                // border-radius       : 0;
+                &:not(:last-of-type) .info-rect,
+                &:not(:last-of-type) .metainfo,
+                &:not(:last-of-type) .duration,
+                &:not(:last-of-type) .explicit-icon {
+                    border-bottom: 1px solid var(--contentBorderColor);
+                    border-radius: 0;
+                }
+
+                .explicit-icon {
+                    height             : 100%;
+                    background-size    : 12px;
+                    background-position: center;
                 }
             }
 
-            .cd-mediaitem-square:not(.mediaitem-brick) {
-                width: 264px;
+            .v-hl-container>*[data-v-45080727] {
+                .cd-mediaitem-list-item {
+                    border-top      : 1px solid var(--contentBorderColor);
+                    border-radius   : 0;
+                    // width        : calc(var(--contentWidth) / 4.225);
+                    margin-right    : 20px;
 
-                .artwork-container .artwork {
-                    width       : 240px;
-                    height      : initial;
-                    aspect-ratio: 1;
-                }
-
-                &.mediaitem-video {
-                    width : 320px;
-                    height: 230px !important;
-
-                    .artwork-container .artwork {
-                        width       : 290px;
-                        height      : initial;
-                        aspect-ratio: 16/9;
-                    }
-                }
-            }
-
-            .cd-mediaitem-square.mediaitem-brick {
-                width: 318px;
-
-                .artwork-container .artwork {
-                    height: 163px;
-                    width : 290px;
-                }
-            }
-
-            .itemContainer .cd-mediaitem-square-container,
-            .madeforyou-body .cd-mediaitem-square-container {
-                padding-right: 20px;
-
-                .mediaitem-video {
-                    max-width: 320px;
-                    width    : 290px;
-                }
-            }
-
-            .cd-mediaitem-square:not(.mediaitem-card):not(.mediaitem-brick) {
-                transition      : transform .2s var(--appleEase);
-                transition-delay: .1s;
-                padding         : 12px;
-                height          : 310px;
-
-                .artwork-container,
-                .info-rect {
-                    transition      : transform .22s var(--appleEase);
-                    transition-delay: .05s;
-                }
-
-                &:hover {
-                    .artwork-container {
-                        transform       : scale(1.1);
-                        transition      : transform .1s var(--appleEase);
-                        transition-delay: 0s;
-                        transform-origin: center;
+                    .duration,
+                    .isLibrary {
+                        display: none;
                     }
 
                     .info-rect {
-                        z-index         : 1;
-                        transition      : transform .1s var(--appleEase);
-                        transition-delay: 0s;
-                        transform       : translateY(8px) translate3d(0, 0, 0);
+                        border-bottom: none;
+                    }
+
+                }
+            }
+
+            .grouping-btn {
+                // @baseColor: ;
+                background-color: var(--categoriesColor);
+            }
+
+            // .v-hl-container[data-v-45080727]{
+            //     height: max-content;
+            // }
+            .cd-hmedia-scroller.hmedia-scroller-card {
+                margin-top: -0.9em;
+            }
+
+            .cd-mediaitem-square-container {
+                align-self: flex-start;
+            }
+
+            .cd-mediaitem-square {
+                .info-rect {
+                    .title {
+                        font-size: 0.95em;
+                    }
+
+                    .subtitle {
+                        font-size: 0.95em;
                     }
                 }
             }
 
-            &:not(.artist-page) .vue-horizontal {
-                height    : 100%;
-                width     : 100%;
-                overflow-y: visible;
-            }
+            .cd-mediaitem-square {
+                height   : auto;
+                width    : calc(var(--contentWidth) / 5.925);
+                min-width: 160px;
 
-            .v-hl-container[data-v-45080727] {
-                overflow-y: visible;
+                .artwork-container {
+                    width: 95%;
 
-                &:not(.v-h1-scroll) {
-                    clip-path: none;
+                    .artwork {
+                        width       : auto;
+                        height      : auto;
+                        aspect-ratio: 1;
+                    }
                 }
-            }
 
-            .cd-hmedia-scroller.hmedia-scroller-card {
-                height    : 21.5vw;
-                max-height: 410px;
-                min-height: 360px;
-                margin-top: -15px;
+                .title,
+                .subtitle {
+                    text-align     : left;
+                    justify-content: left;
 
-                .cd-mediaitem-square.mediaitem-card {
-                    // width        : 100%;
-                    width        : initial;
-                    max-width    : none;
-                    max-width    : none;
-                    height       : 90%;
-                    aspect-ratio : 24/31;
-                    padding-right: 0px;
+                    >div {
+                        -webkit-box-orient: horizontal !important;
+                    }
+                }
 
+                .title+.subtitle {
+                    opacity: 0.7;
+                }
 
-                    & .artwork-container {
-                        width : 100%;
-                        height: 100%;
+                &.mediaitem-card {
+                    width       : calc(var(--contentWidth) / 5);
+                    min-width   : 195px;
+                    max-width   : 288px;
+                    aspect-ratio: 57/74;
 
-                        & .artwork {
-                            width              : 100%;
-                            height             : 100%;
-                            background-size    : cover;
-                            background-position: center;
-                            background-repeat  : no-repeat;
+                    .artwork-container {
+                        width: 100%;
+
+                        .artwork {
+                            width       : auto;
+                            height      : auto;
+                            aspect-ratio: 1;
                         }
                     }
 
-                    & .title {
-                        font-weight: 650;
+                    .title,
+                    .subtitle {
+                        text-align     : left;
+                        justify-content: left;
+
+                        >div {
+                            -webkit-box-orient: horizontal !important;
+                        }
                     }
 
-                    & .subtitle {
-                        font-size         : 0.95em;
-                        display           : -webkit-box;
-                        -webkit-box-orient: vertical;
-                        -webkit-line-clamp: 3;
-                        overflow          : hidden;
-                        max-height        : 3.8em;
-
+                    .title+.subtitle {
+                        opacity: 0.7;
                     }
 
-                    & .title+.subtitle {
-                        max-height: none;
-                        margin-top: -0.5em;
+                    .title,
+                    .subtitle {
+                        text-align        : center;
+                        justify-content   : center;
+                        margin-block-start: 0.5em;
+                    }
+
+                    .title+.subtitle {
+                        opacity           : 1;
+                        margin-block-start: 0;
                     }
                 }
 
-            }
+                &.mediaitem-brick {
+                    // width: calc(var(--contentWidth) / 4.95);
 
-            .cd-mediaitem-square:not(.mediaitem-card) {
-                & .title+.subtitle {
-                    opacity: 0.7;
-                }
-            }
-
-            .heart-icon div {
-                left            : 20px;
-                top             : 22px;
-                width           : 12px;
-                height          : 12px;
-                margin-top      : 3px;
-                background-color: var(--keyColor) !important;
-            }
-
-            .heart-unfilled {
-                opacity: 0;
-            }
-
-            .cd-mediaitem-list-item:hover {
-                background-color: rgba(150, 150, 150, 0.3);
-
-                .heart-icon {
-                    display: flex;
+                    .artwork {
+                        aspect-ratio: 290/163;
+                    }
                 }
 
-                .heart-unfilled {
-                    opacity: 1;
+                &.mediaitem-video {
+                    // width: calc(var(--contentWidth) / 4.95);
+
+                    .artwork {
+                        aspect-ratio: 16/9;
+                    }
                 }
+
+
             }
 
-            &.playlist-page {
-                .playIcon {
-                    margin-left: -10px !important;
+            &.artist-page {
+                .topSongs {
+                    // width: calc(100% - 250px);
+                    margin-right: 10px;
                 }
 
-                .heart-icon {
-                    left: -25px;
-                }
-            }
+                .cd-mediaitem-square {
+                    // width: calc(var(--contentWidth) / 6);
 
-            &.library-page {
-                .heart-icon {
-                    left: -30px;
+                    &.mediaitem-card {
+                        width: 210px;
+                    }
+
+                    &.mediaitem-video {
+                        // width: calc(var(--contentWidth) / 5);
+                    }
+                }
+
+
+                .v-hl-container>*[data-v-45080727] {
+                    .cd-mediaitem-list-item {
+                        border-top   : none;
+                        border-radius: 0;
+                        width        : calc(var(--contentWidth) / 3.8);
+
+                        &:not(:last-of-type) .info-rect,
+                        &:not(:last-of-type) .metainfo,
+                        &:not(:last-of-type) .duration,
+                        &:not(:last-of-type) .explicit-icon {
+                            border-bottom: 1px solid var(--contentBorderColor);
+                            border-radius: 0;
+                        }
+
+                    }
                 }
             }
 
             &.search-page {
-                .mediaitem-brick .title {
-                    color: var(--textColorLight);
-                }
-            }
+                div[data-v-45080727] {
+                    .cd-mediaitem-list-item {
+                        border-top   : none;
+                        border-radius: 0;
+                        width        : calc(var(--contentWidth) / 3.1);
 
-            &.settings-page {
-                .md-option-container .md-option-line:not(:last-child) {
-                    border-bottom: var(--selectBorder);
+                        &:not(:last-of-type) .info-rect,
+                        &:not(:last-of-type) .metainfo,
+                        &:not(:last-of-type) .duration,
+                        &:not(:last-of-type) .explicit-icon {
+                            border-bottom: 1px solid var(--contentBorderColor);
+                            border-radius: 0;
+                        }
+
+                        .duration,
+                        .isLibrary {
+                            display: flex;
+                        }
+
+                        .info-rect {
+                            border-bottom: none;
+                        }
+
+                    }
+                }
+
+                .cd-mediaitem-square.mediaitem-brick {
+                    .info-rect {
+                        .title {
+                            font-size: 1.1rem;
+                            color    : var(--textColorLight);
+                        }
+                    }
                 }
             }
 
             &.home-page {
-                top: 20px;
-            }
-
-        }
-
-        // Style New Artists Page
-        .library-artists-page {
-            .cd-mediaitem-list-item {
-                .artwork {
-                    box-shadow   : 0px 0px 12px var(--mediaBarColor);
-                    border-radius: 50%;
-                }
-
-                &:hover,
-                &.active {
-                    background-color: var(--artistHoverColor);
-                    color           : #fff;
-                    transition      : 0.1s ease-in-out;
-                }
-            }
-        }
-
-        // Style Buttons
-        .md-btn {
-            &.md-btn-primary {
-                background: var(--buttonAccent);
-            }
-
-            &:not(.md-btn-replay):not(.md-btn-replay--hero):not(.teamBtn):hover {
-                background: var(--buttonAccentPressed);
-            }
-        }
-
-        // Style Select
-        .md-btn,
-        .md-select {
-            color: whitesmoke;
-
-            &:not(.md-btn-primary):not(.md-btn-replay):not(.md-btn-replay--hero) {
-                background: var(--selectBackground);
-                border    : var(--selectBorder);
-                color     : var(--textColor);
-            }
-
-            .md-ico-remove {
-                filter: unset;
-            }
-
-            .md-ico-add {
-                filter: unset;
-            }
-
-            >option,
-            >optgroup,
-            optgroup>option {
-                background: var(--selectBackground);
-            }
-        }
-
-        // Style See All/ History Button
-        .cd-btn-seeall {
-            color: var(--keyColor);
-        }
-
-        // Make Static Artist Headers smaller
-        .artist-page .artist-header {
-            min-height: 350px;
-        }
-
-        // Make Static Artist Headers larger
-        .content-inner.artist-page.animated {
-            .artist-header {
-                width   : calc(100vw - 260px);
-                height  : calc(100vh - 480px);
-                overflow: hidden;
-                position: relative;
-
-                .animated {
-                    position  : absolute;
-                    bottom    : 0;
-                    margin-top: calc(var(--chromeHeight1));
-                    height    : 30%;
-                    overflow  : visible;
-                    box-shadow: none;
-
-                    video {
-                        -webkit-mask-image: linear-gradient(0deg, transparent 0%, white 43%, black 55%, black 90%, black 100%);
-                    }
+                .cd-mediaitem-square {
+                    width: calc(var(--contentWidth) / 6);
                 }
             }
 
-            .artist-body {
-                margin-top: -70px;
-            }
+            // Style New Artists Page
+            &.library-artists-page {
+                height: 100%;
 
-            .more-btn-round {
-                box-shadow: var(--mediaItemShadow);
-
-                .svg-icon {
-                    background: var(--textColorLight);
+                .list-container {
+                    border-right: 1px solid var(--contentBorderColor);
                 }
-            }
-        }
 
-        .artist-play {
-            background: var(--buttonAccent);
-        }
+                .podcasts-list {
+                    background: transparent;
 
-        .more-btn-round {
-            box-shadow: var(--mediaItemShadow);
+                }
 
-            .svg-icon {
-                background: var(--keyColor);
-            }
-        }
 
-        // increase star size
-        .popular {
-            width          : 12px;
-            height         : 12px;
-            margin-top     : -2px;
-            background-size: contain;
-            left           : -25px;
-        }
-
-        .playlist-page.inline-playlist .playlist-inner {
-            background     : var(--color2);
-            backdrop-filter: blur(var(--blurSmall));
-
-            .floating-header {
-                background     : var(--mediaBarColor);
-                backdrop-filter: blur(var(--blurMedium));
-            }
-        }
-
-        .playlist-page {
-            .playlist-display {
-                box-shadow: 0px 0px 12px 4px rgb(0 0 0 / 30%);
-            }
-
-            // .playlist-display .playlist-controls {
-            //     button:nth-last-of-type(2) {
-            //         box-shadow: var(--mediaItemShadow);
-            //         background: var(--playlistButtonColor);
-            //         border-radius: 25px;
-            //         margin-left: 10vw;
-
-            //         // display: none;
-            //         .md-ico-add {
-            //             background: var(--keyColor);
-            //         }
-            //     }
-            // }
-            .artist-chip {
-                color: var(--textColor);
-
-                .artist-chip__follow {
-                    color           : var(--keyColor);
+                .cd-mediaitem-list-item {
                     background-color: transparent;
-                    transition      : background-color 0.3s 1s var(--appleEase), color 0.3s 1s var(--appleEase);
+                    margin          : 0;
+                    width           : 100%;
 
-                    &:hover {
-                        background-color: var(--keyColor);
+                    &:not(:last-of-type) {
+                        border-bottom: 1px solid var(--contentBorderColor);
+                        border-radius: 0;
+                    }
+
+                    .artwork {
+                        // box-shadow   : 0px 0px 12px;
+                        border-radius: 50%;
+                    }
+
+                    &:hover,
+                    &.active {
+                        background-color: var(--artistHoverColor);
                         color           : var(--textColorLight);
-                        transition      : background-color 0.3s var(--appleEase);
+                        transition      : 0.1s ease-in-out;
                     }
                 }
             }
-
-
-            .well .playlist-time {
-                margin-top: 40px;
-            }
-
-            div[draggable="false"] .playlist-time {
-                margin-top: -20px;
-            }
-        }
-
-        // Style new Settings Page UIKit
-        .settings-page ul[role="tablist"] {
-            margin-top   : 40px;
-            margin-bottom: 40px;
-        }
-
-        .nav-link {
-            color: var(--UIKitBlackTextColor);
-
-            &.active,
-            &:hover {
-                color      : var(--UIKitWhiteTextColor);
-                box-shadow : var(--UIKitShadow);
-                font-weight: bold;
-
-                &:after {
-                    background-color: var(--UIKitWhite);
-                }
-            }
-        }
-
-        .nav-pills {
-            background-color: var(--UIKitBlack);
-            border-radius   : 25px;
-
-            &:hover {
-                .nav-link.active {
-                    color      : var(--UIKitBlackTextColor);
-                    font-weight: normal;
-
-                    &::after {
-                        background-color: var(--UIKitSelected);
-                    }
-
-                    &:hover {
-                        color      : var(--UIKitWhiteTextColor);
-                        font-weight: bold;
-
-                        &:after {
-                            background-color: var(--UIKitWhite);
-                        }
-                    }
-                }
-            }
-        }
-
-
-
-        // ul[role="tablist"] {
-        //     border-radius   : 25px;
-        //     background-color: var(--UIKitBlack);
-        //     .nav-link {
-        //         color:var(--UIKitBlackTextColor);
-        //         &:hover {
-        //             transform: scale(1.3);
-        //         }
-        //         &::after {
-        //             background-color: hsla(0, 0%, 30%, 1);
-        //         }
-        //     }
-        //     .nav-link.active{
-        //         color: var(--UIKitWhiteTextColor);
-        //         font-weight: bold;
-        //         &::after {
-        //             transform: scale(1.3);
-        //             background-color: var(--UIKitWhite);
-        //         }
-        //     }#content-inner
-        // }
-
-        input[type=checkbox][switch]:checked {
-            background-color: var(--checked);
-            mix-blend-mode  : unset;
-        }
-
-        .cd-mediaitem-list-item:nth-child(odd) {
-            background: var(--oddItemsAccentCOlor);
-        }
-
-        .well:not(.artistfeed-well) {
-            background-color: transparent;
-            box-shadow      : none;
-            padding-inline  : 0;
-        }
-
-    }
-
-    // Only changing the CSS for the Music Video Container
-    #apple-music-video-container {
-
-        // Style Captions
-        #captions:not(:empty) {
-            color         : var(--textColor);
-            font-size     : 1.75rem;
-            padding-inline: 10px;
-            padding-block : 5px;
-            border-radius : 10px;
-            font-family   : 'SF Pro', 'Inter', 'Noto Sans JP', 'Source Han Sans SC', 'Source Han Sans HK', 'Source Han Sans SC', 'Source Han Sans HK', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans HK', 'Noto Sans KR', sans-serif;
-            margin-top    : 6vh;
-        }
-
-        // AM Web Style Fullscreen Button
-        #player-fullscreen {
-            background         : url("icons/fullscreen.svg");
-            background-size    : 50%;
-            background-position: center;
-            background-repeat  : no-repeat;
-            filter             : opacity(0.6);
-            // filter: drop-shadow(0px 0px 4px rgb(0 0 0 / 80%));
-            background-color   : var(--mediaBarColor);
-            border-radius      : 10px;
-            transition         : 0.2s ease-in-out filter;
-            bottom             : 0;
-
-            &:hover {
-                filter    : opacity(1);
-                transition: 0.2s ease-in-out filter;
-            }
-
-            svg {
-                display: none;
-            }
-        }
-
-        // AM Web Style PiP Button
-        #player-pip {
-            background-color: var(--mediaBarColor);
-            border-radius   : 10px;
-            bottom          : 0;
-            filter          : opacity(0.6);
-            transition      : 0.2s ease-in-out filter;
-
-            &:hover {
-                filter    : opacity(1);
-                transition: 0.2s ease-in-out filter;
-            }
-        }
-
-        .playback-info {
-            width           : 100%;
-            bottom          : 0;
-            left            : 0;
-            padding         : 20px 40px;
-            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 50%);
-        }
-
-        input[type="range"] {
-            align-self   : center;
-            height       : 4px;
-            border-radius: .5rem;
-            margin-inline: 10px;
-        }
-
-        p {
-            color: rgb(255, 255, 255, 1);
-        }
-
-        .song-artist {
-            font-size  : 1.7rem;
-            font-weight: bold;
-            color      : rgb(255, 255, 255, 1);
-        }
-
-        .song-name {
-            font-size  : 1.2rem;
-            font-weight: bold;
-            color      : rgb(255, 255, 255, 0.8);
-        }
-
-        .song-progress input[type="range"] {
-            appearance: initial;
-
-            &::-webkit-slider-thumb {
-                box-shadow        : 0px 0px 0px #000000;
-                border            : 1px solid #39404D;
-                background        : #fff;
-                height            : 0.7rem;
-                width             : 0.7rem;
-                border-radius     : 50%;
-                cursor            : pointer;
-                -webkit-appearance: none;
-            }
-        }
-    }
-
-    .artist-play {
-        background: var(--buttonAccent);
-    }
-
-    .more-btn-round {
-        box-shadow: var(--mediaItemShadow);
-
-        .svg-icon {
-            background: var(--keyColor);
-        }
-    }
-
-    // increase star size
-    .popular {
-        width          : 12px;
-        height         : 12px;
-        background-size: contain;
-    }
-
-    .playlist-page.inline-playlist .playlist-inner {
-        background     : var(--color2);
-        backdrop-filter: blur(var(--blurSmall));
-
-        .floating-header {
-            background     : var(--mediaBarColor);
-            backdrop-filter: blur(var(--blurMedium));
-        }
-    }
-
-    // Style new Settings Page UIKit
-    .settings-page ul[role="tablist"] {
-        margin-top   : 40px;
-        margin-bottom: 40px;
-    }
-
-    input[type=checkbox][switch]:checked {
-        background-color: var(--checked);
-        mix-blend-mode  : unset;
-    }
-
-    .cd-mediaitem-list-item:nth-child(odd) {
-        background: var(--oddItemsAccentCOlor);
-    }
-
-    .well:not(.artistfeed-well) {
-        background-color: transparent;
-        box-shadow      : none;
-    }
-
-    // Only changing the CSS for the Music Video Container
-    #apple-music-video-container {
-
-        // Style Captions
-        #captions:not(:empty) {
-            color         : var(--textColorLight);
-            font-size     : 1.75rem;
-            padding-inline: 10px;
-            border-radius : 10px;
-            font-family   : 'SF Pro', 'Inter', 'Noto Sans JP', 'Source Han Sans SC', 'Source Han Sans HK', 'Source Han Sans SC', 'Source Han Sans HK', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans HK', 'Noto Sans KR', sans-serif;
-            margin-top    : 6vh;
-        }
-
-        .menu-panel .menu-panel-body {
-            background-color: var(--color2);
-            backdrop-filter : blur(var(--blurSmall));
-            color           : var(--textColor);
-        }
-    }
-}
-
-:root:not(.dark) {
-    --checked: rgb(77, 202, 77);
-
-    @media (prefers-color-scheme: light) {
-        #app {
-            --color1                  : rgba(252, 252, 252, 0);
-            --color2                  : rgba(255, 255, 255, 0.75);
-            --color3                  : rgba(255, 255, 255, 0.8);
-            --fontStyle               : : "Pretendard Variable", "Inter var experimental", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            font-family               : var(--fontStyle);
-            --textColor               : rgba(0, 0, 0, 0.88) !important;
-            --textColorLighter        : #333;
-            --textColorLight          : white;
-            --keyColor                : #d60017;
-            --buttonAccent            : #d60017;
-            --buttonAccentPressed     : #bb0000;
-            --border                  : 1px solid rgba(68, 68, 68, 0.4);
-            --topBarColor             : rgba(255, 255, 255, 0.35);
-            --linearGradient          : linear-gradient(-90deg, transparent 0%, black 10%, black 90%, transparent 100%);
-            --mediaBarColor           : rgba(255, 255, 255, 1);
-            --songProgressColor       : rgba(0, 0, 0, 0.56);
-            --songProgressBackground  : rgba(0, 0, 0, 0.2);
-            --blurSmall               : 8px;
-            --blurMedium              : 32px;
-            --mediaItemShadow-Shadow  : 4px 4px 4px rgba(0, 0, 0, 0.15);
-            --artistHoverColor        : rgba(250, 35, 59, 0.8);
-            --menuBackgroundColor     : rgba(250, 250, 250, 0.8);
-            --selectBackground        : #eee;
-            --selectBorder            : 1px solid rgba(100, 100, 100, 0.2);
-            --UIKitWhite              : white;
-            --UIKitWhiteTextColor     : #333;
-            --UIKitBlack              : rgba(0, 0, 0, 0.2);
-            --UIKitBlackTextColor     : rgba(50, 50, 50, 0.75);
-            --UIKitSelected           : rgba(200, 200, 200, 0.15);
-            --checked                 : rgb(77, 202, 77);
-            --searchBarBackgroundColor: white;
-            --searchBackgroundColor   : rgba(255, 255, 255, 0.3);
-            --activeTabColor          : rgba(100, 100, 107, 0.25);
-            --oddItemsAccentCOlor     : rgba(0, 0, 0, 0.05);
-            --userHoverColor          : rgba(250, 35, 59, 0.4);
-            --sidebarIconColor        : rgba(30, 30, 30, 0.8);
-            --volumeThumbColor        : var(--textColorLight);
-            --volumeTrackColor        : var(--songProgressColor);
-            --modalContentColor       : rgb(235, 235, 235);
-
-            .menu-panel .menu-panel-body {
-                background-color: var(--menuBackgroundColor);
-                backdrop-filter : blur(var(--blurSmall));
-                color           : var(--textColor);
-
-                .menu-body .svg-icon {
-                    color  : var(--keyColor);
-                    --color: var(--keyColor);
-                }
-            }
-
-            .modal-fullscreen {
-                background: var(--searchBackgroundColor);
-
-                .modal-window {
-                    .castPlayIndicator {
-                        fill: var(--keyColor);
-                    }
-
-                    .modal-header,
-                    .md-footer,
-                    .modal-lowercontent,
-                    .modal-search {
-                        background : var(--color2);
-                        color      : #000;
-                        font-weight: bold;
-
-                        .search-input--icon {
-                            filter: invert(1);
-                        }
-                    }
-
-                    .close-btn {
-                        filter: invert(0.8);
-
-                        &:hover {
-                            filter: invert(0);
-                        }
-                    }
-
-                    .md-select {
-                        background: var(--selectBackground);
-                        border    : var(--selectBorder);
-                        color     : var(--textColor);
-
-                        option,
-                        optgroup {
-                            background: var(--selectBackground);
-                        }
-                    }
-
-                    .modal-content {
-                        background: var(--modalContentColor);
-                        color     : var(--textColor);
-                        box-shadow: none;
-
-                        input[type="number"] {
-                            background: var(--searchBarBackgroundColor);
-                            color     : var(--textColor);
-                        }
-
-                        .sidebar-playlist {
-                            .app-sidebar-item.app-sidebar-item-playlist {
-                                color: var(--textColor);
-                            }
-
-                            .sidebar-icon>svg {
-                                color: var(--sidebarIconColor);
-                            }
-
-                            &:hover {
-                                background-color: var(--keyColor);
-
-                                .app-sidebar-item,
-                                div>svg {
-                                    color: var(--textColorLight);
-                                }
-                            }
-                        }
-
-
-                        .playlist-item {
-                            background: var(--modalContentColor);
-                            color     : var(--textColor);
-
-                            &:hover {
-                                background: var(--keyColor);
-                                color     : var(--textColorLight);
-                            }
-                        }
-                    }
-
-                    .md-btn,
-                    .md-btn-block {
-                        background: var(--keyColor);
-                        color     : var(--textColorLight);
-                    }
-                }
-            }
-        }
-
-        .fullscreen-view {
-            --songProgressColor     : #b8b8b8;
-            --songProgressBackground: #555;
-            --textColorLight        : white;
-
-            .artwork-col .app-playback-controls .playback-info>div,
-            .queue-col {
-                color: var(--textColorLight);
-
-                .queue-title {
-                    opacity: 1;
-                }
-
-                .queue-subtitle {
-                    opacity: 0.6;
-                }
-
-
-                .md-btn-primary {
-                    background-color: var(--keyColor) !important;
-                    color           : var(--textColorLight) !important;
-                }
-            }
-        }
-
-        .app-sidebar-header-text {
-            filter: brightness(0);
-        }
-
-        .sidebar-icon svg:not(.feather) {
-            color: var(--keyColor);
-        }
-
-        .modal-dialog {
-            --menuBackgroundColor: rgba(255, 255, 255, 0.9);
-            --textColor          : #000;
-            --textColorLighter   : #333;
-            --keyColor           : #d60017;
-            --keyColor-primary   : #d60017;
-
-            .modal-content {
-                background     : var(--menuBackgroundColor);
-                backdrop-filter: blur(8px);
-
-                .modal-header {
-                    // background: var(--color2);
-                    color      : var(--textColor);
-                    font-weight: bold;
-                }
-
-                .modal-body {
-                    color: var(--textColorLighter);
-                }
-
-                .close {
-                    filter: invert(0.8);
-
-                    &:hover {
-                        filter: invert(0);
-                    }
-                }
-            }
-        }
-
-
-        .search-hints-container .search-hints {
-            background-color: rgba(0, 0, 0, 0.05);
-            color           : var(--textColor);
-        }
-
-        #app.macosemu {
-            .window-controls-macos div {
-                box-shadow: 0px 0px 6px 0px rgba(11, 11, 11, 0.25) !important;
-            }
-        }
-
-        #app-sidebar {
-            .search-input--icon {
-                filter: invert(0.8);
-            }
-        }
-
-        #app-main {
-            background-color: rgba(255, 255, 255, 0.7) !important;
-            backdrop-filter : blur(var(--blurMedium));
-
-            .about-page .row .col img[src="assets/banner.png"] {
-                width          : 0;
-                height         : 0;
-                padding        : 250px 0 0 500px;
-                background     : url("icons/banner.png");
-                background-size: contain;
-            }
-
-            .playback-button--small:hover,
-            .playback-button:hover,
-            .playback-button--small.active,
-            .playback-button--small.queue:hover,
-            .playback-button--small.queue.active,
-            .playback-button--small.miniplayer:hover,
-            .playback-button--small.shuffle:hover,
-            .playback-button--small.repeat:hover {
-                filter: brightness(0);
-            }
-
-            .md-btn {
-                background-color: var(--keyColor) !important;
-                color           : var(--textColorLight) !important;
-            }
-
-            .settings-page {
-                .md-btn {
-                    background-color: var(--checked) !important;
-                }
-            }
-
-            .playback-button--small:not(.lyrics):not(.cast),
-            .playback-button,
-            .volume-button--small,
-            // .volume,
-            .nav-item:not(li) {
-                filter: invert(1) brightness(85);
-            }
-
-            .playback-button--small.lyrics {
-                filter: brightness(0.5);
-            }
-
-            button.volume {
-                filter: invert(1);
-            }
-
-            .app-chrome-item .window-controls>div {
-                filter: invert(0.8);
-
-                &.close:hover {
-                    filter: invert(0);
-                }
-            }
-
-            .app-drawer {
-                background: var(--searchBackgroundColor);
-
-                .lyric-footer {
-                    background: rgba(30, 30, 30, 0.2);
-                }
-
-                .lyric-line {
-                    color: var(--textColorLighter);
-                }
-
-                .lyric-line.active .lyricWaiting>div {
-                    background: var(--textColorLighter);
-                }
-            }
-
-            input[type="number"],
-            input[type="text"] {
-                background: var(--searchBarBackgroundColor);
-                color     : var(--textColor);
-                border    : var(--selectBorder);
-            }
-
-            .podcasts-page {
-                .podcasts-search {
-                    background: var(--color2);
-
-                    .search-input-container {
-                        filter: invert(0.8);
-                    }
-                }
-            }
-
-            .content-inner {
-                .search-input-container {
-                    filter: invert(0.8);
-                }
-
-                .reload-btn {
-                    background-color: var(--keyColor);
-                }
-            }
-
-            .library-page .library-header {
-                background: var(--searchBackgroundColor);
-
-            }
-
-            .list-group-item-dark {
-                background-color: var(--color2);
-                border          : var(--selectBorder);
-                color           : var(--textColor);
-                border-radius   : 0px;
-            }
-
-            .list-group-item-dark:hover {
-                background-color: var(--keyColor);
-                color           : var(--textColorLight);
-                border-radius   : 0px;
-            }
-
-            .popular {
-                filter: invert(0.65);
-            }
-        }
-
-
-
-        #apple-music-video-container {
-            --mediaBarColor         : rgba(0, 0, 0, 0.3);
-            --songProgressColor     : #b8b8b8;
-            --songProgressBackground: #333;
-
-            // Style Captions
-            #captions:not(:empty) {
-                color         : var(--textColorLight);
-                font-size     : 1.75rem;
-                padding-inline: 10px;
-                border-radius : 10px;
-                font-family   : 'SF Pro', 'Inter', 'Noto Sans JP', 'Source Han Sans SC', 'Source Han Sans HK', 'Source Han Sans SC', 'Source Han Sans HK', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans HK', 'Noto Sans KR', sans-serif;
-                margin-top    : 6vh;
-            }
-        }
-
-        .mini-view .artwork-col .app-playback-controls {
-            --songProgressColor     : #b8b8b8;
-            --songProgressBackground: #555;
-
-            .song-progress {
-                bottom  : -4px;
-                right   : 1px;
-                left    : 2.5px;
-                z-index : 30;
-                overflow: hidden;
-
-                input[type="range"] {
-                    border-radius: 0px;
-
-                    &::-webkit-slider-thumb {
-                        border-radius: 3px;
-                        width        : 7px;
-                        height       : 12px;
-                        border       : #333 solid 1px;
-                        background   : var(--songProgressColor)
-                    }
-                }
-            }
-
-            .playback-info>div {
-                color: var(--textColorLight);
-            }
-        }
-    }
-
-    body {
-        background: black !important;
-
-        #micaEffect {
-            opacity   : 0.5;
-            transition: opacity .20s linear;
-            filter    : saturate(260%) brightness(0.5);
-        }
-
-        &.stopanimation {
-            #micaEffect {
-                opacity: 0;
-            }
-
-            #app.macosemu {
-                .app-chrome-item .window-controls-macos div {
-                    background-color: hsl(0, 0%, 50%) !important;
-                    transition      : background-color 0.7s var(--appleEase);
-                }
-            }
-        }
-    }
-}
-
-:root.light {
-    --checked: rgb(77, 202, 77);
-
-    #app {
-        --color1                  : rgba(252, 252, 252, 0);
-        --color2                  : rgba(255, 255, 255, 0.75);
-        --color3                  : rgba(255, 255, 255, 0.8);
-        --fontStyle               : : "Pretendard Variable", "Inter var experimental", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        font-family               : var(--fontStyle);
-        --textColor               : rgba(0, 0, 0, 0.88) !important;
-        --textColorLighter        : #333;
-        --textColorLight          : white;
-        --keyColor                : #d60017;
-        --buttonAccent            : #d60017;
-        --buttonAccentPressed     : #bb0000;
-        --border                  : 1px solid rgba(68, 68, 68, 0.4);
-        --topBarColor             : rgba(255, 255, 255, 0.35);
-        --linearGradient          : linear-gradient(-90deg, transparent 0%, black 10%, black 90%, transparent 100%);
-        --mediaBarColor           : rgba(255, 255, 255, 1);
-        --songProgressColor       : rgba(0, 0, 0, 0.56);
-        --songProgressBackground  : rgba(0, 0, 0, 0.2);
-        --blurSmall               : 8px;
-        --blurMedium              : 32px;
-        --mediaItemShadow-Shadow  : 4px 4px 4px rgba(0, 0, 0, 0.15);
-        --artistHoverColor        : rgba(250, 35, 59, 0.8);
-        --menuBackgroundColor     : rgba(250, 250, 250, 0.8);
-        --selectBackground        : #eee;
-        --selectBorder            : 1px solid rgba(100, 100, 100, 0.2);
-        --UIKitWhite              : white;
-        --UIKitWhiteTextColor     : #333;
-        --UIKitBlack              : rgba(0, 0, 0, 0.2);
-        --UIKitBlackTextColor     : rgba(50, 50, 50, 0.75);
-        --UIKitSelected           : rgba(200, 200, 200, 0.15);
-        --checked                 : rgb(77, 202, 77);
-        --searchBarBackgroundColor: white;
-        --searchBackgroundColor   : rgba(255, 255, 255, 0.3);
-        --activeTabColor          : rgba(100, 100, 107, 0.25);
-        --oddItemsAccentCOlor     : rgba(0, 0, 0, 0.05);
-        --userHoverColor          : rgba(250, 35, 59, 0.4);
-        --sidebarIconColor        : rgba(30, 30, 30, 0.8);
-        --volumeThumbColor        : var(--textColorLight);
-        --volumeTrackColor        : var(--songProgressColor);
-        --modalContentColor       : rgb(235, 235, 235);
-
-        .menu-panel .menu-panel-body {
-            background-color: var(--menuBackgroundColor);
-            backdrop-filter : blur(var(--blurSmall));
-            color           : var(--textColor);
-
-            .menu-body .svg-icon {
-                color  : var(--keyColor);
-                --color: var(--keyColor);
-            }
-        }
-
-        .modal-fullscreen {
-            background: var(--searchBackgroundColor);
-
-            .modal-window {
-                .castPlayIndicator {
-                    fill: var(--keyColor);
-                }
-
-                .modal-header,
-                .md-footer,
-                .modal-lowercontent,
-                .modal-search {
-                    background : var(--color2);
-                    color      : #000;
-                    font-weight: bold;
-
-                    .search-input--icon {
-                        filter: invert(1);
-                    }
-                }
-
-                .close-btn {
-                    filter: invert(0.8);
-
-                    &:hover {
-                        filter: invert(0);
-                    }
-                }
-
-                .md-select {
-                    background: var(--selectBackground);
-                    border    : var(--selectBorder);
-                    color     : var(--textColor);
-
-                    option,
-                    optgroup {
-                        background: var(--selectBackground);
-                    }
-                }
-
-                .modal-content {
-                    background: var(--modalContentColor);
-                    color     : var(--textColor);
-                    box-shadow: none;
-
-                    input[type="number"] {
-                        background: var(--searchBarBackgroundColor);
-                        color     : var(--textColor);
-                    }
-
-                    .sidebar-playlist {
-                        .app-sidebar-item.app-sidebar-item-playlist {
-                            color: var(--textColor);
-                        }
-
-                        .sidebar-icon>svg {
-                            color: var(--sidebarIconColor);
-                        }
-
-                        &:hover {
-                            background-color: var(--keyColor);
-
-                            .app-sidebar-item,
-                            div>svg {
-                                color: var(--textColorLight);
-                            }
-                        }
-                    }
-
-
-                    .playlist-item {
-                        background: var(--modalContentColor);
-                        color     : var(--textColor);
-
-                        &:hover {
-                            background: var(--keyColor);
-                            color     : var(--textColorLight);
-                        }
-                    }
-                }
-
-                .md-btn,
-                .md-btn-block {
-                    background: var(--keyColor);
-                    color     : var(--textColorLight);
-                }
-            }
-        }
-    }
-
-    .fullscreen-view {
-        --songProgressColor     : #b8b8b8;
-        --songProgressBackground: #555;
-        --textColorLight        : white;
-
-        .artwork-col .app-playback-controls .playback-info>div,
-        .queue-col {
-            color: var(--textColorLight);
-
-            .queue-title {
-                opacity: 1;
-            }
-
-            .queue-subtitle {
-                opacity: 0.6;
-            }
-
-
-            .md-btn-primary {
-                background-color: var(--keyColor) !important;
-                color           : var(--textColorLight) !important;
-            }
-        }
-    }
-
-    .app-sidebar-header-text {
-        filter: brightness(0);
-    }
-
-    .sidebar-icon svg:not(.feather) {
-        color: var(--keyColor);
-    }
-
-    .modal-dialog {
-        --menuBackgroundColor: rgba(255, 255, 255, 0.9);
-        --textColor          : #000;
-        --textColorLighter   : #333;
-        --keyColor           : #d60017;
-        --keyColor-primary   : #d60017;
-
-        .modal-content {
-            background     : var(--menuBackgroundColor);
-            backdrop-filter: blur(8px);
-
-            .modal-header {
-                // background: var(--color2);
-                color      : var(--textColor);
-                font-weight: bold;
-            }
-
-            .modal-body {
-                color: var(--textColorLighter);
-            }
-
-            .close {
-                filter: invert(0.8);
-
-                &:hover {
-                    filter: invert(0);
-                }
-            }
-        }
-    }
-
-
-    .search-hints-container .search-hints {
-        background-color: rgba(0, 0, 0, 0.05);
-        color           : var(--textColor);
-    }
-
-    #app.macosemu {
-        .window-controls-macos div {
-            box-shadow: 0px 0px 6px 0px rgba(11, 11, 11, 0.25) !important;
-        }
-    }
-
-    #app-sidebar {
-        .search-input--icon {
-            filter: invert(0.8);
-        }
-    }
-
-    #app-main {
-        background-color: rgba(255, 255, 255, 0.7) !important;
-        backdrop-filter : blur(var(--blurMedium));
-
-        .about-page .row .col img[src="assets/banner.png"] {
-            width          : 0;
-            height         : 0;
-            padding        : 250px 0 0 500px;
-            background     : url("icons/banner.png");
-            background-size: contain;
-        }
-
-        .playback-button--small:hover,
-        .playback-button:hover,
-        .playback-button--small.active,
-        .playback-button--small.queue:hover,
-        .playback-button--small.queue.active,
-        .playback-button--small.miniplayer:hover,
-        .playback-button--small.shuffle:hover,
-        .playback-button--small.repeat:hover {
-            filter: brightness(0);
-        }
-
-        .md-btn {
-            background-color: var(--keyColor) !important;
-            color           : var(--textColorLight) !important;
-        }
-
-        .settings-page {
-            .md-btn {
-                background-color: var(--checked) !important;
-            }
-        }
-
-        .playback-button--small:not(.lyrics):not(.cast),
-        .playback-button,
-        .volume-button--small,
-        // .volume,
-        .nav-item:not(li) {
-            filter: invert(1) brightness(85);
-        }
-
-        .playback-button--small.lyrics {
-            filter: brightness(0.5);
-        }
-
-        button.volume {
-            filter: invert(1);
-        }
-
-        .app-chrome-item .window-controls>div {
-            filter: invert(0.8);
-
-            &.close:hover {
-                filter: invert(0);
-            }
-        }
-
-        .app-drawer {
-            background: var(--searchBackgroundColor);
-
-            .lyric-footer {
-                background: rgba(30, 30, 30, 0.2);
-            }
-
-            .lyric-line {
-                color: var(--textColorLighter);
-            }
-
-            .lyric-line.active .lyricWaiting>div {
-                background: var(--textColorLighter);
-            }
-        }
-
-        input[type="number"],
-        input[type="text"] {
-            background: var(--searchBarBackgroundColor);
-            color     : var(--textColor);
-            border    : var(--selectBorder);
-        }
-
-        .podcasts-page {
-            .podcasts-search {
-                background: var(--color2);
-
-                .search-input-container {
-                    filter: invert(0.8);
-                }
-            }
-        }
-
-        .content-inner {
-            .search-input-container {
-                filter: invert(0.8);
-            }
-
-            .reload-btn {
-                background-color: var(--keyColor);
-            }
-        }
-
-        .library-page .library-header {
-            background: var(--searchBackgroundColor);
-
-        }
-
-        .list-group-item-dark {
-            background-color: var(--color2);
-            border          : var(--selectBorder);
-            color           : var(--textColor);
-            border-radius   : 0px;
-        }
-
-        .list-group-item-dark:hover {
-            background-color: var(--keyColor);
-            color           : var(--textColorLight);
-            border-radius   : 0px;
-        }
-
-        .popular {
-            filter: invert(0.65);
-        }
-    }
-
-
-
-    #apple-music-video-container {
-        --mediaBarColor         : rgba(0, 0, 0, 0.3);
-        --songProgressColor     : #b8b8b8;
-        --songProgressBackground: #333;
-
-        // Style Captions
-        #captions:not(:empty) {
-            color         : var(--textColorLight);
-            font-size     : 1.75rem;
-            padding-inline: 10px;
-            border-radius : 10px;
-            font-family   : 'SF Pro', 'Inter', 'Noto Sans JP', 'Source Han Sans SC', 'Source Han Sans HK', 'Source Han Sans SC', 'Source Han Sans HK', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans HK', 'Noto Sans KR', sans-serif;
-            margin-top    : 6vh;
-        }
-    }
-
-    .mini-view .artwork-col .app-playback-controls {
-        --songProgressColor     : #b8b8b8;
-        --songProgressBackground: #555;
-
-        .song-progress {
-            bottom  : -4px;
-            right   : 1px;
-            left    : 2.5px;
-            z-index : 30;
-            overflow: hidden;
-
-            input[type="range"] {
-                border-radius: 0px;
-
-                &::-webkit-slider-thumb {
-                    border-radius: 3px;
-                    width        : 7px;
-                    height       : 12px;
-                    border       : #333 solid 1px;
-                    background   : var(--songProgressColor)
-                }
-            }
-        }
-
-        .playback-info>div {
-            color: var(--textColorLight);
         }
     }
 }
 
 @media only screen and (max-width: 1120px) {
     #app {
-        .app-chrome .app-chrome-item:nth-of-type(2) {
+        .app-chrome--left .app-chrome-item:nth-of-type(2) {
             margin-left: 115px !important;
         }
     }
 
     #app.macosemu {
-        .app-chrome .app-chrome-item:nth-of-type(2) {
+        .app-chrome--left .app-chrome-item:nth-of-type(2) {
             margin-left: 180px !important;
         }
 

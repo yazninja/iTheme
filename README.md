@@ -1,25 +1,31 @@
-# iTheme for [Cider](https://cider.sh/) <img src="https://img.shields.io/github/stars/yazninja/apple-cider-lite?style=social" width="70"></img>
+# iTheme (Beta) for [Cider](https://cider.sh/) <img src="https://img.shields.io/github/stars/yazninja/apple-cider-lite?style=social" width="70"></img>
 
 Cider theme based from the Apple Music beta app in MacOS Monterey.
 Best used with `Mica(beta)` option in settings.
 
-Want more functionality?
+```This is a beta release, the full release will be happening on June 9 - 13th```
 
-**New Side Plugin: [iVanced (Alpha)](https://github.com/yazninja/ivanced)**
+#### iTheme Ecosystem
 
-**New Theme Pack: [iTheme++](https://github.com/yazninja/itheme-plus-plus)**
+**Side Plugin: [iVanced (Alpha)](https://github.com/yazninja/ivanced)**
 
----
-
-#### Version 2.1 changelog
-
-+ Improved Listen now page
-+ New Animations
-+ New UIKit Tab Animations and layout
-+ Colored Hearts
+**Theme Pack: [iTheme++](https://github.com/yazninja/itheme-plus-plus)**
 
 ---
-### Gallery
+
+#### Version 3.0 - Beta Release
+
++ Larger Artworks
++ Modern Underline wells
++ Transparent Topbar
++ Artwork Scaling
++ New Search, Album Artist & Song list layout
++ Mica Effects
++ Mojave Layout support (not implemented yet, wait for official release [3.1])
++ New Modal (Popout) Design
+
+---
+### Gallery (Old)
 Listen Now
 ![listennow](https://user-images.githubusercontent.com/71800112/168989861-92f16b56-40de-4b0e-80ea-43fc183cd1d9.png)
 

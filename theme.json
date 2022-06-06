@@ -1,12 +1,34 @@
 {
     "name": "iTheme",
     "description": "Cider theme based from the Apple Music beta app in MacOS.",
-    "version": "2.2.2",
+    "version": "3.0.0",
     "author": "yazninja",
     "github_repo": "ciderapp/iTheme",
     "directives": {
         "windowLayout": {
             "value": "default"
         }
-    }
+    },
+    "themeOptions": [
+        {
+            "name": "Sidebar Color",
+            "type": "color",
+            "value": "#1D1D1D"
+        },
+        {
+            "name": "Topbar Color",
+            "type": "color",
+            "value": "#FFFFFF"
+        },
+        {
+            "name": "Accent Color",
+            "type": "color",
+            "value": "#FF0000"
+        },
+        {
+            "name": "Text Color",
+            "type": "color",
+            "value": "#FFFFFF"
+        }
+    ]
 }
