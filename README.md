@@ -13,7 +13,7 @@ Best used with `Mica(beta)` option in settings.
 
 ---
 
-#### Version 3.0 - Beta Release
+### Version 3.0 - Beta Release
 
 + Larger Artworks
 + Modern Underline wells
@@ -24,11 +24,12 @@ Best used with `Mica(beta)` option in settings.
 + Mojave Layout support (not implemented yet, wait for official release [3.1])
 + New Modal (Popout) Design
 
-Not Supported Prvious iTheme features (will be re-added soon)
+**Not Supported Prvious iTheme features (will be re-added soon)**
 - Light Mode
 - Dynamic Themeing
 - Legacy Cider versions (v1.4.7 and earlier)
 - Inline sidebar theme Support
+- Music Video Layout
 
 ---
 ### Gallery (Old)
