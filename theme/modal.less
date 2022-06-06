@@ -1,0 +1,39 @@
+/* Stylize Popups */
+.modal-fullscreen {
+    backdrop-filter: blur(16px) brightness(0.5);
+
+    .modal-window {
+        background: transparent;
+
+        .modal-header {
+            background-color: var(--baseColorMix);
+            padding-block   : 4px;
+            border-bottom   : 1px solid var(--modalBorderColor);
+            display         : flex;
+
+            .modal-title {
+                align-self  : center;
+                justify-self: center;
+                width       : 100%;
+            }
+        }
+
+        .modal-content {
+            background-color : var(--sidebarColorMix);
+
+            .playlist-item {
+                background-color: transparent;
+                margin-top      : 0;
+
+                &:not(:last-of-type) {
+                    border-bottom: 1px solid var(--modalBorderSubtleColor);
+                }
+
+                &:hover {
+                    background-color: lighten(@sidebarColorMix, 50%);
+                }
+
+            }
+        }
+    }
+}

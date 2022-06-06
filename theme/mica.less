@@ -1,0 +1,39 @@
+body {
+    background: black !important;
+
+    #micaEffect {
+        opacity   : 1;
+        filter    : saturate(200%) brightness(1);
+        transition: opacity 0.7s 1s var(--appleEase);
+    }
+
+    // @media (prefers-color-scheme: light) {
+    //     #micaEffect {
+    //         opacity   : 1;
+    //         filter    : saturate(50%) brightness(150%);
+    //         transition: opacity 0.7s 1s var(--appleEase);
+    //     }
+    // }
+
+    &.stopanimation {
+        #micaEffect {
+            opacity   : 0;
+            transition: opacity 0.7s var(--appleEase);
+        }
+
+        #app.macosemu {
+            .app-chrome-item .window-controls-macos div {
+                filter    : contrast(0) saturate(0);
+                transition: filter 0.7s 1s var(--appleEase);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            #app-sidebar {
+                background-color: @sidebarColor;
+                transition      : background-color 0.7s 0.1s var(--appleEase);
+            }
+
+        }
+    }
+}

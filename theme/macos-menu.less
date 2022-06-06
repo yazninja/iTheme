@@ -1,0 +1,128 @@
+#app.macosemu {
+    .modal-window .modal-header .close-btn {
+        position        : absolute;
+        display         : flex;
+        align-self      : center;
+        justify-self    : center;
+        background-color: rgb(255, 92, 92) !important;
+        height          : 15px !important;
+        width           : 15px !important;
+        border-radius   : 50%;
+        left            : 15px;
+        top             : calc(15px / 2);
+        background-image: none;
+
+        &:hover {
+            background-image : url('icons/close.svg') !important;
+            background-size  : 15px 15px;
+            background-repeat: no-repeat;
+            cursor           : pointer;
+        }
+
+        &::before {
+            content      : '';
+            position     : absolute;
+            top          : 0;
+            left         : 150%;
+            width        : 100%;
+            height       : 100%;
+            border-radius: 50%;
+            border       : 1px solid var(--appBorderColor);
+        }
+
+        &::after {
+            content      : '';
+            position     : absolute;
+            top          : 0;
+            left         : 300%;
+            width        : 100%;
+            height       : 100%;
+            border-radius: 50%;
+            border       : 1px solid var(--appBorderColor);
+        }
+    }
+
+    .app-chrome {
+
+        & .app-chrome-item:nth-of-type(2):not(.generic) {
+            margin-left: 75px;
+        }
+
+        & .app-chrome-item .shuffle {
+            margin-left: 4vw;
+        }
+
+        .app-chrome-item .window-controls-macos {
+            position: relative;
+            left    : 20px;
+
+            div {
+                height            : 13px !important;
+                width             : 13px !important;
+                border-radius     : 50%;
+                margin            : 0px;
+                -webkit-app-region: no-drag;
+                background-image  : unset;
+                position          : absolute;
+                cursor            : pointer;
+                box-shadow        : none !important;
+                transition        : filter 0.7s 0.1s var(--appleEase);
+
+                // set color
+                &.minimize {
+                    background-color: rgb(255, 189, 76) !important;
+                    margin-left     : 2px;
+                    left            : 22px;
+                    top             : 50%;
+                    transform       : translate(0, -50%);
+                }
+
+                &.minmax {
+                    background-color: rgb(77, 202, 77) !important;
+                    left            : 46px;
+                    top             : 50%;
+                    transform       : translate(0, -50%);
+                }
+
+                &.close {
+                    background-color: rgb(255, 92, 92) !important;
+                    margin-left     : 2px;
+                    left            : 0;
+                    top             : 50%;
+                    transform       : translate(0, -50%);
+                }
+            }
+        }
+
+        // set icons on hover
+        & .app-chrome-item:hover {
+            .minimize {
+                background-image      : url('icons/minimize.svg') !important;
+                background-size       : 13px 13px;
+                // background-position: center;
+                background-repeat     : no-repeat;
+            }
+
+            .minmax {
+                background-image   : url('icons/minmax.svg') !important;
+                background-size    : 10px 10px;
+                background-position: center;
+                background-repeat  : no-repeat;
+            }
+
+            .minmax.restore {
+                background-image      : url('icons/maxmin.svg') !important;
+                background-size       : 12px 12px;
+                // background-position: center;
+                background-repeat     : no-repeat;
+            }
+
+            .close {
+                background-image       : url('icons/close.svg') !important;
+                background-size        : 13px 13px;
+                // basckground-position: inherit;
+                background-repeat      : no-repeat;
+            }
+        }
+    }
+}
