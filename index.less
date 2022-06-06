@@ -44,6 +44,7 @@
     --modalBorderSubtleColor: hsla(0, 0%, 50%, 0.2);
     --appBorderColor        : hsla(0, 0%, 50%, 0.5);
     --contentBorderColor    : hsla(0, 0%, 50%, 0.4);
+    --subtleBorderColor     : hsla(0, 0%, 50%, 0.2);
 
     /* Layout */
     --contentWidth: calc(100vw - 346px);
@@ -129,10 +130,11 @@
     // background-color: var(--sidebarColorMix);
 
     .app-chrome {
-        background-color: transparent;
-        box-shadow      : none;
-        backdrop-filter : none;
+        background-color  : transparent;
+        box-shadow        : none;
+        backdrop-filter   : none;
         -webkit-app-region: drag;
+
         &::before {
             // border-bottom     : 1px solid var(--appBorderColor);
             @baseColorMix     : mix(@mediaContainerColor, transparent, @transparencyRate);
@@ -155,8 +157,9 @@
             width  : min-content;
 
             .app-chrome-item:nth-of-type(2) {
-                margin-left       : calc(var(--sidebarWidth) * 0.4);
+                margin-left: calc(var(--sidebarWidth) * 0.4);
             }
+
             .shuffle {
                 margin-left: calc(var(--sidebarWidth) * 0.2);
             }
@@ -198,7 +201,11 @@
                 overflow        : hidden;
 
                 &:empty {
-                    border: 1px solid @mediaColorMix;
+                    border             : 1px solid @mediaColorMix;
+                    background-image   : url('/assets/cider-round.svg');
+                    background-repeat  : no-repeat;
+                    background-position: center;
+                    background-size    : 36px;
                 }
             }
 
@@ -289,12 +296,12 @@
 
         .app-mainmenu,
         .app-mainmenu.active {
-            background       : var(--cvar-userprofileimg, url('/assets/cider-round.svg'));
-            border-radius    : 50%;
-            background-repeat: no-repeat;
-            width            : 35px;
-            height           : 35px;
-            background-size  : contain;
+            background           : var(--cvar-userprofileimg, url('/assets/cider-round.svg'));
+            border-radius        : 50%;
+            background-repeat    : no-repeat;
+            width                : 35px;
+            height               : 35px;
+            background-size      : contain;
             // position         : absolute;
             // margin-left      : 90px;
             // -webkit-app-region: no-drag;
@@ -313,22 +320,24 @@
         // backdrop-filter : blur(10px) saturate(180%);
         border-right       : 1px solid var(--appBorderColor);
         align-self         : flex-end;
-        
-        .search-input{
+
+        .search-input {
             transition: border 0.3s var(--appleEase);
-            &:focus{
+
+            &:focus {
                 border-bottom: none;
-                border: 1px solid var(--keyColor);
-                transition: border 0.3s var(--appleEase);
+                border       : 1px solid var(--keyColor);
+                transition   : border 0.3s var(--appleEase);
             }
         }
-        .search-input-container input{
+
+        .search-input-container input {
             height: 35px;
         }
-        
+
         .search-hints-container .search-hints {
             // margin-left:-10px;
-            width:92.5%;
+            width: 92.5%;
 
             .search-hint {
                 color: var(--textColor);
@@ -620,6 +629,12 @@
             &.home-page {
                 .cd-mediaitem-square {
                     width: calc(var(--contentWidth) / 6);
+                }
+            }
+
+            &.settings-page {
+                .md-option-container .md-option-line:not(:last-child) {
+                    border-bottom: 1px solid var(--subtleBorderColor);
                 }
             }
 
