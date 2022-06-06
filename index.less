@@ -211,13 +211,13 @@
 
             .app-playback-controls {
                 height: 100%;
-
+                -webkit-app-region: drag;
                 .artwork {
                     border-radius: 0;
                     margin       : 0;
                     height       : 100%;
                     width        : auto;
-
+                    -webkit-app-region: no-drag;
                     .mediaitem-artwork {
                         width        : 100%;
                         height       : 100%;
@@ -228,7 +228,9 @@
                 .playback-info {
                     justify-content: flex-start;
                     padding-top    : 3px;
-
+                    > div{
+                        -webkit-app-region: no-drag;
+                    }
                     .chrome-icon-container {
                         right: 3px;
                     }
