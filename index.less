@@ -9,7 +9,7 @@
 @baseColor           : rgb(31, 31, 31);
 @baseColorMix        : mix(@baseColor, transparent, 80%);
 @sidebarColor        : rgb(37, 37, 38);
-@sidebarColorMix     : mix(@sidebarColor, transparent, @transparencyRate);
+@sidebarColorMix     : mix(@sidebarColor, transparent, 20%);
 @mediaColor          : rgb(85, 85, 85);
 @mediaColorMix       : mix(@mediaColor, transparent, @transparencyRate);
 @mediaContainerColor : rgb(46, 46, 45);
@@ -210,14 +210,16 @@
             }
 
             .app-playback-controls {
-                height: 100%;
+                height            : 100%;
                 -webkit-app-region: drag;
+
                 .artwork {
-                    border-radius: 0;
-                    margin       : 0;
-                    height       : 100%;
-                    width        : auto;
+                    border-radius     : 0;
+                    margin            : 0;
+                    height            : 100%;
+                    width             : auto;
                     -webkit-app-region: no-drag;
+
                     .mediaitem-artwork {
                         width        : 100%;
                         height       : 100%;
@@ -228,9 +230,28 @@
                 .playback-info {
                     justify-content: flex-start;
                     padding-top    : 3px;
-                    > div{
+
+                    >div {
                         -webkit-app-region: no-drag;
                     }
+
+                    .info-rect {
+                        mask-image        : linear-gradient(-90deg, transparent 0%, black 10%, black 90%, transparent 100%);
+                        -webkit-mask-image: linear-gradient(-90deg, transparent 3%, black 10%, black 90%, transparent 100%);
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        width:100%;
+                    }
+                    .song-name {
+                        max-width: 560px;
+                    }
+
+                    .song-artist-album {
+                        max-width: 540px;
+                    }
+
                     .chrome-icon-container {
                         right: 3px;
                     }
@@ -507,7 +528,8 @@
                             aspect-ratio: 1;
                         }
                     }
-                    .title{
+
+                    .title {
                         text-overflow: ellipsis;
                         white-space  : nowrap;
                         overflow     : hidden;
@@ -518,7 +540,7 @@
                         text-align        : center;
                         justify-content   : center;
                         margin-block-start: 0.5em;
-                        max-height: 3.8em;
+                        max-height        : 3.8em;
                     }
 
                     .title+.subtitle {
