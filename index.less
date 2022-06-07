@@ -238,12 +238,13 @@
                     .info-rect {
                         mask-image        : linear-gradient(-90deg, transparent 0%, black 10%, black 90%, transparent 100%);
                         -webkit-mask-image: linear-gradient(-90deg, transparent 3%, black 10%, black 90%, transparent 100%);
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-items: center;
-                        width:100%;
+                        display           : flex;
+                        flex-direction    : column;
+                        justify-content   : center;
+                        align-items       : center;
+                        width             : 100%;
                     }
+
                     .song-name {
                         max-width: 560px;
                     }
@@ -371,12 +372,15 @@
                 }
             }
         }
-        .app-sidebar-content{
+
+        .app-sidebar-content {
             padding-inline: 14px;
         }
-        .app-sidebar-header-text:not(:first-of-type){
+
+        .app-sidebar-header-text:not(:first-of-type) {
             margin-top: 1.25em;
         }
+
         .app-sidebar-item {
             font-size: 15px;
             padding  : 4px 16px;
@@ -556,7 +560,7 @@
                 }
 
                 &.mediaitem-brick {
-                    // width: calc(var(--contentWidth) / 4.95);
+                    width: calc(var(--contentWidth) / 4.95);
 
                     .artwork {
                         aspect-ratio: 290/163;
@@ -564,7 +568,7 @@
                 }
 
                 &.mediaitem-video {
-                    // width: calc(var(--contentWidth) / 4.95);
+                    width: calc(var(--contentWidth) / 4.95);
 
                     .artwork {
                         aspect-ratio: 16/9;
@@ -576,19 +580,19 @@
 
             &.artist-page {
                 .topSongs {
-                    // width: calc(100% - 250px);
+                    width       : calc(100% - 250px);
                     margin-right: 10px;
                 }
 
                 .cd-mediaitem-square {
-                    // width: calc(var(--contentWidth) / 6);
+                    width: calc(var(--contentWidth) / 6);
 
                     &.mediaitem-card {
                         width: 210px;
                     }
 
                     &.mediaitem-video {
-                        // width: calc(var(--contentWidth) / 5);
+                        width: calc(var(--contentWidth) / 5);
                     }
                 }
 
@@ -698,6 +702,39 @@
                 }
             }
         }
+    }
+
+    .app-drawer {
+        .queue-body {
+            overflow-x: hidden;
+            overflow-y: scroll;
+            .cd-queue-item,
+            .cd-mediaitem-list-item {
+                width: 100%;
+
+                .info-rect,
+                .queue-info {
+                    border-bottom: 1px solid var(--contentBorderColor);
+                }
+
+                .duration,
+                .queue-duration {
+                    font-size    : 0.8rem;
+                    border-bottom: 1px solid var(--contentBorderColor);
+                }
+            }
+
+            .cd-queue-item {
+                width: 130% !important;
+                ;
+                padding       : 0;
+                height        : 60px;
+                display       : flex;
+                flex-direction: row;
+                flex          : 0 0 auto;
+            }
+        }
+
     }
 }
 
