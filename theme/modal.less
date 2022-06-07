@@ -1,3 +1,4 @@
+@keyColor: #fa586a;
 /* Stylize Popups */
 .modal-fullscreen {
     backdrop-filter: blur(16px) brightness(0.5);
@@ -18,8 +19,10 @@
             }
         }
 
-        .modal-content {
-            background-color : var(--sidebarColorMix);
+        .modal-content, .md-footer {
+            @sidebarColor    : rgb(37, 37, 38);
+            @sidebarColorMix : mix(@sidebarColor, transparent, 80%);
+            background-color : @sidebarColorMix;
 
             .playlist-item {
                 background-color: transparent;
@@ -33,6 +36,13 @@
                     background-color: lighten(@sidebarColorMix, 50%);
                 }
 
+            }
+            .md-btn.md-btn-block:first-of-type {
+                background-color: @keyColor;
+                opacity: 0.8;
+                &:hover {
+                    opacity: 1;
+                }
             }
         }
     }
