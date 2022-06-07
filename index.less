@@ -31,7 +31,7 @@
     --keyColor           : #fa586a;
     --ciderColor         : #ff2654;
     --artistHoverColor   : rgba(250, 35, 59, 0.8);
-    --activeTabColor     : rgba(250, 88, 106, 0.1);
+    --activeTabColor     : rgba(250, 88, 106, 0.25);
     --volumeTrackColor   : rgba(200, 200, 200, 0.3);
     --categoriesColor    : rgba(50, 50, 50, 0.5);
 
@@ -371,10 +371,15 @@
                 }
             }
         }
-
+        .app-sidebar-content{
+            padding-inline: 14px;
+        }
+        .app-sidebar-header-text:not(:first-of-type){
+            margin-top: 1.25em;
+        }
         .app-sidebar-item {
             font-size: 15px;
-            padding  : 4px 12px;
+            padding  : 4px 16px;
             color    : var(--textColor);
 
             &:not(.app-sidebar-item-playlist) .feather {
@@ -387,6 +392,7 @@
 
             &.active {
                 background: var(--activeTabColor);
+                transition: background 0.3s 0.3s var(--appleEase);
             }
         }
     }
