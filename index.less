@@ -471,9 +471,12 @@
                 background-color: var(--categoriesColor);
             }
 
-            // .v-hl-container[data-v-45080727]{
-            //     height: max-content;
-            // }
+            .v-hl-container[data-v-45080727]{
+                clip-path: none;
+                overflow-y: visible;
+                padding-block: 30px;
+                margin-block: -30px;
+            }
             .cd-hmedia-scroller.hmedia-scroller-card {
                 margin-top: -0.9em;
             }
@@ -493,8 +496,8 @@
                     }
                 }
             }
-
             .cd-mediaitem-square {
+                padding:0;
                 height   : auto;
                 width    : calc(var(--contentWidth) / 5.925);
                 min-width: 160px;
