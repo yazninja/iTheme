@@ -23,11 +23,11 @@
             @sidebarColor    : rgb(37, 37, 38);
             @sidebarColorMix : mix(@sidebarColor, transparent, 80%);
             background-color : @sidebarColorMix;
-
+            color: var(--textColor);
             .playlist-item {
                 background-color: transparent;
                 margin-top      : 0;
-
+                color: var(--textColor);
                 &:not(:last-of-type) {
                     border-bottom: 1px solid var(--modalBorderSubtleColor);
                 }
