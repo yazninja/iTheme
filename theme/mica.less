@@ -6,6 +6,11 @@ body {
         filter    : saturate(200%) brightness(0.5);
         transition: opacity 0.7s 1s var(--appleEase);
     }
+    @media (prefers-color-scheme: light){
+        #micaEffect{
+            filter    : saturate(100%) brightness(1); 
+        }
+    }
     &.stopanimation {
         #micaEffect {
             opacity   : 0;
