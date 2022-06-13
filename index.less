@@ -37,6 +37,7 @@
     --categoriesColor         : rgba(50, 50, 50, 0.5);
     --searchBackgroundColor   : rgba(31, 31, 31, 0.6);
     --searchBarBackgroundColor: rgba(0, 0, 0, 0.3);
+    --menuBackgroundColor     : rgba(36, 36, 36, 0.5);
 
     /* Text */
     --textColor     : #fafafa;
@@ -389,10 +390,11 @@
         }
 
         .app-sidebar-item {
-            font-size: 15px;
-            padding  : 4px 16px;
-            color    : var(--textColor);
+            font-size : 15px;
+            padding   : 4px 16px;
+            color     : var(--textColor);
             transition: background 0.3s 0.3s var(--appleEase), font-weight 0.3s 0.3s var(--appleEase);
+
             &:not(.app-sidebar-item-playlist) .feather {
                 color: var(--keyColor);
             }
@@ -403,7 +405,7 @@
 
             &.active {
                 background: var(--activeTabColor);
-                
+
                 font-weight: 500;
             }
         }
@@ -478,15 +480,17 @@
                 // @baseColor: ;
                 background-color: var(--categoriesColor);
             }
-            .cd-btn-seeall{
-                z-index:2;
+
+            .cd-btn-seeall {
+                z-index: 2;
             }
+
             .v-hl-container[data-v-45080727] {
                 clip-path    : none;
                 overflow-y   : visible;
                 padding-block: 30px;
                 margin-block : -30px;
-                z-index:1;
+                z-index      : 1;
             }
 
             .cd-hmedia-scroller.hmedia-scroller-card {
@@ -591,19 +595,20 @@
                     }
                 }
             }
+
             .search-input {
                 transition: border 0.3s var(--appleEase);
                 background: var(--searchBarBackgroundColor);
                 filter    : saturate(0);
                 color     : var(--textColor);
-    
+
                 &:focus {
                     border-bottom: none;
                     border       : 1px solid var(--keyColor);
                     transition   : border 0.3s var(--appleEase);
                 }
             }
-    
+
             .search-input-container input {
                 height: 35px;
             }
@@ -679,10 +684,11 @@
 
                     }
                 }
-                .mediaitem-list-item__grid{
+
+                .mediaitem-list-item__grid {
                     padding-inline: 0;
-                    width: calc(100% + 20px);
-                    margin-left: -20px;
+                    width         : calc(100% + 20px);
+                    margin-left   : -20px;
                 }
 
                 .cd-mediaitem-square.mediaitem-brick {
@@ -717,7 +723,7 @@
 
                 .podcasts-list {
                     background: transparent;
-                    --color2: transparent;
+                    --color2  : transparent;
                 }
 
 
@@ -730,6 +736,7 @@
                         border-bottom: 1px solid var(--contentBorderColor);
                         border-radius: 0;
                     }
+
                     &:not(:last-of-type) .info-rect,
                     &:not(:last-of-type) .metainfo,
                     &:not(:last-of-type) .duration,
@@ -749,6 +756,7 @@
                         transition      : 0.1s ease-in-out;
                     }
                 }
+
                 // .cd-mediaitem-list-item {
 
                 //     // border-top          : 1px solid @contentBorderColor;
@@ -760,7 +768,7 @@
                 //         border-bottom: 1px solid var(--contentBorderColor);
                 //         border-radius: 0;
                 //     }
-    
+
                 //     .explicit-icon {
                 //         height             : 100%;
                 //         background-size    : 12px;
@@ -805,7 +813,43 @@
 
     }
 }
-@media (prefers-color-scheme: light){
+.menu-panel .menu-panel-body {
+    background-color: var(--menuBackgroundColor);
+    backdrop-filter : blur(8px);
+    color           : var(--textColor);
+
+    & .menu-body {
+        padding: 0;
+        .svg-icon {
+            color  : var(--keyColor);
+            --color: var(--keyColor);
+        }
+    }
+
+    & .menu-option {
+        border-radius       : 0;
+        width               : 100%;
+        padding-inline-start: 14px;
+        padding-block       : 10px;
+
+        &::before {
+            --sizeX      : 0px;
+            --sizeY      : 0px;
+            border-radius: 0;
+        }
+
+        +.menu-option {
+            margin-top: -1px;
+        }
+
+        &:not(:last-of-type) {
+            border-bottom: 1px solid var(--subtleBorderColor);
+        }
+
+    }
+}
+
+@media (prefers-color-scheme: light) {
     @import "theme/lightmode.less";
 
 }
