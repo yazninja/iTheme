@@ -1,0 +1,241 @@
+@baseColor              : rgb(255, 255, 255);
+@baseColorMix           : mix(@baseColor, transparent, 80%);
+@sidebarColor           : rgb(255, 255, 255);
+@sidebarColorMix        : mix(@sidebarColor, transparent, 20%);
+@mediaColor             : rgb(255, 255, 255);
+@mediaColorMix          : mix(@mediaColor, transparent, @transparencyRate);
+@mediaContainerColor    : rgb(250, 250, 250);
+@songProgressColor      : rgba(0, 0, 0, 0.5);
+@songProgressBackground : rgba(0, 0, 0, 0.1);
+@volumeThumbColor       : rgb(255, 255, 255);
+
+:root {
+    /* Less Variables */
+    --baseColor               : @baseColor;
+    --baseColorMix            : @baseColorMix;
+    --sidebarColor            : @sidebarColor;
+    --sidebarColorMix         : @sidebarColorMix;
+    --mediaColor              : @mediaColor;
+    --mediaColorMix           : @mediaColorMix;
+    --mediaContainerColor     : @mediaContainerColor;
+    --songProgressColor       : @songProgressColor;
+    --songProgressBackground  : @songProgressBackground;
+    --volumeThumbColor        : @volumeThumbColor;
+    /* Colors */
+    --keyColor                : #d60017;
+    --ciderColor              : #ff2654;
+    --artistHoverColor        : rgba(250, 35, 59, 0.8);
+    --activeTabColor          : rgba(214, 0, 23, 0.25);
+    --volumeTrackColor        : rgba(200, 200, 200, 0.3);
+    --categoriesColor         : rgba(50, 50, 50, 0.5);
+    --searchBackgroundColor   : rgba(255, 255, 255, 0.3);
+    --searchBarBackgroundColor: rgba(255, 255, 255, 0.45);
+
+    /* Text */
+    --textColor     : #111;
+    --textColorLight: #fff;
+
+    /* Borders */
+    --modalBorderColor      : rgba(68, 68, 68, 0.4);
+    --modalBorderSubtleColor: hsla(0, 0%, 50%, 0.2);
+    --appBorderColor        : hsla(0, 0%, 50%, 0.5);
+    --contentBorderColor    : hsla(0, 0%, 50%, 0.4);
+    --subtleBorderColor     : hsla(0, 0%, 50%, 0.2);
+
+    /* Layout */
+    --contentWidth: calc(100vw - 346px);
+    --sidebarWidth: 260px;
+
+
+}
+
+#app-main {
+    // background-color: var(--sidebarColorMix);
+
+    .app-chrome {
+
+        button.playback-button,
+        button.playback-button--small.queue,
+        button.volume-button--small,
+        .window-controls,
+        .window-controls .close:hover {
+            filter: invert(1);
+        }
+
+        button.playback-button--small.repeat,
+        button.playback-button--small.shuffle,
+        button.playback-button--small.lyrics {
+            filter: invert(0.85);
+        }
+
+        .app-chrome-item.playback-controls {
+            border: 0.5px solid var(--appBorderColor);
+        }
+
+        .app-playback-controls {
+            border: 0.5px solid var(--appBorderColor);
+        }
+
+        &::before {
+            background-color: mix(@mediaContainerColor, transparent, @transparencyRate);
+            box-shadow      : 0 0 2px 0px var(--appBorderColor);
+        }
+
+        .app-chrome-item.volume input[type="range"]::-webkit-slider-thumb {
+            background: mix(@volumeThumbColor, @mediaColor, 50%) !important;
+        }
+
+    }
+
+
+}
+
+.app-navigation {
+    --color1: transparent;
+    display : flex;
+
+    #app-sidebar {
+        background-color: var(--sidebarColorMix);
+        z-index         : 1;
+
+        .search-input--icon {
+            filter: brightness(0.15) !important;
+        }
+
+        .app-sidebar-header-text {
+            color      : var(--textColorLight);
+            filter     : invert(0.75);
+            font-weight: 300;
+        }
+    }
+
+    #app-sidebar::before {
+        content   : '';
+        position  : absolute;
+        top       : 0;
+        left      : 0;
+        right     : 0;
+        bottom    : 0;
+        box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
+        filter    : blur(16px) saturate(0.5);
+        background: inherit;
+        margin    : -20px;
+        z-index   : -1;
+    }
+
+    #app-content {
+        background-color: var(--mediaContainerColor);
+
+        .playlist-body.scrollbody {
+            --color3: transparent;
+        }
+
+        .nav-pills {
+            background-color: rgba(0, 0, 0, 0.35);
+            border-radius   : 25px;
+
+            &:hover {
+                .nav-link.active {
+                    color      : rgba(50, 50, 50, 0.75);
+                    font-weight: normal;
+
+                    &::after {
+                        background-color: rgba(200, 200, 200, 0.35);
+                    }
+
+                    &:hover {
+                        color      : #333;
+                        font-weight: bold;
+
+                        &:after {
+                            background-color: #fff;
+                            border          : 1px solid var(--appBorderColor);
+                        }
+                    }
+                }
+            }
+
+            .nav-link {
+                &:after {
+                    background-color: #fff;
+                    border          : 1px solid var(--appBorderColor);
+                    scale           : 1.025;
+                }
+            }
+        }
+
+        .settings-page {
+            .md-btn {
+                background: var(--keyColor);
+            }
+
+            input[type="number"],
+            input[type="text"] {
+                background: var(--searchBarBackgroundColor);
+                color     : var(--textColor);
+                border    : 1px solid var(--contentBorderColor);
+            }
+
+            .md-select {
+                color: whitesmoke;
+
+                &:not(.md-btn-primary):not(.md-btn-replay):not(.md-btn-replay--hero) {
+                    background: #eee;
+                    border    : 1px solid var(--contentBorderColor);
+                    color     : var(--textColor);
+                }
+
+                .md-ico-remove {
+                    filter: unset;
+                }
+
+                .md-ico-add {
+                    filter: unset;
+                }
+
+                >option,
+                >optgroup,
+                optgroup>option {
+                    background: #eee;
+                }
+            }
+        }
+
+        .about-page .row .col img[src="assets/banner.png"] {
+            width          : 0;
+            height         : 0;
+            padding        : 250px 0 0 500px;
+            background     : url("icons/banner.png");
+            background-size: contain;
+        }
+    }
+
+    .app-drawer {
+        background: mix(@sidebarColor, transparent, 40%) !important;
+
+        &::before {
+            content   : '';
+            position  : absolute;
+            top       : 0;
+            left      : 0;
+            right     : 0;
+            bottom    : 0;
+            box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
+            filter    : blur(16px) saturate(0.5);
+            background: inherit;
+            margin    : -20px;
+            z-index   : -1;
+        }
+    }
+}
+
+.modal-fullscreen {
+    backdrop-filter: blur(16px) brightness(1);
+
+    .modal-content,
+    .md-footer {
+        @sidebarColor    : rgb(240, 240, 241);
+        @sidebarColorMix : mix(@sidebarColor, transparent, 80%);
+        background-color : @sidebarColorMix  !important;
+    }
+}

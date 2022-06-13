@@ -1,6 +1,6 @@
 @import "theme/modal.less";
 @import "theme/macos-menu.less";
-@import "theme/mica.less";
+// @import "theme/mica.less";
 
 /* Colors */
 @colorMixRate    : 1%;
@@ -198,7 +198,7 @@
                 max-width       : 650px;
                 height          : calc(100% - 10px);
                 border-radius   : 0.125rem;
-                background-color: @mediaColorMix;
+                background-color: var(--mediaColorMix);
                 max-width       : 650px;
                 border          : none;
                 overflow        : hidden;
@@ -665,6 +665,11 @@
 
                     }
                 }
+                .mediaitem-list-item__grid{
+                    padding-inline: 0;
+                    width: calc(100% + 20px);
+                    margin-left: -20px;
+                }
 
                 .cd-mediaitem-square.mediaitem-brick {
                     .info-rect {
@@ -762,8 +767,12 @@
 
     }
 }
+@media (prefers-color-scheme: light){
+    @import "theme/lightmode.less";
 
-// @import "theme/lightmode.less";
+}
+
+
 
 @media only screen and (max-width: 1120px) {
     #app {

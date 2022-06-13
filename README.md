@@ -23,12 +23,12 @@ Best used with `Mica(beta)` option in settings.
 + Mica Effects
 + Mojave Layout support (not implemented yet, wait for official release [3.1])
 + New Modal (Popout) Design
++ Dynamic Themeing
 
 **Not Supported Prvious iTheme features (will be re-added soon)**
-- Light Mode
-- Dynamic Themeing
-- Legacy Cider versions (v1.4.7 and earlier)
-- Inline sidebar theme Support
+- Forced Light/Dark Mode
+- ~~Legacy Cider versions (v1.4.7 and earlier)~~ (will not be supported)
+- Inline sidebar Theme Support (use iTheme++)
 - Music Video Layout
 
 ---
