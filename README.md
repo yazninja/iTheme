@@ -3,7 +3,7 @@
 Cider theme based from the Apple Music beta app in MacOS Monterey.
 Best used with `Mica(beta)` option in settings.
 
-```This is a beta release, the full release will be happening on June 9 - 13th```
+```This is a beta release, the full release will be happening tonight!```
 
 #### iTheme Ecosystem
 
