@@ -164,40 +164,38 @@
             }
         }
 
-        .settings-page {
-            .md-btn {
-                background: var(--keyColor);
-            }
+        .md-btn {
+            background: var(--keyColor);
+        }
 
-            input[type="number"],
-            input[type="text"] {
-                background: var(--searchBarBackgroundColor);
-                color     : var(--textColor);
+        input[type="number"],
+        input[type="text"] {
+            background: var(--searchBarBackgroundColor);
+            color     : var(--textColor);
+            border    : 1px solid var(--contentBorderColor);
+        }
+
+        .md-select {
+            color: whitesmoke;
+
+            &:not(.md-btn-primary):not(.md-btn-replay):not(.md-btn-replay--hero) {
+                background: #eee;
                 border    : 1px solid var(--contentBorderColor);
+                color     : var(--textColor);
             }
 
-            .md-select {
-                color: whitesmoke;
+            .md-ico-remove {
+                filter: unset;
+            }
 
-                &:not(.md-btn-primary):not(.md-btn-replay):not(.md-btn-replay--hero) {
-                    background: #eee;
-                    border    : 1px solid var(--contentBorderColor);
-                    color     : var(--textColor);
-                }
+            .md-ico-add {
+                filter: unset;
+            }
 
-                .md-ico-remove {
-                    filter: unset;
-                }
-
-                .md-ico-add {
-                    filter: unset;
-                }
-
-                >option,
-                >optgroup,
-                optgroup>option {
-                    background: #eee;
-                }
+            >option,
+            >optgroup,
+            optgroup>option {
+                background: #eee;
             }
         }
 
@@ -207,6 +205,13 @@
             padding        : 250px 0 0 500px;
             background     : url("icons/banner.png");
             background-size: contain;
+        }
+        .library-page{
+            .library-header{
+                @baseColorMix           : mix(@baseColor, transparent, 25%);
+                background: @baseColorMix;
+                backdrop-filter: blur(16px) saturate(160%);
+            }
         }
     }
 

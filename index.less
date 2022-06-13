@@ -590,8 +590,22 @@
                         aspect-ratio: 16/9;
                     }
                 }
-
-
+            }
+            .search-input {
+                transition: border 0.3s var(--appleEase);
+                background: var(--searchBarBackgroundColor);
+                filter    : saturate(0);
+                color     : var(--textColor);
+    
+                &:focus {
+                    border-bottom: none;
+                    border       : 1px solid var(--keyColor);
+                    transition   : border 0.3s var(--appleEase);
+                }
+            }
+    
+            .search-input-container input {
+                height: 35px;
             }
 
             &.library-recentlyAdded {
@@ -703,7 +717,7 @@
 
                 .podcasts-list {
                     background: transparent;
-
+                    --color2: transparent;
                 }
 
 
@@ -715,6 +729,12 @@
                     &:not(:last-of-type) {
                         border-bottom: 1px solid var(--contentBorderColor);
                         border-radius: 0;
+                    }
+                    &:not(:last-of-type) .info-rect,
+                    &:not(:last-of-type) .metainfo,
+                    &:not(:last-of-type) .duration,
+                    &:not(:last-of-type) .explicit-icon {
+                        border-bottom: none;
                     }
 
                     .artwork {
@@ -729,6 +749,24 @@
                         transition      : 0.1s ease-in-out;
                     }
                 }
+                // .cd-mediaitem-list-item {
+
+                //     // border-top          : 1px solid @contentBorderColor;
+                //     // border-radius       : 0;
+                //     &:not(:last-of-type) .info-rect,
+                //     &:not(:last-of-type) .metainfo,
+                //     &:not(:last-of-type) .duration,
+                //     &:not(:last-of-type) .explicit-icon {
+                //         border-bottom: 1px solid var(--contentBorderColor);
+                //         border-radius: 0;
+                //     }
+    
+                //     .explicit-icon {
+                //         height             : 100%;
+                //         background-size    : 12px;
+                //         background-position: center;
+                //     }
+                // }
             }
         }
     }
