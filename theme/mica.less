@@ -3,18 +3,9 @@ body {
 
     #micaEffect {
         opacity   : 1;
-        filter    : saturate(200%) brightness(1);
+        filter    : saturate(200%) brightness(0.5);
         transition: opacity 0.7s 1s var(--appleEase);
     }
-
-    // @media (prefers-color-scheme: light) {
-    //     #micaEffect {
-    //         opacity   : 1;
-    //         filter    : saturate(50%) brightness(150%);
-    //         transition: opacity 0.7s 1s var(--appleEase);
-    //     }
-    // }
-
     &.stopanimation {
         #micaEffect {
             opacity   : 0;
@@ -30,10 +21,34 @@ body {
 
         @media (prefers-color-scheme: light) {
             #app-sidebar {
-                background-color: @sidebarColor;
+                background-color: rgb(250,250,250);
                 transition      : background-color 0.7s 0.1s var(--appleEase);
             }
+            #app-sidebar::before{
+                opacity: 0;
+                transition: opacity 0.7s 0.1s var(--appleEase);
+            }
 
+        }
+    }
+    &:not(.stopanimation){
+        @media (prefers-color-scheme: light) {
+            #app-sidebar::before{
+                opacity: 1;
+                transition: opacity 0.7s 0.1s var(--appleEase);
+            }
+
+        }
+    }
+    #app.simplebg{
+        @media (prefers-color-scheme: light) {
+            #app-sidebar {
+                background-color: rgb(235,235,235);
+            }
+            #app-sidebar::before{
+                opacity: 0;
+                transition: opacity 0.7s 0.1s var(--appleEase);
+            }
         }
     }
 }

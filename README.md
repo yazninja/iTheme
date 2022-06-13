@@ -3,7 +3,7 @@
 Cider theme based from the Apple Music beta app in MacOS Monterey.
 Best used with `Mica(beta)` option in settings.
 
-```This is a beta release, the full release will be happening tonight!```
+```Released 3.0! - next is Mojave support for 3.1```
 
 #### iTheme Ecosystem
 
@@ -13,7 +13,7 @@ Best used with `Mica(beta)` option in settings.
 
 ---
 
-### Version 3.0 - Beta Release
+### Version 3.0 - Release
 
 + Larger Artworks
 + Modern Underline wells
@@ -21,45 +21,50 @@ Best used with `Mica(beta)` option in settings.
 + Artwork Scaling
 + New Search, Album Artist & Song list layout
 + Mica Effects
-+ Mojave Layout support (not implemented yet, wait for official release [3.1])
++ Mojave Layout support (not implemented yet, wait for 3.1 update)
 + New Modal (Popout) Design
 + Dynamic Themeing
++ New simplebg Sidebars
 
 **Not Supported Prvious iTheme features (will be re-added soon)**
 - Forced Light/Dark Mode
 - ~~Legacy Cider versions (v1.4.7 and earlier)~~ (will not be supported)
 - Inline sidebar Theme Support (use iTheme++)
-- Music Video Layout
 
 ---
-### Gallery (Old)
+### Gallery
 Listen Now
-![listennow](https://user-images.githubusercontent.com/71800112/168989861-92f16b56-40de-4b0e-80ea-43fc183cd1d9.png)
+![listennow](https://user-images.githubusercontent.com/71800112/173398442-468b1b27-e844-43bb-a14c-ec859f673582.png)
 
 Light Mode
-![light mode](https://user-images.githubusercontent.com/71800112/168990263-a760aac5-bc59-4607-b4a4-2af7e38a7a96.png)
+![light mode](https://user-images.githubusercontent.com/71800112/173398639-4479a7a9-094d-401b-a693-58cc7593c499.png)
 
 Left Window Controls
-![queue and left window control](https://user-images.githubusercontent.com/71800112/168989915-838447db-a819-499b-861f-79af9dae6081.png)
+![queue and left window control](https://user-images.githubusercontent.com/71800112/173398756-378b3c7f-d12a-4bf1-8e1f-9beecb03853c.png)
 
 Lyrics Pane
-![lyrics](https://user-images.githubusercontent.com/71800112/168990077-069a4c89-987d-4e4f-b544-caf161b6ef08.png)
+![lyrics](https://user-images.githubusercontent.com/71800112/173398852-33c4ca7a-e248-463a-8e77-09380d4f34bd.png)
 
-Music Video (Newer Builds)
-![musicvideo](https://user-images.githubusercontent.com/71800112/168990135-00322395-ba3c-4582-af5c-d71934b96df8.png)
+Music Video
+![musicvideo](https://user-images.githubusercontent.com/71800112/173399150-6efaef54-f9fe-404b-b697-da9eae91db37.png)
 
-
-Search Page (Newer builds)
-![searchpage](https://user-images.githubusercontent.com/71800112/168990001-5034079e-371d-40d6-88b0-bc2f53e03a98.png)
+Search Page
+![searchpage](https://user-images.githubusercontent.com/71800112/173399235-dc1fb787-64c9-4790-9703-f010b1c6f04d.png)
 
 Artist View
-![artist view](https://user-images.githubusercontent.com/71800112/168990324-a9fd928a-97bc-4117-8b04-b18132038ba0.png)
+![artist view](https://user-images.githubusercontent.com/71800112/173399286-82e0b989-aaa2-46e5-8e8b-abcdec94edd0.png)
 
 UI Kit (Pills)
-![UIKit](https://user-images.githubusercontent.com/71800112/168990386-cff18868-6497-47ca-bb09-2b0e875daa0c.png)
+![UIKit](https://user-images.githubusercontent.com/71800112/173399341-86e18029-d83d-4ecc-91ce-974f0c96387f.png)
 
 Hearts
-![hearts](https://user-images.githubusercontent.com/71800112/168990451-c076c95c-a4dc-4091-a6ed-1bf8811665ce.png)
+![hearts](https://user-images.githubusercontent.com/71800112/173399364-97dbf4a6-2d56-4d1c-b4ff-6cbb07659ca2.png)
+
+Modal (light)
+![modal-light](https://user-images.githubusercontent.com/71800112/173400060-338870e7-91d8-488a-800b-b8312de5dc07.png)
+
+Modal (dark)
+![modal-dark](https://user-images.githubusercontent.com/71800112/173400067-a045067d-98db-4b1a-8526-d6f06b07c11b.png)
 
 ---
 

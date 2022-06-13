@@ -26,11 +26,12 @@
     --ciderColor              : #ff2654;
     --artistHoverColor        : rgba(250, 35, 59, 0.8);
     --activeTabColor          : rgba(214, 0, 23, 0.25);
-    --volumeTrackColor        : rgba(200, 200, 200, 0.3);
-    --categoriesColor         : rgba(50, 50, 50, 0.5);
+    --volumeTrackColor        : rgba(200, 200, 200, 0.65);
+    --categoriesColor         : rgba(0, 0, 0, 0.05);
     --searchBackgroundColor   : rgba(255, 255, 255, 0.3);
     --searchBarBackgroundColor: rgba(255, 255, 255, 0.45);
     --menuBackgroundColor     : rgba(250, 250, 250, 0.75);
+    --keyColor-disabled       : rgba(214, 0, 23, 0.35);
 
     /* Text */
     --textColor     : #111;
@@ -52,7 +53,7 @@
 
 #app-main {
     // background-color: var(--sidebarColorMix);
-
+    background-color: transparent;
     .app-chrome {
 
         button.playback-button,
@@ -65,16 +66,17 @@
 
         button.playback-button--small.repeat,
         button.playback-button--small.shuffle,
-        button.playback-button--small.lyrics {
+        button.playback-button--small.lyrics,
+        button.playback-button--small.cast {
             filter: invert(0.85);
         }
 
-        .app-chrome-item.playback-controls {
-            border: 0.5px solid var(--appBorderColor);
+        .app-chrome-item.playback-controls:empty {
+            border: 0.5px solid var(--subtleBorderColor) !important;
         }
 
         .app-playback-controls {
-            border: 0.5px solid var(--appBorderColor);
+            border: 0.5px solid var(--subtleBorderColor);
         }
 
         &::before {
@@ -98,6 +100,7 @@
     #app-sidebar {
         background-color: var(--sidebarColorMix);
         z-index         : 1;
+        transition      : background-color 0.7s 0.1s var(--appleEase);
 
         .search-input--icon {
             filter: brightness(0.15) !important;
@@ -139,6 +142,7 @@
                 .nav-link.active {
                     color      : rgba(50, 50, 50, 0.75);
                     font-weight: normal;
+                    box-shadow: 0px 0px 36px 0px rgba(0, 0, 0, 0.3);
 
                     &::after {
                         background-color: rgba(200, 200, 200, 0.35);
@@ -162,8 +166,12 @@
                     border          : 1px solid var(--appBorderColor);
                     scale           : 1.025;
                 }
+                &.active{
+                    box-shadow: 0px 0px 36px 0px rgba(0, 0, 0, 0.3);
+                }
             }
         }
+        
 
         .md-btn {
             background: var(--keyColor);
@@ -207,10 +215,11 @@
             background     : url("icons/banner.png");
             background-size: contain;
         }
-        .library-page{
-            .library-header{
-                @baseColorMix           : mix(@baseColor, transparent, 25%);
-                background: @baseColorMix;
+
+        .library-page {
+            .library-header {
+                @baseColorMix  : mix(@baseColor, transparent, 25%);
+                background     : @baseColorMix;
                 backdrop-filter: blur(16px) saturate(160%);
             }
         }
@@ -233,6 +242,20 @@
             z-index   : -1;
         }
     }
+    .md-body.lyric-body{
+        background-color: rgba(0,0,0,0.35);
+        -webkit-mask-image: none;
+        .lyric-line.active{
+            backdrop-filter: none !important;
+        }
+    }
+    .lyric-footer{
+        background: rgba(255,255,255,0.8);
+        backdrop-filter: blur(16px);
+        .md-btn{
+            background: var(--keyColor);
+        }
+    }
 }
 
 .modal-fullscreen {
@@ -244,4 +267,13 @@
         @sidebarColorMix : mix(@sidebarColor, transparent, 80%);
         background-color : @sidebarColorMix  !important;
     }
+}
+.popover-body .content{
+    color: var(--textColorLight);
+}
+
+#apple-music-video-container {
+    --mediaBarColor         : rgba(0, 0, 0, 0.3);
+    --songProgressColor     : #b8b8b8;
+    --songProgressBackground: #333;
 }

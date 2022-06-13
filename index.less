@@ -1,6 +1,6 @@
 @import "theme/modal.less";
 @import "theme/macos-menu.less";
-// @import "theme/mica.less";
+@import "theme/mica.less";
 
 /* Colors */
 @colorMixRate    : 1%;
@@ -339,6 +339,7 @@
 
 .app-navigation {
     --color1: transparent;
+    --color2: transparent;
     display : flex;
 
     #app-sidebar {
@@ -404,11 +405,12 @@
             }
 
             &.active {
-                background: var(--activeTabColor);
+                background : var(--activeTabColor);
                 font-weight: 500;
             }
         }
-        .sidebar-icon > svg{
+
+        .sidebar-icon>svg {
             color: var(--keyColor);
         }
     }
@@ -615,6 +617,23 @@
                 height: 35px;
             }
 
+            .list-group-item-dark {
+                background-color: var(--mediaColorMix);
+                border          : 1px solid var(--contentBorderColor);
+                color           : var(--textColor);
+                border-radius   : 0px;
+            }
+
+            .list-group-item-dark:hover,
+            .list-group-item-dark.active {
+                background-color: var(--keyColor);
+                color           : var(--textColorLight);
+                border-radius   : 0px;
+            }
+            .list-group-item-dark.applied{
+                background: var(--keyColor-disabled);
+            }
+
             &.library-recentlyAdded {
                 .cd-mediaitem-square {
                     width         : calc(var(--contentWidth) / 6.1);
@@ -622,11 +641,22 @@
                     padding-bottom: 20px;
                 }
             }
-
+            &.podcasts-page{
+                .podcasts-search{
+                    background: transparent;
+                }
+            }
             &.artist-page {
+                .artist-title{
+                    color: var(--textColor);
+                }
                 .topSongs {
                     width       : calc(100% - 250px);
                     margin-right: 10px;
+                }
+                .more-btn-round{
+                    background: var(--keyColor);
+                    color: var(--textColorLight);
                 }
 
                 .cd-mediaitem-square {
@@ -778,6 +808,25 @@
                 //     }
                 // }
             }
+            &.playlist-page {
+                .artist-chip{
+                    color: var(--textColor);
+                    .artist-chip__follow {
+                        color           : var(--keyColor);
+                        background-color: transparent;
+                        transition      : background-color 0.3s 0.3s var(--appleEase), color 0.3s 0.3s var(--appleEase);
+    
+                        &:hover {
+                            background-color: var(--keyColor);
+                            color           : var(--textColorLight);
+                            transition      : background-color 0.3s var(--appleEase);
+                        }
+                    }
+                }
+                .more-btn-round{
+                    background: var(--keyColor);
+                }
+            }
         }
     }
 
@@ -812,9 +861,11 @@
                 flex          : 0 0 auto;
             }
         }
+        
 
     }
 }
+
 .menu-panel .menu-panel-body {
     background-color: var(--menuBackgroundColor);
     backdrop-filter : blur(8px);
@@ -822,6 +873,7 @@
 
     & .menu-body {
         padding: 0;
+
         .svg-icon {
             color  : var(--keyColor);
             --color: var(--keyColor);
@@ -854,6 +906,103 @@
 @media (prefers-color-scheme: light) {
     @import "theme/lightmode.less";
 
+}
+// Only changing the CSS for the Music Video Container
+#apple-music-video-container {
+
+    // Style Captions
+    #captions:not(:empty) {
+        color         : var(--textColorLight);
+        font-size     : 1.75rem;
+        padding-inline: 10px;
+        padding-block : 5px;
+        border-radius : 10px;
+        font-family   : var(--fontStyle);
+        margin-top    : 6vh;
+    }
+
+    // AM Web Style Fullscreen Button
+    #player-fullscreen {
+        background         : url("icons/fullscreen.svg");
+        background-size    : 50%;
+        background-position: center;
+        background-repeat  : no-repeat;
+        filter             : opacity(0.6);
+        // filter: drop-shadow(0px 0px 4px rgb(0 0 0 / 80%));
+        background-color   : var(--mediaBarColor);
+        border-radius      : 10px;
+        transition         : 0.2s ease-in-out filter;
+        bottom             : 0;
+
+        &:hover {
+            filter    : opacity(1);
+            transition: 0.2s ease-in-out filter;
+        }
+
+        svg {
+            display: none;
+        }
+    }
+
+    // AM Web Style PiP Button
+    #player-pip {
+        background-color: var(--mediaBarColor);
+        border-radius   : 10px;
+        bottom          : 0;
+        filter          : opacity(0.6);
+        transition      : 0.2s ease-in-out filter;
+
+        &:hover {
+            filter    : opacity(1);
+            transition: 0.2s ease-in-out filter;
+        }
+    }
+
+    .playback-info {
+        width           : 100%;
+        bottom          : 0;
+        left            : 0;
+        padding         : 20px 40px;
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 50%);
+    }
+
+    input[type="range"] {
+        align-self   : center;
+        height       : 4px;
+        border-radius: .5rem;
+        margin-inline: 10px;
+    }
+
+    p {
+        color: rgb(255, 255, 255, 1);
+    }
+
+    .song-artist {
+        font-size  : 1.7rem;
+        font-weight: bold;
+        color      : rgb(255, 255, 255, 1);
+    }
+
+    .song-name {
+        font-size  : 1.2rem;
+        font-weight: bold;
+        color      : rgb(255, 255, 255, 0.8);
+    }
+
+    .song-progress input[type="range"] {
+        appearance: initial;
+
+        &::-webkit-slider-thumb {
+            box-shadow        : 0px 0px 0px #000000;
+            border            : 1px solid #39404D;
+            background        : #fff;
+            height            : 0.7rem;
+            width             : 0.7rem;
+            border-radius     : 50%;
+            cursor            : pointer;
+            -webkit-appearance: none;
+        }
+    }
 }
 
 
