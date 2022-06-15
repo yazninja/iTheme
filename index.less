@@ -130,6 +130,10 @@
 
 /****       LAYOUT      ****/
 
+
+.bg-artwork--placeholder {
+    background: transparent;
+}
 #app-main {
     // background-color: var(--sidebarColorMix);
 
@@ -394,19 +398,36 @@
             font-size : 15px;
             padding   : 4px 16px;
             color     : var(--textColor);
-            transition: background 0.3s 0.3s var(--appleEase), font-weight 0.3s 0.3s var(--appleEase);
+            transition: background 0s 0s var(--appleEase), font-weight 0.3s 0.3s var(--appleEase);
 
             &:not(.app-sidebar-item-playlist) .feather {
                 color: var(--keyColor);
             }
 
+            .sidebar-icon {
+                transition: margin-right .3s;
+            }
             .feather {
                 color: var(--sidebarIconColor);
             }
 
+            &:hover {
+                transition: 0s;
+            }
+
+            &:active {
+                transition: 0s;
+                background-color: var(--activeTabColor);
+            }
+
             &.active {
+                transition: background .3s;
                 background : var(--activeTabColor);
                 font-weight: 500;
+
+                .sidebar-icon {
+                    margin-right: 12px;
+                }
             }
         }
 
