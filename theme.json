@@ -1,11 +1,14 @@
 {
     "name": "iTheme",
     "description": "Cider theme based from the Apple Music beta app in MacOS.",
-    "version": "3.0.5",
+    "version": "3.0.6",
     "author": "yazninja",
     "github_repo": "ciderapp/iTheme",
     "directives": {
         "windowLayout": {
+            "value": "default"
+        },
+        "forceUI": {
             "value": "default"
         }
     },

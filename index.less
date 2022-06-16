@@ -847,6 +847,31 @@
                 .more-btn-round{
                     background: var(--keyColor);
                 }
+                .cd-mediaitem-list-item{
+                    height: 50px;
+                    &:nth-child(odd) {
+                        background-color: rgba(255,255,255, 0.05);
+                        
+                    }
+                    .info-rect, .heart-icon, .explicit-icon, .duration{
+                        border-bottom: none !important;
+                    }
+                    .info-rect{
+                        flex-flow: row;
+                        align-items: center;
+                        .title{
+                            width: 60ch;
+                        }
+                        
+                    }
+                    .subtitle {
+                        opacity: 0.85;
+                        font-size: 0.9em;
+
+                        display: flex;
+                    }
+                }
+                
             }
         }
     }

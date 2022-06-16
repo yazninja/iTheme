@@ -224,6 +224,32 @@ body {
                 backdrop-filter: blur(16px) saturate(160%);
             }
         }
+        .playlist-page {
+            .cd-mediaitem-list-item{
+                height: 50px;
+                &:nth-child(odd) {
+                    background-color: rgba(0, 0, 0, 0.05) !important;
+                    
+                }
+                .info-rect, .heart-icon, .explicit-icon, .duration{
+                    border-bottom: none !important;
+                }
+                .info-rect{
+                    flex-flow: row;
+                    align-items: center;
+                    .title{
+                        width: 60ch;
+                    }
+                    
+                }
+                .subtitle {
+                    opacity: 0.85;
+                    font-size: 0.9em;
+
+                    display: flex;
+                }
+            }
+        }
     }
 
     .app-drawer {
