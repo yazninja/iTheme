@@ -640,9 +640,24 @@
 
             .list-group-item-dark {
                 background-color: var(--mediaColorMix);
-                border          : 1px solid var(--contentBorderColor);
                 color           : var(--textColor);
                 border-radius   : 0px;
+                &:not(:last-child){
+                    border-bottom: 1px solid var(--contentBorderColor);
+                }
+
+                &.addon{
+                    background-color: rgba(45, 45, 45, 0.1);
+                }
+            }
+            .repos-list{
+                border-right: 1px solid var(--contentBorderColor);
+            }
+            .stylestack-editor{
+                .list-group-item{
+                    padding: 6px 6px;
+                    font-size: 14px;
+                }
             }
 
             .list-group-item-dark:hover,
@@ -765,7 +780,15 @@
                     border-bottom: 1px solid var(--subtleBorderColor);
                 }
             }
-
+            &.github-themes-page{
+                .header-text{
+                    border-bottom: none;
+                    padding-bottom: 0;
+                }
+                .gh-header{
+                    border-bottom: 1px solid var(--subtleBorderColor);
+                }
+            }
             // Style New Artists Page
             &.library-artists-page {
                 height: 100%;
