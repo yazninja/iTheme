@@ -1,38 +1,38 @@
 # iTheme (Beta) for [Cider](https://cider.sh/) <img src="https://img.shields.io/github/stars/ciderapp/iTheme?style=social" width="70"></img>
 
-Cider theme based from the Apple Music beta app in MacOS Monterey.
+Cider theme based from the Apple Music beta app in MacOS Ventura.
 Best used with `Mica(beta)` option in settings.
 
-```Released 3.0! - next is Mojave support for 3.1```
+```Release 3.1! - Mojave Layout Support```
 
 #### iTheme Ecosystem
 
-**Side Plugin: [iVanced (Alpha)](https://github.com/yazninja/ivanced)**
+**Side Plugin: [iVanced (Alpha)](https://github.com/yazninja/ivanced) (Deprecated)**
 
 **Theme Pack: [iTheme++](https://github.com/yazninja/itheme-plus-plus)**
 
 ---
 
-### Version 3.0 - Release
+### Version 3.1 - Release
 
-+ Larger Artworks
-+ Modern Underline wells
-+ Transparent Topbar
-+ Artwork Scaling
-+ New Search, Album Artist & Song list layout
-+ Mica Effects
-+ Mojave Layout support (not implemented yet, wait for 3.1 update)
-+ New Modal (Popout) Design
-+ Dynamic Themeing
-+ New simplebg Sidebars
++ Mojave Support
++ Slidey Search Bar, Top Bar, and media Bar
++ Lyrics fullscreen support
++ Various Light mode improvements
++ Colored hearts
 
 **Not Supported Prvious iTheme features (will be re-added soon)**
 - Forced Light/Dark Mode
-- ~~Legacy Cider versions (v1.4.7 and earlier)~~ (will not be supported)
 - Inline sidebar Theme Support (use iTheme++)
 
 ---
 ### Gallery
+Mojave Layout
+![mojave-listen-now](https://user-images.githubusercontent.com/71800112/177012916-f6792195-7856-42e4-a17e-f521b921f9f1.png)
+
+Mojave Sidebar Collapsed
+![mojave-sidebarCollapsed](https://user-images.githubusercontent.com/71800112/177012938-33564a6e-3047-41f3-8564-1de07d313a12.png)
+
 Listen Now
 ![listennow](https://user-images.githubusercontent.com/71800112/173398442-468b1b27-e844-43bb-a14c-ec859f673582.png)
 
@@ -44,6 +44,9 @@ Left Window Controls
 
 Lyrics Pane
 ![lyrics](https://user-images.githubusercontent.com/71800112/173398852-33c4ca7a-e248-463a-8e77-09380d4f34bd.png)
+
+Mojave Lyrics (fullscreen)
+![mojave-lyricsFS](https://user-images.githubusercontent.com/71800112/177013015-c107a530-213b-44fd-a442-aca507f696be.png)
 
 Music Video
 ![musicvideo](https://user-images.githubusercontent.com/71800112/173399150-6efaef54-f9fe-404b-b697-da9eae91db37.png)

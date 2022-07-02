@@ -51,20 +51,90 @@
 
 }
 
+#app.twopanel {
+    #app-main {
+        .app-chrome:not(.chrome-bottom) {
+            &::before {
+                background-color: rgba(230, 230, 230, 0.8);
+            }
+
+            .search-input--icon {
+                filter: brightness(0.15) !important;
+            }
+
+            .search-input {
+                background: rgba(241, 241, 241, 0.5);
+                border    : 1px solid var(--contentBorderColor);
+                color     : #777;
+            }
+        }
+
+        .app-chrome--center {
+            .top-nav-group {
+                background   : rgba(241, 241, 241, 0.5) !important;
+                border       : 1px solid var(--contentBorderColor);
+                border-radius: 6px;
+
+                .app-sidebar-item {
+                    color        : #777;
+                    font-weight  : 500;
+                    border-radius: 6px !important;
+
+                    ._svg-icon {
+                        background: #777;
+                    }
+
+                    &.active,
+                    &:hover {
+                        border-left: none !important;
+
+                        &::before {
+                            --dist          : 0px;
+                            background-color: #333;
+                            border-radius   : 6px;
+                        }
+
+                        &+.app-sidebar-item {
+                            border-left: none !important;
+                        }
+                    }
+
+                    &+.app-sidebar-item {
+                        border-left              : 1px solid var(--contentBorderColor);
+                        border-top-left-radius   : 0 !important;
+                        border-bottom-left-radius: 0 !important;
+                    }
+
+                }
+            }
+        }
+
+        .chrome-bottom {
+            --color2: rgba(255, 255, 255, 0.5);
+
+            .app-playback-controls {
+                border: none;
+            }
+        }
+    }
+
+}
+
 #app.simplebg {
     background: transparent !important;
 }
 
 body {
-    background: #eee!important;
+    background: #eee !important;
 }
 
 #app-main {
     // background-color: var(--sidebarColorMix);
     background-color: transparent;
+
     .app-chrome {
 
-        button.playback-button,
+        button.playback-button:not(.collapseLibrary),
         button.playback-button--small.queue,
         button.volume-button--small,
         .window-controls,
@@ -94,10 +164,7 @@ body {
         .app-chrome-item.volume input[type="range"]::-webkit-slider-thumb {
             background: mix(@volumeThumbColor, @mediaColor, 50%) !important;
         }
-
     }
-
-
 }
 
 .app-navigation {
@@ -117,6 +184,10 @@ body {
             color      : var(--textColorLight);
             filter     : invert(0.75);
             font-weight: 300;
+        }
+
+        ._svg-icon[svg-name='sidebar-playlist'] {
+            filter: invert(0.9);
         }
     }
 
@@ -149,7 +220,7 @@ body {
                 .nav-link.active {
                     color      : rgba(50, 50, 50, 0.75);
                     font-weight: normal;
-                    box-shadow: 0px 0px 36px 0px rgba(0, 0, 0, 0.3);
+                    box-shadow : 0px 0px 36px 0px rgba(0, 0, 0, 0.3);
 
                     &::after {
                         background-color: rgba(200, 200, 200, 0.35);
@@ -173,12 +244,13 @@ body {
                     border          : 1px solid var(--appBorderColor);
                     scale           : 1.025;
                 }
-                &.active{
+
+                &.active {
                     box-shadow: 0px 0px 36px 0px rgba(0, 0, 0, 0.3);
                 }
             }
         }
-        
+
 
         .md-btn {
             background: var(--keyColor);
@@ -223,26 +295,35 @@ body {
                 backdrop-filter: blur(16px) saturate(160%);
             }
         }
+
         .playlist-page {
-            .cd-mediaitem-list-item{
+            .cd-mediaitem-list-item {
                 height: 50px;
+
                 &:nth-child(odd) {
                     background-color: rgba(0, 0, 0, 0.05) !important;
-                    
+
                 }
-                .info-rect, .heart-icon, .explicit-icon, .duration{
+
+                .info-rect,
+                .heart-icon,
+                .explicit-icon,
+                .duration {
                     border-bottom: none !important;
                 }
-                .info-rect{
-                    flex-flow: row;
+
+                .info-rect {
+                    flex-flow  : row;
                     align-items: center;
-                    .title{
+
+                    .title {
                         width: 60ch;
                     }
-                    
+
                 }
+
                 .subtitle {
-                    opacity: 0.85;
+                    opacity  : 0.85;
                     font-size: 0.9em;
 
                     display: flex;
@@ -268,17 +349,21 @@ body {
             z-index   : -1;
         }
     }
-    .md-body.lyric-body{
-        background-color: rgba(0,0,0,0.35);
+
+    .md-body.lyric-body {
+        background-color  : rgba(0, 0, 0, 0.35);
         -webkit-mask-image: none;
-        .lyric-line.active{
+
+        .lyric-line.active {
             backdrop-filter: none !important;
         }
     }
-    .lyric-footer{
-        background: rgba(255,255,255,0.8);
+
+    .lyric-footer {
+        background     : rgba(255, 255, 255, 0.8);
         backdrop-filter: blur(16px);
-        .md-btn{
+
+        .md-btn {
             background: var(--keyColor);
         }
     }
@@ -301,7 +386,8 @@ input[type="text"] {
         background-color : @sidebarColorMix  !important;
     }
 }
-.popover-body .content{
+
+.popover-body .content {
     color: var(--textColorLight);
 }
 

@@ -1,0 +1,105 @@
+#app.twopanel {
+    #app-main {
+        .app-chrome:not(.chrome-bottom) {
+            backdrop-filter: none;
+
+            .app-chrome--left,
+            .app-chrome--right {
+                width: 300px;
+            }
+
+            .app-chrome-item:nth-of-type(2):not(.generic) {
+                margin: 0;
+            }
+
+            .search-input {
+                width     : 50px;
+                transition: width 0.35s var(--appleEase);
+
+                &:hover {
+                    width: 140px;
+                }
+
+                &:active,
+                &:focus,
+                &:not(:placeholder-shown) {
+                    width: 250px;
+                }
+            }
+
+            &::before {
+                transition: width 0.35s var(--appleEase);
+            }
+        }
+
+        .app-chrome.chrome-bottom {
+            margin-left    : var(--sidebarWidth);
+            left           : var(--dist, 0);
+            right          : var(--dist, 0);
+            bottom         : var(--dist, 0);
+            width          : auto;
+            position       : fixed;
+            z-index        : 15;
+            backdrop-filter: var(--glassFilterHeavy);
+            transition     : margin-left 0.35s var(--appleEase);
+
+            &::before {
+                display: none;
+            }
+
+            .app-chrome-item:nth-of-type(2):not(.generic),
+            .app-chrome-item .shuffle {
+                margin: 0;
+            }
+        }
+
+        .app-navigation {
+            height: 100%;
+
+            .content-inner {
+                padding-bottom: calc(var(--chromeHeight2) + 20px);
+
+                &.playlist-page {
+                    padding-bottom: var(--chromeHeight2);
+                }
+            }
+        }
+
+        .app-drawer {
+            height         : calc(calc(100% - 2%) - var(--chromeHeight));
+            top            : calc(var(--chromeHeight1) + 1%);
+            backdrop-filter: var(--glassFilterHeavy) brightness(0.65);
+        }
+
+        &.modular-fs {
+            .app-chrome.chrome-bottom {
+                margin-left: 0;
+            }
+
+            .app-chrome:not(.chrome-bottom) {
+                &::before {
+                    width: 100%;
+                }
+            }
+
+            .app-drawer {
+                height: 100%;
+                top   : 0;
+            }
+        }
+    }
+
+    &[library-visible="0"] {
+        #app-main {
+            .app-chrome.chrome-bottom {
+                margin-left: 0;
+            }
+        }
+
+        .app-chrome:not(.chrome-bottom) {
+            &::before {
+                width: 100%;
+            }
+        }
+    }
+}
