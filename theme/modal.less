@@ -17,6 +17,14 @@
                 justify-self: center;
                 width       : 100%;
             }
+            .close-btn{
+                border-radius: 0;
+                right:0;
+                top:0;
+                &::before{
+                    font-size: 20;
+                }
+            }
         }
 
         .modal-content, .md-footer {
@@ -45,5 +53,27 @@
                 }
             }
         }
+    }
+    &.moreinfo-modal{
+        .modal-window{
+            height: max-content;
+            .modal-header{
+                align-items: center;
+                justify-content: center;
+                .modal-title{
+                    font-size: 1.2em;
+                    width:max-content;
+                    &.modal-subtitle{
+                        font-size: 1em;
+                        font-weight: bold;
+                    }
+                }
+            }
+            .modal-content{
+                font-size: 0.9em;
+                padding-block: 25px;
+            }
+        }
+
     }
 }

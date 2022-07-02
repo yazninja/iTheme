@@ -1,6 +1,7 @@
 @import "theme/modal.less";
 @import "theme/macos-menu.less";
 @import "theme/mica.less";
+@import "theme/mojave.less";
 
 /* Colors */
 @colorMixRate    : 1%;
@@ -153,7 +154,7 @@
             top               : 0;
             right             : 0;
             width             : calc(100% - var(--sidebarWidth));
-            height            : var(--chromeHeight);
+            height            : var(--chromeHeight1);
             backdrop-filter   : blur(16px) saturate(180%);
             // border-bottom  : 1px solid var(--appBorderColor);
             // border-left    : 1px solid var(--appBorderColor);
@@ -337,6 +338,14 @@
             // position         : absolute;
             // margin-left      : 90px;
             // -webkit-app-region: no-drag;
+        }
+    }
+    // Lyrics is on fullscreen
+    &.modular-fs {
+        .app-chrome:not(.chrome-bottom) {
+            &::before {
+                width: 100%;
+            }
         }
     }
 }
@@ -600,7 +609,6 @@
 
                     .title+.subtitle {
                         opacity           : 1;
-                        margin-block-start: -0.5em;
                     }
                 }
 
@@ -789,6 +797,12 @@
                     border-bottom: 1px solid var(--subtleBorderColor);
                 }
             }
+            // Style Songs page
+            &.library-page{
+                .heart-icon{
+                    left:-15px;
+                }
+            }
             // Style New Artists Page
             &.library-artists-page {
                 height: 100%;
@@ -894,12 +908,19 @@
                         display: flex;
                     }
                 }
+                .hero-tint{
+                    opacity: 0.3;
+                }
+                .playlist-name{
+                    filter: none !important;
+                }
                 
             }
         }
     }
 
     .app-drawer {
+        backdrop-filter: var(--glassFilterHeavy) brightness(0.75);
         .queue-body {
             overflow-x: hidden;
             overflow-y: scroll;
@@ -911,6 +932,7 @@
                 .info-rect,
                 .queue-info {
                     border-bottom: 1px solid var(--contentBorderColor);
+                    width:100%;
                 }
 
                 .duration,
@@ -921,12 +943,10 @@
             }
 
             .cd-queue-item {
-                width: 130% !important;
-                ;
                 padding       : 0;
                 height        : 60px;
                 display       : flex;
-                flex-direction: row;
+                flex-direction: column;
                 flex          : 0 0 auto;
             }
         }
