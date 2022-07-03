@@ -23,7 +23,7 @@
     --volumeThumbColor        : @volumeThumbColor;
     /* Colors */
     --keyColor                : #d60017;
-    --keyColorSubtle           : rgba(214, 0, 23, 0.75);
+    --keyColorSubtle          : rgba(214, 0, 23, 0.75);
     --ciderColor              : #ff2654;
     --artistHoverColor        : rgba(250, 35, 59, 0.8);
     --activeTabColor          : rgba(214, 0, 23, 0.25);
@@ -252,7 +252,7 @@ body {
         }
 
 
-        .md-btn {
+        .md-btn-primary {
             background: var(--keyColor);
         }
 
@@ -368,11 +368,75 @@ body {
             background: var(--keyColor);
         }
     }
-    .queue-panel{
-        .autoplay{
+
+    .queue-panel {
+        .autoplay {
             background: rgba(0, 0, 0, 0.25);
         }
     }
+}
+
+.settings-panel {
+    background: rgba(255, 255, 255, 0.25);
+
+    .settings-window {
+        background: transparent;
+
+        .close-btn:not(.minmax-btn) {
+            &::before {
+                color: #111;
+            }
+
+            &:hover::before {
+                filter: invert(1);
+            }
+        }
+
+
+        .tabs .col-auto {
+            background: rgba(255, 255, 255, 0.25);
+
+            .nav-link {
+                color: #555;
+
+                ._svg-icon {
+                    background-color: var(--keyColor);
+                }
+            }
+
+        }
+
+        .tabs .tab-content {
+            background: rgba(255, 255, 255, 0.60);
+        }
+    }
+}
+
+.md-btn:not(.md-btn-replay) {
+    background: var(--searchBarBackgroundColor);
+    border    : 1px solid var(--contentBorderColor);
+    color     : var(--textColor);
+
+    &:hover {
+        filter          : brightness(1);
+        background-color: var(--keyColor);
+        color           : var(--textColorLight);
+    }
+
+}
+
+.md-select {
+
+    >option,
+    >optgroup,
+    optgroup>option {
+        background: #eee;
+    }
+}
+
+input[type="checkbox"]:checked:hover {
+    filter    : brightness(1);
+    background: var(--keyColor) !important;
 }
 
 input[type="number"],

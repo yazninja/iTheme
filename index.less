@@ -1086,6 +1086,36 @@ select.md-select{
     }
 }
 
+.settings-panel {
+    background     : rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(16px);
+
+    .settings-window {
+        .tabs .tab-content {
+            .md-option-header {
+                padding-bottom: 1rem;
+                border-bottom: 1px solid var(--contentBorderColor);
+                font-weight: bold;
+            }
+            .md-option-line:not(:last-child){
+                border-bottom: 1px solid var(--contentBorderColor);
+            }
+            .audiolabs-page{
+                .settings-option-body{
+                    margin-top: 0;
+                }
+                .md-option-line:first-child{
+                    padding-top: 0;
+                    .display-3{
+                        margin-top: 0;
+
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media (prefers-color-scheme: light) {
     @import "theme/lightmode.less";
 

@@ -17,6 +17,7 @@ Best used with `Mica(beta)` option in settings.
 
 + Mojave Support
 + Slidey Search Bar, Top Bar, and media Bar
++ New Settings Support
 + Lyrics fullscreen support
 + Various Light mode improvements
 + Colored hearts
