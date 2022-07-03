@@ -519,8 +519,7 @@
                     border-top      : 1px solid var(--contentBorderColor);
                     border-radius   : 0;
                     // width        : calc(var(--contentWidth) / 4.225);
-                    margin-right    : 20px;
-
+                    margin-left    : 25px;
                     .duration,
                     .isLibrary {
                         display: none;
@@ -703,6 +702,14 @@
 
             .list-group-item-dark.applied {
                 background: var(--keyColor-disabled);
+            }
+            .listitem-horizontal{
+                .cd-mediaitem-list-item {
+                    overflow-x: visible;
+                    .heart-icon{
+                        left:-15px;
+                    }
+                }
             }
 
             &.library-recentlyAdded {
