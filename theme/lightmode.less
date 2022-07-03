@@ -458,6 +458,29 @@ input[type="text"] {
         background-color : @sidebarColorMix  !important;
     }
 }
+.addtoplaylist-panel{
+    .modal-content{
+        box-shadow: none;
+        .playlist-item .icon{
+            color: var(--keyColor) !important;
+        }
+        .app-sidebar-item{
+            color: var(--textColor);
+            ._svg-icon{
+                background: var(--keyColor);
+            }
+        }
+    }
+    .modal-search{
+        @sidebarColor    : rgb(240, 240, 241);
+        background-color : @sidebarColor  !important;
+        .search-input {
+            background: rgba(241, 241, 241, 0.5);
+            border    : 1px solid var(--contentBorderColor);
+            color     : #777;
+        }
+    }
+}
 
 .popover-body .content {
     color: var(--textColorLight);
