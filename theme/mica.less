@@ -3,13 +3,25 @@ body {
 
     #micaEffect {
         opacity   : 1;
-        filter    : saturate(200%) brightness(0.5);
+        filter    : saturate(200%) brightness(0.65);
         transition: opacity 0.2s var(--appleEase);
     }
 
     @media (prefers-color-scheme: light) {
         #micaEffect {
             filter: saturate(180%) brightness(1.25);
+        }
+    }
+
+    &:not(.stopanimation) {
+        #app:not(.simplebg) {
+            #app-sidebar {
+                background-color: var(--sidebarColorMix);
+            }
+
+            #app-content {
+                background-color: var(--baseColorMix);
+            }
         }
     }
 
@@ -22,32 +34,10 @@ body {
         #app.macosemu {
             .app-chrome-item .window-controls-macos div {
                 filter    : contrast(0) saturate(0);
-                transition: filter 0.7s 1s var(--appleEase);
+                transition: filter 0.2s var(--appleEase);
             }
         }
 
-        @media (prefers-color-scheme: light) {
-            #app-sidebar {
-                // background-color: rgb(250,250,250);
-                // transition      : background-color 0.7s 0.1s var(--appleEase);
-            }
-
-            // #app-sidebar::before{
-            //     opacity: 0;
-            //     transition: opacity 0.7s 0.1s var(--appleEase);
-            // }
-
-        }
-    }
-
-    &:not(.stopanimation) {
-        @media (prefers-color-scheme: light) {
-            // #app-sidebar::before{
-            //     opacity: 1;
-            //     transition: opacity 0.7s 0.1s var(--appleEase);
-            // }
-
-        }
     }
 
     #app.simplebg {

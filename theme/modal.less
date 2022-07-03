@@ -1,4 +1,5 @@
 @keyColor: #fa586a;
+
 /* Stylize Popups */
 .modal-fullscreen {
     backdrop-filter: blur(16px) brightness(0.5);
@@ -17,25 +18,30 @@
                 justify-self: center;
                 width       : 100%;
             }
-            .close-btn{
+
+            .close-btn {
                 border-radius: 0;
-                right:0;
-                top:0;
-                &::before{
+                right        : 0;
+                top          : 0;
+
+                &::before {
                     font-size: 20;
                 }
             }
         }
 
-        .modal-content, .md-footer {
+        .modal-content,
+        .md-footer {
             @sidebarColor    : rgb(37, 37, 38);
             @sidebarColorMix : mix(@sidebarColor, transparent, 80%);
             background-color : @sidebarColorMix;
-            color: var(--textColor);
+            color            : var(--textColor);
+
             .playlist-item {
                 background-color: transparent;
                 margin-top      : 0;
-                color: var(--textColor);
+                color           : var(--textColor);
+
                 &:not(:last-of-type) {
                     border-bottom: 1px solid var(--modalBorderSubtleColor);
                 }
@@ -45,32 +51,67 @@
                 }
 
             }
+
             .md-btn.md-btn-block:first-of-type {
                 background-color: @keyColor;
-                opacity: 0.8;
+                opacity         : 0.8;
+
                 &:hover {
                     opacity: 1;
                 }
             }
         }
     }
-    &.moreinfo-modal{
-        .modal-window{
+
+    &.equalizer-panel {
+        .modal-header {
+            flex-flow: column;
+
+            .md-select {
+                margin-right: 0 !important;
+            }
+        }
+
+        .modal-content {
+            box-shadow: none;
+        }
+
+        .modal-lowercontent {
+            background: var(--baseColorMix);
+            .md-btn {
+                border    : 1px solid var(--contentBorderColor);
+                background: var(--searchBarBackgroundColor);
+                color     : var(--textColor);
+
+                &.md-btn-primary, &:hover {
+                    background: var(--keyColorSubtle);
+                    color: var(--textColorLight);
+                }
+            }
+        }
+    }
+
+    &.moreinfo-modal {
+        .modal-window {
             height: max-content;
-            .modal-header{
-                align-items: center;
+
+            .modal-header {
+                align-items    : center;
                 justify-content: center;
-                .modal-title{
+
+                .modal-title {
                     font-size: 1.2em;
-                    width:max-content;
-                    &.modal-subtitle{
-                        font-size: 1em;
+                    width    : max-content;
+
+                    &.modal-subtitle {
+                        font-size  : 1em;
                         font-weight: bold;
                     }
                 }
             }
-            .modal-content{
-                font-size: 0.9em;
+
+            .modal-content {
+                font-size    : 0.9em;
                 padding-block: 25px;
             }
         }

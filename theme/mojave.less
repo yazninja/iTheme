@@ -26,6 +26,35 @@
                     width: 250px;
                 }
             }
+            .top-nav-group {
+                border       : 1px solid var(--contentBorderColor);
+                border-radius: 6px;
+                .app-sidebar-item {
+                    font-weight  : 500;
+                    border-radius: 6px !important;
+
+                    &.active,
+                    &:hover {
+                        border-left: none !important;
+
+                        &::before {
+                            --dist          : 0px;
+                            border-radius   : 6px;
+                        }
+
+                        &+.app-sidebar-item {
+                            border-left: none !important;
+                        }
+                    }
+
+                    &+.app-sidebar-item {
+                        border-left              : 1px solid var(--subtleBorderColor);
+                        border-top-left-radius   : 0 !important;
+                        border-bottom-left-radius: 0 !important;
+                    }
+
+                }
+            }
 
             &::before {
                 transition: width 0.35s var(--appleEase);

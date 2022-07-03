@@ -9,9 +9,9 @@
 @appOpacity      : 0;
 
 @baseColor           : rgb(31, 31, 31);
-@baseColorMix        : mix(@baseColor, transparent, 80%);
+@baseColorMix        : mix(@baseColor, transparent, 85%);
 @sidebarColor        : rgb(37, 37, 38);
-@sidebarColorMix     : mix(@sidebarColor, transparent, 20%);
+@sidebarColorMix     : mix(@sidebarColor, transparent, @transparencyRate);
 @mediaColor          : rgb(85, 85, 85);
 @mediaColorMix       : mix(@mediaColor, transparent, @transparencyRate);
 @mediaContainerColor : rgb(46, 46, 45);
@@ -31,6 +31,7 @@
     --volumeThumbColor        : @volumeThumbColor;
     /* Colors */
     --keyColor                : #fa586a;
+    --keyColorSubtle          : rgba(250, 88, 106, 0.75);
     --ciderColor              : #ff2654;
     --artistHoverColor        : rgba(250, 35, 59, 0.8);
     --activeTabColor          : rgba(250, 88, 106, 0.25);
@@ -62,7 +63,7 @@
     @keyColor               : #fa586a;
     @ciderColor             : #ff2654;
     @baseColor              : rgb(31, 31, 31);
-    @baseColorMix           : mix(@baseColor, transparent, 80%);
+    @baseColorMix           : mix(@baseColor, transparent, @transparencyRate);
     @sidebarColor           : rgb(37, 37, 38);
     @sidebarColorMix        : mix(@sidebarColor, transparent, @transparencyRate);
     @mediaColor             : rgb(85, 85, 85);
@@ -138,6 +139,7 @@
 
 #app-main {
     // background-color: var(--sidebarColorMix);
+    background-color: transparent;
 
     .app-chrome {
         background-color  : transparent;
@@ -148,7 +150,7 @@
         &::before {
             // border-bottom     : 1px solid var(--appBorderColor);
             @baseColorMix     : mix(@mediaContainerColor, transparent, @transparencyRate);
-            background-color  : var(--baseColorMix);
+            background-color  : @baseColorMix;
             z-index           : 15;
             content           : "";
             position          : absolute;
@@ -349,6 +351,9 @@
                 width: 100%;
             }
         }
+        .lyric-footer{
+            background-color: transparent;
+        }
     }
 }
 
@@ -358,12 +363,16 @@
     display : flex;
 
     #app-sidebar {
-        background         : @sidebarColorMix;
+        background         : var(--sidebarColor);
+        // transition      : background-color 0.2s var(--appleEase);
         // height          : calc(100% - var(--chromeHeight) + 1.5px);
         // transition      : background-color 0.7s 1.5s var(--appleEase);
-        // backdrop-filter : blur(10px) saturate(180%);
         border-right       : 1px solid var(--appBorderColor);
         align-self         : flex-end;
+
+        &:not(.sidebartransition-enter-active, .sidebartransition-leave-active) {
+            transition: background-color 0.2s var(--appleEase);
+        }
 
         .search-input {
             transition: border 0.3s var(--appleEase);
@@ -454,6 +463,8 @@
     }
 
     #app-content {
+        background-color: var(--baseColor);
+        transition      : background-color 0.2s var(--appleEase);
 
         .content-inner {
             .header-text {
@@ -479,9 +490,11 @@
                 border-bottom : 1px solid var(--contentBorderColor);
                 padding-inline: 0;
             }
-            .heart-filled{
+
+            .heart-filled {
                 background-color: var(--keyColor);
             }
+
             .cd-mediaitem-list-item {
 
                 // border-top          : 1px solid @contentBorderColor;
@@ -924,6 +937,7 @@
                     .duration {
                         border-bottom: none !important;
                     }
+
                     .info-rect {
                         flex-flow  : row;
                         align-items: center;
@@ -992,7 +1006,46 @@
             }
         }
 
+        .queue-footer {
+            .md-btn {
+                border    : 1px solid var(--contentBorderColor);
+                background: rgba(50, 50, 50, 0.25);
 
+                &.md-btn-primary {
+                    background: var(--keyColorSubtle);
+                }
+
+                &:hover {
+                    background: var(--keyColorSubtle);
+                }
+            }
+        }
+        .lyric-footer{
+            background: rgba(50, 50, 50, 0.70);
+            .md-btn {
+                border    : 1px solid var(--contentBorderColor);
+                background: rgba(50, 50, 50, 0.25);
+                &:hover {
+                    background: var(--keyColorSubtle);
+                }
+            }
+        }
+
+    }
+}
+select.md-select{
+    color: var(--textColor);
+    background-color: var(--menuBackgroundColor);
+    border: 1px solid var(--contentBorderColor);
+    optgroup {
+        color: var(--textColor);
+        background-color: var(--menuBackgroundColor);
+        option {
+            background-color: var(--menuBackgroundColor);
+            margin:0;
+            padding: 0;
+            text-align: center;
+        }
     }
 }
 

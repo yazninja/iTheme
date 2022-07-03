@@ -1,6 +1,6 @@
 @baseColor              : rgb(255, 255, 255);
-@baseColorMix           : mix(@baseColor, transparent, 80%);
-@sidebarColor           : rgb(255, 255, 255);
+@baseColorMix           : mix(@baseColor, transparent, 99%);
+@sidebarColor           : rgb(249, 249, 249);
 @sidebarColorMix        : mix(@sidebarColor, transparent, 40%);
 @mediaColor             : rgb(255, 255, 255);
 @mediaColorMix          : mix(@mediaColor, transparent, @transparencyRate);
@@ -23,6 +23,7 @@
     --volumeThumbColor        : @volumeThumbColor;
     /* Colors */
     --keyColor                : #d60017;
+    --keyColorSubtle           : rgba(214, 0, 23, 0.75);
     --ciderColor              : #ff2654;
     --artistHoverColor        : rgba(250, 35, 59, 0.8);
     --activeTabColor          : rgba(214, 0, 23, 0.25);
@@ -172,9 +173,8 @@ body {
     display : flex;
 
     #app-sidebar {
-        background-color: var(--sidebarColorMix);
+        background-color: var(--sidebarColor);
         z-index         : 1;
-        transition      : background-color 0.7s 0.1s var(--appleEase);
 
         .search-input--icon {
             filter: brightness(0.15) !important;
@@ -333,7 +333,8 @@ body {
     }
 
     .app-drawer {
-        background: mix(@sidebarColor, transparent, 40%) !important;
+        background     : mix(@sidebarColor, transparent, 40%) !important;
+        backdrop-filter: var(--glassFilterHeavy) !important;
 
         &::before {
             content   : '';
@@ -365,6 +366,11 @@ body {
 
         .md-btn {
             background: var(--keyColor);
+        }
+    }
+    .queue-panel{
+        .autoplay{
+            background: rgba(0, 0, 0, 0.25);
         }
     }
 }
