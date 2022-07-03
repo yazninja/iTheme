@@ -143,7 +143,8 @@ body {
         .window-controls .close:hover {
             filter: invert(1);
         }
-        button.playback-button--small.cast, 
+
+        button.playback-button--small.cast,
         button.playback-button--small.repeat,
         button.playback-button--small.shuffle,
         button.playback-button--small.lyrics {
@@ -255,7 +256,7 @@ body {
 
         .md-btn-primary {
             background: var(--keyColor);
-            color: var(--textColorLight);
+            color     : var(--textColorLight);
         }
 
         .md-select {
@@ -350,11 +351,16 @@ body {
             background: inherit;
             margin    : -20px;
             z-index   : -1;
+            display   : none;
         }
     }
 
+    .bgArtworkMaterial {
+        display: block;
+    }
+
     .md-body.lyric-body {
-        background-color  : rgba(0, 0, 0, 0.35);
+        backdrop-filter: brightness(0.5) saturate(500%);
         -webkit-mask-image: none;
 
         .lyric-line.active {
@@ -363,8 +369,8 @@ body {
     }
 
     .lyric-footer {
-        background     : rgba(255, 255, 255, 0.8);
-        backdrop-filter: blur(16px);
+        background     : rgba(255, 255, 255, 0.5) !important;
+        padding-bottom: 0 !important;
 
         .md-btn {
             background: var(--keyColor);
@@ -458,25 +464,32 @@ input[type="text"] {
         background-color : @sidebarColorMix  !important;
     }
 }
-.addtoplaylist-panel{
-    .modal-content{
+
+.addtoplaylist-panel {
+    .modal-content {
         box-shadow: none;
-        .playlist-item .icon{
+
+        .playlist-item .icon {
             color: var(--keyColor) !important;
         }
-        .app-sidebar-item{
+
+        .app-sidebar-item {
             color: var(--textColor);
-            ._svg-icon{
+
+            ._svg-icon {
                 background: var(--keyColor);
             }
-            &:hover{
+
+            &:hover {
                 background: var(--categoriesColor);
             }
         }
     }
-    .modal-search{
-        @sidebarColor    : rgb(240, 240, 241);
-        background-color : @sidebarColor  !important;
+
+    .modal-search {
+        @sidebarColor   : rgb(240, 240, 241);
+        background-color: @sidebarColor  !important;
+
         .search-input {
             background: rgba(241, 241, 241, 0.5);
             border    : 1px solid var(--contentBorderColor);

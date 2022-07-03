@@ -91,16 +91,16 @@
                 padding-bottom: calc(var(--chromeHeight2) + 20px);
 
                 &.playlist-page {
-                    padding-bottom: var(--chromeHeight2);
+                    padding-bottom: 0;
                     .playlist-body{
-                        padding-bottom: 0 !important;
+                        padding-bottom:  var(--chromeHeight2) !important;
                     }
                 }
             }
         }
 
         .app-drawer {
-            height         : calc(calc(100% - 3%) - var(--chromeHeight));
+            height         : calc(calc(100% - 4%) - var(--chromeHeight));
             top            : calc(var(--chromeHeight1) + 1%);
             backdrop-filter: var(--glassFilterHeavy) brightness(0.65);
         }
