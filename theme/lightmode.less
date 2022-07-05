@@ -113,7 +113,7 @@
 
         .chrome-bottom {
             --color2: rgba(255, 255, 255, 0.5);
-
+            backdrop-filter: var(--glassFilterHeavy) brightness(150%) !important;
             .app-playback-controls {
                 border: none;
             }
@@ -283,6 +283,10 @@ body {
             }
         }
 
+        .cd-mediaitem-square.mediaitem-card .info-rect-card::before{
+            filter: var(--glassFilterHeavy) brightness(150%);
+        }
+
         .about-page .row .col img[src="assets/banner.png"] {
             width          : 0;
             height         : 0;
@@ -354,13 +358,12 @@ body {
             display   : none;
         }
     }
-
-    .bgArtworkMaterial {
-        display: block;
-    }
+    // .bgArtworkMaterial{
+    //     filter: brightness(180%);
+    // }
 
     .md-body.lyric-body {
-        backdrop-filter: brightness(0.5) saturate(500%);
+        // backdrop-filter: brightness(0.5) saturate(500%);
         -webkit-mask-image: none;
 
         .lyric-line.active {

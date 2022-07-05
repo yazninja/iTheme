@@ -1,0 +1,25 @@
+.fullscreen-view-container{
+    .fullscreen-view{
+        .lyrics-col{
+            width:100%;
+            .lyric-body{
+                width:100%;
+            }
+        }
+        .lyric-line{
+            font-size: 50px;
+            margin-right: 20px;
+            .lyrics-translation{
+                filter: opacity(0.5);
+            }
+            &:not(.active) {
+                transform: scale(0.75);
+                filter: blur(1.5px) opacity(0.5);
+            }
+            
+            &.active{
+                transform: scale(1);
+            }
+        }
+    }
+}

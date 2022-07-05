@@ -1,4 +1,5 @@
 #app.twopanel {
+    --chromeHeight1: 55px;
     #app-main {
         .app-chrome:not(.chrome-bottom) {
             backdrop-filter: none;
@@ -29,10 +30,12 @@
             .top-nav-group {
                 border       : 1px solid var(--contentBorderColor);
                 border-radius: 6px;
+                background: rgba(36, 36, 38, 0.75);
                 .app-sidebar-item {
                     font-weight  : 500;
                     border-radius: 6px !important;
-
+                    padding-inline: 20px;
+                    flex-basis: content;
                     &.active,
                     &:hover {
                         border-left: none !important;

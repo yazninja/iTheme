@@ -2,6 +2,7 @@
 @import "theme/macos-menu.less";
 @import "theme/mica.less";
 @import "theme/mojave.less";
+@import "theme/fullscreen.less";
 
 /* Colors */
 @colorMixRate    : 1%;
@@ -55,8 +56,6 @@
     /* Layout */
     --contentWidth: calc(100vw - 346px);
     --sidebarWidth: 260px;
-
-
 }
 
 @media (prefers-color-scheme: dark) {
@@ -351,12 +350,23 @@
                 width: 100%;
             }
         }
-        .md-body.lyric-body{
+
+        .md-body.lyric-body {
             backdrop-filter: none;
+            .lyric-line {
+                color: var(--textColorLight) !important;
+                opacity: 1;
+                transform: none;
+                scale: 1.5;
+                .lyrics-translation{
+                    // opacity: 0;
+                }
+            }
         }
-        .lyric-footer{
+
+        .lyric-footer {
             background-color: transparent !important;
-            padding-bottom: 55px !important;
+            padding-bottom  : 55px !important;
         }
     }
 }
@@ -523,7 +533,8 @@
                     border-top      : 1px solid var(--contentBorderColor);
                     border-radius   : 0;
                     // width        : calc(var(--contentWidth) / 4.225);
-                    margin-left    : 25px;
+                    margin-left     : 25px;
+
                     .duration,
                     .isLibrary {
                         display: none;
@@ -707,11 +718,13 @@
             .list-group-item-dark.applied {
                 background: var(--keyColor-disabled);
             }
-            .listitem-horizontal{
+
+            .listitem-horizontal {
                 .cd-mediaitem-list-item {
                     overflow-x: visible;
-                    .heart-icon{
-                        left:-15px;
+
+                    .heart-icon {
+                        left: -15px;
                     }
                 }
             }
@@ -840,7 +853,8 @@
                 .gh-header {
                     border-bottom: 1px solid var(--subtleBorderColor);
                 }
-                .repo-header{
+
+                .repo-header {
                     background-color: var(--searchBarBackgroundColor);
                 }
             }
@@ -914,6 +928,12 @@
                 //         background-position: center;
                 //     }
                 // }
+            }
+
+            &.about-page {
+                button.sponsorBtn{
+                    color:var(--textColorLight) !important;
+                }
             }
 
             &.playlist-page {
@@ -1034,11 +1054,19 @@
                 }
             }
         }
-        .lyric-footer{
+        .lyric-body {
+            .lyrics-translation {
+                filter: none;
+                opacity: 0.5;
+            }
+        }
+        .lyric-footer {
             background: rgba(50, 50, 50, 0.70);
+
             .md-btn {
                 border    : 1px solid var(--contentBorderColor);
                 background: rgba(50, 50, 50, 0.25);
+
                 &:hover {
                     background: var(--keyColorSubtle);
                 }
@@ -1047,18 +1075,21 @@
 
     }
 }
-select.md-select{
-    color: var(--textColor);
+
+select.md-select {
+    color           : var(--textColor);
     background-color: var(--menuBackgroundColor);
-    border: 1px solid var(--contentBorderColor);
+    border          : 1px solid var(--contentBorderColor);
+
     optgroup {
-        color: var(--textColor);
+        color           : var(--textColor);
         background-color: var(--menuBackgroundColor);
+
         option {
             background-color: var(--menuBackgroundColor);
-            margin:0;
-            padding: 0;
-            text-align: center;
+            margin          : 0;
+            padding         : 0;
+            text-align      : center;
         }
     }
 }
@@ -1108,19 +1139,23 @@ select.md-select{
         .tabs .tab-content {
             .md-option-header {
                 padding-bottom: 1rem;
-                border-bottom: 1px solid var(--contentBorderColor);
-                font-weight: bold;
+                border-bottom : 1px solid var(--contentBorderColor);
+                font-weight   : bold;
             }
-            .md-option-line:not(:last-child){
+
+            .md-option-line:not(:last-child) {
                 border-bottom: 1px solid var(--contentBorderColor);
             }
-            .audiolabs-page{
-                .settings-option-body{
+
+            .audiolabs-page {
+                .settings-option-body {
                     margin-top: 0;
                 }
-                .md-option-line:first-child{
+
+                .md-option-line:first-child {
                     padding-top: 0;
-                    .display-3{
+
+                    .display-3 {
                         margin-top: 0;
 
                     }
