@@ -55,7 +55,7 @@
 
     /* Layout */
     --contentWidth: calc(100vw - 346px);
-    --sidebarWidth: 260px;
+    --sidebarWidth: 250px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -168,11 +168,11 @@
             width  : min-content;
 
             .app-chrome-item:nth-of-type(2) {
-                margin-left: calc(var(--sidebarWidth) * 0.4);
+                margin-left: calc(var(--sidebarWidth) * 0.37);
             }
 
             .shuffle {
-                margin-left: calc(var(--sidebarWidth) * 0.2);
+                margin-left: calc(var(--sidebarWidth) * 0.4);
             }
 
             .vdiv {
@@ -210,6 +210,7 @@
                 max-width       : 650px;
                 border          : none;
                 overflow        : hidden;
+                margin-left: 70px;
 
                 &:empty {
                     border             : 1px solid @mediaColorMix;
@@ -329,6 +330,10 @@
             }
         }
 
+        .app-chrome-item.generic {
+            width:auto
+        }
+
         .app-mainmenu,
         .app-mainmenu.active {
             background           : var(--cvar-userprofileimg, url('/assets/cider-round.svg'));
@@ -429,7 +434,7 @@
         }
 
         .app-sidebar-item {
-            font-size : 15px;
+            font-size : 12.5px;
             padding   : 4px 16px;
             color     : var(--textColor);
             transition: background 0s 0s var(--appleEase), font-weight 0.3s 0.3s var(--appleEase);
@@ -501,7 +506,7 @@
             }
 
             .well {
-                border-bottom : 1px solid var(--contentBorderColor);
+                // border-bottom : 1px solid var(--contentBorderColor);
                 padding-inline: 0;
             }
 
@@ -586,7 +591,7 @@
 
             .cd-mediaitem-square {
                 padding  : 0;
-                height   : auto;
+                // height   :auto;
                 width    : calc(var(--contentWidth) / 5.925);
                 min-width: 160px;
 
@@ -864,6 +869,10 @@
                 .heart-icon {
                     left: -15px;
                 }
+
+                // .library-header {
+                //     background: var(--baseColor);
+                // }
             }
 
             // Style New Artists Page
@@ -955,6 +964,18 @@
 
                 .more-btn-round {
                     background: var(--keyColor);
+                }
+
+                .playlist-display {
+                    box-shadow: none;
+
+                    .artworkContainer {
+                        position: unset;
+                    }
+
+                    .playlistInfo {
+                        background: var(--color3)
+                    }
                 }
 
                 .cd-mediaitem-list-item {
