@@ -1,5 +1,5 @@
 @baseColor              : rgb(255, 255, 255);
-@baseColorMix           : mix(@baseColor, transparent, 99%);
+@baseColorMix           : mix(@baseColor, transparent, 100%);
 @sidebarColor           : rgb(249, 249, 249);
 @sidebarColorMix        : mix(@sidebarColor, transparent, 40%);
 @mediaColor             : rgb(255, 255, 255);
@@ -48,7 +48,6 @@
 
     /* Layout */
     --contentWidth: calc(100vw - 346px);
-    --sidebarWidth: 260px;
 
 
 }
@@ -337,6 +336,16 @@ body {
                 }
             }
         }
+
+        .content-inner.playlist-page {
+            
+            .playlist-display {
+                
+                .playlistInfo {
+                    background: transparent;
+                }
+            }
+        }
     }
 
     .app-drawer {
@@ -365,8 +374,11 @@ body {
     .md-body.lyric-body {
         // backdrop-filter: brightness(0.5) saturate(500%);
         -webkit-mask-image: none;
-        .lyric-line{
+        .lyric-line {
             color: var(--textColor);
+        }
+        .lyric-line .lyricWaiting > div{
+            background: var(--textColor);
         }
         .lyric-line.active {
             backdrop-filter: none !important;
