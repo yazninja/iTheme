@@ -951,6 +951,21 @@
             }
 
             &.playlist-page {
+                &[is-album="true"] {
+                    
+                    .subtitle {
+                        display: none !important;
+                    }
+
+                    .info-rect {
+                        justify-content: flex-start;
+                    }
+                }
+
+                &[is-album="false"] {
+                    
+                }
+                
                 .artist-chip {
                     color: var(--textColor);
 
