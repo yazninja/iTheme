@@ -1,9 +1,9 @@
 # iTheme (Beta) for [Cider](https://cider.sh/) <img src="https://img.shields.io/github/stars/ciderapp/iTheme?style=social" width="70"></img>
 
+<img src="https://img.shields.io/github/package-json/v/yazninja/discord-fg-bot?style=for-the-badge">
+
 Cider theme based from the Apple Music beta app in MacOS Ventura.
 Best used with `Mica(beta)` option in settings.
-
-```Release 3.1! - Mojave Layout Support```
 
 #### iTheme Ecosystem
 
