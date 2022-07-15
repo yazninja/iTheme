@@ -1,0 +1,25 @@
+#app:not(.twopanel) {
+    #app-main {
+        .app-chrome {
+            .app-chrome--left {
+                width: calc(100% + (var(--sidebarWidth)));
+            }
+
+            .app-chrome--center {
+                max-width: 600px;
+                min-width: 30%;
+            }
+
+            .app-chrome--right {
+                width  : 100%;
+                .app-chrome-item.volume {
+                    width       : 100%;
+                    margin-inline: 3rem;
+                    input[type="range"] {
+                        width: 100px;
+                    }
+                }
+            }
+        }
+    }
+}

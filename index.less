@@ -3,6 +3,7 @@
 @import "theme/mica.less";
 @import "theme/mojave.less";
 @import "theme/fullscreen.less";
+@import "theme/mavericks.less";
 
 /* Colors */
 @colorMixRate    : 1%;
@@ -54,7 +55,7 @@
     --subtleBorderColor     : hsla(0, 0%, 50%, 0.2);
 
     /* Layout */
-    --contentWidth: calc(100vw - 346px);
+    --contentWidth: calc(100vw - var(--sidebarWidth) - 64px);
     --sidebarWidth: 250px;
 }
 
@@ -165,14 +166,12 @@
 
         .app-chrome--left {
             z-index: 17;
-            width  : min-content;
-
-            .app-chrome-item:nth-of-type(2) {
+            > .app-chrome-item:nth-of-type(2) {
                 margin-left: calc(var(--sidebarWidth) * 0.37);
             }
-
-            .shuffle {
-                margin-left: calc(var(--sidebarWidth) * 0.4);
+            .playback-control-buttons{
+                width: 100%;
+                -webkit-app-region: drag;
             }
 
             .vdiv {
@@ -200,9 +199,8 @@
 
         .app-chrome--center {
             z-index: 17;
-
             .app-chrome-item.playback-controls {
-                width           : 90%;
+                width           : 100%;
                 max-width       : 650px;
                 height          : calc(100% - 10px);
                 border-radius   : 0.125rem;
@@ -210,7 +208,6 @@
                 max-width       : 650px;
                 border          : none;
                 overflow        : hidden;
-                margin-left: 70px;
 
                 &:empty {
                     border             : 1px solid @mediaColorMix;
@@ -300,13 +297,12 @@
 
             .app-chrome-item.volume {
                 width       : 120px;
-                margin-right: 3rem;
-                margin-left : 2rem;
-
+                margin-inline: 3rem;
+                -webkit-app-region: drag;
                 input[type="range"] {
+                    -webkit-app-region: no-drag;
                     background-color: transparent;
                     height          : 20px;
-
                     &::-webkit-slider-runnable-track {
                         background   : var(--volumeTrackColor);
                         filter       : none !important;
@@ -359,11 +355,16 @@
 
         .md-body.lyric-body {
             backdrop-filter: none;
+            margin-inline: 5rem;
             .lyric-line {
                 color: var(--textColorLight) !important;
                 opacity: 1;
                 transform: none;
-                scale: 1.5;
+                scale: 1;
+                font-size: 60px;
+                text-align: center;
+                align-items: center;
+                justify-content: center;
                 .lyrics-translation{
                     // opacity: 0;
                 }
@@ -592,12 +593,11 @@
 
             .cd-mediaitem-square {
                 padding  : 0;
-                // height   :auto;
-                width    : calc(var(--contentWidth) / 5.925);
                 min-width: 160px;
+                // width:100%;
 
                 .artwork-container {
-                    width: 95%;
+                    width: 100%;
 
                     .artwork {
                         width       : auto;
@@ -621,7 +621,6 @@
                 }
 
                 &.mediaitem-card {
-                    width       : calc(var(--contentWidth) / 5);
                     min-width   : 195px;
                     max-width   : 288px;
                     aspect-ratio: 57/74;
@@ -656,7 +655,6 @@
                 }
 
                 &.mediaitem-brick {
-                    width: calc(var(--contentWidth) / 4.95);
 
                     .artwork {
                         aspect-ratio: 290/163;
@@ -664,7 +662,6 @@
                 }
 
                 &.mediaitem-video {
-                    width: calc(var(--contentWidth) / 4.95);
 
                     .artwork {
                         aspect-ratio: 16/9;
@@ -879,7 +876,29 @@
                 //     background: var(--baseColor);
                 // }
             }
+            .well.itemContainer.collection-list-square{
+                display: grid;
+                grid-template-columns: repeat(6, minmax(150px, 1fr));
+                margin-inline: 50px;
+                .cd-mediaitem-square-container {
+                    margin-bottom: 1vw;
+                    width:100%;
+                    > .cd-mediaitem-square {
+                        width: 100%;
+                    }
+                }
+            }
+            @media screen and (max-width: 1150px){
+                .well.itemContainer.collection-list-square{
+                    grid-template-columns: repeat(5, minmax(150px, 1fr)); // nah wait this works like its good, no scrolling bug for this... lemee show
 
+                }
+            }
+            @media screen and (max-width: 1000px){
+                .well.itemContainer.collection-list-square{
+                    grid-template-columns: repeat(4, minmax(150px, 1fr));
+                }
+            }
             // Style New Artists Page
             &.library-artists-page {
                 height: 100%;
