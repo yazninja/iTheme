@@ -747,6 +747,7 @@
             }
 
             &.artist-page {
+                --contentWidth: calc(100vw - var(--sidebarWidth) - 72px);
                 .artist-title {
                     color: var(--textColor);
                 }
@@ -764,12 +765,15 @@
                     background: var(--keyColor);
                     color     : var(--textColorLight);
                 }
+                .row.well > .col{
+                    padding: 0;
+                }
 
                 .cd-mediaitem-square {
                     width: calc(var(--contentWidth) / 6);
 
                     &.mediaitem-card {
-                        width: 210px;
+                        width: 240px;
                     }
 
                     &.mediaitem-video {
