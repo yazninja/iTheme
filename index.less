@@ -771,7 +771,7 @@
                     .v-hl-container[data-v-45080727] {
                         padding-block: 0;
                         margin-block: 0;
-                        height: calc((var(--contentWidth) / 6) + 50px);
+                        height: max-content;
                     }
                 }
 
@@ -781,10 +781,13 @@
 
                     &.mediaitem-card {
                         width: 240px;
+                        height: unset;
                     }
 
                     &.mediaitem-video {
                         width: calc(var(--contentWidth) / 5);
+                        height: auto;
+                        aspect-ratio: 16/11;
                     }
                 }
 
