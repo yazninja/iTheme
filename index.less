@@ -612,7 +612,8 @@
                     justify-content: left;
 
                     >div {
-                        -webkit-box-orient: horizontal !important;
+                        // -webkit-box-orient: horizontal !important;
+                        -webkit-line-clamp: 2;
                     }
                 }
 
@@ -767,10 +768,16 @@
                 }
                 .row.well > .col{
                     padding: 0;
+                    .v-hl-container[data-v-45080727] {
+                        padding-block: 0;
+                        margin-block: 0;
+                        height: calc((var(--contentWidth) / 6) + 50px);
+                    }
                 }
 
                 .cd-mediaitem-square {
                     width: calc(var(--contentWidth) / 6);
+                    height: calc((var(--contentWidth) / 6) + 50px);
 
                     &.mediaitem-card {
                         width: 240px;
