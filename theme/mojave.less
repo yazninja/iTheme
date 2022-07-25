@@ -6,11 +6,15 @@
 
             .app-chrome--left,
             .app-chrome--right {
-                width: 300px;
+                width: 350px;
             }
 
             .app-chrome-item:nth-of-type(2):not(.generic) {
                 margin: 0;
+            }
+            .app-chrome--left > div:nth-of-type(3) {
+                margin-left: calc(var(--sidebarWidth)/1.8);
+                transition     : margin-left 0.35s var(--appleEase);
             }
 
             .search-input {
@@ -134,6 +138,9 @@
         }
 
         .app-chrome:not(.chrome-bottom) {
+            .app-chrome--left > div:nth-of-type(3) {
+                margin-left: 0 !important;
+            }
             &::before {
                 width: 100%;
             }

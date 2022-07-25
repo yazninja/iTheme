@@ -56,7 +56,7 @@
 
     /* Layout */
     --contentWidth: calc(100vw - var(--sidebarWidth) - 64px);
-    --sidebarWidth: 250px;
+    --sidebarWidth: 225px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -166,11 +166,14 @@
 
         .app-chrome--left {
             z-index: 17;
-            > .app-chrome-item:nth-of-type(2) {
-                margin-left: calc(var(--sidebarWidth) * 0.37);
+
+            >.app-chrome-item:nth-of-type(2) {
+                margin-left: calc(var(--sidebarWidth) * 0.33);
             }
-            .playback-control-buttons{
-                width: 100%;
+
+            .playback-control-buttons {
+                width             : 100%;
+                margin-inline     : 30px;
                 -webkit-app-region: drag;
             }
 
@@ -199,16 +202,21 @@
 
         .app-chrome--center {
             z-index: 17;
+
             .app-chrome-item.playback-controls {
                 width           : 100%;
                 max-width       : 650px;
                 height          : calc(100% - 10px);
                 border-radius   : 0.125rem;
                 background-color: var(--mediaColorMix);
-                max-width       : 650px;
+                max-width       : 800px;
+                min-width       : 35vw;
                 border          : none;
                 overflow        : hidden;
-
+                margin-inline   : 30px;
+                @media screen and (max-width: 1400px) {
+                    min-width: 25vw;
+                }
                 &:empty {
                     border             : 1px solid @mediaColorMix;
                     background-image   : url('/assets/cider-round.svg');
@@ -296,13 +304,19 @@
             width  : min-content;
 
             .app-chrome-item.volume {
-                width       : 120px;
-                margin-inline: 3rem;
+                width             : 120px;
+                margin-inline     : 3rem;
                 -webkit-app-region: drag;
+
+                .volume-button--small {
+                    -webkit-app-region: no-drag;
+                }
+
                 input[type="range"] {
                     -webkit-app-region: no-drag;
-                    background-color: transparent;
-                    height          : 20px;
+                    background-color  : transparent;
+                    height            : 20px;
+
                     &::-webkit-slider-runnable-track {
                         background   : var(--volumeTrackColor);
                         filter       : none !important;
@@ -328,7 +342,7 @@
         }
 
         .app-chrome-item.generic {
-            width:auto
+            width: auto
         }
 
         .app-mainmenu,
@@ -355,17 +369,19 @@
 
         .md-body.lyric-body {
             backdrop-filter: none;
-            margin-inline: 5rem;
+            margin-inline  : 5rem;
+
             .lyric-line {
-                color: var(--textColorLight) !important;
-                opacity: 1;
-                transform: none;
-                scale: 1;
-                font-size: 60px;
-                text-align: center;
-                align-items: center;
+                color          : var(--textColorLight) !important;
+                opacity        : 1;
+                transform      : none;
+                scale          : 1;
+                font-size      : 60px;
+                text-align     : center;
+                align-items    : center;
                 justify-content: center;
-                .lyrics-translation{
+
+                .lyrics-translation {
                     // opacity: 0;
                 }
             }
@@ -436,7 +452,12 @@
         }
 
         .app-sidebar-item {
-            font-size : 12.5px;
+            display: flex;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            -webkit-box-orient: horizontal;
+            -webkit-line-clamp: 1;
+            font-size : 14px;
             padding   : 4px 16px;
             color     : var(--textColor);
             transition: background 0s 0s var(--appleEase), font-weight 0.3s 0.3s var(--appleEase);
@@ -499,6 +520,15 @@
                 overflow     : hidden;
                 text-overflow: ellipsis;
             }
+            .item-navigate{
+                z-index: 30;
+                &:hover{
+                    text-decoration: none;
+                    h3{
+                        text-decoration: underline;
+                    }
+                }
+            }
 
             .well,
             .mediaitem-list-item__grid {
@@ -534,7 +564,7 @@
                     background-position: center;
                 }
             }
-
+            
             .v-hl-container>*[data-v-45080727] {
                 .cd-mediaitem-list-item {
                     border-top      : 1px solid var(--contentBorderColor);
@@ -549,7 +579,8 @@
 
                     .info-rect {
                         border-bottom: none;
-                        .item-navigate{
+
+                        .item-navigate {
                             -webkit-line-clamp: 1;
                         }
                     }
@@ -562,10 +593,9 @@
                 background-color: var(--categoriesColor);
             }
 
-            .cd-btn-seeall {
+            .cd-btn-seeall, .v-hl-btn {
                 z-index: 2;
             }
-
             .v-hl-container[data-v-45080727] {
                 clip-path    : none;
                 overflow-y   : visible;
@@ -752,10 +782,11 @@
 
             &.artist-page {
                 --contentWidth: calc(100vw - var(--sidebarWidth) - 72px);
+
                 .artist-title {
                     color: var(--textColor);
                 }
-                
+
                 .artist-header {
                     color: var(--textColor)
                 }
@@ -769,27 +800,29 @@
                     background: var(--keyColor);
                     color     : var(--textColorLight);
                 }
-                .row.well > .col{
+
+                .row.well>.col {
                     padding: 0;
+
                     .v-hl-container[data-v-45080727] {
                         padding-block: 0;
-                        margin-block: 0;
-                        height: max-content;
+                        margin-block : 0;
+                        height       : max-content;
                     }
                 }
 
                 .cd-mediaitem-square {
-                    width: calc(var(--contentWidth) / 6);
+                    width : calc(var(--contentWidth) / 6);
                     height: calc((var(--contentWidth) / 6) + 50px);
 
                     &.mediaitem-card {
-                        width: 240px;
+                        width : 240px;
                         height: unset;
                     }
 
                     &.mediaitem-video {
-                        width: calc(var(--contentWidth) / 5);
-                        height: auto;
+                        width       : calc(var(--contentWidth) / 5);
+                        height      : auto;
                         aspect-ratio: 16/11;
                     }
                 }
@@ -847,6 +880,9 @@
                 }
 
                 .cd-mediaitem-square.mediaitem-brick {
+                    .artwork-container{
+                        width: 100%;
+                    }
                     .info-rect {
                         .title {
                             font-size: 1.1rem;
@@ -893,29 +929,36 @@
                 //     background: var(--baseColor);
                 // }
             }
-            .well.itemContainer.collection-list-square{
-                display: grid;
-                grid-template-columns: repeat(6, minmax(150px, 1fr));
-                margin-inline: 50px;
+
+            .well.itemContainer.collection-list-square {
+                display              : grid;
+                grid-template-columns: repeat(6, 1fr);
+                margin-inline        : 50px;
+
+                // max-width: 1600px;
                 .cd-mediaitem-square-container {
                     margin-bottom: 1vw;
-                    width:100%;
-                    > .cd-mediaitem-square {
+                    width        : 100%;
+
+                    >.cd-mediaitem-square {
                         width: 100%;
                     }
                 }
             }
-            @media screen and (max-width: 1150px){
-                .well.itemContainer.collection-list-square{
+
+            @media screen and (max-width: 1150px) {
+                .well.itemContainer.collection-list-square {
                     grid-template-columns: repeat(5, minmax(150px, 1fr)); // nah wait this works like its good, no scrolling bug for this... lemee show
 
                 }
             }
-            @media screen and (max-width: 1000px){
-                .well.itemContainer.collection-list-square{
+
+            @media screen and (max-width: 1000px) {
+                .well.itemContainer.collection-list-square {
                     grid-template-columns: repeat(4, minmax(150px, 1fr));
                 }
             }
+
             // Style New Artists Page
             &.library-artists-page {
                 height: 100%;
@@ -981,14 +1024,14 @@
             }
 
             &.about-page {
-                button.sponsorBtn{
-                    color:var(--textColorLight) !important;
+                button.sponsorBtn {
+                    color: var(--textColorLight) !important;
                 }
             }
 
             &.playlist-page {
                 &[is-album="true"] {
-                    
+
                     .subtitle {
                         display: none !important;
                     }
@@ -998,10 +1041,8 @@
                     }
                 }
 
-                &[is-album="false"] {
-                    
-                }
-                
+                &[is-album="false"] {}
+
                 .artist-chip {
                     color: var(--textColor);
 
@@ -1131,12 +1172,20 @@
                 }
             }
         }
+
         .lyric-body {
             .lyrics-translation {
-                filter: none;
+                filter : none;
                 opacity: 0.5;
             }
+            .lyric-line {
+                &:not(.active) {
+                    filter : blur(2px);
+                }
+                transition      : all 0.5s var(--appleEase);
+            }
         }
+
         .lyric-footer {
             background: rgba(50, 50, 50, 0.70);
 

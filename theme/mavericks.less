@@ -6,12 +6,12 @@
             }
 
             .app-chrome--center {
-                max-width: 600px;
-                min-width: 30%;
+                max-width: 800px;
+                min-width: max-content;
             }
 
             .app-chrome--right {
-                width  : 100%;
+                width: calc(100% - (var(--sidebarWidth)));
                 .app-chrome-item.volume {
                     width       : 100%;
                     margin-inline: 3rem;
