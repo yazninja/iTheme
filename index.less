@@ -380,10 +380,6 @@
                 text-align     : center;
                 align-items    : center;
                 justify-content: center;
-
-                .lyrics-translation {
-                    // opacity: 0;
-                }
             }
         }
 
@@ -1041,8 +1037,6 @@
                     }
                 }
 
-                &[is-album="false"] {}
-
                 .artist-chip {
                     color: var(--textColor);
 
@@ -1073,6 +1067,11 @@
                     .playlistInfo {
                         background: var(--color3)
                     }
+
+                }
+
+                .playlist-hero > .hero-tint {
+                    display: none;
                 }
 
                 .cd-mediaitem-list-item {
@@ -1187,8 +1186,6 @@
         }
 
         .lyric-footer {
-            background: rgba(50, 50, 50, 0.70);
-
             .md-btn {
                 border    : 1px solid var(--contentBorderColor);
                 background: rgba(50, 50, 50, 0.25);
