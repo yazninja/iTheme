@@ -146,6 +146,7 @@
         box-shadow        : none;
         backdrop-filter   : none;
         -webkit-app-region: drag;
+        z-index: 35;
 
         &::before {
             // border-bottom     : 1px solid var(--appBorderColor);
@@ -516,15 +517,18 @@
                 overflow     : hidden;
                 text-overflow: ellipsis;
             }
-            .item-navigate{
-                z-index: 30;
-                &:hover{
-                    text-decoration: none;
-                    h3{
-                        text-decoration: underline;
+            .col {
+                .item-navigate{
+                    z-index: 30;
+                    &:hover{
+                        text-decoration: none;
+                        h3{
+                            text-decoration: underline;
+                        }
                     }
                 }
             }
+            
 
             .well,
             .mediaitem-list-item__grid {
@@ -1121,6 +1125,7 @@
 
     .app-drawer {
         backdrop-filter: var(--glassFilterHeavy) brightness(0.75);
+        z-index: 35;
 
         .queue-body {
             overflow-x: hidden;
