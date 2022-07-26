@@ -363,11 +363,16 @@
     // Lyrics is on fullscreen
     &.modular-fs {
         .app-chrome:not(.chrome-bottom) {
+            .app-chrome--left > div:nth-of-type(3) {
+                margin-left: 0 !important;
+            }
             &::before {
                 width: 100%;
             }
         }
-
+        .app-drawer{
+            z-index: 15;
+        }
         .md-body.lyric-body {
             backdrop-filter: none;
             margin-inline  : 5rem;
