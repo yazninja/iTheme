@@ -111,8 +111,9 @@
         }
 
         .chrome-bottom {
-            --color2: rgba(255, 255, 255, 0.5);
+            --color2       : rgba(255, 255, 255, 0.5);
             backdrop-filter: var(--glassFilterHeavy) brightness(150%) !important;
+
             .app-playback-controls {
                 border: none;
             }
@@ -252,6 +253,15 @@ body {
             }
         }
 
+        .page-btn:not(:hover) {
+
+            .md-ico-next,
+            .md-ico-last,
+            .md-ico-prev,
+            .md-ico-first {
+                filter: invert(0.85);
+            }
+        }
 
         .md-btn-primary {
             background: var(--keyColor);
@@ -282,7 +292,7 @@ body {
             }
         }
 
-        .cd-mediaitem-square.mediaitem-card .info-rect-card::before{
+        .cd-mediaitem-square.mediaitem-card .info-rect-card::before {
             filter: var(--glassFilterHeavy) brightness(150%);
         }
 
@@ -338,9 +348,9 @@ body {
         }
 
         .content-inner.playlist-page {
-            
+
             .playlist-display {
-                
+
                 .playlistInfo {
                     background: transparent;
                 }
@@ -367,26 +377,35 @@ body {
             display   : none;
         }
     }
-    // .bgArtworkMaterial{
-    //     filter: brightness(180%);
-    // }
+
+    .bgArtworkMaterial {
+
+        // filter: brightness(180%);
+        // display: block;
+        .bg-artwork-container .bg-artwork {
+            // filter: blur(64px) opacity(0.5) brightness(120%);
+        }
+    }
 
     .md-body.lyric-body {
         // backdrop-filter: brightness(0.5) saturate(500%);
         -webkit-mask-image: none;
+
         .lyric-line {
             color: var(--textColor);
         }
-        .lyric-line .lyricWaiting > div{
+
+        .lyric-line .lyricWaiting>div {
             background: var(--textColor);
         }
+
         .lyric-line.active {
             backdrop-filter: none !important;
         }
     }
 
     .lyric-footer {
-        background     : rgba(255, 255, 255, 0.5) !important;
+        background    : rgba(255, 255, 255, 0.5) !important;
         padding-bottom: 0 !important;
 
         .md-btn {
@@ -434,7 +453,7 @@ body {
         .tabs .tab-content {
             background: rgba(255, 255, 255, 0.60);
         }
-        
+
         .list-group-item-dark {
             background-color: rgb(255, 255, 255)
         }
@@ -445,7 +464,7 @@ body {
     }
 }
 
-.md-btn:not(.md-btn-replay) {
+.md-btn:not(.md-btn-replay):not(.md-btn-replay--hero) {
     background: var(--searchBarBackgroundColor);
     border    : 1px solid var(--contentBorderColor);
     color     : var(--textColor);

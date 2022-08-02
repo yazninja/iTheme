@@ -140,7 +140,7 @@
 #app-main {
     // background-color: var(--sidebarColorMix);
     background-color: transparent;
-
+    -webkit-font-smoothing: antialiased;
     .app-chrome {
         background-color  : transparent;
         box-shadow        : none;
@@ -787,6 +787,27 @@
 
             &.artist-page {
                 --contentWidth: calc(100vw - var(--sidebarWidth) - 72px);
+                
+                &.animated {
+                    .artist-header{
+                        background: black;
+                        // margin-top: var(--navigationBarHeight);
+                        --webkit-box-refelect:above;
+                        overflow: visible;
+                        --webkit-box-refelect:above; 
+                        height: 60vh; 
+                    }
+                    .animated-artwork-video{
+
+                        height: 100%;
+                        filter: brightness(0.9) contrast(1.2);
+                        min-height: 0;
+                        // opacity:0;
+                        -webkit-mask-image: radial-gradient(circle, black 60%, transparent 120%);
+
+                    }
+                }
+
 
                 .artist-title {
                     color: var(--textColor);
@@ -1035,6 +1056,7 @@
             }
 
             &.playlist-page {
+                padding-top: 0;
                 &[is-album="true"] {
 
                     .subtitle {
@@ -1043,6 +1065,11 @@
 
                     .info-rect {
                         justify-content: flex-start;
+                    }
+                }
+                &.plmin {
+                    .playlist-display {
+                       min-height: calc(230px + var(--navigationBarHeight)) !important;; 
                     }
                 }
 
@@ -1062,11 +1089,18 @@
                     }
                 }
 
+                .col .item-navigate:hover {
+                    text-decoration: underline;
+                }
+
                 .more-btn-round {
                     background: var(--keyColor);
                 }
 
                 .playlist-display {
+                    
+                    padding-top: var(--navigationBarHeight);
+                    min-height: calc(350px + var(--navigationBarHeight));
                     box-shadow: none;
 
                     .artworkContainer {
@@ -1074,7 +1108,11 @@
                     }
 
                     .playlistInfo {
-                        background: var(--color3)
+                        background: var(--color3);
+                        padding-top: var(--navigationBarHeight);
+                    }
+                    .playlist-hero {
+                        margin-top: var(--navigationBarHeight);
                     }
 
                 }
