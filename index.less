@@ -15,7 +15,7 @@
 @sidebarColor        : rgb(37, 37, 38);
 @sidebarColorMix     : mix(@sidebarColor, transparent, @transparencyRate);
 @mediaColor          : rgb(85, 85, 85);
-@mediaColorMix       : mix(@mediaColor, transparent, @transparencyRate);
+@mediaColorMix       : mix(@mediaColor, transparent, 100%);
 @mediaContainerColor : rgb(46, 46, 45);
 @songProgressColor   : rgb(184, 184, 184);
 @volumeThumbColor    : rgb(44, 44, 44);
@@ -265,10 +265,13 @@
 
                     .song-name {
                         max-width: 560px;
+                        font-weight: bold;
                     }
 
                     .song-artist-album {
                         max-width: 540px;
+                        opacity: 0.65;
+                        font-weight: 300;
                     }
 
                     .chrome-icon-container {
@@ -278,14 +281,21 @@
                     .song-progress {
                         height: max-content;
                         bottom: -4px;
-
                         // left: 2px;
+                        .song-duration{
+                            margin-bottom: 3px;
+                            margin-inline: 3px;
+                            opacity: 0.65;
+                            > p{
+                                font-weight: 300 !important;
+                            }
+                        }
                         input[type="range"] {
                             border-radius: 0px;
 
                             &::-webkit-slider-thumb {
                                 border-radius: 3px;
-                                width        : 7px;
+                                width        : 6px;
                                 height       : 15px;
                                 border       : 1px solid @mediaColorMix;
                                 background   : mix(black, @songProgressColor, 20%);
