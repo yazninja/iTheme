@@ -1,6 +1,6 @@
 # iTheme (Beta) for [Cider](https://cider.sh/) <img src="https://img.shields.io/github/stars/ciderapp/iTheme?style=social" width="70"></img>
 
-<img src="https://img.shields.io/github/package-json/v/ciderapp/iTheme?color=dark-green&filename=theme.json&style=for-the-badge">
+<img src="https://img.shields.io/github/package-json/v/ciderapp/iTheme?color=darkgreen&filename=theme.json&style=for-the-badge">
 
 Cider theme based from the Apple Music beta app in MacOS Ventura.
 Best used with `Mica(beta)` option in settings.
