@@ -1,6 +1,6 @@
 # iTheme (Beta) for [Cider](https://cider.sh/) <img src="https://img.shields.io/github/stars/ciderapp/iTheme?style=social" width="70"></img>
 
-<img src="https://img.shields.io/github/package-json/v/ciderapp/iTheme?color=dark-green&filename=theme.json&style=for-the-badge">
+<img src="https://img.shields.io/github/package-json/v/ciderapp/iTheme?color=darkgreen&filename=theme.json&style=for-the-badge">
 
 Cider theme based from the Apple Music beta app in MacOS Ventura.
 Best used with `Mica(beta)` option in settings.
@@ -13,14 +13,20 @@ Best used with `Mica(beta)` option in settings.
 
 ---
 
-### Version 3.1 - Release
-
-+ Mojave Support
-+ Slidey Search Bar, Top Bar, and media Bar
-+ New Settings Support
-+ Lyrics fullscreen support
-+ Various Light mode improvements
-+ Colored hearts
+### Version 3.2 - Release
++ Recently added page support (reduce spacing between albums)
++ UI overlap fixes
++ Mavericks top bar overhaul (horizontally align stuff)
++ Fix on oversized lyrics in the karaoke styled- fullscreen mode
++ antialiased text
++ Animated Artist Banner Video Filter
++ Playlist page header tweaks
++ New Listen now child Tweaks
++ Fix Lightmode fullscreen song info & progress color
++ Fix Light mode page buttons
++ Fix Lightmode replay button color
++ Disable margin of nav button in Mojave window mode
++ New Fullscreen UI
 
 **Not Supported Prvious iTheme features (will be re-added soon)**
 - Forced Light/Dark Mode
