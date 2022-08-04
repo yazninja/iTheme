@@ -1,23 +1,146 @@
 .fullscreen-view-container {
     .fullscreen-view {
+        .fs-header {
+            pointer-events: none;
+        }
+        .top-nav-group {
+            pointer-events: all;
+            border-radius: 100vmax;
+            width: 80%;
+            height: 45px;
+            .app-sidebar-item::before{
+                border-radius: 100vmax;
+            }
+            .app-sidebar-item:last-of-type {
+                width: max-content;
+            }
+        }
+
+        .fs-row{
+            width:100%;
+        }
+
         .playback-info {
             color: var(--textColorLight);
 
             .song-progress {
-                --mediaBarColor         : rgba(0, 0, 0, 0.3);
+                --mediaBarColor         : rgba(255, 255, 255, 0.1);
                 --songProgressColor     : #b8b8b8;
-                --songProgressBackground: #333;
+                --songProgressBackground: rgba(255, 255, 255, 0.1);
             }
         }
-
+        .artwork-col{
+            width: max-content;
+            flex: 40%;
+            .mediaitem-artwork{
+                border-radius: 1rem;
+                box-shadow: 0px 0px 25px rgba(0,0,0,0.5);
+            }
+            .controls-parents {
+                margin-top: 0.75rem;
+                &:hover{
+                    :not(.song-name0):not(.song-artist){
+                        opacity: 1;
+                        transition: opacity 0.35s var(--appleEase);
+                    }
+                    
+                    
+                }
+                .song-name{
+                    font-size: 14px;
+                    font-weight: bold;
+                    color: var(--textColorLight);
+                    margin-bottom: 2.5px;
+                }
+                .song-artist{
+                    font-size: 13px;
+                    color: var(--textColorLight);
+                    opacity: 0.8;
+                }
+                .song-progress{
+                    opacity: 0;
+                    transition: opacity 0.5s 2s var(--appleEase);
+                    position: fixed;
+                    bottom: 8rem;
+                    left: 4rem;
+                    right: 4rem;
+                    width: calc(100% - 8rem);
+                    .song-duration{
+                        width: calc(100% - 0.5rem);
+                        position: absolute;
+                        margin-top: 20px;
+                        margin-inline: 0.25rem;
+                        opacity: 0.8;
+                    }
+                    input {
+                        height: 0.5rem;
+                        border-radius: 1rem;
+                    }
+                }
+                .volume > .input-container {
+                    // display: none;
+                    position: fixed;
+                    bottom: 5rem;
+                    right:4rem;
+                    width: 120px;
+                    opacity: 0;
+                    transition: opacity 0.5s 2s var(--appleEase);
+                }
+                .control-buttons{
+                    opacity: 0;
+                    transition: opacity 0.5s 2s var(--appleEase);
+                    margin:0;
+                    position: fixed;
+                    bottom: 4rem;
+                    left:0;
+                    // display:none;
+                    .playback-button{
+                        width: 45px !important;
+                        height: 45px !important;
+                    }
+                }
+            }
+        }
+        .right-col{
+            flex: 60%;
+            height: 65vh;
+            // margin-right: 2rem;
+            .queue-col{
+                margin-right: 2rem;
+            }
+        }
         .lyrics-col {
             width: 100%;
+            margin-top: -35px;
+            height: 65vh;
 
             .lyric-body {
                 width: 100%;
+                padding-top: 15rem;
+                margin-left: 2rem;
             }
         }
-
+        .tab-toggles{
+            bottom: unset;
+            top: 5rem;
+            right: 5rem;
+            .lyrics, .queue {
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                padding:0;
+                background-size: 50%;
+                background-position: center;
+                background-color: rgba(255,255,255,0.2);
+                &.active{
+                    background-color: rgba(0,0,0,1) !important;
+                    filter: invert(1) brightness(1) !important;
+                }
+            }
+            .lyrics{
+                background-size: 75% !important;
+            }
+        }
         .lyric-line {
             font-size   : 50px;
             margin-right: 20px;

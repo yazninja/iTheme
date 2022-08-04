@@ -139,14 +139,15 @@
 
 #app-main {
     // background-color: var(--sidebarColorMix);
-    background-color: transparent;
+    background-color      : transparent;
     -webkit-font-smoothing: antialiased;
+
     .app-chrome {
         background-color  : transparent;
         box-shadow        : none;
         backdrop-filter   : none;
         -webkit-app-region: drag;
-        z-index: 35;
+        z-index           : 35;
 
         &::before {
             // border-bottom     : 1px solid var(--appBorderColor);
@@ -215,9 +216,28 @@
                 border          : none;
                 overflow        : hidden;
                 margin-inline   : 30px;
+
+                img[src="./assets/MissingArtwork.svg"] {
+                    // opacity: 0 !important;
+
+                    &::after {
+                        position: absolute;
+                        height: 100%;
+                        width: 100%;
+                        content: '';
+                        border             : 1px solid @mediaColorMix;
+                        background-image   : url('/assets/cider-round.svg');
+                        background-repeat  : no-repeat;
+                        background-position: center;
+                        background-size    : 36px;
+                        z-index:1000;
+                    }
+                }
+
                 @media screen and (max-width: 1400px) {
                     min-width: 25vw;
                 }
+
                 &:empty {
                     border             : 1px solid @mediaColorMix;
                     background-image   : url('/assets/cider-round.svg');
@@ -264,13 +284,13 @@
                     }
 
                     .song-name {
-                        max-width: 560px;
+                        max-width  : 560px;
                         font-weight: bold;
                     }
 
                     .song-artist-album {
-                        max-width: 540px;
-                        opacity: 0.65;
+                        max-width  : 540px;
+                        opacity    : 0.65;
                         font-weight: 300;
                     }
 
@@ -281,15 +301,18 @@
                     .song-progress {
                         height: max-content;
                         bottom: -4px;
+
                         // left: 2px;
-                        .song-duration{
+                        .song-duration {
                             margin-bottom: 3px;
                             margin-inline: 3px;
-                            opacity: 0.65;
-                            > p{
+                            opacity      : 0.65;
+
+                            >p {
                                 font-weight: 300 !important;
                             }
                         }
+
                         input[type="range"] {
                             border-radius: 0px;
 
@@ -373,16 +396,19 @@
     // Lyrics is on fullscreen
     &.modular-fs {
         .app-chrome:not(.chrome-bottom) {
-            .app-chrome--left > div:nth-of-type(3) {
+            .app-chrome--left>div:nth-of-type(3) {
                 margin-left: 0 !important;
             }
+
             &::before {
                 width: 100%;
             }
         }
-        .app-drawer{
+
+        .app-drawer {
             z-index: 15;
         }
+
         .md-body.lyric-body {
             backdrop-filter: none;
             margin-inline  : 5rem;
@@ -464,15 +490,15 @@
         }
 
         .app-sidebar-item {
-            display: flex;
-            text-overflow: ellipsis;
-            overflow: hidden;
+            display           : flex;
+            text-overflow     : ellipsis;
+            overflow          : hidden;
             -webkit-box-orient: horizontal;
             -webkit-line-clamp: 1;
-            font-size : 14px;
-            padding   : 4px 16px;
-            color     : var(--textColor);
-            transition: background 0s 0s var(--appleEase), font-weight 0.3s 0.3s var(--appleEase);
+            font-size         : 14px;
+            padding           : 4px 16px;
+            color             : var(--textColor);
+            transition        : background 0s 0s var(--appleEase), font-weight 0.3s 0.3s var(--appleEase);
 
             &:not(.app-sidebar-item-playlist) .feather {
                 color: var(--keyColor);
@@ -532,18 +558,21 @@
                 overflow     : hidden;
                 text-overflow: ellipsis;
             }
+
             .col {
-                .item-navigate{
+                .item-navigate {
                     z-index: 30;
-                    &:hover{
+
+                    &:hover {
                         text-decoration: none;
-                        h3{
+
+                        h3 {
                             text-decoration: underline;
                         }
                     }
                 }
             }
-            
+
 
             .well,
             .mediaitem-list-item__grid {
@@ -579,7 +608,7 @@
                     background-position: center;
                 }
             }
-            
+
             .v-hl-container>*[data-v-45080727] {
                 .cd-mediaitem-list-item {
                     border-top      : 1px solid var(--contentBorderColor);
@@ -608,9 +637,11 @@
                 background-color: var(--categoriesColor);
             }
 
-            .cd-btn-seeall, .v-hl-btn {
+            .cd-btn-seeall,
+            .v-hl-btn {
                 z-index: 2;
             }
+
             .v-hl-container[data-v-45080727] {
                 clip-path    : none;
                 overflow-y   : visible;
@@ -797,22 +828,23 @@
 
             &.artist-page {
                 --contentWidth: calc(100vw - var(--sidebarWidth) - 72px);
-                
-                &.animated {
-                    .artist-header{
-                        background: black;
-                        // margin-top: var(--navigationBarHeight);
-                        --webkit-box-refelect:above;
-                        overflow: visible;
-                        --webkit-box-refelect:above; 
-                        height: 58.5vh; 
-                        min-height: 0;
-                    }
-                    .animated-artwork-video{
 
-                        height: 100%;
-                        filter: brightness(0.9) contrast(1.2);
-                        min-height: 0;
+                &.animated {
+                    .artist-header {
+                        background           : black;
+                        // margin-top: var(--navigationBarHeight);
+                        --webkit-box-refelect: above;
+                        overflow             : visible;
+                        --webkit-box-refelect: above;
+                        height               : 58.5vh;
+                        min-height           : 0;
+                    }
+
+                    .animated-artwork-video {
+
+                        height            : 100%;
+                        filter            : brightness(0.9) contrast(1.2);
+                        min-height        : 0;
                         // opacity:0;
                         -webkit-mask-image: radial-gradient(circle, black 60%, transparent 120%);
 
@@ -917,9 +949,10 @@
                 }
 
                 .cd-mediaitem-square.mediaitem-brick {
-                    .artwork-container{
+                    .artwork-container {
                         width: 100%;
                     }
+
                     .info-rect {
                         .title {
                             font-size: 1.1rem;
@@ -1068,6 +1101,7 @@
 
             &.playlist-page {
                 padding-top: 0;
+
                 &[is-album="true"] {
 
                     .subtitle {
@@ -1078,9 +1112,11 @@
                         justify-content: flex-start;
                     }
                 }
+
                 &.plmin {
                     .playlist-display {
-                       min-height: calc(230px + var(--navigationBarHeight)) !important;; 
+                        min-height: calc(230px + var(--navigationBarHeight)) !important;
+                        ;
                     }
                 }
 
@@ -1109,26 +1145,27 @@
                 }
 
                 .playlist-display {
-                    
+
                     padding-top: var(--navigationBarHeight);
-                    min-height: calc(350px + var(--navigationBarHeight));
-                    box-shadow: none;
+                    min-height : calc(350px + var(--navigationBarHeight));
+                    box-shadow : none;
 
                     .artworkContainer {
                         position: unset;
                     }
 
                     .playlistInfo {
-                        background: var(--color3);
+                        background : var(--color3);
                         padding-top: var(--navigationBarHeight);
                     }
+
                     .playlist-hero {
                         margin-top: var(--navigationBarHeight);
                     }
 
                 }
 
-                .playlist-hero > .hero-tint {
+                .playlist-hero>.hero-tint {
                     display: none;
                 }
 
@@ -1179,7 +1216,7 @@
 
     .app-drawer {
         backdrop-filter: var(--glassFilterHeavy) brightness(0.75);
-        z-index: 35;
+        z-index        : 35;
 
         .queue-body {
             overflow-x: hidden;
@@ -1236,11 +1273,13 @@
                 filter : none;
                 opacity: 0.5;
             }
+
             .lyric-line {
                 &:not(.active) {
-                    filter : blur(2px);
+                    filter: blur(2px);
                 }
-                transition      : all 0.5s var(--appleEase);
+
+                transition : all 0.5s var(--appleEase);
             }
         }
 
@@ -1316,9 +1355,10 @@ select.md-select {
 .settings-panel {
     background     : rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(16px);
-    z-index: 35;
+    z-index        : 35;
+
     .settings-window {
-        
+
         .tabs .tab-content {
             .md-option-header {
                 padding-bottom: 1rem;
