@@ -13,14 +13,20 @@ Best used with `Mica(beta)` option in settings.
 
 ---
 
-### Version 3.1 - Release
-
-+ Mojave Support
-+ Slidey Search Bar, Top Bar, and media Bar
-+ New Settings Support
-+ Lyrics fullscreen support
-+ Various Light mode improvements
-+ Colored hearts
+### Version 3.2 - Release
++ Recently added page support (reduce spacing between albums)
++ UI overlap fixes
++ Mavericks top bar overhaul (horizontally align stuff)
++ Fix on oversized lyrics in the karaoke styled- fullscreen mode
++ antialiased text
++ Animated Artist Banner Video Filter
++ Playlist page header tweaks
++ New Listen now child Tweaks
++ Fix Lightmode fullscreen song info & progress color
++ Fix Light mode page buttons
++ Fix Lightmode replay button color
++ Disable margin of nav button in Mojave window mode
++ New Fullscreen UI
 
 **Not Supported Prvious iTheme features (will be re-added soon)**
 - Forced Light/Dark Mode
