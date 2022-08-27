@@ -1,5 +1,6 @@
 #app.twopanel {
     --chromeHeight1: 55px;
+
     #app-main {
         .app-chrome:not(.chrome-bottom) {
             backdrop-filter: none;
@@ -12,9 +13,10 @@
             .app-chrome-item:nth-of-type(2):not(.generic) {
                 margin: 0;
             }
-            .app-chrome--left > div:nth-of-type(3) {
+
+            .app-chrome--left>div:nth-of-type(3) {
                 // margin-left: calc(var(--sidebarWidth));
-                transition     : margin-left 0.35s var(--appleEase);
+                transition: margin-left 0.35s var(--appleEase);
             }
 
             .search-input {
@@ -31,22 +33,25 @@
                     width: 250px;
                 }
             }
+
             .top-nav-group {
                 border       : 1px solid var(--contentBorderColor);
                 border-radius: 6px;
-                background: rgba(36, 36, 38, 0.75);
+                background   : rgba(36, 36, 38, 0.75);
+
                 .app-sidebar-item {
-                    font-weight  : 500;
-                    border-radius: 6px !important;
+                    font-weight   : 500;
+                    border-radius : 6px !important;
                     padding-inline: 20px;
-                    flex-basis: content;
+                    flex-basis    : content;
+
                     &.active,
                     &:hover {
                         border-left: none !important;
 
                         &::before {
-                            --dist          : 0px;
-                            border-radius   : 6px;
+                            --dist       : 0px;
+                            border-radius: 6px;
                         }
 
                         &+.app-sidebar-item {
@@ -91,16 +96,19 @@
 
         .app-navigation {
             height: 100%;
-            #app-sidebar .app-sidebar-content{
+
+            #app-sidebar .app-sidebar-content {
                 height: 100% !important;
             }
+
             .content-inner {
                 padding-bottom: calc(var(--chromeHeight2) + 20px);
 
                 &.playlist-page {
                     padding-bottom: 0;
-                    .playlist-body{
-                        padding-bottom:  var(--chromeHeight2) !important;
+
+                    .playlist-body {
+                        padding-bottom: var(--chromeHeight2) !important;
                     }
                 }
             }
@@ -138,11 +146,42 @@
         }
 
         .app-chrome:not(.chrome-bottom) {
-            .app-chrome--left > div:nth-of-type(3) {
+            .app-chrome--left>div:nth-of-type(3) {
                 margin-left: 0 !important;
             }
+
             &::before {
                 width: 100%;
+            }
+        }
+    }
+}
+@media (max-width: 1400px) {
+    #app.twopanel #app-main .app-chrome.chrome-bottom .app-chrome--right .app-chrome-item.generic .cast{
+        display: none;
+    }
+}
+@media (max-width: 1200px) {
+    #app.twopanel #app-main .app-chrome.chrome-bottom .app-chrome--right .app-chrome-item.generic .queue{
+        display: none;
+    }
+}
+@media (max-width: 1100px) {
+    #app.twopanel {
+        #app-main {
+            .app-chrome.chrome-bottom {
+                .app-chrome--left {
+                    width: 40%;
+                }
+                .app-chrome--right {
+                    width: 20%;
+                    .app-chrome-item.volume{
+                        margin-inline: 0;
+                    }
+                    .app-chrome-item.generic {
+                        display:none;
+                    }
+                }
             }
         }
     }

@@ -50,26 +50,31 @@
                         opacity   : 1;
                         transition: opacity 0.35s var(--appleEase);
                     }
+                    .song-progress {
+                        transform: translateY(0);
+                        transition:  transform 0.35s var(--appleEase) !important;
+                    }
 
 
                 }
 
                 .song-name {
-                    font-size    : 14px;
+                    font-size    : 16px;
                     font-weight  : bold;
                     color        : var(--textColorLight);
                     margin-bottom: 2.5px;
                 }
 
                 .song-artist {
-                    font-size: 13px;
+                    font-size: 14px;
                     color    : var(--textColorLight);
                     opacity  : 0.8;
                 }
 
                 .song-progress {
-                    opacity   : 0;
-                    transition: opacity 0.5s 2s var(--appleEase);
+                    opacity   : 1;
+                    transform: translateY(60px);
+                    transition:  transform 0.35s 3s var(--appleEase);
                     position  : fixed;
                     bottom    : 8rem;
                     left      : 4rem;
@@ -87,6 +92,14 @@
                     input {
                         height       : 0.5rem;
                         border-radius: 1rem;
+
+                        &::-webkit-slider-thumb {
+                            border-radius: 3px;
+                            width        : 3px;
+                            height       : 10px;
+                            border       : 0;
+                            background   : var(--songProgressColor);
+                        }
                     }
                 }
 
@@ -123,9 +136,10 @@
 
             // margin-right: 2rem;
             .queue-col {
-                margin-right: 2rem;
+                width: 100%;
+                height: 100%;
+                padding-inline: 2rem;
                 color       : var(--textColorLight);
-
                 .queue-body {
 
                     .queue-title {
@@ -156,7 +170,7 @@
         .lyrics-col {
             width     : 100%;
             margin-top: -35px;
-            height    : 65vh;
+            height    : 70vh;
 
             .lyric-body {
                 width      : 100%;
@@ -170,7 +184,19 @@
             top   : 5rem;
             right : 5rem;
 
-            .lyrics,
+            .lyrics {
+                border-radius      : 50%;
+                width              : 40px;
+                height             : 40px;
+                background-size    : 50%;
+                background-position: center;
+                background-color   : rgba(255, 255, 255, 0.2);
+                transition: all 0.35s var(--appleEase);
+                &.active {
+                    background-color: rgba(0, 0, 0, 1) !important;
+                    filter          : invert(0.85) brightness(1) !important;
+                }
+            }
             .queue {
                 border-radius      : 50%;
                 width              : 40px;
@@ -179,7 +205,7 @@
                 background-size    : 50%;
                 background-position: center;
                 background-color   : rgba(255, 255, 255, 0.2);
-
+                transition: all 0.35s var(--appleEase);
                 &.active {
                     background-color: rgba(0, 0, 0, 1) !important;
                     filter          : invert(1) brightness(1) !important;
