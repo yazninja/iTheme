@@ -92,6 +92,27 @@
             .app-chrome-item .shuffle {
                 margin: 0;
             }
+            .app-chrome-playback-duration-bottom {
+                input[type="range"] {
+                    border-radius: 0px;
+
+                    &::-webkit-slider-thumb {
+                        border-radius: 3px;
+                        width        : 6px;
+                        height       : 15px;
+                        border       : 1px solid @mediaColorMix;
+                        background   : mix(black, @songProgressColor, 20%) !important; 
+                    }
+                }
+            }
+            .app-chrome-playback-controls {
+                .playback-button.pause, .playback-button.play, .playback-button.stop {
+                    border-radius:6px;
+                    width: 40px !important;
+                    height: 36px !important;
+                    margin: 0;
+                }
+            }
         }
 
         .app-navigation {
