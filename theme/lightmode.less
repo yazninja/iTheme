@@ -206,6 +206,34 @@ body {
         margin    : -20px;
         z-index   : -1;
     }
+    .usermenu-body {
+        .app-sidebar-button {
+            background-color: rgba(255, 255, 255, 0.75);
+            color: var(--textColor);
+            &:hover {
+                background-color: var(--keyColor);
+                color: white;
+            }
+        }
+        .usermenu-body {
+            background-color: red;
+        }
+        .usermenu-item{
+            color: var(--textColor);
+            .usermenu-item-icon{
+                color: var(--keyColor);
+            }
+            &:hover {
+                background-color: var(--keyColor);
+                color: white;
+                .usermenu-item-icon{
+                    color: white;
+                }
+            }
+        }
+        background: rgba(255, 255, 255, 0.35);
+        backdrop-filter: blur(32px);
+    }
 
     #app-content {
         background-color: var(--mediaContainerColor);
@@ -387,6 +415,11 @@ body {
             z-index   : -1;
             display   : none;
         }
+
+        .lyric-footer {
+            background: none !important;
+            background-image: linear-gradient(180deg, transparent, rgba(30, 30, 30, 0.2)) !important;
+        }
     }
 
     .bgArtworkMaterial {
@@ -466,7 +499,10 @@ body {
         }
 
         .list-group-item-dark {
-            background-color: rgb(255, 255, 255)
+            background-color: rgb(255, 255, 255);
+            &.addon {
+                background-color: rgba(230,230,230,0.25);
+            }
         }
 
         .list-group-item.applied {
@@ -475,6 +511,18 @@ body {
         .md-btn-small {
             background: var(--keyColor);
             color     : var(--textColorLight);
+        }
+        .md-btn {
+            background-color: rgba(255,255,255,0.5);
+            color: var(--textColor);
+            &:hover {
+                filter: none;
+                background-color: var(--keyColor);
+                color: var(--textColorLight);
+            }
+        }
+        .repo-header {
+            background: rgba(219,219,219,0.5);
         }
     }
 }
