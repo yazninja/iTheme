@@ -206,32 +206,40 @@ body {
         margin    : -20px;
         z-index   : -1;
     }
+
     .usermenu-body {
         .app-sidebar-button {
             background-color: rgba(255, 255, 255, 0.75);
-            color: var(--textColor);
+            color           : var(--textColor);
+
             &:hover {
                 background-color: var(--keyColor);
-                color: white;
+                color           : white;
             }
         }
+
         .usermenu-body {
             background-color: red;
         }
-        .usermenu-item{
+
+        .usermenu-item {
             color: var(--textColor);
-            .usermenu-item-icon{
+
+            .usermenu-item-icon {
                 color: var(--keyColor);
             }
+
             &:hover {
                 background-color: var(--keyColor);
-                color: white;
-                .usermenu-item-icon{
+                color           : white;
+
+                .usermenu-item-icon {
                     color: white;
                 }
             }
         }
-        background: rgba(255, 255, 255, 0.35);
+
+        background     : rgba(255, 255, 255, 0.35);
         backdrop-filter: blur(32px);
     }
 
@@ -340,17 +348,21 @@ body {
                 backdrop-filter: blur(16px) saturate(160%);
             }
         }
-        .about-page{
-            .teamBtn{
-                background-color: rgba(200,200,200,0.1);
-                .row{
-                    color:var(--textColor);
+
+        .about-page {
+            .teamBtn {
+                background-color: rgba(200, 200, 200, 0.1);
+
+                .row {
+                    color: var(--textColor);
                 }
-                .social-btn > svg{
-                    fill:#1D9BF0;
+
+                .social-btn>svg {
+                    fill: #1D9BF0;
                 }
             }
         }
+
         .playlist-page {
             .cd-mediaitem-list-item {
                 height: 50px;
@@ -417,7 +429,7 @@ body {
         }
 
         .lyric-footer {
-            background: none !important;
+            background      : none !important;
             background-image: linear-gradient(180deg, transparent, rgba(30, 30, 30, 0.2)) !important;
         }
     }
@@ -500,29 +512,34 @@ body {
 
         .list-group-item-dark {
             background-color: rgb(255, 255, 255);
+
             &.addon {
-                background-color: rgba(230,230,230,0.25);
+                background-color: rgba(230, 230, 230, 0.25);
             }
         }
 
         .list-group-item.applied {
             background: rgba(214, 0, 23, 0.35) !important;
         }
+
         .md-btn-small {
             background: var(--keyColor);
             color     : var(--textColorLight);
         }
+
         .md-btn {
-            background-color: rgba(255,255,255,0.5);
-            color: var(--textColor);
+            background-color: rgba(255, 255, 255, 0.5);
+            color           : var(--textColor);
+
             &:hover {
-                filter: none;
+                filter          : none;
                 background-color: var(--keyColor);
-                color: var(--textColorLight);
+                color           : var(--textColorLight);
             }
         }
+
         .repo-header {
-            background: rgba(219,219,219,0.5);
+            background: rgba(219, 219, 219, 0.5);
         }
     }
 }
@@ -615,4 +632,43 @@ input[type="text"] {
     --mediaBarColor         : rgba(0, 0, 0, 0.3);
     --songProgressColor     : #b8b8b8;
     --songProgressBackground: #333;
+}
+
+.library-page {
+    .cd-mediaitem-list-item {
+        height: 50px;
+
+        &:nth-child(odd) {
+            background-color: rgba(100, 100, 100, 0.1) !important;
+
+        }
+
+        .info-rect,
+        .heart-icon,
+        .explicit-icon,
+        .duration,
+        .metainfo {
+            border-bottom: none !important;
+        }
+
+        .info-rect {
+            flex-flow  : row;
+            align-items: center;
+
+            .title {
+                width: 60ch;
+            }
+
+        }
+
+        .subtitle {
+            opacity  : 0.85;
+            font-size: 0.9em;
+
+            display: flex;
+        }
+    }
+    .library-header {
+        background-color: rgba(230, 230, 230, 0.8) !important;
+    }
 }
