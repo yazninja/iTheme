@@ -901,7 +901,8 @@
                     .cd-mediaitem-list-item {
                         border-top   : none;
                         border-radius: 0;
-                        width        : calc(var(--contentWidth) / 3.8);
+                        width        : calc((var(--contentWidth) - 285px) / 3);
+                        margin-left  : 0;
 
                         &:not(:last-of-type) .info-rect,
                         &:not(:last-of-type) .metainfo,
@@ -920,7 +921,8 @@
                     .cd-mediaitem-list-item {
                         border-top   : none;
                         border-radius: 0;
-                        width        : calc(var(--contentWidth) / 3.1);
+                        width        : calc(var(--contentWidth) / 3);
+                        margin-left  : 0;
 
                         &:not(:last-of-type) .info-rect,
                         &:not(:last-of-type) .metainfo,
@@ -945,7 +947,7 @@
                 .mediaitem-list-item__grid {
                     padding-inline: 0;
                     width         : calc(100% + 20px);
-                    margin-left   : -20px;
+                    margin-left   : -10px;
                 }
 
                 .cd-mediaitem-square.mediaitem-brick {
