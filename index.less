@@ -1153,7 +1153,6 @@
                 &.plmin {
                     .playlist-display {
                         min-height: calc(230px + var(--navigationBarHeight)) !important;
-                        ;
                     }
                 }
 
@@ -1226,6 +1225,9 @@
                         align-items: center;
 
                         .title {
+                            @media (max-width: 1080px) {
+                                width: 40ch;
+                            }
                             width: 60ch;
                         }
 
