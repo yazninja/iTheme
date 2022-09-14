@@ -191,6 +191,42 @@ body {
         ._svg-icon[svg-name='sidebar-playlist'] {
             filter: invert(0.9);
         }
+        .app-sidebar-footer {
+            backdrop-filter: brightness(0.95);
+        }
+
+        .app-playback-controls {
+            --volumeTrackColor        : rgba(100, 100, 100, 0.65);
+            button.playback-button:not(.collapseLibrary),
+            button.playback-button--small.queue,
+            button.volume-button--small,
+            .window-controls,
+            .window-controls .close:hover {
+                filter: invert(1);
+            }
+
+            button.playback-button--small.cast,
+            button.playback-button--small.repeat,
+            button.playback-button--small.shuffle,
+            button.playback-button--small.lyrics {
+                filter: invert(0.85);
+            }
+            .app-chrome-item.volume input[type="range"]{
+                &::-webkit-slider-runnable-track {
+                    background   : var(--volumeTrackColor);
+                    filter       : none !important;
+                    height       : 4px;
+                    border-radius: 4px;
+
+                }
+                &::-webkit-slider-thumb {
+                    background: mix(@volumeThumbColor, @mediaColor, 50%) !important;
+                    border: 1px solid var(--appBorderColor);
+                    margin-top: -5px;
+                }
+            }
+            
+        }
     }
 
     #app-sidebar::before {
@@ -668,6 +704,7 @@ input[type="text"] {
             display: flex;
         }
     }
+
     .library-header {
         background-color: rgba(230, 230, 230, 0.8) !important;
     }

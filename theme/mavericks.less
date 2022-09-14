@@ -8,9 +8,6 @@
             .app-chrome--center {
                 max-width: 800px;
                 min-width: max-content;
-                @media screen and (max-width: 1475px) {
-                    max-width: 10px;                    
-                }
             }
 
             .app-chrome--right {
@@ -37,5 +34,22 @@
                 } 
             }
         }
+    }
+}
+@media (max-width: 1225px) {
+    // #app #app-main .app-chrome .app-chrome--right .app-chrome-item.generic .cast {
+    //     display: none;
+    // }
+    .app-chrome--right {
+        width: 30% !important;
+
+        .app-chrome-item.volume {
+            margin-inline: 0;
+        }
+    }
+}
+@media (max-width: 1120px) {
+    .app-chrome--left {
+        width: 30% !important;
     }
 }

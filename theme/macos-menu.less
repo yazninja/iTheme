@@ -28,8 +28,8 @@
             height          : 100%;
             border-radius   : 50%;
             background-color: var(--appBorderColor);
-            cursor: default;
-            pointer-events: none;
+            cursor          : default;
+            pointer-events  : none;
         }
 
         &::after {
@@ -41,15 +41,16 @@
             height          : 100%;
             border-radius   : 50%;
             background-color: var(--appBorderColor);
-            cursor: default;
-            pointer-events: none;
+            cursor          : default;
+            pointer-events  : none;
         }
     }
 
     .app-chrome {
-        .app-chrome--left > .app-chrome-item:nth-of-type(2) {
+        .app-chrome--left>.app-chrome-item:nth-of-type(2) {
             margin-left: calc(var(--sidebarWidth) * 0.2);
         }
+
         .app-chrome-item .window-controls-macos {
             position: relative;
             left    : 20px;
@@ -123,9 +124,14 @@
             }
         }
     }
+
+    .search-hints-container {
+        width: 280px !important;
+    }
+
     .app-navigation {
         .usermenu-container {
-            left:30px;
+            left: 30px;
         }
     }
 }

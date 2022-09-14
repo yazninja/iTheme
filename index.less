@@ -1579,21 +1579,43 @@ select.md-select {
 }
 
 
-
+@media only screen and (max-width: 1500px) {
+    #app:not(.macosemu) {
+        #app-main .app-chrome .app-chrome--right .app-chrome-item.generic .cast {
+            display: none;
+        }
+    }
+}
+@media only screen and (max-width: 1430px) {
+    #app:not(.macosemu) {
+        #app-main .app-chrome .app-chrome--right .app-chrome-item.generic .queue {
+            display: none;
+        }
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .app-chrome-item.volume {
+        margin-inline: 0 !important;
+    }
+}
 @media only screen and (max-width: 1120px) {
     #app {
         .app-chrome--left .app-chrome-item:nth-of-type(2) {
-            margin-left: 115px !important;
+            margin-left: 70px !important;
         }
     }
 
     #app.macosemu {
         .app-chrome--left .app-chrome-item:nth-of-type(2) {
-            margin-left: 180px !important;
+            margin-left: 40px !important;
         }
 
         .app-chrome--right {
             width: 20% !important;
         }
     }
+    #app-main .app-chrome .app-chrome--right .app-chrome-item.generic > *{
+        display: flex !important;
+    }
 }
+
