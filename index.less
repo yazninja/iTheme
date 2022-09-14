@@ -450,10 +450,10 @@
         }
 
         .search-input {
-            transition: border 0.3s var(--appleEase);
-            background: var(--searchBarBackgroundColor);
+            transition   : border 0.3s var(--appleEase);
+            background   : var(--searchBarBackgroundColor);
             // filter    : saturate(0);
-            color     : var(--textColor);
+            color        : var(--textColor);
 
             &:focus {
                 border-bottom: none;
@@ -468,43 +468,56 @@
 
 
         .search-hints-container {
-            padding:0;
+            padding         : 0;
             background-color: transparent;
-            width: 200px;
+            width           : 200px;
+
             .search-hints {
                 // margin-left:-10px;
                 width           : 100%;
                 background-color: var(--searchBackgroundColor);
+                animation       : unset !important;
+
                 .search-hint {
-                    font-weight: 500;
-                    font-size: 13px;
+                    font-weight  : 500;
+                    font-size    : 13px;
                     padding-block: 3px;
-                    color: var(--textColor);
-                    &:hover,&.active {
+                    color        : var(--textColor);
+
+                    &:hover,
+                    &.active {
                         background-color: var(--keyColor) !important;
-                        color     : var(--textColorLight) !important;
+                        color           : var(--textColorLight) !important;
                     }
                 }
             }
+
             .cd-queue-item {
                 border-bottom: 1px solid var(--subtleBorderColor);
-                font-weight: 400;
-                &:hover,&.active {
-                    background-color: var(--keyColor) !important;
-                    color     : var(--textColorLight) !important;
+                font-weight  : 400;
+
+                &:hover,
+                &.active {
+                    background-color: var(--keyColor);
+                    color           : var(--textColorLight);
                 }
-                .row > *:not(.queue-info) {
+
+                .row>*:not(.queue-info) {
                     padding-inline: 0;
+
                     .artwork {
                         --mediaItemRadius: 3px;
                     }
                 }
-                .row > .queue-info {
+
+                .row>.queue-info {
                     padding-left: 10px;
+
                     .queue-title {
-                        font-size: 13px;
+                        font-size   : 13px;
                         margin-block: 2px;
                     }
+
                     .queue-subtitle {
                         font-size: 12px;
                     }
@@ -571,6 +584,10 @@
         .sidebar-icon>svg {
             color: var(--keyColor);
         }
+    }
+
+    .usermenu-body {
+        animation: unset !important;
     }
 
     #app-content {
@@ -1063,7 +1080,7 @@
                 }
 
                 .library-header {
-                    @baseColorMix     : mix(@mediaContainerColor, transparent, @transparencyRate);
+                    @baseColorMix   : mix(@mediaContainerColor, transparent, @transparencyRate);
                     background-color: @baseColorMix;
                 }
             }
@@ -1259,6 +1276,7 @@
                             @media (max-width: 1080px) {
                                 width: 40ch;
                             }
+
                             width: 60ch;
                         }
 
