@@ -37,6 +37,17 @@
             width: max-content;
             flex : 40%;
 
+            .artwork {
+                transition: all 0.6s 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+                height    : 40vh;
+                width     : 40vh;
+
+                &.playing {
+                    height: 50vh;
+                    width : 50vh;
+                }
+            }
+
             .mediaitem-artwork {
                 border-radius: 1rem;
                 box-shadow   : 0px 0px 25px rgba(0, 0, 0, 0.5);
@@ -50,12 +61,11 @@
                         opacity   : 1;
                         transition: opacity 0.35s var(--appleEase);
                     }
+
                     .song-progress {
-                        transform: translateY(0);
-                        transition:  transform 0.35s var(--appleEase) !important;
+                        transform : translateY(0);
+                        transition: transform 0.35s var(--appleEase) !important;
                     }
-
-
                 }
 
                 .song-name {
@@ -73,8 +83,8 @@
 
                 .song-progress {
                     opacity   : 1;
-                    transform: translateY(60px);
-                    transition:  transform 0.35s 3s var(--appleEase);
+                    transform : translateY(60px);
+                    transition: transform 0.35s 3s var(--appleEase);
                     position  : fixed;
                     bottom    : 8rem;
                     left      : 4rem;
@@ -123,8 +133,15 @@
 
                     // display:none;
                     .playback-button {
-                        width : 45px !important;
-                        height: 45px !important;
+                        width     : 45px !important;
+                        height    : 45px !important;
+                        transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+                        &:active {
+                            width     : 35px !important;
+                            height    : 35px !important;
+                            transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+                        }
                     }
                 }
             }
@@ -136,10 +153,11 @@
 
             // margin-right: 2rem;
             .queue-col {
-                width: 100%;
-                height: 100%;
+                width         : 100%;
+                height        : 100%;
                 padding-inline: 2rem;
-                color       : var(--textColorLight);
+                color         : var(--textColorLight);
+
                 .queue-body {
 
                     .queue-title {
@@ -191,12 +209,14 @@
                 background-size    : 50%;
                 background-position: center;
                 background-color   : rgba(255, 255, 255, 0.2);
-                transition: all 0.35s var(--appleEase);
+                transition         : all 0.35s var(--appleEase);
+
                 &.active {
                     background-color: rgba(0, 0, 0, 1) !important;
                     filter          : invert(0.85) brightness(1) !important;
                 }
             }
+
             .queue {
                 border-radius      : 50%;
                 width              : 40px;
@@ -205,7 +225,8 @@
                 background-size    : 50%;
                 background-position: center;
                 background-color   : rgba(255, 255, 255, 0.2);
-                transition: all 0.35s var(--appleEase);
+                transition         : all 0.35s var(--appleEase);
+
                 &.active {
                     background-color: rgba(0, 0, 0, 1) !important;
                     filter          : invert(1) brightness(1) !important;
@@ -218,9 +239,9 @@
         }
 
         .lyric-line {
-            font-size   : 50px;
+            font-size   : 5rem;
             margin-right: 20px;
-
+            transition : all 0.5s var(--appleEase);
             .lyrics-translation {
                 filter: opacity(0.5);
             }
@@ -232,7 +253,21 @@
 
             &.active {
                 transform: scale(1);
+                .verse {
+                    opacity:1 !important;
+                }
+                .verse-active {
+                    transition         : all 0.35s var(--appleEase);
+                    text-shadow        :
+                        3px 3px 0 #000,
+                        -1px -1px 0 #000,
+                        1px -1px 0 #000,
+                        -1px 1px 0 #000,
+                        1px 1px 0 #000;
+                }
+
             }
+
         }
     }
 }

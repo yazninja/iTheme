@@ -189,6 +189,21 @@
             .content-inner {
                 padding-bottom: calc(var(--chromeHeight2) + 20px);
 
+                &.library-artists-page {
+                    margin-bottom: var(--chromeHeight2);
+                    padding-bottom: 0;
+                    height: calc(100% - var(--chromeHeight));
+                    
+                    .list-container {
+                        display: flex;
+                        flex-direction: column; 
+                        height: 100%;
+                        .podcasts-list {
+                            height: calc(100% - var(--chromeHeight1) - 5px);
+                            padding-bottom: 5px;
+                        }
+                    }
+                }
                 &.playlist-page {
                     padding-bottom: 0;
 
