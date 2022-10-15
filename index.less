@@ -865,13 +865,21 @@
                 }
             }
 
-            &.library-recentlyAdded {
-                .cd-mediaitem-square {
-                    width         : calc(var(--contentWidth) / 6.1);
-                    max-width     : 300px;
-                    padding-bottom: 20px;
+            // &.library-recentlyAdded {
+                .collection-list-square {
+                    display:flex !important;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    margin-inline: 0 !important;
+                    .cd-mediaitem-square-container {
+                        width: auto !important;
+                        .cd-mediaitem-square {
+                            width: calc(160px * var(--windowRelativeScale)) !important;
+                            height: calc(200px * var(--windowRelativeScale)) !important;
+                        }
+                    }
                 }
-            }
+            // }
 
             &.podcasts-page {
                 .podcasts-search {
