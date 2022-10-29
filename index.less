@@ -18,6 +18,7 @@
 @mediaColorMix       : mix(@mediaColor, transparent, 100%);
 @mediaContainerColor : rgb(46, 46, 45);
 @songProgressColor   : rgb(184, 184, 184);
+@songProgressBackgroundColor: rgba(165, 168, 186, 0.35);
 @volumeThumbColor    : rgb(44, 44, 44);
 
 :root {
@@ -30,6 +31,7 @@
     --mediaColorMix           : @mediaColorMix;
     --mediaContainerColor     : @mediaContainerColor;
     --songProgressColor       : @songProgressColor;
+    --songProgressBackground  : @songProgressBackgroundColor;
     --volumeThumbColor        : @volumeThumbColor;
     /* Colors */
     --keyColor                : #fa586a;
@@ -164,6 +166,12 @@
             // border-bottom  : 1px solid var(--appBorderColor);
             // border-left    : 1px solid var(--appBorderColor);
             -webkit-app-region: drag;
+
+            &:hover {
+                .app-chrome--center {
+                    color: red;
+                }
+            }
         }
 
         .app-chrome--left {
@@ -319,6 +327,7 @@
                         }
 
                         input[type="range"] {
+                            
                             border-radius: 0px;
 
                             &::-webkit-slider-thumb {
@@ -606,6 +615,18 @@
                 border-bottom : 1px solid var(--contentBorderColor);
             }
 
+            .album-header{
+                padding-block: 0.5rem;
+                gap: 10px;
+                justify-content: center;
+                .pagination-container{
+                    
+                    .page-btn.md-input-number {
+                        min-width: none;
+                    }
+                }
+            }
+
             .title-browse-sp {
                 white-space  : nowrap;
                 overflow     : hidden;
@@ -641,6 +662,14 @@
 
             .heart-filled {
                 background-color: var(--keyColor);
+            }
+            .cd-mediaitem-mvview {
+                width: 530px;
+                height: 375px;
+                .artwork, .cd-mediaitem-mvview-overlay{
+                    width:100%;
+                    // height:100%;
+                }
             }
 
             .cd-mediaitem-list-item {
@@ -874,8 +903,9 @@
                     .cd-mediaitem-square-container {
                         width: auto !important;
                         .cd-mediaitem-square {
-                            width: calc(160px * var(--windowRelativeScale)) !important;
+                            width: calc(180px * var(--windowRelativeScale)) !important;
                             height: calc(200px * var(--windowRelativeScale)) !important;
+                            max-width: none;
                         }
                     }
                 }
@@ -1201,11 +1231,11 @@
                 padding-top: 0;
 
                 &[is-album="true"] {
-
-                    .subtitle {
-                        display: none !important;
-                    }
-
+                    #songList {
+                        .subtitle {
+                            display: none !important;
+                        }
+                    }   
                     .info-rect {
                         justify-content: flex-start;
                     }

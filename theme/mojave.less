@@ -154,16 +154,32 @@
 
             .app-chrome-playback-duration-bottom {
                 input[type="range"] {
-                    border-radius: 0px;
+                    --songProgressBackground  : @songProgressBackgroundColor;
+                    border-radius: 5px;
 
                     &::-webkit-slider-thumb {
                         border-radius: 3px;
                         width        : 6px;
+                        height       : 0px;
+                        border       : 0px solid @mediaColorMix;
+                        background   : mix(black, @songProgressColor, 20%) !important;
+                        transition: height 0.35s 1s var(--appleEase), opacity 0.35s 1s var(--appleEase), border 0.3s 1s var(--appleEase);
+                        opacity: 0;
+                    }
+                    &:hover::-webkit-slider-thumb {
+                        transition: height 0.5s 0s var(--appleEase), opacity 0.35s 0s var(--appleEase), border 0.3s 0s var(--appleEase);
                         height       : 15px;
                         border       : 1px solid @mediaColorMix;
-                        background   : mix(black, @songProgressColor, 20%) !important;
+                        opacity: 1;
+                    }
+                    &:hover {
+                        cursor            : pointer;
                     }
                 }
+            }
+            .app-chrome-playback-controls .app-chrome-item .playback-button.pause,.app-chrome-playback-controls .app-chrome-item .playback-button.play  {
+                width: 34px !important;
+                height: 34px !important;
             }
 
             .app-chrome-playback-controls {

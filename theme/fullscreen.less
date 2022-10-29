@@ -118,7 +118,7 @@
                     position  : fixed;
                     bottom    : 5rem;
                     right     : 4rem;
-                    width     : 120px;
+                    width     : 150px;
                     opacity   : 0;
                     transition: opacity 0.5s 2s var(--appleEase);
                 }
@@ -136,6 +136,10 @@
                         width     : 45px !important;
                         height    : 45px !important;
                         transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+                        &.pause,&.play  {
+                            width: 40px !important;
+                            height: 40px !important;
+                        }
 
                         &:active {
                             width     : 35px !important;
@@ -239,7 +243,7 @@
         }
 
         .lyric-line {
-            font-size   : 5rem;
+            font-size   : 4.5rem;
             margin-right: 20px;
             transition : all 0.5s var(--appleEase);
             .lyrics-translation {
