@@ -1,36 +1,29 @@
-# iTheme (Beta) for [Cider](https://cider.sh/) <img src="https://img.shields.io/github/stars/ciderapp/iTheme?style=social" width="70"></img>
+# iTheme (Beta) for [Cider](https://cider.sh/) <img src="https://img.shields.io/github/stars/yazninja/iTheme?style=social" width="70"></img>
 
-<img src="https://img.shields.io/github/package-json/v/ciderapp/iTheme?color=darkgreen&filename=theme.json&style=for-the-badge">
+<img src="https://img.shields.io/github/package-json/v/yazninja/iTheme?color=darkgreen&filename=theme.json&style=for-the-badge">
 
-Cider theme based from the Apple Music beta app in MacOS Ventura.
+Cider theme based from the Apple Music beta app in MacOS Ventura. 
 Best used with `Mica(beta)` option in settings.
+Supports all layouts (Mojave/Mavericks)
+Supports both Light and Dark Mode
 
 #### iTheme Ecosystem
-
-**Side Plugin: [iVanced (Alpha)](https://github.com/yazninja/ivanced) (Deprecated)**
 
 **Theme Pack: [iTheme++](https://github.com/yazninja/itheme-plus-plus)**
 
 ---
+### Version 4.0 - Release 
+iTheme is now in its dormant stage, it will only be getting patch and bug fixes from now on, I removed the (beta) part of iTheme because with your help we have made it to my goal of iTheme. Can't thank you enough!
+Changelog:
++ fix large favorite's page artists
++ fix artist page floating header background color in light mode
++ darken volume track on light mode
++ fill heart icon on right click menu
++ fix light theme Add/Remove from library button icon color
++ animation fix (smoother esp for low-end systems)
++ animation tweak for lyrics
++ add iTheme++ icons and font to iTheme (for people who don't read this and new iTheme enjoyers)
 
-### Version 3.2 - Release
-+ Recently added page support (reduce spacing between albums)
-+ UI overlap fixes
-+ Mavericks top bar overhaul (horizontally align stuff)
-+ Fix on oversized lyrics in the karaoke styled- fullscreen mode
-+ antialiased text
-+ Animated Artist Banner Video Filter
-+ Playlist page header tweaks
-+ New Listen now child Tweaks
-+ Fix Lightmode fullscreen song info & progress color
-+ Fix Light mode page buttons
-+ Fix Lightmode replay button color
-+ Disable margin of nav button in Mojave window mode
-+ New Fullscreen UI
-
-**Not Supported Prvious iTheme features (will be re-added soon)**
-- Forced Light/Dark Mode
-- Inline sidebar Theme Support (use iTheme++)
 
 ---
 ### Gallery

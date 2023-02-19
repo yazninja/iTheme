@@ -1,0 +1,90 @@
+.app-chrome .app-chrome-item {
+
+    svg,
+    button {
+        transform : scale(1);
+        transition: transform 0.2s var(--appleEase);
+    }
+
+    &:hover {
+        svg,
+        button {
+            transform : scale(1.1);
+            transition: transform 0.2s var(--appleEase);
+        }
+    }
+}
+.content-inner{
+    .cd-mediaitem-square.mediaitem-card, .cd-mediaitem-square.mediaitem-brick {
+        transform : scale(1);
+        transition: transform 0.2s var(--appleEase) 0.1s;
+
+        &:hover {
+            transform : scale(1.05);
+            transition: transform 0.2s var(--appleEase) 0.1s;
+        }
+    }
+    .cd-mediaitem-square:not(.mediaitem-card):not(.mediaitem-brick) {
+        transition      : transform .2s var(--appleEase);
+        transition-delay: .1s;
+        padding         : 12px;
+        height          : 310px;
+
+        .artwork-container,
+        .info-rect {
+            transition      : transform .22s var(--appleEase);
+            transition-delay: .05s;
+        }
+
+        &:hover {
+            .artwork-container {
+                transform       : scale(1.1);
+                transition      : transform .1s var(--appleEase);
+                transition-delay: 0s;
+                transform-origin: center;
+            }
+
+            .info-rect {
+                z-index         : 1;
+                transition      : transform .1s var(--appleEase);
+                transition-delay: 0s;
+                transform       : translateY(8px) translate3d(0, 0, 0);
+            }
+        }
+    }
+}
+.wpfade_transform-enter-active,
+.wpfade_transform-leave-active {
+  --transitionTime: 0.4s;
+  transition: opacity var(--transitionTime) var(--appleEase), transform var(--transitionTime) var(--appleEase);
+  will-change: opacity, transform;
+}
+
+.wpfade_transform-enter {
+  opacity: 0;
+  transform: translateX(30%) translate3d(0,0,0);
+  will-change: opacity, transform;
+}
+.wpfade_transform-leave-to {
+  opacity: 0;
+  transform: translateX(-30%) translate3d(0,0,0);
+  will-change: opacity, transform;
+}
+
+
+.wpfade_transform_backwards-enter-active,
+.wpfade_transform_backwards-leave-active {
+  --transitionTime: 0.4s;
+  transition: opacity var(--transitionTime) var(--appleEase), transform var(--transitionTime) var(--appleEase);
+}
+
+.wpfade_transform_backwards-enter {
+  opacity: 0;
+  transform: translateX(-50%) translate3d(0,0,0);
+  will-change: opacity, transform;
+}
+.wpfade_transform_backwards-leave-to {
+  opacity: 0;
+  transform: translateX(50%) translate3d(0,0,0);
+  will-change: opacity, transform;
+}

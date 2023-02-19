@@ -4,6 +4,8 @@
 @import "theme/mojave.less";
 @import "theme/fullscreen.less";
 @import "theme/mavericks.less";
+@import "theme/cupertinofont.less";
+@import "theme/cupertinoicns.less";
 
 /* Colors */
 @colorMixRate    : 1%;
@@ -59,6 +61,8 @@
     /* Layout */
     --contentWidth: calc(100vw - var(--sidebarWidth) - 64px);
     --sidebarWidth: 225px;
+
+    --appleEase: cubic-bezier(.2, .2, 0, 1);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -87,60 +91,13 @@
 
 }
 
-// @media (prefers-color-scheme: light) {
-//     @keyColor               : #d60017;
-//     @ciderColor             : #ff2654;
-//     @baseColor              : #fff;
-//     @baseColorMix           : mix(@baseColor, transparent, 100%);
-//     @sidebarColor           : rgba(249, 249, 249, 0);
-//     @sidebarColorMix        : mix(@sidebarColor, transparent, 40%);
-//     @mediaColor             : #fff;
-//     @mediaColorMix          : mix(@mediaColor, transparent, 100%);
-//     @textColor              : #333;
-//     @textColorLight         : #fff;
-//     @activeTabColor         : rgba(250, 88, 106, 0.1);
-//     @artistHoverColor       : rgba(250, 35, 59, 0.8);
-//     @modalBorderColor       : rgba(68, 68, 68, 0.4);
-//     @modalBorderSubtleColor : hsla(0, 0%, 50%, 0.2);
-//     @songProgressColor      : rgb(184, 184, 184);
-//     @appBorderColor         : hsla(0, 0%, 50%, 0.8);
-//     @appBorderColor         : rgb(221, 221, 221, 0.5);
-//     @volumeTrackColor       : rgba(200, 200, 200, 0.9);
-//     @volumeThumbColor       : #ffffff;
-//     @contentBorderColor     : hsla(0, 0%, 50%, 0.4);
-//     @contentWidth           : calc(100vw - 346px);
-//     @categoriesColor        : rgba(50, 50, 50, 0.5);
-//     @mediaContainerColor    : #fefefe;
-
-//     .app-chrome-item.display--large>button,
-//     .queue {
-//         filter: invert(0.8);
-//     }
-
-//     .app-chrome-item.playback-controls:empty {
-//         border: 1px solid @appBorderColor  !important;
-
-//         &::before {
-//             border-right: 1px solid @appBorderColor  !important;
-//         }
-//     }
-
-// }
-
-
-
-
-
-
 /****       LAYOUT      ****/
-
 
 .bg-artwork--placeholder {
     background: transparent;
 }
 
 #app-main {
-    // background-color: var(--sidebarColorMix);
     background-color      : transparent;
     -webkit-font-smoothing: antialiased;
 
@@ -163,8 +120,6 @@
             width             : calc(100% - var(--sidebarWidth));
             height            : var(--chromeHeight1);
             backdrop-filter   : blur(16px) saturate(180%);
-            // border-bottom  : 1px solid var(--appBorderColor);
-            // border-left    : 1px solid var(--appBorderColor);
             -webkit-app-region: drag;
 
             &:hover {
@@ -192,24 +147,6 @@
             .vdiv {
                 display: none;
             }
-
-            // .app-chrome-item:nth-of-type(4) {
-            //     position: absolute;
-
-            //     button[title="Show Library"],
-            //     button[data-original-title="Show Library"] {
-            //         transition        : margin-left 0.3s var(--appleEase);
-            //         margin-left       : 70px;
-            //         -webkit-app-region: no-drag;
-            //     }
-
-            //     button[title="Hide Library"],
-            //     button[data-original-title="Hide Library"] {
-            //         transition        : margin-left 0.3s var(--appleEase);
-            //         margin-left       : 270px;
-            //         -webkit-app-region: no-drag;
-            //     }
-            // }
         }
 
         .app-chrome--center {
@@ -436,7 +373,20 @@
                 text-align     : center;
                 align-items    : center;
                 justify-content: center;
+                &.active:has(.lyricWaiting){
+                    min-height: calc(32px + 16px);
+                }
+                &:has(.lyricWaiting){
+                    min-height: 16px;
+                    // margin-top: 0px;
+                    // margin-bottom: 0px;
+                    transition: opacity 5s cubic-bezier(0.2, 0.2, 0, 1), min-height 1s cubic-bezier(0.2, 0.2, 0, 1), margin-top 1s cubic-bezier(0.2, 0.2, 0, 1), margin-bottom 1s cubic-bezier(0.2, 0.2, 0, 1) !important;
+                }
+                &:last-of-type{
+                    margin-bottom: 40vh;
+                }
             }
+
         }
 
         .lyric-footer {
@@ -829,6 +779,11 @@
                         aspect-ratio: 16/9;
                     }
                 }
+                &.mediaitem-small {
+                    height: auto;
+                    aspect-ratio: 12/13;
+                    max-width: calc(var(--contentWidth) / 6.1);
+                }
             }
 
             .search-input {
@@ -1146,7 +1101,7 @@
 
             @media screen and (max-width: 1150px) {
                 .well.itemContainer.collection-list-square {
-                    grid-template-columns: repeat(5, minmax(150px, 1fr)); // nah wait this works like its good, no scrolling bug for this... lemee show
+                    grid-template-columns: repeat(5, minmax(150px, 1fr));
 
                 }
             }
@@ -1200,25 +1155,6 @@
                         transition      : 0.1s ease-in-out;
                     }
                 }
-
-                // .cd-mediaitem-list-item {
-
-                //     // border-top          : 1px solid @contentBorderColor;
-                //     // border-radius       : 0;
-                //     &:not(:last-of-type) .info-rect,
-                //     &:not(:last-of-type) .metainfo,
-                //     &:not(:last-of-type) .duration,
-                //     &:not(:last-of-type) .explicit-icon {
-                //         border-bottom: 1px solid var(--contentBorderColor);
-                //         border-radius: 0;
-                //     }
-
-                //     .explicit-icon {
-                //         height             : 100%;
-                //         background-size    : 12px;
-                //         background-position: center;
-                //     }
-                // }
             }
 
             &.about-page {
@@ -1413,7 +1349,7 @@
                     filter: blur(2px);
                 }
 
-                transition : all 0.5s var(--appleEase);
+                transition : all 0.75s var(--appleEase);
             }
         }
 
@@ -1453,7 +1389,7 @@ select.md-select {
     backdrop-filter : blur(8px);
     color           : var(--textColor);
 
-    & .menu-body {
+    .menu-body {
         padding: 0;
 
         .svg-icon {
@@ -1462,7 +1398,7 @@ select.md-select {
         }
     }
 
-    & .menu-option {
+    .menu-option {
         border-radius       : 0;
         width               : 100%;
         padding-inline-start: 14px;
@@ -1482,6 +1418,11 @@ select.md-select {
             border-bottom: 1px solid var(--subtleBorderColor);
         }
 
+    }
+    .menu-header-body {
+        button[title="Unlove"] .svg-icon, button[data-original-title="Unlove"] .svg-icon {
+            --url: url(icons/heart.svg) !important;
+        }
     }
 }
 
